@@ -1,4 +1,4 @@
-# AWS Control Panel zur Administrierung von Ressourcen
+# Cloud Control Panel für AWS – Ressourcen effizient verwalten
 
 ![Titelbild](img/FutureControlPanel.jpg)
 
@@ -6,7 +6,18 @@
 
 [toc]
 
-## 1 Projektorganisation
+
+## 1 Einleitung
+
+In diesem Projekt wird ein Bash-basiertes Control Panel für AWS entwickelt, das eine einfache und effiziente Verwaltung sowie Administration von Cloud-Ressourcen ermöglicht.
+
+
+## 1.1 Behandelte Module
+
+- AWS-Base
+- Infrastructure as Code
+
+# 2 Projektorganisation
 
 ```mermaid
 
@@ -27,11 +38,32 @@ flowchart LR
 
 ```
 
-## 2 Projektübersicht
+## 2.1 Problemstellung
 
-### 2.1 Behandelte Module
+## 2.2 Aufgabenstellung
 
-- AWS-Base
-- Infrastructure as Code
+## 2.3 Ziele
 
-## 2.2 Problemstellung
+## 2.4 Terminplan
+
+## 2.5 Sachmittel
+
+## 2.6 Vorgaben, Methoden und Werkzeuge
+
+### 2.6.1 Projektmanagementmethod
+
+### 2.6.2 Versionierungskonzept
+
+### 2.6.3 Arbeitsumgebung
+
+### 2.6.4 Nicht Teil des Projektes
+
+### 2.6.5 Risikoanalyse
+
+## 2.7 Projekt Sprints
+
+# 3 Projektplan
+
+# 4 Architekturdiagramm
+
+# 5 Lösungsdesign
