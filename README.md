@@ -1,5 +1,7 @@
 # AWS Control Panel zur Administrierung von Ressourcen
 
+![Titelbild](img/FutureControlPanel.jpg)
+
 # Inhaltsverzeichnis
 
 [toc]
