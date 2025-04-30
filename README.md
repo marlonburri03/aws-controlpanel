@@ -1,6 +1,7 @@
 # Cloud Control Panel für AWS – Ressourcen effizient verwalten
 
 ![Titelbild](img/FutureControlPanel.jpg)
+*Das Image wurde mit Adobe Firefly erstellt.*
 
 # Inhaltsverzeichnis
 
