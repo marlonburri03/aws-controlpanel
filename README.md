@@ -49,17 +49,16 @@ In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch ber
 
 ## 2.3 Ziele
 
-* __Effizienzsteigerung und Automatisierung__
-
+* __Effizienzsteigerung und Automatisierung:__:
 Entwicklung eines Control Panel für die Verwaltung von AWS-Ressourcen mithilfe von Infrastructure-as-Code (IaC). 
 Dabei sollen EC2-Instanzen, Netzwerke (VPCs, Subnets, Gateways), Security Groups und weitere AWS-Ressourcen durch Code automatisch erstellt, konfiguriert und verwaltet werden. 
 Ziel ist es, manuelle Arbeitsschritte vollständig zu eliminieren und die Bereitstellung zu automatisieren.
 
-* __Unabhängigkeit von der Weboberfläche__
+* __Unabhängigkeit von der Weboberfläche:__:
 Vollständige Steuerung und Verwaltung von AWS-Ressourcen über die Shell mit Skripte welche mittels Bash auf die AWS CLI zugreiffen. 
 Die Notwendigkeit, die AWS Management Console zu nutzen, soll entfallen, um die Verwaltung und Bereitstellung der Ressourcen effizienter und einfacher zu gestalten.
 
-* __Standardisierung und Wiederverwendbarkeit__
+* __Standardisierung und Wiederverwendbarkeit:__
 Aufbau einer strukturierten IaC-Codelogik mit wiederverwendbaren Templates und Parametern für verschiedene AWS-Komponenten. 
 Dadurch können identische Setups mehrfach verwendet und standardisiert werden. 
 Die Lösung soll versioniert über GitLab verwaltet werden, um Änderungen nachvollziehbar zu dokumentieren.
@@ -73,28 +72,51 @@ Das Tool wird eingesetzt, da es im agilen Projektmanagement üblich ist, dass es
 Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so einen optimalen Überblick über den Projektverlauf.
 
 **Der Zeitplan für die Projektsprints sieht wie folgt aus:**
-| Sprint  | Titel                              | Zeitraum              | Ziel                                                                 |
-|---------|------------------------------------|------------------------|----------------------------------------------------------------------|
-| Sprint 1   | Grundlagen und Initialisierung     | 05.05.25 – 19.05.25    | Projektstruktur, Planung, AWS-Zugriffe einrichten, erstes Basis Script. |
-| Sprint 2   | Netzwerkautomatisierung            | 19.05.25 – 02.06.25    | Automatisierte Erstellung der Infrastruktur (VPCs, Subnets, Routing etc.) |
-| Sprint 3   | Server Deployment und Automatisierung | 02.06.25 – 16.06.25 | EC2-Instanzen automatisiert erstellen/löschen und konfigurieren.     |
-| Sprint 4   | Optimierung und Bedienbarkeit      | 16.06.25 – 30.06.25    | Code verbessern, Logging und Fehlerbehandlung einbauen.             |
-| Sprint 5   | Finalisierung und Nachbearbeitung  | 30.06.25 – 09.07.25    | Finales Testing und Dokumentation abschließen.                      |
+| Sprint     | Titel                                 | Zeitraum                     | Ziel                                                                      |
+|------------|---------------------------------------|------------------------------|---------------------------------------------------------------------------|
+| Sprint 1   | Grundlagen und Initialisierung        | 05.05.25 – 19.05.25          | Projektstruktur, Planung, AWS-Zugriffe einrichten, erstes Basis Script.   |
+| Sprint 2   | Netzwerkautomatisierung               | 19.05.25 – 02.06.25          | Automatisierte Erstellung der Infrastruktur (VPCs, Subnets, Routing etc.) |
+| Sprint 3   | Server Deployment und Automatisierung | 02.06.25 – 16.06.25          | EC2-Instanzen automatisiert erstellen/löschen und konfigurieren.          |
+| Sprint 4   | Optimierung und Bedienbarkeit         | 16.06.25 – 30.06.25          | Code verbessern, Logging und Fehlerbehandlung einbauen.                   |
+| Sprint 5   | Finalisierung und Nachbearbeitung     | 30.06.25 – 09.07.25          | Finales Testing und Dokumentation abschließen.                            |
 
 
 ## 2.5 Sachmittel
 
+* AI-Tools (Chatgpt, Gemini, Copilot etc.)
+* AWS-Academy
+* AWS-CLI
+* Bash
+* Cloud-init
+* Git
+* Gitlab
+* Jira
+* Markdown
+* Mermaid Markdown
+* VS-Code
+
 ## 2.6 Vorgaben, Methoden und Werkzeuge
 
 ### 2.6.1 Projektmanagementmethod
+Für die Umsetzung des Projekts wird SCRUM als agile Projektmanagementmethode verwendet. 
+Die Entwicklung erfolgt iterativ wodurch regelmässige Zwischenergebnisse abgeliefert und überprüft werden können. 
+Bei Bedarf können am Ende der Iteration das weitere Vorgehen angepasst werden. 
 
 ### 2.6.2 Versionierungskonzept
+Gitlab wird zur Dokumentation und Nachverfolgung von Änderungen verwendet. 
+Die Projektdateien werden in einem Gitlab-Repository verwaltet. 
+Die komplette Dokumentation des Projekts wird fortlaufend in einer Markdown Datei innerhalb des Repositories erstellt und mit den Commit Messages ergänzt. 
 
 ### 2.6.3 Arbeitsumgebung
+Im Projekt wird die AWS-CLI mit Bash verwendet. Um die EC2-Instanzen zu konfigurieren, verwende Ich Cloud-init. 
+Als Code Editor wird Visual Studio Code verwendet. 
 
-### 2.6.4 Nicht Teil des Projektes
+### 2.6.4 Test und Validierung
+Das Testing findet während jedem Sprint statt. Am Ende des Projekts werden zusätzlich Testfälle definiert um die Funktionsfähigkeit Final zu Messen. 
 
-### 2.6.5 Risikoanalyse
+### 2.6.5 Nicht Teil des Projektes
+
+### 2.6.6 Risikoanalyse
 
 ## 2.7 Projekt Sprints
 
