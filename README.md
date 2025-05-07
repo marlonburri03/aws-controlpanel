@@ -49,16 +49,16 @@ In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch ber
 
 ## 2.3 Ziele
 
-### 2.3.1 Effizienzsteigerung und Automatisierung
+* Effizienzsteigerung und Automatisierung
 Entwicklung eines Control Panel für die Verwaltung von AWS-Ressourcen mithilfe von Infrastructure-as-Code (IaC). 
 Dabei sollen EC2-Instanzen, Netzwerke (VPCs, Subnets, Gateways), Security Groups und weitere AWS-Ressourcen durch Code automatisch erstellt, konfiguriert und verwaltet werden. 
 Ziel ist es, manuelle Arbeitsschritte vollständig zu eliminieren und die Bereitstellung zu automatisieren.
 
-### 2.3.2 Unabhängigkeit von der Weboberfläche
+* 2.3.2 Unabhängigkeit von der Weboberfläche
 Vollständige Steuerung und Verwaltung von AWS-Ressourcen über die Shell mit Skripte welche mittels Bash auf die AWS CLI zugreiffen. 
 Die Notwendigkeit, die AWS Management Console zu nutzen, soll entfallen, um die Verwaltung und Bereitstellung der Ressourcen effizienter und einfacher zu gestalten.
 
-### 2.3.2 Standardisierung und Wiederverwendbarkeit
+* 2.3.2 Standardisierung und Wiederverwendbarkeit
 Aufbau einer strukturierten IaC-Codelogik mit wiederverwendbaren Templates und Parametern für verschiedene AWS-Komponenten. 
 Dadurch können identische Setups mehrfach verwendet und standardisiert werden. 
 Die Lösung soll versioniert über GitLab verwaltet werden, um Änderungen nachvollziehbar zu dokumentieren.
@@ -74,11 +74,11 @@ Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so 
 **Der Zeitplan für die Projektsprints sieht wie folgt aus:**
 | Sprint  | Titel                              | Zeitraum              | Ziel                                                                 |
 |---------|------------------------------------|------------------------|----------------------------------------------------------------------|
-| S-001   | Grundlagen und Initialisierung     | 05.05.25 – 19.05.25    | Projektstruktur, Planung, AWS-Zugriffe einrichten, erstes Basis Script. |
-| S-002   | Netzwerkautomatisierung            | 19.05.25 – 02.06.25    | Automatisierte Erstellung der Infrastruktur (VPCs, Subnets, Routing etc.) |
-| S-003   | Server Deployment und Automatisierung | 02.06.25 – 16.06.25 | EC2-Instanzen automatisiert erstellen/löschen und konfigurieren.     |
-| S-004   | Optimierung und Bedienbarkeit      | 16.06.25 – 30.06.25    | Code verbessern, Logging und Fehlerbehandlung einbauen.             |
-| S-005   | Finalisierung und Nachbearbeitung  | 30.06.25 – 09.07.25    | Finales Testing und Dokumentation abschließen.                      |
+| Sprint 1   | Grundlagen und Initialisierung     | 05.05.25 – 19.05.25    | Projektstruktur, Planung, AWS-Zugriffe einrichten, erstes Basis Script. |
+| Sprint 2   | Netzwerkautomatisierung            | 19.05.25 – 02.06.25    | Automatisierte Erstellung der Infrastruktur (VPCs, Subnets, Routing etc.) |
+| Sprint 3   | Server Deployment und Automatisierung | 02.06.25 – 16.06.25 | EC2-Instanzen automatisiert erstellen/löschen und konfigurieren.     |
+| Sprint 4   | Optimierung und Bedienbarkeit      | 16.06.25 – 30.06.25    | Code verbessern, Logging und Fehlerbehandlung einbauen.             |
+| Sprint 5   | Finalisierung und Nachbearbeitung  | 30.06.25 – 09.07.25    | Finales Testing und Dokumentation abschließen.                      |
 
 
 ## 2.5 Sachmittel
