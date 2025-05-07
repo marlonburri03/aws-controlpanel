@@ -50,9 +50,19 @@ In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch ber
 ## 2.3 Ziele
 
 ### 2.3.1 Effizienzsteigerung und Automatisierung
-Entwicklung eines Control Panel für AWS-Ressourcen mithilfe von Infrastructure-as-Code (IaC). 
-Dabei sollen EC2-Instanzen, Netzwerke (VPCs, Subnets, Gateways), Security Groups und weitere AWS-Komponenten durch Code automatisch erstellt, konfiguriert und verwaltet werden. 
-Ziel ist es, manuelle Arbeitsschritte vollständig zu eliminieren und die Bereitstellung zu standardisieren.
+Entwicklung eines Control Panel für die Verwaltung von AWS-Ressourcen mithilfe von Infrastructure-as-Code (IaC). 
+Dabei sollen EC2-Instanzen, Netzwerke (VPCs, Subnets, Gateways), Security Groups und weitere AWS-Ressourcen durch Code automatisch erstellt, konfiguriert und verwaltet werden. 
+Ziel ist es, manuelle Arbeitsschritte vollständig zu eliminieren und die Bereitstellung zu automatisieren.
+
+### 2.3.2 Unabhängigkeit von der Weboberfläche
+Vollständige Steuerung und Verwaltung von AWS-Ressourcen über die Shell mit Skripte welche mittels Bash auf die AWS CLI zugreiffen. 
+Die Notwendigkeit, die AWS Management Console zu nutzen, soll entfallen, um die Verwaltung und Bereitstellung der Ressourcen effizienter und einfacher zu gestalten.
+
+### 2.3.2 Standardisierung und Wiederverwendbarkeit
+Aufbau einer strukturierten IaC-Codelogik mit wiederverwendbaren Templates und Parametern für verschiedene AWS-Komponenten. 
+Dadurch können identische Setups mehrfach verwendet und standardisiert werden. 
+Die Lösung soll versioniert über GitLab verwaltet werden, um Änderungen nachvollziehbar zu dokumentieren.
+
 
 ## 2.4 Terminplan
 
