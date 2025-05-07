@@ -65,6 +65,21 @@ Die Lösung soll versioniert über GitLab verwaltet werden, um Änderungen nachv
 
 
 ## 2.4 Terminplan
+Zur Planung des Projektablaufs wird in Jira ein Gantt-Chart verwendet. 
+Dieses dient dazu, eine Übersicht und zeitliche Strukturierung der User Stories zu erhalten. 
+Änderungen können flexibel vorgenommen werden, was eine sofortige Anpassung des Plans ermöglicht. 
+Das Tool wird eingesetzt, da es im agilen Projektmanagement üblich ist, dass es zu Veränderungen kommt. 
+Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so einen optimalen Überblick über den Projektverlauf.
+
+**Der Zeitplan für die Projektsprints sieht wie folgt aus:**
+| Sprint  | Titel                              | Zeitraum              | Ziel                                                                 |
+|---------|------------------------------------|------------------------|----------------------------------------------------------------------|
+| S-001   | Grundlagen und Initialisierung     | 05.05.25 – 19.05.25    | Projektstruktur, Planung, AWS-Zugriffe einrichten, erstes Basis Script. |
+| S-002   | Netzwerkautomatisierung            | 19.05.25 – 02.06.25    | Automatisierte Erstellung der Infrastruktur (VPCs, Subnets, Routing etc.) |
+| S-003   | Server Deployment und Automatisierung | 02.06.25 – 16.06.25 | EC2-Instanzen automatisiert erstellen/löschen und konfigurieren.     |
+| S-004   | Optimierung und Bedienbarkeit      | 16.06.25 – 30.06.25    | Code verbessern, Logging und Fehlerbehandlung einbauen.             |
+| S-005   | Finalisierung und Nachbearbeitung  | 30.06.25 – 09.07.25    | Finales Testing und Dokumentation abschließen.                      |
+
 
 ## 2.5 Sachmittel
 
