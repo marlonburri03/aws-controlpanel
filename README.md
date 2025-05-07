@@ -17,6 +17,7 @@ In diesem Projekt wird ein Bash-basiertes Control Panel für AWS entwickelt, das
 
 - AWS-Base
 - Infrastructure as Code
+- Projektmanagement
 
 # 2 Projektorganisation
 
@@ -40,10 +41,18 @@ flowchart LR
 ```
 
 ## 2.1 Problemstellung
+Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen, VPCs, Security Groups und mehr vollständig automatisiert per Skript erstellen und verwalten. 
+Der entscheidende Vorteil dabei, die Nutzung der AWS-Weboberfläche wird nahezu überflüssig. 
+In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren. 
 
 ## 2.2 Aufgabenstellung
 
 ## 2.3 Ziele
+
+### 2.3.1 Effizienzsteigerung und Automatisierung
+Entwicklung eines Control Panel für AWS-Ressourcen mithilfe von Infrastructure-as-Code (IaC). 
+Dabei sollen EC2-Instanzen, Netzwerke (VPCs, Subnets, Gateways), Security Groups und weitere AWS-Komponenten durch Code automatisch erstellt, konfiguriert und verwaltet werden. 
+Ziel ist es, manuelle Arbeitsschritte vollständig zu eliminieren und die Bereitstellung zu standardisieren.
 
 ## 2.4 Terminplan
 
