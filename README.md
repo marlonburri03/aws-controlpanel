@@ -173,3 +173,19 @@ Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgt 
 ## 5.4 Security Groups, IP-Assignment Script
 
 # 6 Umsetzung
+
+# 7 Testverfahren
+
+# 8 Projektabschluss
+
+## 8.1 Technisches Fazit
+
+## 8.2 Persönliches Fazit
+
+## 8.3 Mögliche Erweiterungen
+
+# 9 Schlusswort
+
+## 9.1 Glossar
+
+## 9.2 Quellenverzeichnis
