@@ -126,14 +126,31 @@ Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgt 
 
 ### 2.6.6 Risikoanalyse
 
-| Risiko-ID | Beschreibung                                                                    | Wahrscheinlichkeit | Auswirkung   | Risiko-Level | Ampel    | Massnahmen                                                           |
-|-----------|---------------------------------------------------------------------------------|--------------------|--------------|--------------|----------|----------------------------------------------------------------------|
-| R1        | Skript löscht versehentlich Ressourcen ohne Rückfrage                           | 4 (hoch)           | 5 (sehr hoch)| 20           | 🔴 Hoch  | --confirm-Abfrage einbauen, dry-run verwenden, Logging aktivieren    |
-| R2        | IAM-Rollen sind unzureichend konfiguriert                                       | 3 (mittel)         | 4 (hoch)     | 12           | 🟠 Mittel| IAM-Rollen prüfen und anpassen, Least-Privilege-Prinzip umsetzen     |
-| R3        | Skriptfehler durch fehlende Validierung oder Error Handling                     | 4 (hoch)           | 3 (mittel)   | 12           | 🟠 Mittel| set -e, trap, und Input-Validierung verwenden                        |
-| R4        | Fehlkonfiguration von Ressourcen (z.B. VPCs oder Security Groups)               | 3 (mittel)         | 5 (sehr hoch)| 15           | 🔴 Hoch  | Code regelmässig validieren, automatische Tests                      |
-| R5        | Unkontrollierte Ressourcenerstellung                                            | 4 (hoch)           | 4 (hoch)     | 16           | 🔴 Hoch  | Ressourcen mit Tags versehen, regelmässige Bereinigung               |
-| R6        | Falsch konfigurierter Code mit sensiblen Daten oder fehlerhaften Berechtigungen | 3 (mittel)         | 5 (sehr hoch)| 15           | 🔴 Hoch  | Zugangsdaten nicht als Klartext speichern, SSH-Keys für EC2 nutzen   |
+Im Rahmen dieses Projekts wurde eine Risikoanalyse durchgeführt und in der folgenden Matrix visualisiert. Dabei wurden potenzielle Risiken identifiziert und dokumentiert. 
+Zu jedem Risiko wurde eine passende Massnahme definiert, die entweder im Falle des Eintritts des Risikos ergriffen oder präventiv im Vorhinein umgesetzt wird.
+Das Risikolevel wird durch die Bewertung der Eintrittswahrscheinlichkeit und der Auswirkung eines Risikos auf einer Skala von 1 bis 5 definiert und anschliessend zusammengerechnet. 
+Die Eintrittswahrscheinlichkeit gibt an, wie wahrscheinlich es ist, dass ein bestimmtes Risiko tatsächlich eintritt. Sie wird auf einer Skala von 1 (sehr niedrig) bis 5 (sehr hoch) bewertet.
+Die Auswirkung beschreibt, wie gravierend die Folgen sind, wenn das Risiko tatsächlich eintritt. Sie wird ebenfalls auf einer Skala von 1 (sehr niedrig) bis 5 (sehr hoch) bewertet.
+
+* __Farben zur Bewertung:__
+* 🔴 Hoch (Risiko-Level 15–25)
+* 🟠 Mittel (Risiko-Level 10–14)
+* 🟡 Niedrig–Mittel (Risiko-Level 5–9)
+* 🟢 Niedrig (1–4)
+
+
+__Platzhalter Screenshot Excel__
+
+| Risiko-ID | Beschreibung                                                                    | Wahrscheinlichkeit | Auswirkung   | Risiko-Level | Farbe            | Massnahmen                                                           |
+|-----------|---------------------------------------------------------------------------------|--------------------|--------------|--------------|------------------|----------------------------------------------------------------------|
+| R1        | Skript löscht versehentlich Ressourcen ohne Rückfrage                           | 3 (mittel)         | 4 (hoch)     | 12           | 🟠 Mittel        | --confirm-Abfrage einbauen, dry-run verwenden, Logging aktivieren    |
+| R2        | IAM-Rollen sind unzureichend konfiguriert                                       | 2 (mittel)         | 3 (hoch)     | 6            | 🟡 Niedrig–Mittel| IAM-Rollen prüfen und anpassen, Least-Privilege-Prinzip umsetzen     |
+| R3        | Skriptfehler durch fehlende Validierung oder Error Handling                     | 3 (hoch)           | 3 (mittel)   | 9            | 🟡 Niedrig–Mittel| set -e, trap, und Input-Validierung verwenden                        |
+| R4        | Fehlkonfiguration von Ressourcen (z.B. VPCs oder Security Groups)               | 3 (mittel)         | 4 (sehr hoch)| 12           | 🟠 Mittel        | Code regelmässig validieren, automatische Tests                      |
+| R5        | Unkontrollierte Ressourcenerstellung                                            | 3 (hoch)           | 4 (hoch)     | 12           | 🟠 Mittel        | Ressourcen mit Tags versehen, regelmässige Bereinigung               |
+| R6        | Falsch konfigurierter Code mit sensiblen Daten oder fehlerhaften Berechtigungen | 3 (mittel)         | 5 (sehr hoch)| 15           | 🔴 Hoch          | Zugangsdaten nicht als Klartext speichern, SSH-Keys für EC2 nutzen   |
+
+
 
 ### 2.6.7 Definition of Ready (DoR)
 Die Definition of Ready besteht aus individuell festgelegten Kriterien, die definieren, welche Voraussetzungen eine User Story im Product Backlog erfüllen muss, bevor sie in einen Sprint aufgenommen werden kann. 
