@@ -127,16 +127,17 @@ Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgt 
 ### 2.6.6 Risikoanalyse
 
 Im Rahmen dieses Projekts wurde eine Risikoanalyse durchgeführt und in der folgenden Matrix visualisiert. Dabei wurden potenzielle Risiken identifiziert und dokumentiert. 
-Zu jedem Risiko wurde eine passende Massnahme definiert, die entweder im Falle des Eintritts des Risikos ergriffen oder präventiv im Vorhinein umgesetzt wird.
+Zu jedem Risiko wurde eine passende Massnahme definiert, die entweder im Falle des Eintritts des Risikos ergriffen oder präventiv im Vorhinein umgesetzt wird.  
+
 Das Risikolevel wird durch die Bewertung der Eintrittswahrscheinlichkeit und der Auswirkung eines Risikos auf einer Skala von 1 bis 5 definiert und anschliessend zusammengerechnet. 
 Die Eintrittswahrscheinlichkeit gibt an, wie wahrscheinlich es ist, dass ein bestimmtes Risiko tatsächlich eintritt. Sie wird auf einer Skala von 1 (sehr niedrig) bis 5 (sehr hoch) bewertet.
-Die Auswirkung beschreibt, wie gravierend die Folgen sind, wenn das Risiko tatsächlich eintritt. Sie wird ebenfalls auf einer Skala von 1 (sehr niedrig) bis 5 (sehr hoch) bewertet.
-
-* __Farben zur Bewertung:__
-* 🔴 Hoch (Risiko-Level 15–25)
-* 🟠 Mittel (Risiko-Level 10–14)
-* 🟡 Niedrig–Mittel (Risiko-Level 5–9)
-* 🟢 Niedrig (1–4)
+Die Auswirkung beschreibt, wie gravierend die Folgen sind, wenn das Risiko tatsächlich eintritt. Sie wird ebenfalls auf einer Skala von 1 (sehr niedrig) bis 5 (sehr hoch) bewertet.  
+  
+Die Einteilung des Risiko-Levels in Farbbereiche sowie die zugehörige Einstufung wird folgendermassen abgebildet:
+* 🔴 __Hoch__ (Risiko-Level 15–25)
+* 🟠 __Mittel__ (Risiko-Level 10–14)
+* 🟡 __Niedrig–Mittel__ (Risiko-Level 5–9)
+* 🟢 __Niedrig__ (1–4)
 
 
 __Platzhalter Screenshot Excel__
