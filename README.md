@@ -131,8 +131,7 @@ Zu jedem Risiko wurde eine passende Massnahme definiert, die entweder im Falle d
 
 Das Risikolevel wird durch die Bewertung der Eintrittswahrscheinlichkeit und der Auswirkung eines Risikos auf einer Skala von 1 bis 5 definiert und anschliessend zusammengerechnet. 
 Die Eintrittswahrscheinlichkeit gibt an, wie wahrscheinlich es ist, dass ein bestimmtes Risiko tatsächlich eintritt. Sie wird auf einer Skala von 1 (sehr niedrig) bis 5 (sehr hoch) bewertet.
-Die Auswirkung beschreibt, wie gravierend die Folgen sind, wenn das Risiko tatsächlich eintritt. Sie wird ebenfalls auf einer Skala von 1 (sehr niedrig) bis 5 (sehr hoch) bewertet.  
-*(Dieser Text wurde mit ChatGPT geschrieben, 2025).* 
+Die Auswirkung beschreibt, wie gravierend die Folgen sind, wenn das Risiko tatsächlich eintritt. Sie wird ebenfalls auf einer Skala von 1 (sehr niedrig) bis 5 (sehr hoch) bewertet. *(Dieser Text wurde mit ChatGPT geschrieben, 2025).* 
   
 Die Einteilung des Risiko-Levels in Farbbereiche sowie die zugehörige Einstufung wird folgendermassen abgebildet:
 * 🔴 __Hoch__ (Risiko-Level 15–25)
@@ -246,4 +245,4 @@ In JIra wurde eine Automation Rule erstellt, welche die Kriterien der Definition
 
 ## 9.2 Quellenverzeichnis
 
-* ChatGPT. (2025, Mai 09). *Antwort von ChatGPT auf die Frage: Wir wird das Risiko-Level Berechnet*. ChatGPT. https://chatgpt.com 
+* ChatGPT (2025, Mai 09). *Antwort von ChatGPT auf die Frage: Wir wird das Risiko-Level Berechnet*. ChatGPT: https://chatgpt.com 
