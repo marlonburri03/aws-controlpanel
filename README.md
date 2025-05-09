@@ -126,6 +126,16 @@ Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgt 
 
 ### 2.6.6 Risikoanalyse
 
+### 2.6.7 Definition of Ready (DoR)
+Die Definition of Ready besteht aus individuell festgelegten Kriterien, die definieren, welche Voraussetzungen eine User Story im Product Backlog erfüllen muss, bevor sie in einen Sprint aufgenommen werden kann. 
+Sie stellt sicher, dass das Team ein gemeinsames Verständnis der Aufgabe hat und diese realistisch umsetzbar ist.
+
+
+### 2.6.8 Definition of Done (DoD)
+Die Definition of Done setzt sich aus individuell festgelegten Kriterien zusammen, die definieren, wann eine User Story als vollständig abgeschlossen gilt. 
+Sie schafft ein einheitliches Verständnis von Qualität innerhalb des Teams.
+
+
 ## 2.7 Projekt Sprints
 
 ### 2.7.1 Sprint 1
