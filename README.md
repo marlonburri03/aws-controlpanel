@@ -78,7 +78,7 @@ Das Tool wird eingesetzt, da es im agilen Projektmanagement üblich ist, dass es
 Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so einen optimalen Überblick über den Projektverlauf.
 
 **Der Zeitplan für die Projektsprints sieht wie folgt aus:**
-| Sprint     | Titel                                 | Zeitraum                     | Ziel                                                                      |
+| Sprint           | Titel                                 | Zeitraum                     | Ziel                                                                      |
 |------------------|---------------------------------------|------------------------------|---------------------------------------------------------------------------|
 | Sprint 1         | Grundlagen und Initialisierung        | 05.05.25 – 19.05.25          | Projektstruktur, Planung, AWS-Zugriffe einrichten, erstes Basis Script.   |
 | Sprint 2         | Netzwerkautomatisierung               | 19.05.25 – 02.06.25          | Automatisierte Erstellung der Infrastruktur (VPCs, Subnets, Routing etc.) |
@@ -121,13 +121,55 @@ Als Code Editor wird Visual Studio Code verwendet.
 Das Testing findet während jedem Sprint statt. Am Ende des Projekts werden zusätzlich Testfälle definiert um die Funktionsfähigkeit Final zu Messen. 
 
 ### 2.6.5 Nicht Teil des Projektes
+Das Bereitstellen von weiteren Ressourcen, abgesehen von EC2-Instanzen, VPCs, Security Groups usw. ist nicht vorgesehen. Im Rahmen des Projekts werden Ressourcen ausschliesslich per Skript erstellt und gelöscht. 
+Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgt nicht automatisiert und ist auch nicht Bestandteil des Projekt.
 
 ### 2.6.6 Risikoanalyse
 
 ## 2.7 Projekt Sprints
+
+### 2.7.1 Sprint 1
+
+#### 2.7.1.1 Sprint Planning
+
+#### 2.7.1.2 Sprint Review
+
+### 2.7.2 Sprint 2
+
+#### 2.7.2.1 Sprint Planning
+
+#### 2.7.2.2 Sprint Review
+
+### 2.7.3 Sprint 3
+
+#### 2.7.3.1 Sprint Planning
+
+#### 2.7.3.2 Sprint Review
+
+### 2.7.4 Sprint 4
+
+#### 2.7.4.1 Sprint Planning
+
+#### 2.7.4.2 Sprint Review
+
+### 2.7.5 Sprint 5
+
+#### 2.7.5.1 Sprint Planning
+
+#### 2.7.5.2 Sprint Review
 
 # 3 Projektplan
 
 # 4 Architekturdiagramm
 
 # 5 Lösungsdesign
+
+## 5.1 Main Script
+
+## 5.2 EC2 Script
+
+## 5.3 VPC, Subnetz Script
+
+## 5.4 Security Groups, IP-Assignment Script
+
+# 6 Umsetzung
