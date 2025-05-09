@@ -84,7 +84,7 @@ Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so 
 | Sprint 2         | Netzwerkautomatisierung               | 19.05.25 – 02.06.25          | Automatisierte Erstellung der Infrastruktur (VPCs, Subnets, Routing etc.) |
 | Sprint 3         | Server Deployment und Automatisierung | 02.06.25 – 16.06.25          | EC2-Instanzen automatisiert erstellen/löschen und konfigurieren.          |
 | Sprint 4         | Optimierung und Bedienbarkeit         | 16.06.25 – 30.06.25          | Code verbessern, Logging und Fehlerbehandlung einbauen.                   |
-| Sprint 5         | Finalisierung und Nachbearbeitung     | 30.06.25 – 09.07.25          | Finales Testing und Dokumentation abschließen.                            |
+| Sprint 5         | Finalisierung und Nachbearbeitung     | 30.06.25 – 09.07.25          | Finales Testing und Dokumentation abschliessen.                            |
 
 
 ## 2.5 Sachmittel
@@ -125,6 +125,15 @@ Das Bereitstellen von weiteren Ressourcen, abgesehen von EC2-Instanzen, VPCs, Se
 Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgt nicht automatisiert und ist auch nicht Bestandteil des Projekt.
 
 ### 2.6.6 Risikoanalyse
+
+| Risiko-ID | Beschreibung                                                                    | Wahrscheinlichkeit | Auswirkung   | Risiko-Level | Ampel    | Massnahmen                                                           |
+|-----------|---------------------------------------------------------------------------------|--------------------|--------------|--------------|----------|----------------------------------------------------------------------|
+| R1        | Skript löscht versehentlich Ressourcen ohne Rückfrage                           | 4 (hoch)           | 5 (sehr hoch)| 20           | 🔴 Hoch  | --confirm-Abfrage einbauen, dry-run verwenden, Logging aktivieren    |
+| R2        | IAM-Rollen sind unzureichend konfiguriert                                       | 3 (mittel)         | 4 (hoch)     | 12           | 🟠 Mittel| IAM-Rollen prüfen und anpassen, Least-Privilege-Prinzip umsetzen     |
+| R3        | Skriptfehler durch fehlende Validierung oder Error Handling                     | 4 (hoch)           | 3 (mittel)   | 12           | 🟠 Mittel| set -e, trap, und Input-Validierung verwenden                        |
+| R4        | Fehlkonfiguration von Ressourcen (z.B. VPCs oder Security Groups)               | 3 (mittel)         | 5 (sehr hoch)| 15           | 🔴 Hoch  | Code regelmässig validieren, automatische Tests                      |
+| R5        | Unkontrollierte Ressourcenerstellung                                            | 4 (hoch)           | 4 (hoch)     | 16           | 🔴 Hoch  | Ressourcen mit Tags versehen, regelmässige Bereinigung               |
+| R6        | Falsch konfigurierter Code mit sensiblen Daten oder fehlerhaften Berechtigungen | 3 (mittel)         | 5 (sehr hoch)| 15           | 🔴 Hoch  | Zugangsdaten nicht als Klartext speichern, SSH-Keys für EC2 nutzen   |
 
 ### 2.6.7 Definition of Ready (DoR)
 Die Definition of Ready besteht aus individuell festgelegten Kriterien, die definieren, welche Voraussetzungen eine User Story im Product Backlog erfüllen muss, bevor sie in einen Sprint aufgenommen werden kann. 
@@ -209,7 +218,7 @@ In JIra wurde eine Automation Rule erstellt, welche die Kriterien der Definition
 
 ## 8.2 Persönliches Fazit
 
-## 8.3 Mögliche Erweiterungen
+## 8.3 Mögliche Weiterentwicklung
 
 # 9 Schlusswort
 
