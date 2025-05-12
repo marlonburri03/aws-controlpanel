@@ -212,9 +212,10 @@ Für den ersten Sprint habe ich mir ein Ziel von fünf Storypoints gesetzt. Ein 
 Entsprechend plane ich Aufgaben mit einem Gesamtaufwand von fünf Storypoints ein.  
 
 Im Anschluss wurde in Jira der erste Sprint erstellt, welcher vom 5. Mai bis zum 19. Mai 2025 läuft. 
-Abschließend wurden falls erforderlich, Subtasks zu den Stories angelegt, um die Aufgaben besser strukturieren und aufteilen zu können.  
+Abschliessend wurden falls erforderlich, Subtasks zu den Stories angelegt, um die Aufgaben besser strukturieren und aufteilen zu können.  
 
 ![Sprint1Planning](img/Sprint1Planning.png)
+*Screenshot von meinem Sprint 1 Backlog in Jira*
 
 #### 2.7.1.2 Sprint Review
 
