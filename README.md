@@ -188,7 +188,12 @@ User Stories stellen konkrete Anforderungen aus Sicht des Nutzers dar und sind s
 Zur weiteren Aufteilung und besseren Planung können User Stories in Subtasks untergliedert werden. 
 Das sind kleinere technische oder organisatorische Aufgaben, die für die Umsetzung der jeweiligen Story notwendig sind. *(Dieser Text wurde mithilfe von ChatGPT geschrieben, 2025).*  
 
-<pre> ``` Projekt └── Epic └── User Story └── Subtask ``` </pre>
+```
+Projekt
+└── Epic
+    └── User Story
+        └── Subtask
+```
 
 ### 2.7.1 Sprint 1
 
@@ -207,7 +212,9 @@ Für den ersten Sprint habe ich mir ein Ziel von fünf Storypoints gesetzt. Ein 
 Entsprechend plane ich Aufgaben mit einem Gesamtaufwand von fünf Storypoints ein.  
 
 Im Anschluss wurde in Jira der erste Sprint erstellt, welcher vom 5. Mai bis zum 19. Mai 2025 läuft. 
-Abschließend wurden falls erforderlich, Subtasks zu den Stories angelegt, um die Aufgaben besser strukturieren und aufteilen zu können.
+Abschließend wurden falls erforderlich, Subtasks zu den Stories angelegt, um die Aufgaben besser strukturieren und aufteilen zu können.  
+
+![Sprint1Planning](img/Sprint1Planning.png)
 
 #### 2.7.1.2 Sprint Review
 
@@ -268,4 +275,5 @@ Abschließend wurden falls erforderlich, Subtasks zu den Stories angelegt, um di
 
 ## 9.2 Quellenverzeichnis
 
-* ChatGPT (2025, Mai 09). *Antwort von ChatGPT auf die Frage: Wir wird das Risiko-Level Berechnet*. ChatGPT: https://chatgpt.com 
+* ChatGPT (2025, Mai 09). *Antwort von ChatGPT auf die Frage: Wir wird das Risiko-Level Berechnet?* ChatGPT: https://chatgpt.com
+* ChatGPT (2025, Mai 12). *Antwort von ChatGPT auf die Frage: Wie ist das Backlog hierarchisch gegliedert?* ChatGPT: https://chatgpt.com 
