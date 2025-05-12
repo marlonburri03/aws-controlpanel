@@ -188,10 +188,7 @@ User Stories stellen konkrete Anforderungen aus Sicht des Nutzers dar und sind s
 Zur weiteren Aufteilung und besseren Planung können User Stories in Subtasks untergliedert werden. 
 Das sind kleinere technische oder organisatorische Aufgaben, die für die Umsetzung der jeweiligen Story notwendig sind. *(Dieser Text wurde mithilfe von ChatGPT geschrieben, 2025).*  
 
-Projekt
-└── Epic  
-    └── User Story  
-        └── Subtask
+<pre> ``` Projekt └── Epic └── User Story └── Subtask ``` </pre>
 
 ### 2.7.1 Sprint 1
 
