@@ -131,9 +131,9 @@ Zu jedem Risiko wurde eine passende Massnahme definiert, die entweder im Falle d
 
 Das Risikolevel wird durch die Bewertung der Eintrittswahrscheinlichkeit und der Auswirkung eines Risikos auf einer Skala von 1 bis 5 definiert und anschliessend zusammengerechnet. 
 Die Eintrittswahrscheinlichkeit gibt an, wie wahrscheinlich es ist, dass ein bestimmtes Risiko tatsächlich eintritt. Sie wird auf einer Skala von 1 (sehr niedrig) bis 5 (sehr hoch) bewertet.
-Die Auswirkung beschreibt, wie gravierend die Folgen sind, wenn das Risiko tatsächlich eintritt. Sie wird ebenfalls auf einer Skala von 1 (sehr niedrig) bis 5 (sehr hoch) bewertet. *(Dieser Text wurde mit ChatGPT geschrieben, 2025).* 
+Die Auswirkung beschreibt, wie gravierend die Folgen sind, wenn das Risiko tatsächlich eintritt. Sie wird ebenfalls auf einer Skala von 1 (sehr niedrig) bis 5 (sehr hoch) bewertet. *(Dieser Text wurde mithilfe von ChatGPT geschrieben, 2025).* 
   
-Die Einteilung des Risiko-Levels in Farbbereiche sowie die zugehörige Einstufung wird folgendermassen abgebildet:
+Das Risiko-Level  wird in folgende Gruppen Eingestuft:
 * 🔴 __Hoch__ (Risiko-Level 15–25)
 * 🟠 __Mittel__ (Risiko-Level 10–14)
 * 🟡 __Niedrig–Mittel__ (Risiko-Level 5–9)
@@ -182,9 +182,35 @@ In JIra wurde eine Automation Rule erstellt, welche die Kriterien der Definition
 
 ## 2.7 Projekt Sprints
 
+In Scrum werden Anforderungen hierarchisch gegliedert, um komplexe Aufgaben übersichtlich zu strukturieren. 
+Epics bilden dabei die oberste Ebene. Sie beschreiben große, übergeordnete Anforderungen, die mehrere Sprints umfassen und in kleinere User Stories unterteilt werden. 
+User Stories stellen konkrete Anforderungen aus Sicht des Nutzers dar und sind so formuliert, dass sie innerhalb eines Sprints umgesetzt werden können. 
+Zur weiteren Aufteilung und besseren Planung können User Stories in Subtasks untergliedert werden. 
+Das sind kleinere technische oder organisatorische Aufgaben, die für die Umsetzung der jeweiligen Story notwendig sind. *(Dieser Text wurde mithilfe von ChatGPT geschrieben, 2025).*  
+
+Projekt
+└── Epic  
+    └── User Story  
+        └── Subtask
+
 ### 2.7.1 Sprint 1
 
+Ziel des ersten Sprints ist es, die Grundlagen und Voraussetzungen für das Projekt zu schaffen. 
+Dazu gehören unter anderem die Erstellung einer Risikoanalyse, die Planung des weiteren Vorgehens sowie die Dokumentation der Organisationsstruktur. 
+Am Ende des ersten Sprints sollen alle notwendigen Vorarbeiten geleistet sein, sodass mit der eigentlichen Umsetzung gestartet werden kann.
+
 #### 2.7.1.1 Sprint Planning
+
+Zu Beginn musste der Aufwand von den am höchsten priorisierten User Stories anhand von Storypoints geschätzt werden. 
+Da ich im Rahmen dieser Arbeit allein als SCRUM-Team agiere, ergibt ein separates Backlog Refinement wenig Sinn. 
+Daher führe ich die Schätzung der Storypoints direkt im Sprint Planning durch.  
+
+Im Sprint Planning wurde zunächst ermittelt, wie viel Kapazität anhand von Storypoints zur Verfügung steht. 
+Für den ersten Sprint habe ich mir ein Ziel von fünf Storypoints gesetzt. Ein Storypoint entspricht dabei einem Arbeitstag mit acht Stunden Aufwand. 
+Entsprechend plane ich Aufgaben mit einem Gesamtaufwand von fünf Storypoints ein.  
+
+Im Anschluss wurde in Jira der erste Sprint erstellt, welcher vom 5. Mai bis zum 19. Mai 2025 läuft. 
+Abschließend wurden falls erforderlich, Subtasks zu den Stories angelegt, um die Aufgaben besser strukturieren und aufteilen zu können.
 
 #### 2.7.1.2 Sprint Review
 
