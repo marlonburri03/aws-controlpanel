@@ -103,28 +103,33 @@ Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so 
 
 ## 2.6 Vorgaben, Methoden und Werkzeuge
 
-__Projektmethodik__
+__Projektmethodik__  
+
 Für die Umsetzung des Projekts wird SCRUM als agile Projektmanagementmethode verwendet. 
 Die Entwicklung erfolgt iterativ wodurch regelmässige Zwischenergebnisse abgeliefert und überprüft werden können. 
 Bei Bedarf können am Ende der Iteration das weitere Vorgehen angepasst werden. 
 
-__Versionierungskonzept__
+__Versionierungskonzept__  
+
 Gitlab wird zur Dokumentation und Nachverfolgung von Änderungen verwendet. 
 Die Projektdateien werden in einem Gitlab-Repository verwaltet. 
 Die komplette Dokumentation des Projekts wird fortlaufend in einer Markdown Datei innerhalb des Repositories erstellt und mit den Commit Messages ergänzt. 
 
-__Arbeitsumgebung__
+__Arbeitsumgebung__  
+
 Im Projekt wird die AWS-CLI mit Bash verwendet. Um die EC2-Instanzen zu konfigurieren, verwende Ich Cloud-init. 
 Als Code Editor wird Visual Studio Code verwendet. 
 
-__Test und Validierung__
+__Test und Validierung__  
+
 Das Testing findet während jedem Sprint statt. Am Ende des Projekts werden zusätzlich Testfälle definiert um die Funktionsfähigkeit Final zu Messen. 
 
-__Nicht Teil des Projektes__
+__Nicht Teil des Projektes__  
+
 Das Bereitstellen von weiteren Ressourcen, abgesehen von EC2-Instanzen, VPCs, Security Groups usw. ist nicht vorgesehen. Im Rahmen des Projekts werden Ressourcen ausschliesslich per Skript erstellt und gelöscht. 
 Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgt nicht automatisiert und ist auch nicht Bestandteil des Projekt.
 
-__Risikoanalyse__
+__Risikoanalyse__  
 
 Im Rahmen dieses Projekts wurde eine Risikoanalyse durchgeführt und in der folgenden Matrix visualisiert. Dabei wurden potenzielle Risiken identifiziert und dokumentiert. 
 Zu jedem Risiko wurde eine passende Massnahme definiert, die entweder im Falle des Eintritts des Risikos ergriffen oder präventiv im Vorhinein umgesetzt wird.  
