@@ -103,28 +103,28 @@ Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so 
 
 ## 2.6 Vorgaben, Methoden und Werkzeuge
 
-### 2.6.1 Projektmethodik
+__Projektmethodik__
 Für die Umsetzung des Projekts wird SCRUM als agile Projektmanagementmethode verwendet. 
 Die Entwicklung erfolgt iterativ wodurch regelmässige Zwischenergebnisse abgeliefert und überprüft werden können. 
 Bei Bedarf können am Ende der Iteration das weitere Vorgehen angepasst werden. 
 
-### 2.6.2 Versionierungskonzept
+__Versionierungskonzept__
 Gitlab wird zur Dokumentation und Nachverfolgung von Änderungen verwendet. 
 Die Projektdateien werden in einem Gitlab-Repository verwaltet. 
 Die komplette Dokumentation des Projekts wird fortlaufend in einer Markdown Datei innerhalb des Repositories erstellt und mit den Commit Messages ergänzt. 
 
-### 2.6.3 Arbeitsumgebung
+__Arbeitsumgebung__
 Im Projekt wird die AWS-CLI mit Bash verwendet. Um die EC2-Instanzen zu konfigurieren, verwende Ich Cloud-init. 
 Als Code Editor wird Visual Studio Code verwendet. 
 
-### 2.6.4 Test und Validierung
+__Test und Validierung__
 Das Testing findet während jedem Sprint statt. Am Ende des Projekts werden zusätzlich Testfälle definiert um die Funktionsfähigkeit Final zu Messen. 
 
-### 2.6.5 Nicht Teil des Projektes
+__Nicht Teil des Projektes__
 Das Bereitstellen von weiteren Ressourcen, abgesehen von EC2-Instanzen, VPCs, Security Groups usw. ist nicht vorgesehen. Im Rahmen des Projekts werden Ressourcen ausschliesslich per Skript erstellt und gelöscht. 
 Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgt nicht automatisiert und ist auch nicht Bestandteil des Projekt.
 
-### 2.6.6 Risikoanalyse
+__Risikoanalyse__
 
 Im Rahmen dieses Projekts wurde eine Risikoanalyse durchgeführt und in der folgenden Matrix visualisiert. Dabei wurden potenzielle Risiken identifiziert und dokumentiert. 
 Zu jedem Risiko wurde eine passende Massnahme definiert, die entweder im Falle des Eintritts des Risikos ergriffen oder präventiv im Vorhinein umgesetzt wird.  
