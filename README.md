@@ -151,34 +151,6 @@ __Platzhalter Screenshot Excel__
 | R5        | Unkontrollierte Ressourcenerstellung                                            | 3 (hoch)           | 4 (hoch)     | 12           | 🟠 Mittel        | Ressourcen mit Tags versehen, regelmässige Bereinigung               |
 | R6        | Falsch konfigurierter Code mit sensiblen Daten oder fehlerhaften Berechtigungen | 3 (mittel)         | 5 (sehr hoch)| 15           | 🔴 Hoch          | Zugangsdaten nicht als Klartext speichern, SSH-Keys für EC2 nutzen   |
 
-
-
-### 2.6.7 Definition of Ready (DoR)
-Die Definition of Ready besteht aus individuell festgelegten Kriterien, die definieren, welche Voraussetzungen eine User Story im Product Backlog erfüllen muss, bevor sie in einen Sprint aufgenommen werden kann. 
-Sie stellt sicher, dass das Team ein gemeinsames Verständnis der Aufgabe hat und diese realistisch umsetzbar ist.
-
-* __Inhaltliche Anforderungen:__ Die User Story enthält eine vollständige Beschreibung mit allen relevanten Informationen, und das Ziel der Story ist klar definiert. Zudem sind alle notwendigen Akzeptanzkriterien formuliert, und die Story wurde vom Product Owner gegengelesen.
-
-* __Technische Anforderungen:__ Alle technischen Abhängigkeiten wurden identifiziert. Externe Abhängigkeiten sind, falls erforderlich dokumentiert. Zudem ist klar definiert, welche Ressourcen benötigt werden (z.B. Datenbanken, Server usw.).
-
-* __Planbarkeit:__ Die Story ist so zugeschnitten, dass sie innerhalb eines Sprints umgesetzt werden kann. Falls erforderlich, wurde sie in Tasks oder Subtasks aufgeteilt. Alle betroffenen Teams und Stakeholder wurden informiert, und es bestehen keine offenen Unklarheiten oder Blocker, die die Umsetzung behindern.
-
-Die Definition of Ready gilt einheitlich für alle User Stories im Projekt und wird nicht individuell in die Beschreibung einzelner Stories eingefügt.
-
-### 2.6.8 Definition of Done (DoD)
-Die Definition of Done setzt sich aus individuell festgelegten Kriterien zusammen, die definieren, wann eine User Story als vollständig abgeschlossen gilt. 
-Sie schafft ein einheitliches Verständnis von Qualität innerhalb des Teams.
-
-* __Umsetzung der Anforderungen:__ Alle Anforderungen und Akzeptanzkriterien der User Story sind vollständig umgesetzt und funktionieren gemäss den Vorgaben.
-
-* __Testabdeckung:__ Die User Story ist vollständig und erfolgreich getestet. Alle Akzeptanzkriterien wurden erfüllt.
-
-* __Dokumentation:__ Alle relevanten Änderungen und Konfigurationen sind dokumentiert. Die Dokumentation ist aktuell und für das Team zugänglich.
-
-* __Betriebs- und Supportprozess:__ Falls erforderlich, wurde ein Prozess für den Betrieb und Support eingerichtet, um eine reibungslose Übergabe und Nachverfolgbarkeit sicherzustellen.
-
-In JIra wurde eine Automation Rule erstellt, welche die Kriterien der Definition of Done (DoD) automatisch in das Beschreibungsfeld eingefügt, sobald ein neues Backlog Item erstellt wird.
-
 # 3 Projektplan
 
 Für die Semesterarbeit wurde kein klassischer Gantt-Projektplan erstellt. Die Durchführung erfolgt vollständig nach SCRUM wesshalb es im Verlauf vom Projekt zu Änderungen am Projektplan kommen könnte. Die Aufgaben wurden in User Stories aufgeteilt und in fünf Sprints gegliedert, wobei für jeden Sprint ein klares Ziel festgelegt wurde. Um dennoch eine visuelle Planung darzustellen, wurde die Timeline vom Projekt in Jira genutzt.
@@ -202,13 +174,39 @@ Projekt
         └── Subtask
 ```
 
-### 3.1.1 Sprint 1
+### 3.1.1 Definition of Ready (DoR)
+Die Definition of Ready besteht aus individuell festgelegten Kriterien, die definieren, welche Voraussetzungen eine User Story im Product Backlog erfüllen muss, bevor sie in einen Sprint aufgenommen werden kann. 
+Sie stellt sicher, dass das Team ein gemeinsames Verständnis der Aufgabe hat und diese realistisch umsetzbar ist.
+
+* __Inhaltliche Anforderungen:__ Die User Story enthält eine vollständige Beschreibung mit allen relevanten Informationen, und das Ziel der Story ist klar definiert. Zudem sind alle notwendigen Akzeptanzkriterien formuliert, und die Story wurde vom Product Owner gegengelesen.
+
+* __Technische Anforderungen:__ Alle technischen Abhängigkeiten wurden identifiziert. Externe Abhängigkeiten sind, falls erforderlich dokumentiert. Zudem ist klar definiert, welche Ressourcen benötigt werden (z.B. Datenbanken, Server usw.).
+
+* __Planbarkeit:__ Die Story ist so zugeschnitten, dass sie innerhalb eines Sprints umgesetzt werden kann. Falls erforderlich, wurde sie in Tasks oder Subtasks aufgeteilt. Alle betroffenen Teams und Stakeholder wurden informiert, und es bestehen keine offenen Unklarheiten oder Blocker, die die Umsetzung behindern.
+
+Die Definition of Ready gilt einheitlich für alle User Stories im Projekt und wird nicht individuell in die Beschreibung einzelner Stories eingefügt.
+
+### 3.1.2 Definition of Done (DoD)
+Die Definition of Done setzt sich aus individuell festgelegten Kriterien zusammen, die definieren, wann eine User Story als vollständig abgeschlossen gilt. 
+Sie schafft ein einheitliches Verständnis von Qualität innerhalb des Teams.
+
+* __Umsetzung der Anforderungen:__ Alle Anforderungen und Akzeptanzkriterien der User Story sind vollständig umgesetzt und funktionieren gemäss den Vorgaben.
+
+* __Testabdeckung:__ Die User Story ist vollständig und erfolgreich getestet. Alle Akzeptanzkriterien wurden erfüllt.
+
+* __Dokumentation:__ Alle relevanten Änderungen und Konfigurationen sind dokumentiert. Die Dokumentation ist aktuell und für das Team zugänglich.
+
+* __Betriebs- und Supportprozess:__ Falls erforderlich, wurde ein Prozess für den Betrieb und Support eingerichtet, um eine reibungslose Übergabe und Nachverfolgbarkeit sicherzustellen.
+
+In JIra wurde eine Automation Rule erstellt, welche die Kriterien der Definition of Done (DoD) automatisch in das Beschreibungsfeld eingefügt, sobald ein neues Backlog Item erstellt wird.
+
+### 3.1.3 Sprint 1
 
 Ziel des ersten Sprints ist es, die Grundlagen und Voraussetzungen für das Projekt zu schaffen. 
 Dazu gehören unter anderem die Erstellung einer Risikoanalyse, die Planung des weiteren Vorgehens sowie die Dokumentation der Organisationsstruktur. 
 Am Ende des ersten Sprints sollen alle notwendigen Vorarbeiten geleistet sein, sodass mit der eigentlichen Umsetzung gestartet werden kann.
 
-__3.1.1.1 Sprint Planning__
+__Sprint Planning__
 
 Zu Beginn musste der Aufwand von den am höchsten priorisierten User Stories anhand von Storypoints geschätzt werden. 
 Da ich im Rahmen dieser Arbeit allein als SCRUM-Team agiere, ergibt ein separates Backlog Refinement wenig Sinn. 
@@ -224,31 +222,31 @@ Abschliessend wurden falls erforderlich, Subtasks zu den Stories angelegt, um di
 ![Sprint1Planning](img/Sprint1Planning.png)
 *Screenshot von meinem Sprint 1 Backlog in Jira*
 
-__2.7.1.2 Sprint Review__
+__Sprint Review__
 
-### 3.1.2 Sprint 2
+### 3.1.4 Sprint 2
 
-#### 3.1.2.1 Sprint Planning
+__Sprint Planning__
 
-#### 3.1.2.2 Sprint Review
+__Sprint Review__
 
-### 3.1.3 Sprint 3
+### 3.1.5 Sprint 3
 
-#### 3.1.3.1 Sprint Planning
+__Sprint Planning__
 
-#### 3.1.3.2 Sprint Review
+__Sprint Review__
 
-### 3.1.4 Sprint 4
+### 3.1.6 Sprint 4
 
-#### 3.1.4.1 Sprint Planning
+__Sprint Planning__
 
-#### 3.1.4.2 Sprint Review
+__Sprint Review__
 
-### 3.1.5 Sprint 5
+### 3.1.7 Sprint 5
 
-#### 3.1.5.1 Sprint Planning
+__Sprint Planning__
 
-#### 3.1.5.2 Sprint Review
+__Sprint Review__
 
 # 4 Architekturdiagramm
 
