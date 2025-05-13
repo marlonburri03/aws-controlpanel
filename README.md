@@ -179,8 +179,15 @@ Sie schafft ein einheitliches Verständnis von Qualität innerhalb des Teams.
 
 In JIra wurde eine Automation Rule erstellt, welche die Kriterien der Definition of Done (DoD) automatisch in das Beschreibungsfeld eingefügt, sobald ein neues Backlog Item erstellt wird.
 
+# 3 Projektplan
 
-## 2.7 Projekt Sprints
+Für die Semesterarbeit wurde kein klassischer Gantt-Projektplan erstellt. Die Durchführung erfolgt vollständig nach SCRUM wesshalb es im Verlauf vom Projekt zu Änderungen am Projektplan kommen könnte. Die Aufgaben wurden in User Stories aufgeteilt und in fünf Sprints gegliedert, wobei für jeden Sprint ein klares Ziel festgelegt wurde. Um dennoch eine visuelle Planung darzustellen, wurde die Timeline vom Projekt in Jira genutzt.
+
+Diese kann über folgenden Link aufgerufen werden: [Jira Timeline](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline)
+
+Die Timeline bietet einen strukturierten Überblick über alle geplanten Sprints. Änderungen an Tasks oder User Stories werden in Echtzeit sichtbar, was die Visualisierung der Projektumsetzung erleichtert.
+
+## 3.1 Projekt Sprints
 
 In Scrum werden Anforderungen hierarchisch gegliedert, um komplexe Aufgaben übersichtlich zu strukturieren. 
 Epics bilden dabei die oberste Ebene. Sie beschreiben große, übergeordnete Anforderungen, die mehrere Sprints umfassen und in kleinere User Stories unterteilt werden. 
@@ -195,13 +202,13 @@ Projekt
         └── Subtask
 ```
 
-### 2.7.1 Sprint 1
+### 3.1.1 Sprint 1
 
 Ziel des ersten Sprints ist es, die Grundlagen und Voraussetzungen für das Projekt zu schaffen. 
 Dazu gehören unter anderem die Erstellung einer Risikoanalyse, die Planung des weiteren Vorgehens sowie die Dokumentation der Organisationsstruktur. 
 Am Ende des ersten Sprints sollen alle notwendigen Vorarbeiten geleistet sein, sodass mit der eigentlichen Umsetzung gestartet werden kann.
 
-#### 2.7.1.1 Sprint Planning
+__3.1.1.1 Sprint Planning__
 
 Zu Beginn musste der Aufwand von den am höchsten priorisierten User Stories anhand von Storypoints geschätzt werden. 
 Da ich im Rahmen dieser Arbeit allein als SCRUM-Team agiere, ergibt ein separates Backlog Refinement wenig Sinn. 
@@ -217,39 +224,31 @@ Abschliessend wurden falls erforderlich, Subtasks zu den Stories angelegt, um di
 ![Sprint1Planning](img/Sprint1Planning.png)
 *Screenshot von meinem Sprint 1 Backlog in Jira*
 
-#### 2.7.1.2 Sprint Review
+__2.7.1.2 Sprint Review__
 
-### 2.7.2 Sprint 2
+### 3.1.2 Sprint 2
 
-#### 2.7.2.1 Sprint Planning
+#### 3.1.2.1 Sprint Planning
 
-#### 2.7.2.2 Sprint Review
+#### 3.1.2.2 Sprint Review
 
-### 2.7.3 Sprint 3
+### 3.1.3 Sprint 3
 
-#### 2.7.3.1 Sprint Planning
+#### 3.1.3.1 Sprint Planning
 
-#### 2.7.3.2 Sprint Review
+#### 3.1.3.2 Sprint Review
 
-### 2.7.4 Sprint 4
+### 3.1.4 Sprint 4
 
-#### 2.7.4.1 Sprint Planning
+#### 3.1.4.1 Sprint Planning
 
-#### 2.7.4.2 Sprint Review
+#### 3.1.4.2 Sprint Review
 
-### 2.7.5 Sprint 5
+### 3.1.5 Sprint 5
 
-#### 2.7.5.1 Sprint Planning
+#### 3.1.5.1 Sprint Planning
 
-#### 2.7.5.2 Sprint Review
-
-# 3 Projektplan
-
-Für die Semesterarbeit wurde kein klassischer Gantt-Projektplan erstellt. Die Durchführung erfolgt vollständig nach SCRUM wesshalb es im Verlauf vom Projekt zu Änderungen am Projektplan kommen könnte. Die Aufgaben wurden in User Stories aufgeteilt und in fünf Sprints gegliedert, wobei für jeden Sprint ein klares Ziel festgelegt wurde. Um dennoch eine visuelle Planung darzustellen, wurde die Timeline vom Projekt in Jira genutzt.
-
-Diese kann über folgenden Link aufgerufen werden: [Jira Timeline](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline)
-
-Die Timeline bietet einen strukturierten Überblick über alle geplanten Sprints. Änderungen an Tasks oder User Stories werden in Echtzeit sichtbar, was die Visualisierung der Projektumsetzung erleichtert.
+#### 3.1.5.2 Sprint Review
 
 # 4 Architekturdiagramm
 
