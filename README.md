@@ -187,8 +187,6 @@ Die Definition of Ready gilt einheitlich für alle User Stories im Projekt und w
 Die Definition of Done setzt sich aus individuell festgelegten Kriterien zusammen, die definieren, wann eine User Story als vollständig abgeschlossen gilt. 
 Sie schafft ein einheitliches Verständnis von Qualität innerhalb des Teams.
 
-## 3.3 Projekt Sprints
-
 * __Umsetzung der Anforderungen:__ Alle Anforderungen und Akzeptanzkriterien der User Story sind vollständig umgesetzt und funktionieren gemäss den Vorgaben.
 
 * __Testabdeckung:__ Die User Story ist vollständig und erfolgreich getestet. Alle Akzeptanzkriterien wurden erfüllt.
@@ -198,6 +196,8 @@ Sie schafft ein einheitliches Verständnis von Qualität innerhalb des Teams.
 * __Betriebs- und Supportprozess:__ Falls erforderlich, wurde ein Prozess für den Betrieb und Support eingerichtet, um eine reibungslose Übergabe und Nachverfolgbarkeit sicherzustellen.
 
 In JIra wurde eine Automation Rule erstellt, welche die Kriterien der Definition of Done (DoD) automatisch in das Beschreibungsfeld eingefügt, sobald ein neues Backlog Item erstellt wird.
+
+## 3.3 Projekt Sprints
 
 ### 3.3.1 Sprint 1
 
