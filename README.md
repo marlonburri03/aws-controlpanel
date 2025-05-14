@@ -130,12 +130,12 @@ Im Rahmen dieses Projekts wurde eine Risikoanalyse durchgeführt und in der folg
 Zu jedem Risiko wurde eine passende Massnahme definiert, die entweder im Falle des Eintritts des Risikos ergriffen oder präventiv im Vorhinein umgesetzt wird.  
 
 Das Risikolevel wird durch die Bewertung der Eintrittswahrscheinlichkeit und der Auswirkung eines Risikos auf einer Skala von 1 bis 5 definiert und anschliessend zusammengerechnet. 
-Die Eintrittswahrscheinlichkeit gibt an, wie wahrscheinlich es ist, dass ein bestimmtes Risiko tatsächlich eintritt. Sie wird auf einer Skala von 1 (sehr niedrig) bis 5 (sehr hoch) bewertet.
-Die Auswirkung beschreibt, wie gravierend die Folgen sind, wenn das Risiko tatsächlich eintritt. Sie wird ebenfalls auf einer Skala von 1 (sehr niedrig) bis 5 (sehr hoch) bewertet. *(Dieser Text wurde mithilfe von ChatGPT geschrieben, 2025).* 
+Die Eintrittswahrscheinlichkeit gibt an, wie wahrscheinlich es ist, dass ein bestimmtes Risiko tatsächlich eintritt. Sie wird auf einer Skala von 1 (niedrig) bis 4 (sehr hoch) bewertet.
+Die Auswirkung beschreibt, wie gravierend die Folgen sind, wenn das Risiko tatsächlich eintritt. Sie wird ebenfalls auf einer Skala von 1 (niedrig) bis 4 (sehr hoch) bewertet. *(Dieser Text wurde mithilfe von ChatGPT geschrieben, 2025).* 
   
 Das Risiko-Level  wird in folgende Gruppen Eingestuft:
-* 🔴 __Hoch__ (Risiko-Level 15–25)
-* 🟠 __Mittel__ (Risiko-Level 10–14)
+* 🔴 __Sehr Hoch__ (Risiko-Level 15–25)
+* 🟠 __Hoch__ (Risiko-Level 10–14)
 * 🟡 __Niedrig–Mittel__ (Risiko-Level 5–9)
 * 🟢 __Niedrig__ (1–4)
 
@@ -144,12 +144,12 @@ __Platzhalter Screenshot Excel__
 
 | Risiko-ID | Beschreibung                                                                    | Wahrscheinlichkeit | Auswirkung   | Risiko-Level | Farbe            | Massnahmen                                                           |
 |-----------|---------------------------------------------------------------------------------|--------------------|--------------|--------------|------------------|----------------------------------------------------------------------|
-| R1        | Skript löscht versehentlich Ressourcen ohne Rückfrage                           | 3 (mittel)         | 4 (hoch)     | 12           | 🟠 Mittel        | --confirm-Abfrage einbauen, dry-run verwenden, Logging aktivieren    |
-| R2        | IAM-Rollen sind unzureichend konfiguriert                                       | 2 (mittel)         | 3 (hoch)     | 6            | 🟡 Niedrig–Mittel| IAM-Rollen prüfen und anpassen, Least-Privilege-Prinzip umsetzen     |
-| R3        | Skriptfehler durch fehlende Validierung oder Error Handling                     | 3 (hoch)           | 3 (mittel)   | 9            | 🟡 Niedrig–Mittel| set -e, trap, und Input-Validierung verwenden                        |
-| R4        | Fehlkonfiguration von Ressourcen (z.B. VPCs oder Security Groups)               | 3 (mittel)         | 4 (sehr hoch)| 12           | 🟠 Mittel        | Code regelmässig validieren, automatische Tests                      |
-| R5        | Unkontrollierte Ressourcenerstellung                                            | 3 (hoch)           | 4 (hoch)     | 12           | 🟠 Mittel        | Ressourcen mit Tags versehen, regelmässige Bereinigung               |
-| R6        | Falsch konfigurierter Code mit sensiblen Daten oder fehlerhaften Berechtigungen | 3 (mittel)         | 5 (sehr hoch)| 15           | 🔴 Hoch          | Zugangsdaten nicht als Klartext speichern, SSH-Keys für EC2 nutzen   |
+| R1        | Skript löscht versehentlich Ressourcen ohne Rückfrage                           | 2 (niedrig)        | 2 (niedrig)  | 4            | 🟢 Niedrig       | --confirm-Abfrage einbauen, dry-run verwenden, Logging aktivieren    |
+| R2        | IAM-Rollen sind unzureichend konfiguriert                                       | 2 (mittel)         | 3 (hoch)     | 6            | 🟡 Mittel        | IAM-Rollen prüfen und anpassen, Least-Privilege-Prinzip umsetzen     |
+| R3        | Skriptfehler durch fehlende Validierung oder Error Handling                     | 3 (hoch)           | 3 (mittel)   | 9            | 🟡 Mittel        | set -e, trap, und Input-Validierung verwenden                        |
+| R4        | Fehlkonfiguration von Ressourcen (z.B. VPCs oder Security Groups)               | 3 (mittel)         | 3 (mittel)   | 9            | 🟡 Mittel        | Code regelmässig validieren, automatische Tests                      |
+| R5        | Unkontrollierte Ressourcenerstellung                                            | 3 (hoch)           | 4 (hoch)     | 12           | 🟠 Hoch          | Ressourcen mit Tags versehen, regelmässige Bereinigung               |
+| R6        | Falsch konfigurierter Code mit sensiblen Daten oder fehlerhaften Berechtigungen | 3 (mittel)         | 5 (sehr hoch)| 15           | 🔴 Sehr Hoch     | Zugangsdaten nicht als Klartext speichern, SSH-Keys für EC2 nutzen   |
 
 
 
