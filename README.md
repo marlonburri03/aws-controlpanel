@@ -131,7 +131,8 @@ Zu jedem Risiko wurde eine passende Massnahme definiert, die entweder im Falle d
 
 Das Risikolevel wird durch die Bewertung der Eintrittswahrscheinlichkeit und der Auswirkung eines Risikos auf einer Skala von 1 bis 5 definiert und anschliessend zusammengerechnet. 
 Die Eintrittswahrscheinlichkeit gibt an, wie wahrscheinlich es ist, dass ein bestimmtes Risiko tatsächlich eintritt. Sie wird auf einer Skala von 1 (niedrig) bis 5 (sehr hoch) bewertet.
-Die Auswirkung beschreibt, wie gravierend die Folgen sind, wenn das Risiko tatsächlich eintritt. Sie wird ebenfalls auf einer Skala von 1 (niedrig) bis 5 (sehr hoch) bewertet. *(Dieser Text wurde mithilfe von ChatGPT geschrieben, 2025).* 
+Die Auswirkung beschreibt, wie gravierend die Folgen sind, wenn das Risiko tatsächlich eintritt. Sie wird ebenfalls auf einer Skala von 1 (niedrig) bis 5 (sehr hoch) bewertet.
+> (Dieser Text wurde mithilfe von ChatGPT geschrieben, 2025). 
   
 Das Risiko-Level  wird in folgende Gruppen Eingestuft:
 * 🔴 __Sehr hoch__ (Risiko-Level 15–25)
@@ -141,7 +142,8 @@ Das Risiko-Level  wird in folgende Gruppen Eingestuft:
 
 
 ![RisikoMatrix](img/RisikoAnalyse.png)
-*Screenshot von meiner Risiko Matrix aus data/RisikoMatrix.xlsx.*
+*Screenshot von meiner Risiko Matrix aus data/RisikoMatrix.xlsx.*  
+
 
 | Risiko-ID | Beschreibung                                                                    | Wahrscheinlichkeit | Auswirkung   | Risiko-Level | Farbe            | Massnahmen                                                           |
 |-----------|---------------------------------------------------------------------------------|--------------------|--------------|--------------|------------------|----------------------------------------------------------------------|
@@ -186,7 +188,8 @@ In Scrum werden Anforderungen hierarchisch gegliedert, um komplexe Aufgaben übe
 Epics bilden dabei die oberste Ebene. Sie beschreiben große, übergeordnete Anforderungen, die mehrere Sprints umfassen und in kleinere User Stories unterteilt werden. 
 User Stories stellen konkrete Anforderungen aus Sicht des Nutzers dar und sind so formuliert, dass sie innerhalb eines Sprints umgesetzt werden können. 
 Zur weiteren Aufteilung und besseren Planung können User Stories in Subtasks untergliedert werden. 
-Das sind kleinere technische oder organisatorische Aufgaben, die für die Umsetzung der jeweiligen Story notwendig sind. *(Dieser Text wurde mithilfe von ChatGPT geschrieben, 2025).*  
+Das sind kleinere technische oder organisatorische Aufgaben, die für die Umsetzung der jeweiligen Story notwendig sind. 
+> (Dieser Text wurde mithilfe von ChatGPT geschrieben, 2025).  
 
 ```
 Projekt
