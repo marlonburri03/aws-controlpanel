@@ -114,7 +114,7 @@ Die Projektdateien werden in einem Gitlab-Repository verwaltet.
 Die komplette Dokumentation des Projekts wird fortlaufend in einer Markdown Datei innerhalb des Repositories erstellt und mit den Commit Messages ergänzt. 
 
 ### 2.6.3 Arbeitsumgebung
-Im Projekt wird die AWS-CLI mit Bash verwendet. Um die EC2-Instanzen zu konfigurieren, verwende Ich Cloud-init. 
+Im Projekt wird die AWS-CLI mit Bash verwendet. Um die EC2-Instanzen zu konfigurieren, wird Cloud-init verwendet. 
 Als Code Editor wird Visual Studio Code verwendet. 
 
 ### 2.6.4 Test und Validierung
@@ -207,12 +207,12 @@ Am Ende des ersten Sprints sollen alle notwendigen Vorarbeiten geleistet sein, s
 #### 2.7.1.1 Sprint Planning
 
 Zu Beginn musste der Aufwand von den am höchsten priorisierten User Stories anhand von Storypoints geschätzt werden. 
-Da ich im Rahmen dieser Arbeit allein als SCRUM-Team agiere, ergibt ein separates Backlog Refinement wenig Sinn. 
-Daher führe ich die Schätzung der Storypoints direkt im Sprint Planning durch.  
+Da im Rahmen dieser Arbeit nur eine einzelne Person das SCRUM-Team bildet, ist ein separates Backlog Refinement nicht sinnvoll.
+Die Schätzung der Storypoints erfolgt daher direkt im Sprint Planning. 
 
 Im Sprint Planning wurde zunächst ermittelt, wie viel Kapazität anhand von Storypoints zur Verfügung steht. 
-Für den ersten Sprint habe ich mir ein Ziel von fünf Storypoints gesetzt. Ein Storypoint entspricht dabei einem Arbeitstag mit acht Stunden Aufwand. 
-Entsprechend plane ich Aufgaben mit einem Gesamtaufwand von fünf Storypoints ein.  
+Für den ersten Sprint habe wurde ein Ziel von fünf Storypoints gesetzt. Ein Storypoint entspricht dabei einem Arbeitstag mit acht Stunden Aufwand. 
+Entsprechend werden Aufgaben mit einem Gesamtaufwand von fünf Storypoints eingeplant. 
 
 Im Anschluss wurde in Jira der erste Sprint erstellt, welcher vom 5. Mai bis zum 19. Mai 2025 läuft. 
 Abschliessend wurden falls erforderlich, Subtasks zu den Stories angelegt, um die Aufgaben besser strukturieren und aufteilen zu können.  
