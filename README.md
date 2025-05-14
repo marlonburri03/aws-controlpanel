@@ -15,7 +15,7 @@ In diesem Projekt wird ein Bash-basiertes Control Panel für AWS entwickelt, das
 
 ## 1.1 Behandelte Module
 
-- AWS-Base
+- AWS-Cloud
 - Infrastructure as Code
 - Projektmanagement
 
@@ -42,9 +42,8 @@ flowchart LR
 
 ## 2.1 Problemstellung
 
-Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen, VPCs, Security Groups und mehr vollständig automatisiert per Skript erstellen und verwalten. 
-Der entscheidende Vorteil dabei, die Nutzung der AWS-Weboberfläche wird nahezu überflüssig. 
-In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren. 
+Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen, VPCs, Security Groups und mehr vollständig automatisiert per Skript erstellen und verwalten. Als wir im AWS-Cloud Modul vermehrt EC2-Instanzen sowie die dazugehörigen VPCs und Subnetze manuell erstellen musste, wurde mir schnell klar, dass dieser Prozess automatisiert werden muss. So entstand die Idee zum Control Panel. Der entscheidende Vorteil dabei ist, dass die Nutzung der AWS-Weboberfläche nahezu überflüssig wird. In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren.
+
 
 ## 2.2 Aufgabenstellung
 
@@ -103,28 +102,33 @@ Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so 
 
 ## 2.6 Vorgaben, Methoden und Werkzeuge
 
-### 2.6.1 Projektmethodik
+__Projektmethodik:__  
+
 Für die Umsetzung des Projekts wird SCRUM als agile Projektmanagementmethode verwendet. 
 Die Entwicklung erfolgt iterativ wodurch regelmässige Zwischenergebnisse abgeliefert und überprüft werden können. 
 Bei Bedarf können am Ende der Iteration das weitere Vorgehen angepasst werden. 
 
-### 2.6.2 Versionierungskonzept
+__Versionierungskonzept:__  
+
 Gitlab wird zur Dokumentation und Nachverfolgung von Änderungen verwendet. 
 Die Projektdateien werden in einem Gitlab-Repository verwaltet. 
 Die komplette Dokumentation des Projekts wird fortlaufend in einer Markdown Datei innerhalb des Repositories erstellt und mit den Commit Messages ergänzt. 
 
-### 2.6.3 Arbeitsumgebung
+__Arbeitsumgebung:__  
+
 Im Projekt wird die AWS-CLI mit Bash verwendet. Um die EC2-Instanzen zu konfigurieren, wird Cloud-init verwendet. 
 Als Code Editor wird Visual Studio Code verwendet. 
 
-### 2.6.4 Test und Validierung
+__Test und Validierung:__  
+
 Das Testing findet während jedem Sprint statt. Am Ende des Projekts werden zusätzlich Testfälle definiert um die Funktionsfähigkeit Final zu Messen. 
 
-### 2.6.5 Nicht Teil des Projektes
+__Nicht Teil des Projektes:__  
+
 Das Bereitstellen von weiteren Ressourcen, abgesehen von EC2-Instanzen, VPCs, Security Groups usw. ist nicht vorgesehen. Im Rahmen des Projekts werden Ressourcen ausschliesslich per Skript erstellt und gelöscht. 
 Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgt nicht automatisiert und ist auch nicht Bestandteil des Projekt.
 
-### 2.6.6 Risikoanalyse
+__Risikoanalyse:__  
 
 Im Rahmen dieses Projekts wurde eine Risikoanalyse durchgeführt und in der folgenden Matrix visualisiert. Dabei wurden potenzielle Risiken identifiziert und dokumentiert. 
 Zu jedem Risiko wurde eine passende Massnahme definiert, die entweder im Falle des Eintritts des Risikos ergriffen oder präventiv im Vorhinein umgesetzt wird.  
@@ -156,7 +160,15 @@ Das Risiko-Level  wird in folgende Gruppen Eingestuft:
 
 &nbsp;
 
-### 2.6.7 Definition of Ready (DoR)
+
+# 3 Projektplan
+
+Für die Semesterarbeit wurde kein klassischer Gantt-Projektplan erstellt. Die Durchführung erfolgt vollständig nach SCRUM wesshalb es im Verlauf vom Projekt zu Änderungen am Projektplan kommen könnte. Die Aufgaben wurden in User Stories aufgeteilt und in fünf Sprints gegliedert, wobei für jeden Sprint ein klares Ziel festgelegt wurde. Um dennoch eine visuelle Planung darzustellen, wurde die Timeline vom Projekt in Jira genutzt.
+
+Diese kann über folgenden Link aufgerufen werden: [Jira Timeline](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline)
+
+## 3.1 Definition of Ready (DoR)
+
 Die Definition of Ready besteht aus individuell festgelegten Kriterien, die definieren, welche Voraussetzungen eine User Story im Product Backlog erfüllen muss, bevor sie in einen Sprint aufgenommen werden kann. 
 Sie stellt sicher, dass das Team ein gemeinsames Verständnis der Aufgabe hat und diese realistisch umsetzbar ist.
 
@@ -168,7 +180,8 @@ Sie stellt sicher, dass das Team ein gemeinsames Verständnis der Aufgabe hat un
 
 Die Definition of Ready gilt einheitlich für alle User Stories im Projekt und wird nicht individuell in die Beschreibung einzelner Stories eingefügt.
 
-### 2.6.8 Definition of Done (DoD)
+## 3.2 Definition of Done (DoD)
+
 Die Definition of Done setzt sich aus individuell festgelegten Kriterien zusammen, die definieren, wann eine User Story als vollständig abgeschlossen gilt. 
 Sie schafft ein einheitliches Verständnis von Qualität innerhalb des Teams.
 
@@ -182,8 +195,9 @@ Sie schafft ein einheitliches Verständnis von Qualität innerhalb des Teams.
 
 In JIra wurde eine Automation Rule erstellt, welche die Kriterien der Definition of Done (DoD) automatisch in das Beschreibungsfeld eingefügt, sobald ein neues Backlog Item erstellt wird.
 
+Die Timeline bietet einen strukturierten Überblick über alle geplanten Sprints. Änderungen an Tasks oder User Stories werden in Echtzeit sichtbar, was die Visualisierung der Projektumsetzung erleichtert.
 
-## 2.7 Projekt Sprints
+## 3.3 Projekt Sprints
 
 In Scrum werden Anforderungen hierarchisch gegliedert, um komplexe Aufgaben übersichtlich zu strukturieren. 
 Epics bilden dabei die oberste Ebene. Sie beschreiben große, übergeordnete Anforderungen, die mehrere Sprints umfassen und in kleinere User Stories unterteilt werden. 
@@ -198,13 +212,13 @@ Projekt
         └── Subtask
 ```
 
-### 2.7.1 Sprint 1
+### 3.3.1 Sprint 1
 
 Ziel des ersten Sprints ist es, die Grundlagen und Voraussetzungen für das Projekt zu schaffen. 
 Dazu gehören unter anderem die Erstellung einer Risikoanalyse, die Planung des weiteren Vorgehens sowie die Dokumentation der Organisationsstruktur. 
 Am Ende des ersten Sprints sollen alle notwendigen Vorarbeiten geleistet sein, sodass mit der eigentlichen Umsetzung gestartet werden kann.
 
-#### 2.7.1.1 Sprint Planning
+__Sprint Planning:__  
 
 Zu Beginn musste der Aufwand von den am höchsten priorisierten User Stories anhand von Storypoints geschätzt werden. 
 Da im Rahmen dieser Arbeit nur eine einzelne Person das SCRUM-Team bildet, ist ein separates Backlog Refinement nicht sinnvoll.
@@ -220,33 +234,7 @@ Abschliessend wurden falls erforderlich, Subtasks zu den Stories angelegt, um di
 ![Sprint1Planning](img/Sprint1Planning.png)
 *Screenshot von meinem Sprint 1 Backlog in Jira.*
 
-#### 2.7.1.2 Sprint Review
-
-### 2.7.2 Sprint 2
-
-#### 2.7.2.1 Sprint Planning
-
-#### 2.7.2.2 Sprint Review
-
-### 2.7.3 Sprint 3
-
-#### 2.7.3.1 Sprint Planning
-
-#### 2.7.3.2 Sprint Review
-
-### 2.7.4 Sprint 4
-
-#### 2.7.4.1 Sprint Planning
-
-#### 2.7.4.2 Sprint Review
-
-### 2.7.5 Sprint 5
-
-#### 2.7.5.1 Sprint Planning
-
-#### 2.7.5.2 Sprint Review
-
-# 3 Projektplan
+__Sprint Refinement:__ 
 
 # 4 Architekturdiagramm
 
