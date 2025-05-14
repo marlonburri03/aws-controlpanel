@@ -142,7 +142,9 @@ Das Risiko-Level  wird in folgende Gruppen Eingestuft:
 * 🟠 __Hoch__ (Risiko-Level 10–14)
 * 🟡 __Mittel__ (Risiko-Level 5–9)
 * 🟢 __Niedrig__ (1–4)  
-  
+ 
+&nbsp;
+&nbsp;
 
 | Risiko-ID | Beschreibung                                                                    | Wahrscheinlichkeit | Auswirkung   | Risiko-Level | Farbe            | Massnahmen                                                           |
 |-----------|---------------------------------------------------------------------------------|--------------------|--------------|--------------|------------------|----------------------------------------------------------------------|
