@@ -138,12 +138,14 @@ Das Risiko-Level  wird in folgende Gruppen Eingestuft:
 * 🟠 __Hoch__ (Risiko-Level 10–14)
 * 🟡 __Mittel__ (Risiko-Level 5–9)
 * 🟢 __Niedrig__ (1–4)
-
-
+  
+  
 ![RisikoMatrix](img/RisikoAnalyse.png)
 *Screenshot von meiner Risiko Matrix aus data/RisikoMatrix.xlsx.*  
   
 
+  
+  
 | Risiko-ID | Beschreibung                                                                    | Wahrscheinlichkeit | Auswirkung   | Risiko-Level | Farbe            | Massnahmen                                                           |
 |-----------|---------------------------------------------------------------------------------|--------------------|--------------|--------------|------------------|----------------------------------------------------------------------|
 | R1        | Skript löscht versehentlich Ressourcen ohne Rückfrage                           | 2 (niedrig)        | 2 (niedrig)  | 4            | 🟢Niedrig       | --confirm-Abfrage einbauen, dry-run verwenden, Logging aktivieren    |
