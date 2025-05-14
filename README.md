@@ -132,17 +132,17 @@ Zu jedem Risiko wurde eine passende Massnahme definiert, die entweder im Falle d
 Das Risikolevel wird durch die Bewertung der Eintrittswahrscheinlichkeit und der Auswirkung eines Risikos auf einer Skala von 1 bis 5 definiert und anschliessend zusammengerechnet. 
 Die Eintrittswahrscheinlichkeit gibt an, wie wahrscheinlich es ist, dass ein bestimmtes Risiko tatsächlich eintritt. Sie wird auf einer Skala von 1 (niedrig) bis 5 (sehr hoch) bewertet.
 Die Auswirkung beschreibt, wie gravierend die Folgen sind, wenn das Risiko tatsächlich eintritt. Sie wird ebenfalls auf einer Skala von 1 (niedrig) bis 5 (sehr hoch) bewertet. *(Dieser Text wurde mithilfe von ChatGPT geschrieben, 2025).* 
-  
+&nbsp;
 
-![RisikoMatrix](img/RisikoAnalyse.png)
-*Screenshot von meiner Risiko Matrix aus data/RisikoMatrix.xlsx.*  
-  
 Das Risiko-Level  wird in folgende Gruppen Eingestuft:
 * 🔴 __Sehr hoch__ (Risiko-Level 15–25)
 * 🟠 __Hoch__ (Risiko-Level 10–14)
 * 🟡 __Mittel__ (Risiko-Level 5–9)
 * 🟢 __Niedrig__ (1–4)  
- 
+
+![RisikoMatrix](img/RisikoAnalyse.png)
+*Screenshot von meiner Risiko Matrix aus data/RisikoMatrix.xlsx.*  
+
 &nbsp;
 &nbsp;
 
