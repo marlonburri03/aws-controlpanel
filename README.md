@@ -232,7 +232,7 @@ Abschliessend wurden falls erforderlich, Subtasks zu den Stories angelegt, um di
 ![Sprint1Planning](img/Sprint1Planning.png)
 *Screenshot von meinem Sprint 1 Backlog in Jira.*
 
-__Sprint Refinement:__ 
+__Sprint Review:__ 
 
 ### 3.3.2 Sprint 2
 
