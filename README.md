@@ -122,6 +122,7 @@ Als Code-Editor kommt Visual Studio Code zum Einsatz. Zur Veranschaulichung habe
 
 ![Arbeitsumgebung](img/Architecture.png)
 *Visualisierung meiner Arbeitsumgebung.*
+&nbsp;
 
 __Test und Validierung:__  
 
@@ -259,36 +260,35 @@ __Sprint Review__
 
 __Sprint Planning__
 
-# 4 Architekturdiagramm
 
-# 5 Lösungsdesign
+# 4 Lösungsdesign
 
-## 5.1 Main Script
+## 4.1 Main Script
 
-## 5.2 EC2 Script
+## 4.2 EC2 Script
 
-## 5.3 VPC, Subnetz Script
+## 4.3 VPC, Subnetz Script
 
-## 5.4 Security Groups, IP-Assignment Script
+## 4.4 Security Groups, IP-Assignment Script
 
-# 6 Umsetzung
+# 5 Umsetzung
 
-# 7 Testverfahren
+# 6 Testverfahren
 
-# 8 Projektabschluss
+# 7 Projektabschluss
 
-## 8.1 Technisches Fazit
+## 7.1 Technisches Fazit
 
-## 8.2 Persönliches Fazit
+## 7.2 Persönliches Fazit
 
-## 8.3 Mögliche Weiterentwicklung
+## 7.3 Mögliche Weiterentwicklung
 
-# 9 Schlusswort
+# 8 Schlusswort
 
-## 9.1 Glossar
+## 8.1 Glossar
 
 
-## 9.2 Quellenverzeichnis
+## 8.2 Quellenverzeichnis
 
 * ChatGPT (2025, Mai 09). *Antwort von ChatGPT auf die Frage: Wir wird das Risiko-Level Berechnet?* ChatGPT: https://chatgpt.com
 * ChatGPT (2025, Mai 12). *Antwort von ChatGPT auf die Frage: Wie ist das Backlog hierarchisch gegliedert?* ChatGPT: https://chatgpt.com 
