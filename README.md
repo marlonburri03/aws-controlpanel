@@ -265,6 +265,28 @@ __Sprint Planning__
 
 ## 4.1 Main Script
 
+```mermaid
+
+flowchart TD
+    A([Start]) --> B[Main Script]
+    B --> C{Choose operation}
+
+    C --> D1[Operation 1: VPC]
+    D1 --> E1[VPC script]
+
+    C --> D2[Operation 2: EC2]
+    D2 --> E2[EC2 script]
+
+    C --> D3[Operation 3: Subnets]
+    D3 --> E3[Subnet script]
+
+    C --> F[Exit]
+
+    C --> G[Wrong input]
+    G --> C
+```
+
+
 ![FlowChartMain](img/FlowchartMainScript.png)  
 
 *Flowchart – Main-Script | Erstellt von: Marlon Burri | Stand: 16.05.2025 | Version: 1.0 | Tool: draw.io*
