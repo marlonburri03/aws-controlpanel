@@ -265,22 +265,26 @@ __Sprint Planning__
 
 ## 4.1 Main Script
 
-![FlowChartMain](img/FlowchartMainScript.png)
+![FlowChartMain](img/FlowchartMainScript.png)  
+
 *Flowchart – Main-Script | Erstellt von: Marlon Burri | Stand: 16.05.2025 | Version: 1.0 | Tool: draw.io*
 
 ## 4.2 EC2 Script
 
-![FlowChartEC2](img/FlowchartEC2Script.png)
+![FlowChartEC2](img/FlowchartEC2Script.png)  
+
 *Flowchart – EC2-Script | Erstellt von: Marlon Burri | Stand: 16.05.2025 | Version: 1.0 | Tool: draw.io*
 
 ## 4.3 VPC Script
 
-![FlowChartVPC](img/FlowchartVPCScript.png)
+![FlowChartVPC](img/FlowchartVPCScript.png)  
+
 *Flowchart – VPC-Script | Erstellt von: Marlon Burri | Stand: 16.05.2025 | Version: 1.0 | Tool: draw.io*
 
 ## 4.4 Subnets Script
 
-![FlowChartSubnet](img/FlowchartSubnetScript.png)
+![FlowChartSubnet](img/FlowchartSubnetScript.png)  
+
 *Flowchart – Subnet-Script | Erstellt von: Marlon Burri | Stand: 16.05.2025 | Version: 1.0 | Tool: draw.io*
 
 # 5 Umsetzung
