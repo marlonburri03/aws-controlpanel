@@ -106,27 +106,30 @@ __Projektmethodik:__
 
 Für die Umsetzung des Projekts wird SCRUM als agile Projektmanagementmethode verwendet. 
 Die Entwicklung erfolgt iterativ wodurch regelmässige Zwischenergebnisse abgeliefert und überprüft werden können. 
-Bei Bedarf können am Ende der Iteration das weitere Vorgehen angepasst werden. 
+Bei Bedarf kann am Ende jeder Iteration das weitere Vorgehen angepasst werden. 
 
 __Versionierungskonzept:__  
 
 Gitlab wird zur Dokumentation und Nachverfolgung von Änderungen verwendet. 
-Die Projektdateien werden in einem Gitlab-Repository verwaltet. 
+Die Projektdateien werden in diesem Gitlab-Repository verwaltet. 
 Die komplette Dokumentation des Projekts wird fortlaufend in einer Markdown Datei innerhalb des Repositories erstellt und mit den Commit Messages ergänzt. 
 
 __Arbeitsumgebung:__  
 
-Im Projekt wird die AWS-CLI mit Bash verwendet. Um die EC2-Instanzen zu konfigurieren, wird Cloud-init verwendet. 
-Als Code Editor wird Visual Studio Code verwendet. 
+Die Umsetzung der Arbeit erfolgt lokal auf meinem Laptop. Der Bash-Code wird dort entwickelt und anschließend in mein GitLab-Projekt gepusht.
+Über die AWS-CLI werden die benötigten Ressourcen in der AWS-Cloud erstellt, verwaltet und aufgerufen.
+Als Code-Editor kommt Visual Studio Code zum Einsatz. Zur Veranschaulichung habe ich mit draw.io eine schematische Darstellung meiner Arbeitsumgebung erstellt.
+
+![Arbeitsumgebung](img/Architecture.png)
+*Visualisierung meiner Arbeitsumgebung.*
 
 __Test und Validierung:__  
 
-Das Testing findet während jedem Sprint statt. Am Ende des Projekts werden zusätzlich Testfälle definiert um die Funktionsfähigkeit Final zu Messen. 
+Die Validierung des Codes findet Vortlaufend während der Entwicklung statt. Am Ende des Projekts werden zusätzlich Testfälle definiert um die Funktionsfähigkeit Final zu Messen. 
 
 __Nicht Teil des Projektes:__  
 
-Das Bereitstellen von weiteren Ressourcen, abgesehen von EC2-Instanzen, VPCs, Security Groups usw. ist nicht vorgesehen. Im Rahmen des Projekts werden Ressourcen ausschliesslich per Skript erstellt und gelöscht. 
-Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgt nicht automatisiert und ist auch nicht Bestandteil des Projekt.
+Das Bereitstellen von weiteren Ressourcen, abgesehen von EC2-Instanzen, VPCs, Security Groups usw. ist nicht vorgesehen. Im Rahmen des Projekts werden Ressourcen ausschliesslich per Skript erstellt und gelöscht. Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgt nicht automatisiert und ist auch nicht Bestandteil des Projekt.
 
 __Risikoanalyse:__  
 
