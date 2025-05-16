@@ -122,7 +122,7 @@ Als Code-Editor kommt Visual Studio Code zum Einsatz. Zur Veranschaulichung habe
 
 ![Arbeitsumgebung](img/Architecture.png)
 *Visualisierung meiner Arbeitsumgebung.*
- 
+
 __Test und Validierung:__  
 
 Die Validierung des Codes findet Vortlaufend während der Entwicklung statt. Am Ende des Projekts werden zusätzlich Testfälle definiert um die Funktionsfähigkeit Final zu Messen. 
