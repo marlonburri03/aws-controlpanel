@@ -261,36 +261,34 @@ Insgesamt konnte der erste Sprint erfolgreich abgeschlossen werden und die defin
 
 ### 3.3.2 Sprint 2
 
-__Sprint Planning__
+__Sprint Planning:__
 
 Seit dem letzten Mal, als die verbleibenden User Stories im Backlog betrachtet wurden, wurde das Projekt grob geplant und die Stories erstellt. Jedoch waren sie zu diesem Zeitpunkt noch nicht im Detail beschrieben.
 
-Daher bestand der erste Schritt darin, für alle User Stories aussagekräftige Beschreibungen zu verfassen und passende Akzeptanzkriterien zu definieren, um eine klare Grundlage für die Umsetzung zu schaffen.
-
-Anschliessend wurde anhand der Story Points ermittelt, wie viel Kapazität zur Verfügung steht. Für den zweiten Sprint wurden User Stories im Gesamtumfang von fünf Story Points eingeplant.
+Daher bestand der erste Schritt darin, für alle User Stories aussagekräftige Beschreibungen zu verfassen und passende Akzeptanzkriterien zu definieren, um eine klare Grundlage für die Umsetzung zu schaffen. Anschliessend wurde anhand der Story Points ermittelt, wie viel Kapazität zur Verfügung steht. Für den zweiten Sprint wurden User Stories im Gesamtumfang von fünf Story Points eingeplant.
 
 Zum Abschluss wurde in Jira der zweite Sprint erstellt, welcher vom 19. Mai bis zum 2. Juni läuft. Zusätzlich wurden für einige User Stories Sub-Tasks angelegt, um die Aufgaben innerhalb der Stories besser aufteilen und effizienter bearbeiten zu können.
 
 ![Sprint2Planning](img/Sprint2Planning.png)
 *Screenshot von meinem Sprint 2 Backlog in Jira.*
 
-__Sprint Review__
+__Sprint Review:__
 
 ### 3.3.3 Sprint 3
 
-__Sprint Planning__
+__Sprint Planning:__
 
-__Sprint Review__
+__Sprint Review:__
 
 ### 3.3.4 Sprint 4
 
-__Sprint Planning__
+__Sprint Planning:__
 
-__Sprint Review__
+__Sprint Review:__
 
 ### 3.3.5 Sprint 5
 
-__Sprint Planning__
+__Sprint Planning:__
 
 
 # 4 Lösungsdesign
