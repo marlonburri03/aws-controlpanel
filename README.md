@@ -7,6 +7,7 @@
 
 [toc]
 
+&nbsp;
 
 ## 1 Einleitung
 
@@ -85,6 +86,7 @@ Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so 
 | Sprint 4         | Optimierung und Bedienbarkeit         | 16.06.25 – 30.06.25          | Code verbessern, Logging und Fehlerbehandlung einbauen.                   |
 | Sprint 5         | Finalisierung und Nachbearbeitung     | 30.06.25 – 09.07.25          | Finales Testing und Dokumentation abschliessen.                            |
 
+&nbsp;
 
 ## 2.5 Sachmittel
 
@@ -171,6 +173,8 @@ Für die Semesterarbeit wurde kein klassischer Gantt-Projektplan erstellt. Die D
 
 Diese kann über folgenden Link aufgerufen werden: [Jira Timeline](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline)
 
+__Platzhalter Screenshot Jira Timeline__
+
 Die Timeline bietet einen strukturierten Überblick über alle geplanten Sprints. Änderungen an Tasks oder User Stories werden in Echtzeit sichtbar, was die Visualisierung der Projektumsetzung erleichtert.  
 
 In Scrum werden Anforderungen hierarchisch gegliedert, um komplexe Aufgaben übersichtlich zu strukturieren. 
@@ -184,7 +188,10 @@ Projekt
 └── Epic
     └── User Story
         └── Subtask
-```  
+```
+
+&nbsp;
+
 ## 3.1. Definition of Ready (DoR)
 
 Die Definition of Ready besteht aus individuell festgelegten Kriterien, die definieren, welche Voraussetzungen eine User Story im Product Backlog erfüllen muss, bevor sie in einen Sprint aufgenommen werden kann. 
@@ -197,6 +204,8 @@ Sie stellt sicher, dass das Team ein gemeinsames Verständnis der Aufgabe hat un
 * __Planbarkeit:__ Die Story ist so zugeschnitten, dass sie innerhalb eines Sprints umgesetzt werden kann. Falls erforderlich, wurde sie in Tasks oder Subtasks aufgeteilt. Alle betroffenen Teams und Stakeholder wurden informiert, und es bestehen keine offenen Unklarheiten oder Blocker, die die Umsetzung behindern.
 
 Die Definition of Ready gilt einheitlich für alle User Stories im Projekt und wird nicht individuell in die Beschreibung einzelner Stories eingefügt.
+
+&nbsp;
 
 ## 3.2 Definition of Done (DoD)
 
@@ -211,6 +220,8 @@ Die Definition of Done setzt sich aus individuell festgelegten Kriterien zusamme
 * __Betriebs- und Supportprozess:__ Falls erforderlich, wurde ein Prozess für den Betrieb und Support eingerichtet, um eine reibungslose Übergabe und Nachverfolgbarkeit sicherzustellen.
 
 In JIra wurde eine Automation Rule erstellt, welche die Kriterien der Definition of Done (DoD) automatisch in das Beschreibungsfeld eingefügt, sobald ein neues Backlog Item erstellt wird.
+
+&nbsp;
 
 ## 3.3 Projekt Sprints
 
@@ -237,6 +248,16 @@ Abschliessend wurden falls erforderlich, Subtasks zu den Stories angelegt, um di
 *Screenshot von meinem Sprint 1 Backlog in Jira.*
 
 __Sprint Review:__ 
+
+In der Sprint Review wurden die Ergebnisse des ersten Sprints vorgestellt und gemeinsam mit dem Projektmanagement-Lehrer Projektleiter besprochen. Dabei wurde gezielt Feedback eingeholt, um die weitere Projektarbeit zu verbessern. 
+
+Ein wesentlicher Diskussionspunkt war die Deklaration von Inhalten, die mithilfe von künstlicher Intelligenz (KI) erstellt wurden. Es wurde festgelegt, dass solche Inhalte eindeutig deklariert und die verwendeten Prompts im Quellenverzeichnis aufgeführt werden sollen.
+Zudem wurde darüber diskutiert, ob zusätzlich zur Jira-Timeline ein Gantt-Diagramm erstellt werden soll, um den Projektplan visuell darzustellen. Nach gemeinsamer Absprache wurde entschieden, dass die Visualisierung über die Jira-Timeline ausreichend ist und somit kein separates Gantt-Diagramm erstellt wird. 
+
+Insgesamt konnte der erste Sprint erfolgreich abgeschlossen werden und die definierten Sprintziele wurden erreicht. Darüber hinaus wurde die Sprint Review für den zweiten Sprint bereits geplant.
+
+![Sprint1Planning](img/Sprint1Review.png)
+*Screenshot von meiner Timeline nach dem ersten Sprint.*
 
 ### 3.3.2 Sprint 2
 
