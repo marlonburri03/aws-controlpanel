@@ -238,7 +238,7 @@ Da im Rahmen dieser Arbeit nur eine einzelne Person das SCRUM-Team bildet, ist e
 Die Schätzung der Storypoints erfolgt daher direkt im Sprint Planning. 
 
 Im Sprint Planning wurde zunächst ermittelt, wie viel Kapazität anhand von Storypoints zur Verfügung steht. 
-Für den ersten Sprint habe wurde ein Ziel von fünf Storypoints gesetzt. Ein Storypoint entspricht dabei einem Arbeitstag mit acht Stunden Aufwand. 
+Für den ersten Sprint wurde ein Ziel von fünf Storypoints gesetzt. Ein Storypoint entspricht dabei einem Arbeitstag mit acht Stunden Aufwand. 
 Entsprechend werden Aufgaben mit einem Gesamtaufwand von fünf Storypoints eingeplant. 
 
 Im Anschluss wurde in Jira der erste Sprint erstellt, welcher vom 5. Mai bis zum 19. Mai 2025 läuft. 
@@ -256,12 +256,23 @@ Zudem wurde darüber diskutiert, ob zusätzlich zur Jira-Timeline ein Gantt-Diag
 
 Insgesamt konnte der erste Sprint erfolgreich abgeschlossen werden und die definierten Sprintziele wurden erreicht. Darüber hinaus wurde die Sprint Review für den zweiten Sprint bereits geplant.
 
-![Sprint1Planning](img/Sprint1Review.png)
+![Sprint1Review](img/Sprint1Review.png)
 *Screenshot von meiner Timeline nach dem ersten Sprint.*
 
 ### 3.3.2 Sprint 2
 
 __Sprint Planning__
+
+Seit dem letzten Mal, als die verbleibenden User Stories im Backlog betrachtet wurden, wurde das Projekt grob geplant und die Stories erstellt. Jedoch waren sie zu diesem Zeitpunkt noch nicht im Detail beschrieben.
+
+Daher bestand der erste Schritt darin, für alle User Stories aussagekräftige Beschreibungen zu verfassen und passende Akzeptanzkriterien zu definieren, um eine klare Grundlage für die Umsetzung zu schaffen.
+
+Anschliessend wurde anhand der Story Points ermittelt, wie viel Kapazität zur Verfügung steht. Für den zweiten Sprint wurden User Stories im Gesamtumfang von fünf Story Points eingeplant.
+
+Zum Abschluss wurde in Jira der zweite Sprint erstellt, welcher vom 19. Mai bis zum 2. Juni läuft. Zusätzlich wurden für einige User Stories Sub-Tasks angelegt, um die Aufgaben innerhalb der Stories besser aufteilen und effizienter bearbeiten zu können.
+
+![Sprint2Planning](img/Sprint2Planning.png)
+*Screenshot von meinem Sprint 2 Backlog in Jira.*
 
 __Sprint Review__
 
