@@ -192,7 +192,17 @@ Projekt
 
 &nbsp;
 
-## 3.1. Definition of Ready (DoR)
+## 3.1 Bestandteile User Story
+Eine User Story ist eine zentrale Einheit im agilen Arbeiten. Sie beschreibt kein einzelnes Feature, sondern ein spezifisches, kleines Endziel aus Sicht des Anwenders. Dabei handelt es sich um eine klare und leicht verständliche Beschreibung einer Funktion, die einem bestimmten Muster folgt. User Storys werden meist in einem einfachen Satz formuliert, der den Zweck deutlich macht. Die typische Struktur lautet:
+
+> „Als [Rolle] möchte ich [Ziel], damit [Nutzen].“
+
+Dieses Muster wurde konsequent für alle User Storys in diesem Projekt verwendet. Im Screenshot ist ein Beispiel einer User Story aus meinem Projekt dargestellt.
+
+![UserStory](img/UserStoryDescription.png)
+*Screenshot einer User Story*  
+
+## 3.2 Definition of Ready (DoR)
 
 Die Definition of Ready besteht aus individuell festgelegten Kriterien, die definieren, welche Voraussetzungen eine User Story im Product Backlog erfüllen muss, bevor sie in einen Sprint aufgenommen werden kann. 
 Sie stellt sicher, dass das Team ein gemeinsames Verständnis der Aufgabe hat und diese realistisch umsetzbar ist.
@@ -207,7 +217,7 @@ Die Definition of Ready gilt einheitlich für alle User Stories im Projekt und w
 
 &nbsp;
 
-## 3.2 Definition of Done (DoD)
+## 3.3 Definition of Done (DoD)
 
 Die Definition of Done setzt sich aus individuell festgelegten Kriterien zusammen, die definieren, wann eine User Story als vollständig abgeschlossen gilt. Sie schafft ein einheitliches Verständnis von Qualität innerhalb des Teams.
 
@@ -223,9 +233,9 @@ In JIra wurde eine Automation Rule erstellt, welche die Kriterien der Definition
 
 &nbsp;
 
-## 3.3 Projekt Sprints
+## 3.4 Projekt Sprints
 
-### 3.3.1 Sprint 1
+### 3.4.1 Sprint 1
 
 Ziel des ersten Sprints ist es, die Grundlagen und Voraussetzungen für das Projekt zu schaffen. 
 Dazu gehören unter anderem die Erstellung einer Risikoanalyse, die Planung des weiteren Vorgehens sowie die Dokumentation der Organisationsstruktur. 
@@ -259,7 +269,7 @@ Insgesamt konnte der erste Sprint erfolgreich abgeschlossen werden und die defin
 ![Sprint1Review](img/Sprint1Review.png)
 *Screenshot von meiner Timeline nach dem ersten Sprint.*
 
-### 3.3.2 Sprint 2
+### 3.4.2 Sprint 2
 
 __Sprint Planning:__
 
@@ -267,26 +277,26 @@ Seit dem letzten Mal, als die verbleibenden User Stories im Backlog betrachtet w
 
 Daher bestand der erste Schritt darin, für alle User Stories aussagekräftige Beschreibungen zu verfassen und passende Akzeptanzkriterien zu definieren, um eine klare Grundlage für die Umsetzung zu schaffen. Anschliessend wurde anhand der Story Points ermittelt, wie viel Kapazität zur Verfügung steht. Für den zweiten Sprint wurden User Stories im Gesamtumfang von fünf Story Points eingeplant.
 
-Zum Abschluss wurde in Jira der zweite Sprint erstellt, welcher vom 19. Mai bis zum 2. Juni läuft. Zusätzlich wurden für einige User Stories Sub-Tasks angelegt, um die Aufgaben innerhalb der Stories besser aufteilen und effizienter bearbeiten zu können.
+Zum Abschluss wurde in Jira der zweite Sprint erstellt, welcher vom 19. Mai bis zum 2. Juni 2025 läuft. Zusätzlich wurden für einige User Stories Sub-Tasks angelegt, um die Aufgaben innerhalb der Stories besser aufteilen und effizienter bearbeiten zu können.
 
 ![Sprint2Planning](img/Sprint2Planning.png)
 *Screenshot von meinem Sprint 2 Backlog in Jira.*
 
 __Sprint Review:__
 
-### 3.3.3 Sprint 3
+### 3.4.3 Sprint 3
 
 __Sprint Planning:__
 
 __Sprint Review:__
 
-### 3.3.4 Sprint 4
+### 3.4.4 Sprint 4
 
 __Sprint Planning:__
 
 __Sprint Review:__
 
-### 3.3.5 Sprint 5
+### 3.4.5 Sprint 5
 
 __Sprint Planning:__
 
