@@ -41,7 +41,7 @@ handle_input() {
             echo "Listing EC2 instances..."
             ;;
         3)
-            echo "Describing EC2 instance..."
+            echo "Delete EC2 instance..."
             ;;
         4)
             echo "Creating new full EC2 environment..."
