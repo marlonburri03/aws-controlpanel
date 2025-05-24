@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Farbdefinitionen einbinden
+# Variables
 source "$(dirname "$0")/colors.bash"
 source "$(dirname "$0")/variables.bash"
 
@@ -24,7 +24,7 @@ print_header() {
     echo "║ Purpose      : Manage and automate AWS resources             ║"
     echo "║ Features     : EC2, VPC, Subnets, Security Groups            ║"
     echo "║ Environment  : Bash CLI interface with modular structure     ║"
-    echo "║ Session Info : $USER@$HOSTNAME | $DATE ║"
+    echo "║ Session Info : $USER@$HOSTNAME | $DATE             ║"
     echo "╚══════════════════════════════════════════════════════════════╝"
     echo -e "${NC}"
 }
@@ -37,7 +37,7 @@ show_menu() {
     echo "2. VPC-Menu"
     echo "3. Subnet-Menu"
     echo "4. SecurityGroup-Menu"
-    echo "6. Exit"
+    echo "5. Exit"
     echo -e "${NC}"
 }
 
@@ -47,21 +47,21 @@ read_input() {
     case "$choice" in
         1)
             echo -e "${BOLD_YELLOW}You selected EC2-Menu. Loading EC2 options...${NC}"
-            source "$(dirname "$0")/ec2.bash"
+            bash "$(dirname "$0")/ec2_menu.bash"
             ;;
         2)
             echo -e "${BOLD_YELLOW}You selected VPC-Menu. Loading VPC options...${NC}"
-            source "$(dirname "$0")/vpc.bash"
+            bash "$(dirname "$0")/vpc_menu.bash"
             ;;
         3)
             echo -e "${BOLD_YELLOW}You selected Subnet-Menu. Loading Subnet options...${NC}"
-            source "$(dirname "$0")/subnet.bash"
+            bash "$(dirname "$0")/subnet_menu.bash"
             ;;
         4)
             echo -e "${BOLD_YELLOW}You selected SecurityGroup-Menu. Loading Security Group options...${NC}"
-            source "$(dirname "$0")/securitygroup.bash"
+            bash "$(dirname "$0")/securitygroup_menu.bash"
             ;;
-        6)
+        5)
             echo -e "${BOLD_YELLOW}Exiting program. Goodbye!${NC}"
             source "$(dirname "$0")/ascii_logo.bash"
             print_ascii_logo
@@ -73,12 +73,13 @@ read_input() {
     esac
 }
 
+
 # Pause
 pause() {
     read -rp "Press [Enter] key to continue..."
 }
 
-# Hauptschleife
+# main loop
 main() {
     while true; do
         print_header
@@ -87,6 +88,7 @@ main() {
         pause
     done
 }
+
 
 # Main aufrufen, wenn Script direkt gestartet wird
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
