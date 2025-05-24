@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Variables
+# variables
 source "$(dirname "$0")/colors.bash"
 source "$(dirname "$0")/variables.bash"
 
-# Header anzeigen
+# header 
 print_header() {
     clear
     echo -e "${BOLD_YELLOW}"
@@ -41,7 +41,7 @@ show_menu() {
     echo -e "${NC}"
 }
 
-#get input
+# input
 read_input() {
     read -rp "Please select an option: " choice
     case "$choice" in
@@ -74,7 +74,7 @@ read_input() {
 }
 
 
-# Pause
+# pause
 pause() {
     read -rp "Press [Enter] key to continue..."
 }
@@ -90,7 +90,7 @@ main() {
 }
 
 
-# Main aufrufen, wenn Script direkt gestartet wird
+# Only executes if it runs directly
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     main
 fi

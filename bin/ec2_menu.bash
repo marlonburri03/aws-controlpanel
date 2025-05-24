@@ -75,7 +75,7 @@ main_ec2_menu() {
     done
 }
 
-# Starten, wenn direkt ausgeführt
+# Only executes if it runs directly
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     main_ec2_menu
 fi
