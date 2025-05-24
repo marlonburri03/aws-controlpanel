@@ -338,7 +338,7 @@ __Sprint Planning:__
 
 __Main Script:__
 
-Mit der effektiven Entwicklung des Codes wurde im zweiten Sprint begonnen. Die erste User Story dieses Sprints umfasste die Entwicklung des Hauptscripts, das als zentrales Menü fungiert, sowie der zugehörigen Submenüs (EC2-Menu, VPC-Menu usw.). Das Main-Script wurde schrittweise aufgebaut, um ein modulares und benutzerfreundliches Control Panel zu bereitzustellen. Die Idee, den Titel mithilfe von ASCII-Zeichen darzustellen, entstand spontan und verleiht dem Projekt ein gewisses Wiedererkennungsmerkmal. Für das Design kam die Star-Wars-Schriftart aus dem ASCII-Generator von [Patorjk](https://patorjk.com/software/taag/#p=display&f=Star%20Wars&t=Type%20Something%20) zum Einsatz.
+Mit der effektiven Entwicklung des Codes wurde im zweiten Sprint begonnen. Die erste User Story dieses Sprints ([SCRUM-23](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1?selectedIssue=SCRUM-23&sprintStarted=true)) umfasste die Entwicklung des Hauptscripts, das als zentrales Menü fungiert, sowie der zugehörigen Submenüs (EC2-Menu, VPC-Menu usw.). Das Main-Script wurde schrittweise aufgebaut, um ein modulares und benutzerfreundliches Control Panel zu bereitzustellen. Die Idee, den Titel mithilfe von ASCII-Zeichen darzustellen, entstand spontan und verleiht dem Projekt ein gewisses Wiedererkennungsmerkmal. Für das Design kam die Star-Wars-Schriftart aus dem ASCII-Generator von [Patorjk](https://patorjk.com/software/taag/#p=display&f=Star%20Wars&t=Type%20Something%20) zum Einsatz.
 
 Zu Beginn wurden die Farbdefinitionen ausgelagert, da ich diese Parameter ich allen meinen Scripts braucht. Anschliessend wurde ein Hauptmenü mit Auswahlmöglichkeiten für EC2, VPC, Subnetze und Security Groups erstelt, wobei jede Kategorie über ein separates, aufrufbares Script verfügt. Das Vorgehen basiert auf einer klaren Trennung der Funktionalitäten (Modularisierung) und kann beliebig erweitert werden, um eine noch Benutzerfreundliche Bedienung zu gewährleisten.
 
@@ -440,7 +440,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     main
 fi
 ```
-> Hinweis: Dieses Script repräsentiert den aktuellen Arbeitsstand des Main-Menüs. Es befindet sich in aktiver Entwicklung und stellt noch nicht die endgültige Version dar.
+> __Hinweis__: Dieses Script repräsentiert den aktuellen Arbeitsstand des Main-Script. Es befindet sich in aktiver Entwicklung und stellt noch nicht die endgültige Version dar.
 
 
 
