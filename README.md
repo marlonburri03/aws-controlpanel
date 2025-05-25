@@ -449,7 +449,7 @@ fi
 
 ![MainControlPanel](img/Main_ControlPanel.png)
 
-*Aktuelles Abbild – Main-Script | Erstellt von: Marlon Burri | Stand: 25.05.2025 | Version: 1.0 |*
+*Aktuelles Abbild – Main-Script | Erstellt von: Marlon Burri | Stand: 25.05.2025 | Version: 1.0*
 
 
 
