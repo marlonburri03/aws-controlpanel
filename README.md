@@ -328,7 +328,7 @@ __Sprint Planning:__
 
 *Flowchart – VPC-Script | Erstellt von: Marlon Burri | Stand: 16.05.2025 | Version: 1.0 | Tool: draw.io*
 
-## 4.4 Subnets Script
+## 4.4 Subnet Script
 
 ![FlowChartSubnet](img/FlowchartSubnetScript.png)  
 

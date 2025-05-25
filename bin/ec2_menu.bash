@@ -8,9 +8,11 @@ source "$(dirname "$0")/variables.bash"
 print_header() {
     clear
     echo -e "${BOLD_YELLOW}"
-    echo "EC2 MENU"
-    echo -e "${NC}"
-    echo -e "${WHITE}Session Info : $USER@$HOSTNAME | $DATE${NC}"
+    echo "╔══════════════════════════════════════════════════════════════╗"
+    echo "║                       EC2 MENU                               ║"
+    echo "╠══════════════════════════════════════════════════════════════╣"
+    echo "║ Session Info : $USER@$HOSTNAME | $DATE             ║"
+    echo "╚══════════════════════════════════════════════════════════════╝"
 }
 
 # menu
@@ -21,7 +23,7 @@ show_menu() {
     echo "3. Delete EC2 Instance"
     echo "4. Create new full EC2 Environment"
     echo "5. Back to Main Menu"
-    #echo "6. Exit Program"
+    echo "6. Exit Program"
     echo -e "${NC}"
 }
 
@@ -51,12 +53,13 @@ handle_input() {
             source "$(dirname "$0")/main.bash"
             exit 0
             ;;
-        #6)
-            #echo -e "${BOLD_YELLOW}Exiting program. Goodbye!${NC}"
-            #source "$(dirname "$0")/ascii_logo.bash"
-            #print_ascii_logo
-            #exit 0
-            #;;
+        6)
+            echo -e "${BOLD_YELLOW}Exiting program. Goodbye!${NC}"
+            source "$(dirname "$0")/ascii_logo.bash"
+            print_ascii_logo
+            kill $PPID
+            exit 0
+            ;;
         *)
             echo -e "${RED}Invalid option.${NC}"
             ;;
