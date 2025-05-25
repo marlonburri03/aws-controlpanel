@@ -445,6 +445,11 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 fi
 ```
 > __Hinweis__: Dieses Script repräsentiert den aktuellen Arbeitsstand des Main-Script. Es befindet sich in aktiver Entwicklung und stellt noch nicht die endgültige Version dar.
+&nbsp;
+
+![MainControlPanel](img/Main_ControlPanel.png)
+
+*Aktuelles Abbild – Main-Script | Erstellt von: Marlon Burri | Stand: 25.05.2025 | Version: 1.0 |*
 
 
 
