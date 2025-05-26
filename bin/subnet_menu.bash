@@ -1,19 +1,8 @@
 #!/bin/bash
 
 # variables
-source "$(dirname "$0")/colors.bash"
-source "$(dirname "$0")/variables.bash"
+source "$(dirname "$0")/init_env.bash"
 
-# header
-print_header() {
-    clear
-    echo -e "${BOLD_YELLOW}"
-    echo "╔══════════════════════════════════════════════════════════════╗"
-    echo "║                       Subnet MENU                            ║"
-    echo "╠══════════════════════════════════════════════════════════════╣"
-    echo "║ Session Info : $USER@$HOSTNAME | $DATE             ║"
-    echo "╚══════════════════════════════════════════════════════════════╝"
-}
 
 # menu
 show_menu() {
@@ -55,7 +44,7 @@ handle_input() {
             ;;
         6)
             echo -e "${BOLD_YELLOW}Exiting program. Goodbye!${NC}"
-            source "$(dirname "$0")/ascii_logo.bash"
+            source $LIBDIR/ascii_logo.bash
             print_ascii_logo
             kill $PPID
             exit 0

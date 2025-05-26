@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # variables
-source "$(dirname "$0")/colors.bash"
-source "$(dirname "$0")/variables.bash"
+source "$(dirname "$0")/init_env.bash"
+
 
 # header 
 print_header() {
@@ -29,8 +29,7 @@ print_header() {
     echo -e "${NC}"
 }
 
-
-# menu 
+# menu  
 show_menu() {
     echo -e "${BOLD_BLUE}"
     echo "1. EC2-Menu"
@@ -63,7 +62,7 @@ read_input() {
             ;;
         5)
             echo -e "${BOLD_YELLOW}Exiting program. Goodbye!${NC}"
-            source "$(dirname "$0")/ascii_logo.bash"
+            source $LIBDIR/ascii_logo.bash
             print_ascii_logo
             exit 0
             ;;
