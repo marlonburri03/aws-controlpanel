@@ -444,12 +444,121 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     main
 fi
 ```
+
 > __Hinweis__: Dieses Script repräsentiert den aktuellen Arbeitsstand des Main-Script. Es befindet sich in aktiver Entwicklung und stellt noch nicht die endgültige Version dar.
+
 &nbsp;
 
 ![MainControlPanel](img/Main_ControlPanel.png)
-
 *Aktuelles Abbild – Main-Script | Erstellt von: Marlon Burri | Stand: 25.05.2025 | Version: 1.0*
+
+&nbsp;
+
+__EC2 Script:__
+Das EC2-Script übernimmt die vollständige Bereitstellung, Konfiguration sowie das Löschen von EC2-Instanzen. Es beinhaltet die gleichen Variablen wie das Main-Script und ist ähnlich aufgebaut. Das Script bietet dem Benutzer ein übersichtliches Menü zur Auswahl verschiedener Operationen, darunter das Erstellen, Anzeigen und Löschen von EC2-Instanzen.
+
+Der Header ist bewusst schlicht gehalten, ohne eine ASCII-Schriftzug jedoch wird dennoch klar anzeigt, in welchem Menü sich der Benutzer befindet.
+Bei der Auswahl einer Option wird ein separater Bash-Prozess gestartet, der das jeweils referenzierte Unterskript ausführt (z. B. ec2_create.bash, ec2_list.bash, ec2_delete.bash). Nach Abschluss des Prozesses gibt das Script eine Zusammenfassung der ausgeführten Aktion aus und kehrt nach bestätigung des Anwenders ins EC2-Menü zurück.
+
+Zur Ausführung des Scripts wurde eine Hauptschleife definiert. Die Funktion ruft in einer Endlosschleife wiederholt folgende vier Funktionen auf:
+
+```print_header``` – zeigt den Menü-Kopf an.
+
+```show_menu``` – listet die verfügbaren Optionen auf.
+
+```handle_input``` – verarbeitet die Benutzereingabe.
+
+```pause``` – hält das Skript kurz an, bis der Benutzer eine Taste drückt.
+
+Der if-Block am Ende sorgt dafür, dass die Funktion nur ausgeführt wird, wenn das Script direkt aufgerufen wird, nicht wenn es von einem anderen Script importiert oder gesourced wird. Das macht das Skript modular und wiederverwendbar.
+
+```bash
+#!/bin/bash
+
+# variables
+source "$(dirname "$0")/init_env.bash"
+
+# menu
+show_menu() {
+    echo -e "${BOLD_BLUE}"
+    echo "1. Create EC2 Instance"
+    echo "2. List EC2 Instances"
+    echo "3. Delete EC2 Instance"
+    echo "4. Create new full EC2 Environment"
+    echo "5. Back to Main Menu"
+    echo "6. Exit Program"
+    echo -e "${NC}"
+}
+
+# pause
+pause() {
+    read -rp "Press [Enter] to continue..."
+}
+
+# handle input
+handle_input() {
+    read -rp "Select an option: " choice
+    case "$choice" in
+        1)
+            echo -e "${BOLD_YELLOW}Loading EC2 creation process...${NC}"
+            bash "$(dirname "$0")/ec2_create.bash"
+            ;;
+        2)
+            echo "Listing EC2 instances..."
+            bash "$(dirname "$0")/ec2_list.bash"
+            ;;
+        3)
+            echo -e "${BOLD_YELLOW}Loading EC2 deletion process...${NC}"
+            bash "$(dirname "$0")/ec2_delete.bash"
+            ;;
+        4)
+            echo "Creating new full EC2 environment..."
+            bash "$(dirname "$0")/ec2_fullenviroment.bash"
+            ;;
+        5)
+            echo "Returning to Main Menu..."
+            source "$(dirname "$0")/main.bash"
+            exit 0
+            ;;
+        6)
+            echo -e "${BOLD_YELLOW}Exiting program. Goodbye!${NC}"
+            source $LIBDIR/ascii_logo.bash
+            print_ascii_logo
+            kill $PPID
+            exit 0
+            ;;
+        *)
+            echo -e "${RED}Invalid option.${NC}"
+            ;;
+    esac
+}
+
+
+
+# main loop
+main_ec2_menu() {
+    while true; do
+        print_header
+        show_menu
+        handle_input
+        pause
+    done
+}
+
+# Only executes if it runs directly
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    main_ec2_menu
+fi
+```
+
+> __Hinweis__: Dieses Script repräsentiert den aktuellen Arbeitsstand des EC2-Script. Es befindet sich in aktiver Entwicklung und stellt noch nicht die endgültige Version dar.
+
+&nbsp;
+
+![EC2-Menu](img/EC2_Script_Menu.png)
+*Aktuelles Abbild – EC2-Script | Erstellt von: Marlon Burri | Stand: 30.05.2025 | Version: 1.0*
+
+&nbsp;
 
 
 
