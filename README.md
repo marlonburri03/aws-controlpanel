@@ -454,7 +454,8 @@ fi
 
 &nbsp;
 
-__EC2 Script:__
+__EC2 Script:__  
+
 Das EC2-Script übernimmt die vollständige Bereitstellung, Konfiguration sowie das Löschen von EC2-Instanzen. Es beinhaltet die gleichen Variablen wie das Main-Script und ist ähnlich aufgebaut. Das Script bietet dem Benutzer ein übersichtliches Menü zur Auswahl verschiedener Operationen, darunter das Erstellen, Anzeigen und Löschen von EC2-Instanzen.
 
 Der Header ist bewusst schlicht gehalten, ohne eine ASCII-Schriftzug jedoch wird dennoch klar anzeigt, in welchem Menü sich der Benutzer befindet.
@@ -470,7 +471,7 @@ Zur Ausführung des Scripts wurde eine Hauptschleife definiert. Die Funktion ruf
 
 ```pause``` – hält das Skript kurz an, bis der Benutzer eine Taste drückt.
 
-Der if-Block am Ende sorgt dafür, dass die Funktion nur ausgeführt wird, wenn das Script direkt aufgerufen wird, nicht wenn es von einem anderen Script importiert oder gesourced wird. Das macht das Skript modular und wiederverwendbar.
+Der ```if```-Block am Ende sorgt dafür, dass die Funktion nur ausgeführt wird, wenn das Script direkt aufgerufen wird, nicht wenn es von einem anderen Script importiert oder gesourced wird. Das macht das Skript modular und wiederverwendbar.
 
 ```bash
 #!/bin/bash
