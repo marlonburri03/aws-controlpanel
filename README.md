@@ -557,7 +557,6 @@ fi
 &nbsp;
 
 ![EC2-Menu](img/EC2_Script_Menu.png)  
-
 *Aktuelles Abbild – EC2-Script | Erstellt von: Marlon Burri | Stand: 30.05.2025 | Version: 1.0*
 
 &nbsp;
