@@ -25,16 +25,20 @@ handle_input() {
     read -rp "Select an option: " choice
     case "$choice" in
         1)
-            echo "EC2 instance creation coming soon..."
+            echo -e "${BOLD_YELLOW}Loading EC2 creation process...${NC}"
+            bash "$(dirname "$0")/ec2_create.bash"
             ;;
         2)
             echo "Listing EC2 instances..."
+            bash "$(dirname "$0")/ec2_list.bash"
             ;;
         3)
-            echo "Delete EC2 instance..."
+            echo -e "${BOLD_YELLOW}Loading EC2 deletion process...${NC}"
+            bash "$(dirname "$0")/ec2_delete.bash"
             ;;
         4)
             echo "Creating new full EC2 environment..."
+            bash "$(dirname "$0")/ec2_fullenviroment.bash"
             ;;
         5)
             echo "Returning to Main Menu..."
