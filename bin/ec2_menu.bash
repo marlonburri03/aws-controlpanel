@@ -26,23 +26,22 @@ handle_input() {
     case "$choice" in
         1)
             echo -e "${BOLD_YELLOW}Loading EC2 creation process...${NC}"
-            bash "$(dirname "$0")/ec2_create.bash"
+            bash $SCRIPTDIR/ec2_create.bash
             ;;
         2)
             echo "Listing EC2 instances..."
-            bash "$(dirname "$0")/ec2_list.bash"
+            bash $SCRIPTDIR/ec2_list.bash
             ;;
         3)
             echo -e "${BOLD_YELLOW}Loading EC2 deletion process...${NC}"
-            bash "$(dirname "$0")/ec2_delete.bash"
+            bash $SCRIPTDIR/ec2_delete.bash
             ;;
         4)
             echo "Creating new full EC2 environment..."
-            bash "$(dirname "$0")/ec2_fullenviroment.bash"
+            bash $SCRIPTDIR/ec2_fullenviroment.bash
             ;;
         5)
             echo "Returning to Main Menu..."
-            source "$(dirname "$0")/main.bash"
             exit 0
             ;;
         6)

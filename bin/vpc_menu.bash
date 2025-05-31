@@ -25,16 +25,18 @@ handle_input() {
     case "$choice" in
         1)
             echo "VPC creation coming soon..."
+            bash $SCRIPTDIR/vpc_create.bash
             ;;
         2)
             echo "Listing VPC's..."
+            bash $SCRIPTDIR/vpc_list.bash
             ;;
         3)
             echo "Delete VPC..."
+            bash $SCRIPTDIR/vpc_delete.bash
             ;;
         4)
             echo "Returning to Main Menu..."
-            source "$(dirname "$0")/main.bash"
             exit 0
             ;;
         5)
@@ -46,6 +48,7 @@ handle_input() {
             ;;
         *)
             echo -e "${RED}Invalid option.${NC}"
+           bash $SCRIPTDIR/ec2_delete.bash
             ;;
     esac
 }
