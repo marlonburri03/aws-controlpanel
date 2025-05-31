@@ -459,7 +459,7 @@ __EC2 Script:__
 Das EC2-Script übernimmt die vollständige Bereitstellung, Konfiguration sowie das Löschen von EC2-Instanzen. Es beinhaltet die gleichen Variablen wie das Main-Script und ist ähnlich aufgebaut. Das Script bietet dem Benutzer ein übersichtliches Menü zur Auswahl verschiedener Operationen, darunter das Erstellen, Anzeigen und Löschen von EC2-Instanzen.
 
 Der Header ist bewusst schlicht gehalten, ohne eine ASCII-Schriftzug jedoch wird dennoch klar anzeigt, in welchem Menü sich der Benutzer befindet.
-Bei der Auswahl einer Option wird ein separater Bash-Prozess gestartet, der das jeweils referenzierte Unterskript ausführt (z. B. ec2_create.bash, ec2_list.bash, ec2_delete.bash). Nach Abschluss des Prozesses gibt das Script eine Zusammenfassung der ausgeführten Aktion aus und kehrt nach bestätigung des Anwenders ins EC2-Menü zurück.
+Bei der Auswahl einer Option wird ein separater Bash-Prozess gestartet, der das jeweils referenzierte Unterskript ausführt (z. B. ```ec2_create.bash```, ```ec2_list.bash```, ```ec2_delete.bash```). Nach Abschluss des Prozesses gibt das Script eine Zusammenfassung der ausgeführten Aktion aus und kehrt nach bestätigung des Anwenders ins EC2-Menü zurück.
 
 Zur Ausführung des Scripts wurde eine Hauptschleife definiert. Die Funktion ruft in einer Endlosschleife wiederholt folgende vier Funktionen auf:
 
@@ -561,15 +561,15 @@ fi
 
 &nbsp;
 
-Alle weiteren Submenüs wie vpc_menu.bash, subnet_menu.bash und securitygroup_menu.bash wurden nach dem gleichen Schema wie das EC2_menu.bash entwickelt. Sie sind modular aufgebaut und können bei Bedarf auch unabhängig vom Main-Script ausgeführt werden.
+Alle weiteren Submenüs wie ```vpc_menu.bash```, ```subnet_menu.bash``` und ```securitygroup_menu.bash``` wurden nach dem gleichen Schema wie das ```EC2_menu.bash``` entwickelt. Sie sind modular aufgebaut und können bei Bedarf auch unabhängig vom Main-Script ausgeführt werden.
 
-Hinter jedem dieser Menüscripte stehen weitere Einzelscripte, die konkrete Aufgaben übernehmen wie das Erstellen oder Löschen einer EC2-Instanz. Wählt der Benutzer eine entsprechende Option im Menü, wird er zur Eingabe relevanter Parameter aufgefordert, wie beispielsweise dem Namen der Instanz. Alternativ lassen sich diese Parameter auch direkt über die Kommandozeile beim Einzelaufruf der jeweiligen Scripte übergeben, was eine flexible und automatisierte Nutzung ermöglicht.
+Hinter jedem dieser Menüscripte stehen weitere Einzelscripte, die konkrete Aufgaben übernehmen wie z.B das Erstellen oder Löschen einer EC2-Instanz. Wählt der Benutzer eine entsprechende Option im Menü, wird er zur Eingabe relevanter Parameter aufgefordert, wie beispielsweise dem Namen der Instanz. Alternativ lassen sich diese Parameter auch direkt über die Kommandozeile beim Einzelaufruf der jeweiligen Scripte übergeben, was eine flexible und automatisierte Nutzung ermöglicht.
 
 &nbsp;
 
 __Server Konfiguration:__   
 
-Beim Erstellprozess einer EC2-Instanz besteht die Möglichkeit, das System mithilfe von cloud-init automatisch zu konfigurieren. Der darin enthaltene Konfigurationscode wird jeweils beim Start des Systems ausgeführt und kann verschiedene Einrichtungsschritte automatisieren. Die Konfigurationsdateien enden mit der Dateiendung .yaml und beginnen mit der Direktive #cloud-config. Das cloud-init-Konfigurationstemplat beinhalten unter anderem die Erstellung meines persönlichen Benutzers (marlob), welcher der sudo-Gruppe zugewiesen ist. Dieser Benutzer kann sich neben dem hinterlegten SSH-Key auch über ein im Template hinterlegtes, als Hash gespeichertes Passwort authentifizieren.
+Beim Erstellprozess einer EC2-Instanz besteht die Möglichkeit, das System mithilfe von cloud-init automatisch zu konfigurieren. Der darin enthaltene Konfigurationscode wird jeweils beim Start des Systems ausgeführt und kann verschiedene Einrichtungsschritte automatisieren. Die Konfigurationsdateien enden mit der Dateiendung ```.yaml``` und beginnen mit der Direktive ```#cloud-config```. Das cloud-init-Konfigurationstemplat beinhalten unter anderem die Erstellung meines persönlichen Benutzers (marlob), welcher der sudo-Gruppe zugewiesen ist. Dieser Benutzer kann sich neben dem hinterlegten SSH-Key auch über ein im Template hinterlegtes, als Hash gespeichertes Passwort authentifizieren.
 
 Zusätzlich werden automatisch die SSH Keys von zwei Lehrpersonen und mir im Standard-User (ubuntu) auf der Instanz hinterlegt. Das Einfügen dieser SSH-Keys dient ausschliesslich der Veranschaulichung, wie eine Zusammenarbeit mehrerer Benutzer auf einem System organisiert werden könnte. Für die Bewertung meiner Semesterarbeit ist es jedoch nicht erforderlich, dass die Lehrpersonen Zugriff auf die Systeme haben.
 
@@ -616,7 +616,9 @@ packages:
 runcmd:
   - sudo touch /etc/cloud/cloud-init.disabled
 ```
+*Aktuelles Abbild – Template_Ubuntu.yaml | Erstellt von: Marlon Burri | Stand: 31.05.2025 | Version: 1.0*
 
+&nbsp;
 
 # 6 Testverfahren
 
