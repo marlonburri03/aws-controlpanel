@@ -1,6 +1,5 @@
 #cloud-config
 
-
 users:
   - name: marlob
     sudo: ALL=(ALL) NOPASSWD:ALL

@@ -561,6 +561,61 @@ fi
 
 &nbsp;
 
+Alle weiteren Submenüs wie vpc_menu.bash, subnet_menu.bash und securitygroup_menu.bash wurden nach dem gleichen Schema wie das EC2_menu.bash entwickelt. Sie sind modular aufgebaut und können bei Bedarf auch unabhängig vom Main-Script ausgeführt werden.
+
+Hinter jedem dieser Menüscripte stehen weitere Einzelscripte, die konkrete Aufgaben übernehmen wie das Erstellen oder Löschen einer EC2-Instanz. Wählt der Benutzer eine entsprechende Option im Menü, wird er zur Eingabe relevanter Parameter aufgefordert, wie beispielsweise dem Namen der Instanz. Alternativ lassen sich diese Parameter auch direkt über die Kommandozeile beim Einzelaufruf der jeweiligen Scripte übergeben, was eine flexible und automatisierte Nutzung ermöglicht.
+
+&nbsp;
+
+__Server Konfiguration:__   
+
+Beim Erstellprozess einer EC2-Instanz besteht die Möglichkeit, das System mithilfe von cloud-init automatisch zu konfigurieren. Der darin enthaltene Konfigurationscode wird jeweils beim Start des Systems ausgeführt und kann verschiedene Einrichtungsschritte automatisieren. Die Konfigurationsdateien enden mit der Dateiendung .yaml und beginnen mit der Direktive #cloud-config. Das cloud-init-Konfigurationstemplat beinhalten unter anderem die Erstellung meines persönlichen Benutzers (marlob), welcher der sudo-Gruppe zugewiesen ist. Dieser Benutzer kann sich neben dem hinterlegten SSH-Key auch über ein im Template hinterlegtes, als Hash gespeichertes Passwort authentifizieren.
+
+Zusätzlich werden automatisch die SSH Keys von zwei Lehrpersonen und mir im Standard-User (ubuntu) auf der Instanz hinterlegt. Das Einfügen dieser SSH-Keys dient ausschliesslich der Veranschaulichung, wie eine Zusammenarbeit mehrerer Benutzer auf einem System organisiert werden könnte. Für die Bewertung meiner Semesterarbeit ist es jedoch nicht erforderlich, dass die Lehrpersonen Zugriff auf die Systeme haben.
+
+Darüber hinaus werden wichtige Pakete wie vim und curl automatisch installiert.
+Aus sicherheitstechnischen Gründen wird am Ende des cloud-init-Templates die erneute Ausführung von cloud-init auf dem System deaktiviert, um unbeabsichtigte Änderungen bei zukünftigen Neustarts zu verhindern.
+
+```yaml
+#cloud-config
+
+users:
+  - name: marlob
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: sudo
+    homedir: /home/marlob
+    shell: /bin/bash
+    lock_passwd: false
+    passwd: <sha512-crypt-hash-of-your-password>
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDSAgeAmyw8sIph8AWkngIf3DomfsbEvzj6ErBmeUmhPjNd4H8d9FfWUKoarpQpjB1HEFL2krbWlldBO+e4t8Ckds+1RqobFeXLeoI91XXyEEWR+WY3dfRUAgBAtXDlOoWSU6uq8Shsg62EUQSKE9diHKujt07TYDyNv1hfN1rcJWzktrCPuxCVBDQdjtornhssl0dY1//uO5OwkGHiDUPSwCFmMoB5oJqBx8trqrAkX8sudKzzykv+WmFEVCzRjVe6j5Q1iiqzkMrHeSyp/RH2R1f4bXqKbeA0CoFcApa0A7Wvkd33ig5BE5NpqUjy99sRKN1zAYAI1JHZOKgy6wLaCjLnibkAbmhUKW0C2J4MeF8s2pPCqIlDCK6+bMkA6bIdtxW93cCI8C6qaNr35hwT9wH8XQ3JHW2GEEPNZZ5vfwMPs+7kjxl8BQRSGPcpbSGylZ7xnUmiCpq+UKLdyA/Am70xyWJ70hVwJPndbwAZ3FyzPnAYS4J8dnF+1Xmt1dFkv9dYtJbfGuOAZ7Q9TVWax01OIvb8yb/FEObjlDbTx4C491iTLizsFYfE4vRcT0HEE/qUQhdr8/7Iq17cVadAZaLScvXVhVpKJaF0GcEN+6VnUR2Fa4X2EZZoZRHHKqr3G/qa3avP4dNW6rq3wyfhZKTQBcRHGzgUAQ0Evo9ItQ== marlo@PC-BURRI
+  
+
+  - name: ubuntu
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: sudo
+    homedir: /home/ubuntu
+    shell: /bin/bash
+    passwd: np
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDSAgeAmyw8sIph8AWkngIf3DomfsbEvzj6ErBmeUmhPjNd4H8d9FfWUKoarpQpjB1HEFL2krbWlldBO+e4t8Ckds+1RqobFeXLeoI91XXyEEWR+WY3dfRUAgBAtXDlOoWSU6uq8Shsg62EUQSKE9diHKujt07TYDyNv1hfN1rcJWzktrCPuxCVBDQdjtornhssl0dY1//uO5OwkGHiDUPSwCFmMoB5oJqBx8trqrAkX8sudKzzykv+WmFEVCzRjVe6j5Q1iiqzkMrHeSyp/RH2R1f4bXqKbeA0CoFcApa0A7Wvkd33ig5BE5NpqUjy99sRKN1zAYAI1JHZOKgy6wLaCjLnibkAbmhUKW0C2J4MeF8s2pPCqIlDCK6+bMkA6bIdtxW93cCI8C6qaNr35hwT9wH8XQ3JHW2GEEPNZZ5vfwMPs+7kjxl8BQRSGPcpbSGylZ7xnUmiCpq+UKLdyA/Am70xyWJ70hVwJPndbwAZ3FyzPnAYS4J8dnF+1Xmt1dFkv9dYtJbfGuOAZ7Q9TVWax01OIvb8yb/FEObjlDbTx4C491iTLizsFYfE4vRcT0HEE/qUQhdr8/7Iq17cVadAZaLScvXVhVpKJaF0GcEN+6VnUR2Fa4X2EZZoZRHHKqr3G/qa3avP4dNW6rq3wyfhZKTQBcRHGzgUAQ0Evo9ItQ== marlo@PC-BURRI
+      - ssh-rsa AAAA...replace-with-a-team-member-key teammate@example.com
+      - ssh-rsa AAAA...replace-with-a-team-member-key teammate@example.com
+
+ssh_pwauth: true
+disable_root: false
+package_update: true 
+packages:
+  - curl
+  - wget
+  - vim
+  - nano 
+  - htop
+  - net-tools
+
+runcmd:
+  - sudo touch /etc/cloud/cloud-init.disabled
+```
 
 
 # 6 Testverfahren
