@@ -26,20 +26,23 @@ handle_input() {
     read -rp "Select an option: " choice
     case "$choice" in
         1)
-            echo "Subnet creation coming soon..."
+            echo "Create Subnet..."
+            bash $SCRIPTDIR/subnet_create.bash
             ;;
         2)
             echo "Listing Subnets..."
+            bash $SCRIPTDIR/subnet_create.bash
             ;;
         3)
             echo "Delete Subnet..."
+            bash $SCRIPTDIR/subnet_create.bash
             ;;
         4)
             echo "Creating new Subnet and VPC..."
+            bash $SCRIPTDIR/subnet_create.bash
             ;;
         5)
             echo "Returning to Main Menu..."
-            source "$(dirname "$0")/main.bash"
             exit 0
             ;;
         6)
