@@ -305,10 +305,10 @@ In [Abschnitt 5](https://gitlab.com/semesterarbeiten1/1-semester/aws-controlpane
 
 Abgeschlossene User Storys:  
 
-*[SCRUM-16, EC2-Instance handling](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-16)✅-DONE
-*[SCRUM-15, Infrastruktur Automatisierung](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-15)✅-DONE
-*[SCRUM-17, Server Konfiguration](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-17)✅-DONE
-*[SCRUM-23, Control Panel](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-23)✅-DONE
+* [SCRUM-16, EC2-Instance handling](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-16)✅-DONE
+* [SCRUM-15, Infrastruktur Automatisierung](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-15)✅-DONE
+* [SCRUM-17, Server Konfiguration](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-17)✅-DONE
+* [SCRUM-23, Control Panel](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-23)✅-DONE
 
 
 ![Sprint2Review](img/Sprint2Review.png)
