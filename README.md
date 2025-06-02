@@ -330,6 +330,16 @@ Abgeschlossene User Storys:
 
 __Sprint Planning:__
 
+Der dritte Sprint befasst sich mit dem Testen sowie der Erweiterung des im vorherigen Sprint erstellten Control Panels. 
+Ziel ist es, am Ende ein möglichst benutzerfreundliches und funktionales Control Panel bereitzustellen, mit dem sich AWS-Ressourcen einfach, effizient und übersichtlich verwalten lassen.
+
+Am Montag, dem 26.05.2025, fand eine Besprechung mit meinem Fachexperten Fachdozent statt. Er empfahl mir, die Skripte strukturiert in verschiedene Verzeichnisse (z.B. bin, var, log usw.) zu organisieren. 
+Zusätzlich riet er dazu, die Scripte mit relokalisierbaren Pfaden auszustatten, sodass sie unabhängig vom Ausführungsort funktionieren. 
+Ausserdem betonte er, dass die Scripte eigenständig lauffähig sein sollen und nicht zwingend vom Hauptscript abhängig sein sollen.
+
+Dieses Feedback habe ich aufgenommen und in das Sprint Backlog eingearbeitet. Die erste Aufgabe im Sprint bestand daher darin, entsprechende User Stories zu formulieren und einzuplanen. 
+Für diesen Sprint wurde erneut eine Kapazität von fünf Story Points festgelegt, die auf die einzelnen User Stories verteilt wurden. Der dritte Sprint geht vom 2. Juni bis zum 16. Juni 2025.
+
 ![Sprint3Planning](img/Sprint3Planning.png)
 *Screenshot von meinem Sprint 3 Backlog in Jira.*
 
