@@ -333,7 +333,7 @@ __Sprint Planning:__
 Der dritte Sprint befasst sich mit dem Testen sowie der Erweiterung des im vorherigen Sprint erstellten Control Panels. 
 Ziel ist es, am Ende ein möglichst benutzerfreundliches und funktionales Control Panel bereitzustellen, mit dem sich AWS-Ressourcen einfach, effizient und übersichtlich verwalten lassen.
 
-Am Montag, dem 26.05.2025, fand eine Besprechung mit meinem Fachexperten Fachdozent statt. Er empfahl mir, die Skripte strukturiert in verschiedene Verzeichnisse (z.B. bin, var, log usw.) zu organisieren. 
+Am Montag, dem 26.05.2025, fand eine Besprechung mit meinem Fachexperten Fachdozent statt. Er empfahl mir, die Scripte strukturiert in verschiedene Verzeichnisse (z.B. bin, var, log usw.) zu organisieren. 
 Zusätzlich riet er dazu, die Scripte mit relokalisierbaren Pfaden auszustatten, sodass sie unabhängig vom Ausführungsort funktionieren. 
 Ausserdem betonte er, dass die Scripte eigenständig lauffähig sein sollen und nicht zwingend vom Hauptscript abhängig sein sollen.
 
