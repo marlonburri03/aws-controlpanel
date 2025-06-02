@@ -291,6 +291,25 @@ Zum Abschluss wurde in Jira der zweite Sprint erstellt, welcher vom 19. Mai bis 
 
 __Sprint Review:__
 
+Im zweiten Sprint Review wurde eine kurze Live-Demo des im Sprint fertiggestellten Control Panels präsentiert. Der Fokus lag auf kleineren Navigationsschritten innerhalb des Panels,
+da aus zeitlichen Gründen keine umfangreichere Demonstration möglich war.  
+
+Im Anschluss holte ich Feedback von Ceasar Roth (Projektmanagement-Lehrperson) ein. Er wies mich darauf hin, dass nach jedem Sprint eine kurze Zusammenfassung in Form von 
+2–3 Sätzen erfolgen soll. In dieser sollte festgehalten werden, ob das Sprintziel erreicht wurde und welche User Stories abgeschlossen sind. 
+Er gab mir ausserdem stichwortartige Hinweise, was eine gute Sprint Review beinhalten sollte. Diese Punkte habe ich aufgenommen und direkt in meine Sprint Review integriert,
+um den formalen und inhaltlichen Anforderungen besser zu entsprechen.
+
+Der zweite Sprint konzentrierte sich vollständig auf die Umsetzung der Scripte. Ziel war es, ein erstes funktionsfähiges Control Panel zu entwickeln, das die grundlegenden Anforderungen des Projekts erfüllt.
+Das Sprintziel wurde vollständig erreicht, alle eingeplanten User Stories sowie die zugehörigen Subtasks konnten erfolgreich umgesetzt werden.
+In [Abschnitt 5](https://gitlab.com/semesterarbeiten1/1-semester/aws-controlpanel#5-umsetzung) der Projektdokumentation, der sich mit der technischen Umsetzung befasst, wurden sämtliche Arbeitsschritte nachvollziehbar dokumentiert, inklusive relevanter Codeausschnitte und unterstützender Screenshots.
+
+Abgeschlossene User Storys:  
+
+*[SCRUM-16, EC2-Instance handling](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-16)✅-DONE
+*[SCRUM-15, Infrastruktur Automatisierung](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-15)✅-DONE
+*[SCRUM-17, Server Konfiguration](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-17)✅-DONE
+*[SCRUM-23, Control Panel](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-23)✅-DONE
+
 
 ![Sprint2Review](img/Sprint2Review.png)
 *Screenshot von meiner Timeline nach dem zweiten Sprint.*
