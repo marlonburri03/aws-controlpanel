@@ -1,4 +1,5 @@
 #!/bin/bash
+source "$(dirname "$0")/init_env.bash"
 
 # Delete EC2 instance
 delete_ec2_instance() {

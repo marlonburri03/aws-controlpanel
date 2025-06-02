@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $(dirname $0)/init_env.bash
+source "$(dirname "$0")/init_env.bash"
 
 VPC_NAME="vpc-advanced"
 

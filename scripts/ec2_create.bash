@@ -1,4 +1,5 @@
 #!/bin/bash
+source "$(dirname "$0")/init_env.bash"
 
 # Konfiguration
 AMI_ID="ami-0abcdef1234567890"            # Beispiel: Amazon Linux 2 AMI

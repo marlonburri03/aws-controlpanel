@@ -1,4 +1,5 @@
 #!/bin/bash
+source "$(dirname "$0")/init_env.bash"
 
 # Create a new VPC
 create_vpc() {

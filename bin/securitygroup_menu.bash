@@ -24,13 +24,16 @@ handle_input() {
     read -rp "Select an option: " choice
     case "$choice" in
         1)
-            echo "Subnet creation coming soon..."
+            echo "Create Security Group..."
+            bash $SCRIPTDIR/securitygroup_create.bash
             ;;
         2)
-            echo "Listing Subnets..."
+            echo "Listing Security Groups..."
+            bash $SCRIPTDIR/securitygroup_list.bash
             ;;
         3)
-            echo "Delete Subnet..."
+            echo "Delete Security Group..."
+            bash $SCRIPTDIR/securitygroup_delete.bash
             ;;
         4)
             echo "Returning to Main Menu..."
@@ -49,7 +52,6 @@ handle_input() {
             ;;
     esac
 }
-
 
 
 # main loop

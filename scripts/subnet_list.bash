@@ -1,4 +1,5 @@
 #!/bin/bash
+source "$(dirname "$0")/init_env.bash"
 
 # List existing Subnets
 list_subnets() {

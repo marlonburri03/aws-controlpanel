@@ -1,4 +1,5 @@
 #!/bin/bash
+source "$(dirname "$0")/init_env.bash"
 
 # Create a new Security Group with standard Linux rules
 create_security_group() {

@@ -1,4 +1,5 @@
 #!/bin/bash
+source "$(dirname "$0")/init_env.bash"
 
 # Create VPC and Subnet
 create_vpc_and_subnet() {
