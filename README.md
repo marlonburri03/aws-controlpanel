@@ -271,7 +271,18 @@ In der Sprint Review wurden die Ergebnisse des ersten Sprints vorgestellt und ge
 Ein wesentlicher Diskussionspunkt war die Deklaration von Inhalten, die mithilfe von künstlicher Intelligenz (KI) erstellt wurden. Es wurde festgelegt, dass solche Inhalte eindeutig deklariert und die verwendeten Prompts im Quellenverzeichnis aufgeführt werden sollen.
 Zudem wurde darüber diskutiert, ob zusätzlich zur Jira-Timeline ein Gantt-Diagramm erstellt werden soll, um den Projektplan visuell darzustellen. Nach gemeinsamer Absprache wurde entschieden, dass die Visualisierung über die Jira-Timeline ausreichend ist und somit kein separates Gantt-Diagramm erstellt wird. 
 
-Insgesamt konnte der erste Sprint erfolgreich abgeschlossen werden und die definierten Sprintziele wurden erreicht. Darüber hinaus wurde das Datum für das Sprint Review für den zweiten Sprint bereits festgelegt.
+Insgesamt konnte der erste Sprint erfolgreich abgeschlossen werden, und die definierten Sprintziele wurden erreicht. Ziel war es, nach dem ersten Sprint mit der eigentlichen Umsetzung der Scripte beginnen zu können. 
+Dafür mussten zunächst alle notwendigen Vorbereitungen getroffen und abgeschlossen werden. Darüber hinaus wurde bereits im Voraus das Datum für das Sprint Review des zweiten Sprints festgelegt.  
+
+
+Abgeschlossene User Storys:  
+
+* [SCRUM-10, Einleitung und Projektorganisation](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-10)✅-DONE
+* [SCRUM-11, Risikoanalyse](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-11)✅-DONE
+* [SCRUM-12, Lösungsdesign](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-12)✅-DONE
+* [SCRUM-13, Architektur](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-13)✅-DONE
+* [SCRUM-30, DoR und DoD](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-30)✅-DONE
+* [SCRUM-30, Projektplan](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-34)✅-DONE
 
 ![Sprint1Review](img/Sprint1Review.png)
 *Screenshot von meiner Timeline nach dem ersten Sprint.*
@@ -301,7 +312,8 @@ um den formalen und inhaltlichen Anforderungen besser zu entsprechen.
 
 Der zweite Sprint konzentrierte sich vollständig auf die Umsetzung der Scripte. Ziel war es, ein erstes funktionsfähiges Control Panel zu entwickeln, das die grundlegenden Anforderungen des Projekts erfüllt.
 Das Sprintziel wurde vollständig erreicht, alle eingeplanten User Stories sowie die zugehörigen Subtasks konnten erfolgreich umgesetzt werden.
-In [Abschnitt 5](https://gitlab.com/semesterarbeiten1/1-semester/aws-controlpanel#5-umsetzung) der Projektdokumentation, der sich mit der technischen Umsetzung befasst, wurden sämtliche Arbeitsschritte nachvollziehbar dokumentiert, inklusive relevanter Codeausschnitte und unterstützender Screenshots.
+In [Abschnitt 5](https://gitlab.com/semesterarbeiten1/1-semester/aws-controlpanel#5-umsetzung) der Projektdokumentation, der sich mit der technischen Umsetzung befasst, wurden sämtliche Arbeitsschritte nachvollziehbar dokumentiert, 
+inklusive relevanter Codeausschnitte und unterstützender Screenshots. Als Nächstes steht das Testen sowie die Erweiterung und Optimierung einzelner Funktionen der SCripte an. 
 
 Abgeschlossene User Storys:  
 
