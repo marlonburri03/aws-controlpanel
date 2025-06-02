@@ -291,9 +291,16 @@ Zum Abschluss wurde in Jira der zweite Sprint erstellt, welcher vom 19. Mai bis 
 
 __Sprint Review:__
 
+
+![Sprint2Review](img/Sprint2Review.png)
+*Screenshot von meiner Timeline nach dem zweiten Sprint.*
+
 ### 3.4.3 Sprint 3
 
 __Sprint Planning:__
+
+![Sprint3Planning](img/Sprint3Planning.png)
+*Screenshot von meinem Sprint 3 Backlog in Jira.*
 
 __Sprint Review:__
 
