@@ -271,7 +271,7 @@ In der Sprint Review wurden die Ergebnisse des ersten Sprints vorgestellt und ge
 Ein wesentlicher Diskussionspunkt war die Deklaration von Inhalten, die mithilfe von künstlicher Intelligenz (KI) erstellt wurden. Es wurde festgelegt, dass solche Inhalte eindeutig deklariert und die verwendeten Prompts im Quellenverzeichnis aufgeführt werden sollen.
 Zudem wurde darüber diskutiert, ob zusätzlich zur Jira-Timeline ein Gantt-Diagramm erstellt werden soll, um den Projektplan visuell darzustellen. Nach gemeinsamer Absprache wurde entschieden, dass die Visualisierung über die Jira-Timeline ausreichend ist und somit kein separates Gantt-Diagramm erstellt wird. 
 
-Insgesamt konnte der erste Sprint erfolgreich abgeschlossen werden und die definierten Sprintziele wurden erreicht. Darüber hinaus wurde die Sprint Review für den zweiten Sprint bereits geplant.
+Insgesamt konnte der erste Sprint erfolgreich abgeschlossen werden und die definierten Sprintziele wurden erreicht. Darüber hinaus wurde das Datum für das Sprint Review für den zweiten Sprint bereits festgelegt.
 
 ![Sprint1Review](img/Sprint1Review.png)
 *Screenshot von meiner Timeline nach dem ersten Sprint.*
