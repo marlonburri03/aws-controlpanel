@@ -1,38 +1,51 @@
 #!/bin/bash
 source "$(dirname "$0")/init_env.bash"
 
+list_running_instances() {
+    echo "Verfügbare laufende EC2-Instanzen:"
+    aws ec2 describe-instances \
+        --filters "Name=instance-state-name,Values=running" \
+        --query 'Reservations[*].Instances[*].[InstanceId,Tags[?Key==`Name`].Value | [0],State.Name]' \
+        --output table
+}
+
 # Delete EC2 instance
 delete_ec2_instance() {
-    read -rp "Enter the Instance ID to delete: " instance_id
+    list_running_instances
+    read -rp "Gib die Instance ID ein, die gelöscht werden soll: " instance_id
     if [[ -z "$instance_id" ]]; then
-        echo "Instance ID cannot be empty."
+        echo "Instance ID darf nicht leer sein."
         return 1
     fi
-    echo "Deleting EC2 instance with ID: $instance_id..."
+    echo "Lösche EC2-Instanz mit ID: $instance_id..."
     aws ec2 terminate-instances --instance-ids "$instance_id"
     if [[ $? -ne 0 ]]; then
-        echo "Failed to delete instance $instance_id."
+        echo "Fehler beim Löschen der Instanz $instance_id."
         return 1
     fi
-    echo "Instance $instance_id has been deleted successfully."
+    echo "Instanz $instance_id wurde erfolgreich gelöscht."
     return 0
 }
-# Check if AWS CLI is installed
+
+# Prüfen ob AWS CLI installiert ist
 if ! command -v aws &> /dev/null; then
-    echo "AWS CLI is not installed. Please install it first."
+    echo "AWS CLI ist nicht installiert. Bitte zuerst installieren."
     exit 1
 fi
-# Check if user is authenticated
+
+# Prüfen ob der Nutzer authentifiziert ist
 if ! aws sts get-caller-identity &> /dev/null; then
-    echo "You are not authenticated with AWS. Please configure your credentials."
+    echo "Keine AWS-Authentifizierung gefunden. Bitte Zugangsdaten konfigurieren."
     exit 1
 fi
-# Call the function to delete instance
+
+# Funktion zum Löschen aufrufen
 delete_ec2_instance
-# Pause for user input
-read -rp "Press [Enter] to return to the EC2 menu..."
-# Return to EC2 menu
-source "$(dirname "$0")/ec2_menu.bash"
-# End of script
-# Exit the script
+
+# Auf Eingabe warten bevor zum Menü zurück
+read -rp "Drücke [Enter], um zum EC2-Menü zurückzukehren..."
+
+# Zurück zum Menü
+source "$DIR/ec2_menu.bash"
+
 exit 0

@@ -24,7 +24,7 @@ list_ec2_instances
 # Pause for user input
 read -rp "Press [Enter] to return to the EC2 menu..."
 # Return to EC2 menu
-source "$(dirname "$0")/ec2_menu.bash"
+source "$DIR/ec2_menu.bash"
 # End of script
 # Exit the script
 exit 0

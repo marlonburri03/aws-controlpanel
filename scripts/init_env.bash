@@ -4,6 +4,7 @@
 CWD=$(pwd)                      
 BINDIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)  
 
+DIR="$BINDIR/bin"  
 ETCDIR="$BINDIR/etc"            
 LIBDIR="$BINDIR/lib"            
 LOGDIR="$BINDIR/logs"           
