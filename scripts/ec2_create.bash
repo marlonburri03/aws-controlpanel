@@ -3,7 +3,7 @@
 # Konfiguration
 AMI_ID="ami-0abcdef1234567890"            # Beispiel: Amazon Linux 2 AMI
 INSTANCE_TYPE="t2.micro"
-KEY_NAME="mein-keypair"                   # Muss vorher erstellt worden sein
+KEY_NAME="VOCKEY"                   
 SECURITY_GROUP_ID="sg-0123456789abcdef0"  # Bestehende SG
 SUBNET_ID="subnet-0abc1234567890def"      # Optional: Für bestimmte VPC/Subnet
 TAG_NAME="MeineInstanz"

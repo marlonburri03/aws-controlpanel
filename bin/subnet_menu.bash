@@ -31,15 +31,15 @@ handle_input() {
             ;;
         2)
             echo "Listing Subnets..."
-            bash $SCRIPTDIR/subnet_create.bash
+            bash $SCRIPTDIR/subnet_list.bash
             ;;
         3)
             echo "Delete Subnet..."
-            bash $SCRIPTDIR/subnet_create.bash
+            bash $SCRIPTDIR/subnet_delete.bash
             ;;
         4)
             echo "Creating new Subnet and VPC..."
-            bash $SCRIPTDIR/subnet_create.bash
+            bash $SCRIPTDIR/subnet_createVPC.bash
             ;;
         5)
             echo "Returning to Main Menu..."
