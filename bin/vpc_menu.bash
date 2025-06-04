@@ -48,7 +48,6 @@ handle_input() {
             ;;
         *)
             echo -e "${RED}Invalid option.${NC}"
-           bash $SCRIPTDIR/ec2_delete.bash
             ;;
     esac
 }

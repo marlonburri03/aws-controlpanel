@@ -282,7 +282,7 @@ Abgeschlossene User Storys:
 * [SCRUM-12, Lösungsdesign](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-12)✅-DONE
 * [SCRUM-13, Architektur](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-13)✅-DONE
 * [SCRUM-30, DoR und DoD](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-30)✅-DONE
-* [SCRUM-30, Projektplan](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-34)✅-DONE
+* [SCRUM-34, Projektplan](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-34)✅-DONE
 
 ![Sprint1Review](img/Sprint1Review.png)
 *Screenshot von meiner Timeline nach dem ersten Sprint.*

@@ -73,7 +73,7 @@ create_vpc
 read -rp "Press [Enter] to return to the VPC menu..."
 
 # Return to VPC menu
-source "$(dirname "$0")/vpc_menu.bash"
+source "$BINDIR/vpc_menu.bash"
 
 # End of script
 exit 0
