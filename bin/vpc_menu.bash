@@ -24,7 +24,7 @@ handle_input() {
     read -rp "Select an option: " choice
     case "$choice" in
         1)
-            echo "VPC creation coming soon..."
+            echo "Start VPC creation..."
             bash $SCRIPTDIR/vpc_create.bash
             ;;
         2)
