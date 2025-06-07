@@ -2,6 +2,8 @@
 
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
+log "INFO" "Starte Script: $(basename "$0")"
+
 VPC_NAME="vpc-advanced"
 
 # Advanced VPC-Configuration
