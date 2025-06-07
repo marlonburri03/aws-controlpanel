@@ -1,13 +1,13 @@
 #!/bin/bash
-source "$(dirname "$0")/init_env.bash"
+source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
-log "INFO" "Starte Skript: $(basename "$0")"
+log "INFO" "Starte Script: $(basename "$0")"
 
 get_latest_ami() {
     local owner=$1
     local name_filter=$2
 
-    log "DEBUG" "Suche neuestes AMI für $owner mit Filter $name_filter"
+    #log "DEBUG" "Suche neuestes AMI für $owner mit Filter $name_filter"
     aws ec2 describe-images \
         --owners "$owner" \
         --filters "Name=name,Values=$name_filter" "Name=state,Values=available" \
@@ -16,13 +16,13 @@ get_latest_ami() {
 }
 
 list_key_pairs() {
-    log "INFO" "Liste Key Pairs"
+    #log "INFO" "Liste Key Pairs"
     echo "Verfügbare Key Pairs:"
     aws ec2 describe-key-pairs --query 'KeyPairs[*].KeyName' --output table
 }
 
 list_security_groups() {
-    log "INFO" "Liste Security Groups"
+    #log "INFO" "Liste Security Groups"
     echo "Verfügbare Security Groups:"
     aws ec2 describe-security-groups \
         --query 'SecurityGroups[*].[GroupId,GroupName,Description]' \
@@ -42,7 +42,7 @@ list_matching_subnets() {
         return 1
     fi
 
-    log "INFO" "Liste Subnets in VPC $vpc_id"
+    #log "INFO" "Liste Subnets in VPC $vpc_id"
     echo "Verfügbare Subnets in VPC $vpc_id:"
     aws ec2 describe-subnets \
         --filters "Name=vpc-id,Values=$vpc_id" \
@@ -51,7 +51,7 @@ list_matching_subnets() {
 }
 
 list_instance_types() {
-    log "INFO" "Liste gängige Instanztypen"
+    #log "INFO" "Liste gängige Instanztypen"
     echo "Gängige Instanztypen (Beispiel):"
     cat <<EOF
 t2.nano
@@ -65,7 +65,7 @@ EOF
 }
 
 list_latest_amis() {
-    log "INFO" "Liste neueste AMIs"
+    #log "INFO" "Liste neueste AMIs"
     echo "Neueste AMI-IDs der beliebtesten Anbieter:"
     amazon_ami=$(get_latest_ami amazon "amzn2-ami-hvm-2.0.*-x86_64-gp2")
     canonical_ami=$(get_latest_ami 099720109477 "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*")
@@ -167,7 +167,7 @@ create_ec2_instance() {
     echo "Instanz erstellt mit ID: $INSTANCE_ID"
 
     echo "Warte, bis die Instanz in den Zustand 'running' wechselt..."
-    log "INFO" "Warte auf 'running' Status für Instanz $INSTANCE_ID"
+    #log "INFO" "Warte auf 'running' Status für Instanz $INSTANCE_ID"
     aws ec2 wait instance-running --instance-ids "$INSTANCE_ID"
 
     PUBLIC_IP=$(aws ec2 describe-instances \
@@ -196,7 +196,7 @@ fi
 create_ec2_instance
 
 read -rp "Drücke [Enter], um zum Menü zurückzukehren..."
-log "INFO" "Skript abgeschlossen, kehre zurück zum Menü."
+#log "INFO" "Skript abgeschlossen, kehre zurück zum Menü."
 
 source "$DIR/main.bash"
 exit 0

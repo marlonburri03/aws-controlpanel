@@ -14,5 +14,3 @@ TMPDIR="/tmp/$(basename "$0").$$"
 
 source $LIBDIR/variables.bash
 source $LIBDIR/colors.bash
-
-
