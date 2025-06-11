@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # variables
-source "$(dirname "$0")/init_env.bash"
+source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
 
 # menu
