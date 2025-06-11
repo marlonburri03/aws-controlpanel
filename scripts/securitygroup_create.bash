@@ -1,7 +1,7 @@
 #!/bin/bash
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
-log "INFO" "Starte Script: $(basename "$0")"
+log "INFO" "Starting Script: $(basename "$0")"
 
 # Create a new Security Group with standard Linux rules
 create_security_group() {

@@ -1,7 +1,7 @@
 #!/bin/bash
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
-log "INFO" "Starte Script: $(basename "$0")"
+log "INFO" "Starting Script: $(basename "$0")"
 
 get_latest_ami() {
     local owner=$1
@@ -16,13 +16,13 @@ get_latest_ami() {
 }
 
 list_key_pairs() {
-    #log "INFO" "Liste Key Pairs"
+    #log "INFO" "Listing Key Pairs"
     echo "Verfügbare Key Pairs:"
     aws ec2 describe-key-pairs --query 'KeyPairs[*].KeyName' --output table
 }
 
 list_security_groups() {
-    #log "INFO" "Liste Security Groups"
+    #log "INFO" "Listing Security Groups"
     echo "Verfügbare Security Groups:"
     aws ec2 describe-security-groups \
         --query 'SecurityGroups[*].[GroupId,GroupName,Description]' \

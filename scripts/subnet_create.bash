@@ -1,6 +1,8 @@
 #!/bin/bash
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
+log "INFO" "Starting Script: $(basename "$0")"
+
 # Create a new Subnet
 create_subnet() {
     read -rp "Enter the AWS region (e.g., us-east-1): " region

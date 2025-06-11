@@ -1,7 +1,7 @@
 #!/bin/bash
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
-log "INFO" "Starte Script: $(basename "$0")"
+log "INFO" "Starting Script: $(basename "$0")"
 
 # List EC2 instances
 list_ec2_instances() {
