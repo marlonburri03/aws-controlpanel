@@ -14,3 +14,4 @@ TMPDIR="/tmp/$(basename "$0").$$"
 
 source $LIBDIR/variables.bash
 source $LIBDIR/colors.bash
+source $LIBDIR/aws_config.bash
