@@ -1,5 +1,4 @@
 #!/bin/bash
-source "$(dirname "$0")/init_env.bash"
 
 # Standardregion für AWS-CLI-Befehle
 AWS_REGION="us-east-1"

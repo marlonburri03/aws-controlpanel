@@ -180,12 +180,12 @@ create_ec2_instance() {
     return 0
 }
 
+# run functions
 check_aws_requirements
-
 create_ec2_instance
 
+# end of script
 read -rp "Drücke [Enter], um zum Menü zurückzukehren..."
-#log "INFO" "Skript abgeschlossen, kehre zurück zum Menü."
 
 source "$DIR/main.bash"
 exit 0
