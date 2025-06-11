@@ -6,14 +6,14 @@ create_vpc() {
     read -rp "Enter the VPC name: " vpc_name
     read -rp "Enter the IPv4 CIDR block (e.g., 10.0.0.0/16): " cidr_block
     read -rp "Enable IPv6 CIDR block? (y/n): " enable_ipv6
-    read -rp "Enter the AWS region (e.g., eu-central-1): " region
+    #read -rp "Enter the AWS region (e.g., eu-central-1): " region
 
-    if [[ -z "$vpc_name" || -z "$cidr_block" || -z "$region" ]]; then
+    if [[ -z "$vpc_name" || -z "$cidr_block" || -z "$AWS_REGION" ]]; then
         echo "All fields are required."
         return 1
     fi
 
-    echo "Creating VPC '$vpc_name' with CIDR block '$cidr_block' in region '$region'..."
+    echo "Creating VPC '$vpc_name' with CIDR block '$cidr_block' in region '$AWS_REGION'..."
 
     if [[ "$enable_ipv6" =~ ^[Yy]$ ]]; then
         vpc_id=$(aws ec2 create-vpc \
