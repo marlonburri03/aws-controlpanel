@@ -54,19 +54,8 @@ create_vpc() {
     return 0
 }
 
-# Check if AWS CLI is installed
-if ! command -v aws &> /dev/null; then
-    echo "AWS CLI is not installed. Please install it first."
-    exit 1
-fi
-
-# Check if user is authenticated
-if ! aws sts get-caller-identity &> /dev/null; then
-    echo "You are not authenticated with AWS. Please configure your credentials."
-    exit 1
-fi
-
-# Call the function to create a VPC
+# run functions
+check_aws_requirements
 create_vpc
 
 # Pause for user input
