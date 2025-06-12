@@ -7,33 +7,53 @@ log "INFO" "Starting script: $(basename "$0")"
 [[ -z "$VPC_NAME" ]] && read -p "Enter VPC name: " VPC_NAME
 [[ -z "$VPC_CIDR" ]] && read -p "Enter VPC CIDR (e.g., 10.0.0.0/16): " VPC_CIDR
 [[ -z "$PUBLIC_SUBNET_CIDR" ]] && read -p "Enter Public Subnet CIDR (e.g., 10.0.1.0/24): " PUBLIC_SUBNET_CIDR
-[[ -z "$AMI_ID" ]] && read -p "Enter AMI ID: " AMI_ID
-[[ -z "$INSTANCE_TYPE" ]] && read -p "Enter Instance Type (e.g., t2.micro): " INSTANCE_TYPE
+#[[ -z "$AMI_ID" ]] && read -p "Enter AMI ID: " AMI_ID
+#[[ -z "$INSTANCE_TYPE" ]] && read -p "Enter Instance Type (e.g., t2.micro): " INSTANCE_TYPE
 #[[ -z "$KEY_NAME" ]] && read -p "Enter EC2 Key Pair Name: " KEY_NAME
 #[[ -z "$USER_DATA_FILE" ]] && read -p "Enter path to User Data file: " USER_DATA_FILE
-[[ -z "$AWS_REGION" ]] && read -p "Enter AWS Region (e.g., us-east-1): " AWS_REGION
+#[[ -z "$AWS_REGION" ]] && read -p "Enter AWS Region (e.g., us-east-1): " AWS_REGION
 
 select_user_data_file() {
-    local script_dir etc_dir user_data_file
-
-    script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-    etc_dir="${script_dir}/../etc"
-
     echo "Verfügbare User Data Dateien:"
-    ls "$etc_dir"/*.yaml 2>/dev/null | xargs -n1 basename
+    ls "$ETCDIR"/*.yaml 2>/dev/null | xargs -n1 basename
 
     while true; do
         echo
         read -rp "Bitte gib den Namen der gewünschten User Data Datei ein (z. B. ubuntu_userdata.yaml): " user_data_file
 
-        if [[ -f "${etc_dir}/${user_data_file}" ]]; then
+        if [[ -f "${ETCDIR}/${user_data_file}" ]]; then
             echo "Datei gefunden: ${user_data_file}"
-            USER_DATA_FILE="${etc_dir}/${user_data_file}"
+            USER_DATA_FILE="${ETCDIR}/${user_data_file}"
             break
         else
             echo "Datei nicht gefunden. Bitte erneut versuchen."
         fi
     done
+}
+
+get_latest_ami() {
+    local owner=$1
+    local name_filter=$2
+
+    #log "DEBUG" "get newest AMI for $owner with filter $name_filter"
+    aws ec2 describe-images \
+        --owners "$owner" \
+        --filters "Name=name,Values=$name_filter" "Name=state,Values=available" \
+        --query 'Images | sort_by(@, &CreationDate)[-1].ImageId' \
+        --output text
+}
+
+list_latest_amis() {
+    #log "INFO" "List newest AMIs"
+    echo "Newest AMI-IDs of the favourite Distributions:"
+    amazon_ami=$(get_latest_ami amazon "amzn2-ami-hvm-2.0.*-x86_64-gp2")
+    canonical_ami=$(get_latest_ami 099720109477 "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*")
+    redhat_ami=$(get_latest_ami 309956199498 "RHEL-8.*_HVM-*-x86_64-*")
+
+    printf "Amazon Linux 2 (amazon): %s\n" "$amazon_ami"
+    printf "Ubuntu 20.04 LTS (canonical): %s\n" "$canonical_ami"
+    printf "Red Hat Enterprise Linux 8 (redhat): %s\n" "$redhat_ami"
+    echo
 }
 
 read -p "Set EC2 instance name: " INSTANCE_NAME
@@ -118,6 +138,7 @@ create_vpc
 create_subnet
 create_internet_gateway
 create_route_table
+select_user_data_file
 launch_ec2_instance
 
 log "SUCCESS" "Fertig! EC2-Instanz '$INSTANCE_NAME' wurde erstellt."
