@@ -1,55 +1,135 @@
 #!/bin/bash
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
-# Delete a VPC
+log "INFO" "Starting Script: $(basename "$0")"
+
+# List all VPCs
+list_vpcs() {
+    if [[ -z "$AWS_REGION" ]]; then
+        echo "Region cannot be empty."
+        return 1
+    fi
+
+    echo "Listing VPCs in region '$AWS_REGION'..."
+    aws ec2 describe-vpcs \
+        --region "$AWS_REGION" \
+        --query "Vpcs[*].{ID:VpcId,Name:Tags[?Key=='Name']|[0].Value,CIDR:CidrBlock,State:State}" \
+        --output table
+    return 0
+}
+
+# Check for resources in the VPC
+check_vpc_resources() {
+    local vpc_id="$1"
+    local resource_found=0
+
+    echo "Prüfe, ob Ressourcen im VPC '$vpc_id' vorhanden sind..."
+
+    declare -A resources=(
+        ["Subnets"]="aws ec2 describe-subnets --filters Name=vpc-id,Values=$vpc_id --query 'Subnets[*].SubnetId' --output text"
+        ["Internet Gateways"]="aws ec2 describe-internet-gateways --filters Name=attachment.vpc-id,Values=$vpc_id --query 'InternetGateways[*].InternetGatewayId' --output text"
+        ["Route Tables"]="aws ec2 describe-route-tables --filters Name=vpc-id,Values=$vpc_id --query 'RouteTables[*].RouteTableId' --output text"
+        ["Security Groups"]="aws ec2 describe-security-groups --filters Name=vpc-id,Values=$vpc_id --query 'SecurityGroups[?GroupName!=\`default\`].GroupId' --output text"
+        ["Network Interfaces"]="aws ec2 describe-network-interfaces --filters Name=vpc-id,Values=$vpc_id --query 'NetworkInterfaces[*].NetworkInterfaceId' --output text"
+    )
+
+    for resource in "${!resources[@]}"; do
+        result=$(eval "${resources[$resource]}")
+        if [[ -n "$result" ]]; then
+            echo "$resource gefunden: $result"
+            resource_found=1
+        fi
+    done
+
+    return $resource_found
+}
+
+# Löscht alle Ressourcen und danach das VPC
+force_delete_vpc() {
+    local vpc_id="$1"
+
+    echo "Detaching and deleting Internet Gateways..."
+    for igw in $(aws ec2 describe-internet-gateways \
+        --filters "Name=attachment.vpc-id,Values=$vpc_id" \
+        --query "InternetGateways[*].InternetGatewayId" --output text); do
+        aws ec2 detach-internet-gateway --internet-gateway-id "$igw" --vpc-id "$vpc_id"
+        aws ec2 delete-internet-gateway --internet-gateway-id "$igw"
+    done
+
+    echo "Deleting subnets..."
+    for subnet in $(aws ec2 describe-subnets \
+        --filters "Name=vpc-id,Values=$vpc_id" \
+        --query "Subnets[*].SubnetId" --output text); do
+        aws ec2 delete-subnet --subnet-id "$subnet"
+    done
+
+    echo "Disassociating Route Tables..."
+    for assoc_id in $(aws ec2 describe-route-tables \
+        --filters "Name=vpc-id,Values=$vpc_id" \
+        --query "RouteTables[].Associations[?Main!=\`true\`].RouteTableAssociationId" \
+        --output text); do
+        aws ec2 disassociate-route-table --association-id "$assoc_id"
+    done
+
+    echo "Deleting non-main Route Tables..."
+    for rt in $(aws ec2 describe-route-tables \
+        --filters "Name=vpc-id,Values=$vpc_id" \
+        --query "RouteTables[?Associations[?Main!=\`true\`]].RouteTableId" --output text); do
+        aws ec2 delete-route-table --route-table-id "$rt"
+    done
+
+    echo "Deleting non-default security groups..."
+    for sg in $(aws ec2 describe-security-groups \
+        --filters Name=vpc-id,Values=$vpc_id \
+        --query "SecurityGroups[?GroupName!='default'].GroupId" --output text); do
+        aws ec2 delete-security-group --group-id "$sg"
+    done
+
+    echo "Deleting network interfaces..."
+    for eni in $(aws ec2 describe-network-interfaces \
+        --filters Name=vpc-id,Values=$vpc_id \
+        --query "NetworkInterfaces[*].NetworkInterfaceId" --output text); do
+        aws ec2 delete-network-interface --network-interface-id "$eni"
+    done
+
+    echo "Lösche VPC: $vpc_id"
+    aws ec2 delete-vpc --vpc-id "$vpc_id"
+}
+
+# Hauptfunktion zum Löschen eines VPC
 delete_vpc() {
     read -rp "Enter the VPC ID to delete (e.g., vpc-123abc456def): " vpc_id
-    read -rp "Enter the AWS region of the VPC: " region
 
-    if [[ -z "$vpc_id" || -z "$region" ]]; then
+    if [[ -z "$vpc_id" || -z "$AWS_REGION" ]]; then
         echo "VPC ID and region are required."
         return 1
     fi
 
-    echo "WARNING: Deleting a VPC will also remove all associated resources (subnets, gateways, etc.)."
-    read -rp "Are you sure you want to delete VPC '$vpc_id'? (y/N): " confirm
-    if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
-        echo "Aborted."
-        return 0
+    echo "WARNING: Deleting a VPC will also remove all associated resources."
+    check_vpc_resources "$vpc_id"
+    if [[ $? -eq 1 ]]; then
+        echo "Im VPC befinden sich noch Ressourcen."
+        read -rp "Möchtest du die Ressourcen und das VPC trotzdem löschen? (y/N): " confirm
+        if [[ "$confirm" =~ ^[Yy]$ ]]; then
+            force_delete_vpc "$vpc_id"
+        else
+            echo "Löschung abgebrochen."
+            return 0
+        fi
+    else
+        read -rp "VPC ist leer. Sicher löschen? (y/N): " confirm
+        if [[ "$confirm" =~ ^[Yy]$ ]]; then
+            aws ec2 delete-vpc --vpc-id "$vpc_id"
+            echo "VPC $vpc_id wurde gelöscht."
+        else
+            echo "Löschung abgebrochen."
+        fi
     fi
-
-    echo "Deleting VPC '$vpc_id'..."
-    aws ec2 delete-vpc --vpc-id "$vpc_id" --region "$region"
-
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to delete VPC $vpc_id."
-        return 1
-    fi
-
-    echo "VPC $vpc_id deleted successfully."
-    return 0
 }
 
-# Check if AWS CLI is installed
-if ! command -v aws &> /dev/null; then
-    echo "AWS CLI is not installed. Please install it first."
-    exit 1
-fi
-
-# Check if user is authenticated
-if ! aws sts get-caller-identity &> /dev/null; then
-    echo "You are not authenticated with AWS. Please configure your credentials."
-    exit 1
-fi
-
-# Call the function to delete the VPC
+# run functions
+check_aws_requirements
+list_vpcs
 delete_vpc
 
-# Pause for user input
-read -rp "Press [Enter] to return to the VPC menu..."
-
-# Return to VPC menu
-source "$(dirname "$0")/vpc_menu.bash"
-
-# End of script
-exit 0
+# end of script

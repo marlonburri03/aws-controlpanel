@@ -28,7 +28,7 @@ handle_input() {
             bash $SCRIPTDIR/vpc_create.bash
             ;;
         2)
-            echo "Listing VPC's..."
+            echo "Start Listing VPC Script..."
             bash $SCRIPTDIR/vpc_list.bash
             ;;
         3)

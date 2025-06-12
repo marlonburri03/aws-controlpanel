@@ -28,15 +28,7 @@ if ! aws sts get-caller-identity &> /dev/null; then
     exit 1
 fi
 
-# Call the function to list instances
+# run functions
 list_ec2_instances
 
-# Pause for user input
-read -rp "Press [Enter] to return to the EC2 menu..."
-
-# Return to EC2 menu
-#log "INFO" "Returning to EC2 menu..."
-source "$DIR/ec2_menu.bash"
-
-# End of script
-exit 0
+# end of script

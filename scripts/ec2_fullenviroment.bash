@@ -123,7 +123,3 @@ launch_ec2_instance
 log "SUCCESS" "Fertig! EC2-Instanz '$INSTANCE_NAME' wurde erstellt."
 
 # end of script
-read -rp "Drücke [Enter], um zum Menü zurückzukehren..."
-
-source "$DIR/main.bash"
-exit 0

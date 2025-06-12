@@ -185,7 +185,3 @@ check_aws_requirements
 create_ec2_instance
 
 # end of script
-read -rp "Drücke [Enter], um zum Menü zurückzukehren..."
-
-source "$DIR/main.bash"
-exit 0
