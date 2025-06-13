@@ -18,12 +18,12 @@ list_vpcs() {
     return 0
 }
 
-# Check for resources in the VPC
+# check resources in the VPC
 check_vpc_resources() {
     local vpc_id="$1"
     local resource_found=0
 
-    echo "Prüfe, ob Ressourcen im VPC '$vpc_id' vorhanden sind..."
+    echo "Check, if ressources are available in VPC '$vpc_id'..."
 
     declare -A resources=(
         ["Subnets"]="aws ec2 describe-subnets --filters Name=vpc-id,Values=$vpc_id --query 'Subnets[*].SubnetId' --output text"
@@ -44,7 +44,7 @@ check_vpc_resources() {
     return $resource_found
 }
 
-# Löscht alle Ressourcen und danach das VPC
+# Delete all ressources and VPC
 force_delete_vpc() {
     local vpc_id="$1"
 
@@ -96,7 +96,7 @@ force_delete_vpc() {
     aws ec2 delete-vpc --vpc-id "$vpc_id"
 }
 
-# Hauptfunktion zum Löschen eines VPC
+# main function
 delete_vpc() {
     read -rp "Enter the VPC ID to delete (e.g., vpc-123abc456def): " vpc_id
 
@@ -108,21 +108,21 @@ delete_vpc() {
     echo "WARNING: Deleting a VPC will also remove all associated resources."
     check_vpc_resources "$vpc_id"
     if [[ $? -eq 1 ]]; then
-        echo "Im VPC befinden sich noch Ressourcen."
-        read -rp "Möchtest du die Ressourcen und das VPC trotzdem löschen? (y/N): " confirm
+        echo "There are still resources in the VPC."
+        read -rp "Do you still want to delete the resources and the VPC? (y/N): " confirm
         if [[ "$confirm" =~ ^[Yy]$ ]]; then
             force_delete_vpc "$vpc_id"
         else
-            echo "Löschung abgebrochen."
+            echo "Deletion canceled."
             return 0
         fi
     else
         read -rp "VPC ist leer. Sicher löschen? (y/N): " confirm
         if [[ "$confirm" =~ ^[Yy]$ ]]; then
             aws ec2 delete-vpc --vpc-id "$vpc_id"
-            echo "VPC $vpc_id wurde gelöscht."
+            echo "VPC $vpc_id has been deleted."
         else
-            echo "Löschung abgebrochen."
+            echo "Deletion canceled."
         fi
     fi
 }

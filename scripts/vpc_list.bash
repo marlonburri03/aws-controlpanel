@@ -3,7 +3,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
 log "INFO" "Starting Script: $(basename "$0")"
 
-# List all VPCs
+# main function 
 list_vpcs() {
     #read -rp "Enter the AWS region (e.g., eu-central-1): " region
 

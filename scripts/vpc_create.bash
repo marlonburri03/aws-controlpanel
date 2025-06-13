@@ -1,7 +1,9 @@
 #!/bin/bash
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
-# Create a new VPC
+log "INFO" "Starting Script: $(basename "$0")"
+
+# main function
 create_vpc() {
     read -rp "Enter the VPC name: " vpc_name
     read -rp "Enter the IPv4 CIDR block (e.g., 10.0.0.0/16): " cidr_block
@@ -19,13 +21,13 @@ create_vpc() {
         vpc_id=$(aws ec2 create-vpc \
             --cidr-block "$cidr_block" \
             --amazon-provided-ipv6-cidr-block \
-            --region "$region" \
+            --region "$AWS_REGION" \
             --query 'Vpc.VpcId' \
             --output text)
     else
         vpc_id=$(aws ec2 create-vpc \
             --cidr-block "$cidr_block" \
-            --region "$region" \
+            --region "$AWS_REGION" \
             --query 'Vpc.VpcId' \
             --output text)
     fi
@@ -38,17 +40,17 @@ create_vpc() {
     aws ec2 create-tags \
         --resources "$vpc_id" \
         --tags Key=Name,Value="$vpc_name" \
-        --region "$region"
+        --region "$AWS_REGION"
 
     aws ec2 modify-vpc-attribute \
         --vpc-id "$vpc_id" \
         --enable-dns-support "{\"Value\":true}" \
-        --region "$region"
+        --region "$AWS_REGION"
 
     aws ec2 modify-vpc-attribute \
         --vpc-id "$vpc_id" \
         --enable-dns-hostnames "{\"Value\":true}" \
-        --region "$region"
+        --region "$AWS_REGION"
 
     echo "VPC '$vpc_name' created successfully with ID: $vpc_id"
     return 0
@@ -58,11 +60,4 @@ create_vpc() {
 check_aws_requirements
 create_vpc
 
-# Pause for user input
-read -rp "Press [Enter] to return to the VPC menu..."
-
-# Return to VPC menu
-source "$BINDIR/vpc_menu.bash"
-
-# End of script
-exit 0
+# end of script
