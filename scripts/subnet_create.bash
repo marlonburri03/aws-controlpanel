@@ -3,19 +3,19 @@ source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
 log "INFO" "Starting Script: $(basename "$0")"
 
-# Create a new Subnet
+# create subnet
 create_subnet() {
-    read -rp "Enter the AWS region (e.g., us-east-1): " region
+    #read -rp "Enter the AWS region (e.g., us-east-1): " region
 
-    if [[ -z "$region" ]]; then
-        echo "Region is required."
-        return 1
-    fi
+    #if [[ -z "$region" ]]; then
+        #echo "Region is required."
+        #return 1
+    #fi
 
-    echo "Fetching available VPCs in region '$region'..."
+    echo "Fetching available VPCs in region '$AWS_REGION'..."
 
     aws ec2 describe-vpcs \
-        --region "$region" \
+        --region "$AWS_REGION" \
         --query 'Vpcs[*].{VpcId:VpcId, CidrBlock:CidrBlock, Name:Tags[?Key==`Name`]|[0].Value}' \
         --output table
 
@@ -28,8 +28,8 @@ create_subnet() {
         return 1
     fi
 
-    echo "Fetching available Availability Zones in region '$region'..."
-    az_list=$(aws ec2 describe-availability-zones --region "$region" --query 'AvailabilityZones[*].ZoneName' --output text)
+    echo "Fetching available Availability Zones in region '$AWS_REGION'..."
+    az_list=$(aws ec2 describe-availability-zones --region "$AWS_REGION" --query 'AvailabilityZones[*].ZoneName' --output text)
 
     if [[ -z "$az_list" ]]; then
         echo "Could not retrieve Availability Zones. Please check your region and credentials."
@@ -52,7 +52,7 @@ create_subnet() {
         --vpc-id "$vpc_id" \
         --cidr-block "$cidr_block" \
         --availability-zone "$az" \
-        --region "$region" \
+        --region "$AWS_REGION" \
         --query 'Subnet.SubnetId' \
         --output text)
 
@@ -64,34 +64,19 @@ create_subnet() {
     aws ec2 create-tags \
         --resources "$subnet_id" \
         --tags Key=Name,Value="$subnet_name" \
-        --region "$region"
+        --region "$AWS_REGION"
 
     aws ec2 modify-subnet-attribute \
         --subnet-id "$subnet_id" \
         --map-public-ip-on-launch \
-        --region "$region"
+        --region "$AWS_REGION"
 
     echo "Subnet '$subnet_name' created successfully with ID: $subnet_id"
     return 0
 }
 
-# Check if AWS CLI is installed
-if ! command -v aws &> /dev/null; then
-    echo "AWS CLI is not installed. Please install it first."
-    exit 1
-fi
-
-# Check if user is authenticated
-if ! aws sts get-caller-identity &> /dev/null; then
-    echo "You are not authenticated with AWS. Please configure your credentials."
-    exit 1
-fi
-
-# Call the function to create the Subnet
+# run functions
+check_aws_requirements
 create_subnet
 
-# Pause for user input
-read -rp "Press [Enter] to return to the Subnet menu..."
-
-# End of script
-exit 0
+# end of script

@@ -1,19 +1,21 @@
 #!/bin/bash
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
-# List existing Subnets
+log "INFO" "Starting Script: $(basename "$0")"
+
+# list subnets
 list_subnets() {
-    read -rp "Enter the AWS region: " region
+    #read -rp "Enter the AWS region: " region
 
-    if [[ -z "$region" ]]; then
-        echo "Region is required."
-        return 1
-    fi
+    #if [[ -z "$region" ]]; then
+        #echo "Region is required."
+        #return 1
+    #fi
 
-    echo "Fetching Subnets in region '$region'..."
+    echo "Fetching Subnets in region '$AWS_REGION'..."
 
     aws ec2 describe-subnets \
-        --region "$region" \
+        --region "$AWS_REGION" \
         --query "Subnets[*].{SubnetID:SubnetId, VPC:VpcId, CIDR:CidrBlock, AZ:AvailabilityZone, Name:Tags[?Key=='Name']|[0].Value}" \
         --output table
 
@@ -26,26 +28,8 @@ list_subnets() {
     return 0
 }
 
-# Check if AWS CLI is installed
-if ! command -v aws &> /dev/null; then
-    echo "AWS CLI is not installed. Please install it first."
-    exit 1
-fi
-
-# Check if user is authenticated
-if ! aws sts get-caller-identity &> /dev/null; then
-    echo "You are not authenticated with AWS. Please configure your credentials."
-    exit 1
-fi
-
-# Call the function to list the Subnets
+# run functions
+check_aws_requirements
 list_subnets
 
-# Pause for user input
-read -rp "Press [Enter] to return to the Subnet menu..."
-
-# Return to Subnet menu
-source "$(dirname "$0")/subnet_menu.bash"
-
-# End of script
-exit 0
+# end of script

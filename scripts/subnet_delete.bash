@@ -1,7 +1,9 @@
 #!/bin/bash
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
-# Delete a Subnet
+log "INFO" "Starting Script: $(basename "$0")"
+
+# delete a Subnet
 delete_subnet() {
     echo "Fetching existing Subnets..."
 
@@ -11,9 +13,9 @@ delete_subnet() {
 
     echo
     read -rp "Enter the Subnet ID to delete (e.g., subnet-0123abcd): " subnet_id
-    read -rp "Enter the AWS region: " region
+    #read -rp "Enter the AWS region: " region
 
-    if [[ -z "$subnet_id" || -z "$region" ]]; then
+    if [[ -z "$subnet_id" || -z "$AWS_REGION" ]]; then
         echo "Subnet ID and region are required."
         return 1
     fi
@@ -22,7 +24,7 @@ delete_subnet() {
 
     aws ec2 delete-subnet \
         --subnet-id "$subnet_id" \
-        --region "$region"
+        --region "$AWS_REGION"
 
     if [[ $? -ne 0 ]]; then
         echo "Failed to delete Subnet '$subnet_id'."
@@ -33,26 +35,8 @@ delete_subnet() {
     return 0
 }
 
-# Check if AWS CLI is installed
-if ! command -v aws &> /dev/null; then
-    echo "AWS CLI is not installed. Please install it first."
-    exit 1
-fi
-
-# Check if user is authenticated
-if ! aws sts get-caller-identity &> /dev/null; then
-    echo "You are not authenticated with AWS. Please configure your credentials."
-    exit 1
-fi
-
-# Call the function to delete the Subnet
+# run functions
+check_aws_requirements
 delete_subnet
 
-# Pause for user input
-read -rp "Press [Enter] to return to the Subnet menu..."
-
-# Return to Subnet menu
-source "$(dirname "$0")/subnet_menu.bash"
-
-# End of script
-exit 0
+# end of script
