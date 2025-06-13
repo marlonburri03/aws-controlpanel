@@ -7,65 +7,13 @@ log "INFO" "Starting script: $(basename "$0")"
 [[ -z "$VPC_NAME" ]] && read -p "Enter VPC name: " VPC_NAME
 [[ -z "$VPC_CIDR" ]] && read -p "Enter VPC CIDR (e.g., 10.0.0.0/16): " VPC_CIDR
 [[ -z "$PUBLIC_SUBNET_CIDR" ]] && read -p "Enter Public Subnet CIDR (e.g., 10.0.1.0/24): " PUBLIC_SUBNET_CIDR
-#[[ -z "$AMI_ID" ]] && read -p "Enter AMI ID: " AMI_ID
-#[[ -z "$INSTANCE_TYPE" ]] && read -p "Enter Instance Type (e.g., t2.micro): " INSTANCE_TYPE
-#[[ -z "$KEY_NAME" ]] && read -p "Enter EC2 Key Pair Name: " KEY_NAME
-#[[ -z "$USER_DATA_FILE" ]] && read -p "Enter path to User Data file: " USER_DATA_FILE
-#[[ -z "$AWS_REGION" ]] && read -p "Enter AWS Region (e.g., us-east-1): " AWS_REGION
 
-select_user_data_file() {
-    echo "Verfügbare User Data Dateien:"
-    ls "$ETCDIR"/*.yaml 2>/dev/null | xargs -n1 basename
+# ...
 
-    while true; do
-        echo
-        read -rp "Bitte gib den Namen der gewünschten User Data Datei ein (z. B. ubuntu_userdata.yaml): " user_data_file
+# Beispiel: Region ggf. vor dem Start setzen oder abfragen, damit AVAILABILITY_ZONE klappt
+[[ -z "$AWS_REGION" ]] && read -p "Enter AWS Region (e.g., us-east-1): " AWS_REGION
 
-        if [[ -f "${ETCDIR}/${user_data_file}" ]]; then
-            echo "Datei gefunden: ${user_data_file}"
-            USER_DATA_FILE="${ETCDIR}/${user_data_file}"
-            break
-        else
-            echo "Datei nicht gefunden. Bitte erneut versuchen."
-        fi
-    done
-}
-
-get_latest_ami() {
-    local owner=$1
-    local name_filter=$2
-
-    #log "DEBUG" "get newest AMI for $owner with filter $name_filter"
-    aws ec2 describe-images \
-        --owners "$owner" \
-        --filters "Name=name,Values=$name_filter" "Name=state,Values=available" \
-        --query 'Images | sort_by(@, &CreationDate)[-1].ImageId' \
-        --output text
-}
-
-list_latest_amis() {
-    #log "INFO" "List newest AMIs"
-    echo "Newest AMI-IDs of the favourite Distributions:"
-    amazon_ami=$(get_latest_ami amazon "amzn2-ami-hvm-2.0.*-x86_64-gp2")
-    canonical_ami=$(get_latest_ami 099720109477 "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*")
-    redhat_ami=$(get_latest_ami 309956199498 "RHEL-8.*_HVM-*-x86_64-*")
-
-    printf "Amazon Linux 2 (amazon): %s\n" "$amazon_ami"
-    printf "Ubuntu 20.04 LTS (canonical): %s\n" "$canonical_ami"
-    printf "Red Hat Enterprise Linux 8 (redhat): %s\n" "$redhat_ami"
-    echo
-}
-
-read -p "Set EC2 instance name: " INSTANCE_NAME
-[[ -z "$INSTANCE_NAME" ]] && { log "ERROR" "No name provided"; exit 1; }
-
-
-AVAILABILITY_ZONE=$(aws ec2 describe-availability-zones \
-  --region "$AWS_REGION" \
-  --query "AvailabilityZones[0].ZoneName" \
-  --output text)
-log "INFO" "Using availability zone: $AVAILABILITY_ZONE"
-
+# ...
 
 create_vpc() {
   log "INFO" "Creating VPC..."
@@ -74,6 +22,7 @@ create_vpc() {
     --region "$AWS_REGION" \
     --query "Vpc.VpcId" \
     --output text)
+  # Tags richtig quoten, hier explizit in Anführungszeichen
   aws ec2 create-tags --resources "$VPC_ID" --tags Key=Name,Value="$VPC_NAME" --region "$AWS_REGION"
   log "INFO" "VPC created: $VPC_ID"
 }
@@ -115,9 +64,41 @@ create_route_table() {
   log "INFO" "Route Table created and associated: $RT_ID"
 }
 
+select_user_data_file() {
+  echo "Available User Data files:"
+  echo "1) Template_Linux_Webserver.yaml"
+  echo "2) Template_Ubuntu.yaml"
+  echo "3) Template_Ubuntu_Docker.yaml"
+
+  while true; do
+    read -p "Please enter the number of the desired User Data file (1-3): " choice
+    case $choice in
+      1) file="Template_Linux_Webserver.yaml"; break ;;
+      2) file="Template_Ubuntu.yaml"; break ;;
+      3) file="Template_Ubuntu_Docker.yaml"; break ;;
+      *) echo "Invalid input. Please enter 1, 2, or 3." ;;
+    esac
+  done
+    USER_DATA_FILE="$ETCDIR/$file"
+  echo "You selected: $USER_DATA_FILE"
+}
+
 launch_ec2_instance() {
   log "INFO" "Launching EC2 instance..."
-  INSTANCE_ID=$(aws ec2 run-instances \
+
+  # Pfad zu USER_DATA_FILE anpassen, falls Windows-Pfad (C:/... oder c:/...) vorhanden ist
+  # Beispiel für Umwandlung in WSL-Pfad:
+  # Falls Sie WSL verwenden, könnte man so machen:
+  if [[ "$USER_DATA_FILE" =~ ^[a-zA-Z]:\\ ]]; then
+    # Beispiel: C:\Users\... -> /mnt/c/Users/...
+    # Dazu können Sie eine Umwandlung mit sed machen
+    USER_DATA_FILE=$(echo "$USER_DATA_FILE" | sed -E 's#^([a-zA-Z]):\\#\/mnt\/\L\1\/#' | tr '\\' '/')
+  fi
+
+  # Alternativ: Prüfen Sie manuell, ob der Pfad passt
+
+  # Starten mit user-data als file:// Pfad - sicherstellen, dass Pfad keine Leerzeichen/Sonderzeichen hat
+  aws ec2 run-instances \
     --image-id "$AMI_ID" \
     --instance-type "$INSTANCE_TYPE" \
     --key-name "$KEY_NAME" \
@@ -125,9 +106,15 @@ launch_ec2_instance() {
     --user-data "file://$USER_DATA_FILE" \
     --region "$AWS_REGION" \
     --associate-public-ip-address \
-    --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$INSTANCE_NAME}]" \
+    --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=\"$INSTANCE_NAME\"}]" \
     --query "Instances[0].InstanceId" \
-    --output text)
+    --output text | tee >(read INSTANCE_ID)
+  
+  if [[ -z "$INSTANCE_ID" ]]; then
+    log "ERROR" "Failed to launch EC2 instance"
+    exit 1
+  fi
+
   log "INFO" "EC2 Instance launched: $INSTANCE_ID"
 }
 

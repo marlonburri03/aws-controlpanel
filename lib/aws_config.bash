@@ -16,4 +16,4 @@ INSTANCE_TYPE="t2.micro"
 KEY_NAME="vockey"
 
 # Cloud-Init Datei für User Data
-#USER_DATA_FILE="$CONFDIR/user-data-template.yml"
+USER_DATA_FILE="$CONFDIR/"

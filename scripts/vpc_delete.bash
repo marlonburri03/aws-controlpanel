@@ -92,6 +92,46 @@ force_delete_vpc() {
         aws ec2 delete-network-interface --network-interface-id "$eni"
     done
 
+    echo "Deleting NAT Gateways..."
+    for nat in $(aws ec2 describe-nat-gateways \
+        --filter Name=vpc-id,Values=$vpc_id \
+        --query "NatGateways[*].NatGatewayId" --output text); do
+        aws ec2 delete-nat-gateway --nat-gateway-id "$nat"
+        sleep 5  # wait for NAT Gateway deletion
+    done
+
+    echo "Deleting VPC Endpoints..."
+    for endpoint in $(aws ec2 describe-vpc-endpoints \
+        --filters Name=vpc-id,Values=$vpc_id \
+        --query "VpcEndpoints[*].VpcEndpointId" --output text); do
+        aws ec2 delete-vpc-endpoints --vpc-endpoint-ids "$endpoint"
+    done
+
+    echo "Deleting VPC Peering Connections..."
+    for peer in $(aws ec2 describe-vpc-peering-connections \
+        --query "VpcPeeringConnections[?RequesterVpcInfo.VpcId=='$vpc_id' || AccepterVpcInfo.VpcId=='$vpc_id'].VpcPeeringConnectionId" \
+        --output text); do
+        aws ec2 delete-vpc-peering-connection --vpc-peering-connection-id "$peer"
+    done
+
+    echo "Deleting Classic Load Balancers..."
+    for elb in $(aws elb describe-load-balancers \
+        --query "LoadBalancerDescriptions[?VPCId=='$vpc_id'].LoadBalancerName" --output text); do
+        aws elb delete-load-balancer --load-balancer-name "$elb"
+    done
+
+    echo "Deleting Application/Network Load Balancers..."
+    for elbv2 in $(aws elbv2 describe-load-balancers \
+        --query "LoadBalancers[?VpcId=='$vpc_id'].LoadBalancerArn" --output text); do
+        aws elbv2 delete-load-balancer --load-balancer-arn "$elbv2"
+    done
+
+    echo "Releasing Elastic IPs associated with the VPC..."
+    for alloc in $(aws ec2 describe-addresses \
+        --query "Addresses[?AssociationId!=null && NetworkInterfaceId!=null].AllocationId" --output text); do
+        aws ec2 release-address --allocation-id "$alloc"
+    done
+
     echo "Lösche VPC: $vpc_id"
     aws ec2 delete-vpc --vpc-id "$vpc_id"
 }

@@ -77,9 +77,35 @@ list_latest_amis() {
     echo
 }
 
+select_user_data_file() {
+  echo "Available User Data files:"
+  echo "1) Template_Linux_Webserver.yaml"
+  echo "2) Template_Ubuntu.yaml"
+  echo "3) Template_Ubuntu_Docker.yaml"
+
+  while true; do
+    read -p "Please enter the number of the desired User Data file (1-3): " choice
+    case $choice in
+      1) file="Template_Linux_Webserver.yaml"; break ;;
+      2) file="Template_Ubuntu.yaml"; break ;;
+      3) file="Template_Ubuntu_Docker.yaml"; break ;;
+      *) echo "Invalid input. Please enter 1, 2, or 3." ;;
+    esac
+  done
+    USER_DATA_FILE="$ETCDIR/$file"
+  echo "You selected: $USER_DATA_FILE"
+}
+
 create_ec2_instance() {
     list_latest_amis
     read -rp "Set AMI ID (example: ami-0abcdef1234567890): " AMI_ID
+
+    select_user_data_file
+    if [[ ! -f "$USER_DATA_FILE" ]]; then
+        log "ERROR" "User Data file $USER_DATA_FILE does not exist."
+        echo "User Data file does not exist. Please check the path."
+        return 1
+    fi
 
     #list_instance_types
     #read -rp "Set Instancetype  (z.B. t2.micro): " INSTANCE_TYPE
