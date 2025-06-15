@@ -787,21 +787,21 @@ Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführ
 | Erwartetes Ergebnis    | Das Hauptmenü wird im Terminal angezeigt. Es stehen Auswahlmöglichkeiten wie EC2, VPC, Subnet und Security Group zur Verfügung.  |
 | Testablauf             | 1. Terminal öffnen<br>2. Im Projektverzeichnis `./bin/main.bash` ausführen<br>3. Menüauswahl wird sichtbar.                      |
 | Effektives Ergebnis    | Menü erscheint und reagiert auf Benutzereingabe                                                                                  |
-| Screenshotg / Logfiles | ![Testfall1](img/Testing/Testfall1.gif)<br>*Screencapture Main-Menu Script*                                                      |
+| Screenshotg / Logfiles | ![Testfall1](img/Testing/Testfall1.gif)<br>*GIF Main-Menu Script*                                                                |
 | Problemstellungen      | -                                                                                                                                |
 | Testergebnis           | Erfolgreich                                                                                                                      |
 
 &nbsp;
 
-| Testfall 2             | Navigation ins EC2-Menü über Hauptmenü                                    |
-|------------------------|----------------------------------------------------------------------------|
-| Voraussetzungen        | - Hauptmenü ist geöffnet                                                   |
-| Erwartetes Ergebnis    | EC2-Menü wird geladen und zeigt EC2-spezifische Aktionen an  |
-| Testablauf             | 1. Hauptmenü starten<br>2. Option „EC2“ auswählen                          |
-| Effektives Ergebnis    | EC2-Menü erscheint                                                         |
-| Screenshotg / Logfiles | -                                                                          |
-| Problemstellungen      | -                                                                          |
-| Testergebnis           | Erfolgreich                                                                |
+| Testfall 2             | Navigation ins EC2-Menü über Hauptmenü                                       |
+|------------------------|------------------------------------------------------------------------------|
+| Voraussetzungen        | - Hauptmenü ist geöffnet                                                     |
+| Erwartetes Ergebnis    | EC2-Menü wird geladen und zeigt EC2-spezifische Aktionen an.                 |
+| Testablauf             | 1. Hauptmenü starten<br>2. Option „EC2“ auswählen                            |
+| Effektives Ergebnis    | EC2-Menü erscheint                                                           |
+| Screenshotg / Logfiles | ![Testfall2](img/Testing/Testfall2.gif)<br>*GIF EC2-Menu Script*             |
+| Problemstellungen      | -                                                                            |
+| Testergebnis           | Erfolgreich                                                                  |
 
 &nbsp;
 
@@ -920,3 +920,4 @@ Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführ
 * ChatGPT (2025, Mai 09). *Antwort von ChatGPT auf die Frage: Wir wird das Risiko-Level Berechnet?* ChatGPT: https://chatgpt.com
 * ChatGPT (2025, Mai 12). *Antwort von ChatGPT auf die Frage: Wie ist das Backlog hierarchisch gegliedert?* ChatGPT: https://chatgpt.com
 * Text to ASCII Art Generator (2025, Mai 22): https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+* GIF-Converter (2025, Juni 15): https://www.adobe.com/de/express/feature/video/convert/video-to-gif
