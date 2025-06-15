@@ -773,7 +773,7 @@ c -->|Nein|e[Analyse der Fehlerursache]
 e --> f[Behebung des Fehlers]
 f --> b
 ```
-Getestet werden die jeweiligen Prozesse zur Bereitstellung und Löschung einer virtuellen Maschine (VM) sowie deren Durchlaufzeit. Alle Testfälle sind so konzipiert, dass sie gemeinsam die Projektziele vollständig abdecken und bei erfolgreichem Abschluss als erfüllt gelten.
+Getestet werden die jeweiligen Prozesse zur Erstellung und Löschung von AWS-Ressourcen, wie z. B. EC2-Instanzen oder Security Groups, sowie deren Funktionalität und Ablauf im Terminal. Alle Testfälle sind so konzipiert, dass sie gemeinsam die definierten Projektziele vollständig abdecken. Ein erfolgreiches Bestehen aller Testfälle bestätigt die korrekte Umsetzung des AWS-Controlpanels.
 
 Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführt. Diese befindet sich auf meinem vorhandenen Laptop, wie in der Projektbeschreibung definiert.
 
@@ -789,7 +789,115 @@ Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführ
 | Problemstellungen      | -                                                                          |
 | Testergebnis           | Erfolgreich                                                                |
 
+&nbsp;
 
+| Testfall 2             | Navigation ins EC2-Menü über Hauptmenü                                    |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - Hauptmenü ist geöffnet                                                   |
+| Erwartetes Ergebnis    | EC2-spezifisches Menü wird geladen und zeigt EC2-spezifische Aktionen an  |
+| Testablauf             | 1. Hauptmenü starten<br>2. Option „EC2“ auswählen                          |
+| Effektives Ergebnis    | EC2-Menü erscheint                                                         |
+| Screenshotg / Logfiles | -                                                                          |
+| Problemstellungen      | -                                                                          |
+| Testergebnis           | Erfolgreich                                                                |
+
+&nbsp;
+
+| Testfall 3              | Löschen einer Security Group über `delete_security_group.bash`            |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - AWS CLI ist konfiguriert<br>- Benutzer hat Berechtigungen zum Löschen von Security Groups<br>- Eine Security Group existiert |
+| Erwartetes Ergebnis    | Die angegebene Security Group wird erfolgreich gelöscht.                   |
+| Testablauf             | 1. Terminal öffnen<br>2. Skript `./scripts/security-group/delete_security_group.bash` ausführen<br>3. Bestehende SGs anzeigen lassen<br>4. ID eingeben und löschen |
+| Effektives Ergebnis    | Security Group wird gelöscht und Erfolgsmeldung angezeigt                  |
+| Screenshotg / Logfiles | -                                                                          |
+| Problemstellungen      | - Security Group ist noch in Verwendung                                    |
+| Testergebnis           | Erfolgreich / Fehler bei in Benutzung befindlicher SG                      |
+
+&nbsp;
+
+| Testfall 4              | Fehlende Eingabe einer Security Group ID                                  |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - AWS CLI ist konfiguriert<br>- Skript ist vorhanden                      |
+| Erwartetes Ergebnis    | Das Skript bricht ab und meldet, dass keine gültige ID eingegeben wurde.   |
+| Testablauf             | 1. Skript starten<br>2. Bei der Abfrage keine ID eingeben<br>3. Bestätigen |
+| Effektives Ergebnis    | Fehlermeldung wird ausgegeben<br>Skript wird abgebrochen                   |
+| Screenshotg / Logfiles | -                                                                          |
+| Problemstellungen      | -                                                                          |
+| Testergebnis           | Erfolgreich                                                                |
+
+&nbsp;
+
+| Testfall 5             | Erstellen einer EC2-Instanz                                               |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - AWS CLI konfiguriert<br>- Zugriff auf passende Subnet/Security Group   |
+| Erwartetes Ergebnis    | Eine neue EC2-Instanz wird erstellt und angezeigt                         |
+| Testablauf             | 1. EC2-Menü öffnen<br>2. Instanzparameter angeben<br>3. Erstellung starten |
+| Effektives Ergebnis    | EC2-Instanz erscheint in der AWS-Konsole                                  |
+| Screenshotg / Logfiles | -                                                                          |
+| Problemstellungen      | - Falscher AMI oder fehlende Rechte                                       |
+| Testergebnis           | Erfolgreich / Fehler erkannt                                              |
+
+&nbsp;
+
+| Testfall 6             | Löschen einer EC2-Instanz                                                 |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - EC2-Instanz existiert<br>- AWS CLI ist eingerichtet                     |
+| Erwartetes Ergebnis    | Instanz wird beendet und gelöscht                                         |
+| Testablauf             | 1. EC2-Menü öffnen<br>2. Instanz auswählen<br>3. Löschen bestätigen         |
+| Effektives Ergebnis    | Instanz nicht mehr sichtbar                                                |
+| Screenshotg / Logfiles | -                                                                          |
+| Problemstellungen      | - Fehlende Berechtigung oder Instanz-ID falsch                            |
+| Testergebnis           | Erfolgreich                                                                |
+
+&nbsp;
+
+| Testfall 7             | Erstellen eines Subnetzes                                                 |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - VPC existiert<br>- AWS CLI ist bereit                                   |
+| Erwartetes Ergebnis    | Neues Subnetz wird angelegt                                               |
+| Testablauf             | 1. Subnet-Skript starten<br>2. VPC und CIDR angeben<br>3. Subnetz erstellen |
+| Effektives Ergebnis    | Subnetz wird erfolgreich in AWS erstellt                                  |
+| Screenshotg / Logfiles | -                                                                          |
+| Problemstellungen      | - CIDR-Konflikte                                                           |
+| Testergebnis           | Erfolgreich                                                                |
+
+&nbsp;
+
+| Testfall 8             | Auflisten aller Security Groups                                            |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - AWS CLI eingerichtet                                                     |
+| Erwartetes Ergebnis    | Liste aller SGs wird im Terminal angezeigt                                |
+| Testablauf             | 1. SG-Skript starten<br>2. Liste anzeigen lassen                           |
+| Effektives Ergebnis    | Übersicht im Terminal                                                      |
+| Screenshotg / Logfiles | -                                                                          |
+| Problemstellungen      | -                                                                          |
+| Testergebnis           | Erfolgreich                                                                |
+
+&nbsp;
+
+| Testfall 9             | Logging der Skriptausgabe                                                  |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - `log()`-Funktion implementiert<br>- LOGLEVEL korrekt gesetzt             |
+| Erwartetes Ergebnis    | Jeder Schritt wird mit Zeitstempel geloggt                                |
+| Testablauf             | 1. Skript mit Logging starten<br>2. Terminalausgabe prüfen<br>3. Logdatei kontrollieren |
+| Effektives Ergebnis    | Logfile-Einträge vorhanden                                                 |
+| Screenshotg / Logfiles | Logdatei: `aws-control.log`                                                |
+| Problemstellungen      | -                                                                          |
+| Testergebnis           | Erfolgreich                                                                |
+
+&nbsp;
+
+| Testfall 10            | Direkter Aufruf eines Task-Skripts ohne Hauptmenü                          |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - Zugriff auf Skript<br>- AWS CLI konfiguriert                             |
+| Erwartetes Ergebnis    | Task wird unabhängig vom Menü ausgeführt                                  |
+| Testablauf             | 1. Terminal öffnen<br>2. Skript direkt starten<br>3. Ergebnis prüfen       |
+| Effektives Ergebnis    | Task wird ordnungsgemäß ausgeführt                                         |
+| Screenshotg / Logfiles | -                                                                          |
+| Problemstellungen      | -                                                                          |
+| Testergebnis           | Erfolgreich                                                                |
+
+&nbsp;
 
 # 7 Projektabschluss
 
