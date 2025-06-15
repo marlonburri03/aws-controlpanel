@@ -805,14 +805,14 @@ Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführ
 
 &nbsp;
 
-| Testfall 3              | Löschen einer Security Group über `delete_security_group.bash`            |
-|------------------------|----------------------------------------------------------------------------|
-| Voraussetzungen        | - AWS CLI ist konfiguriert<br>- Benutzer hat Berechtigungen zum Löschen von Security Groups<br>- Eine Security Group existiert |
-| Erwartetes Ergebnis    | Die angegebene Security Group wird erfolgreich gelöscht.                   |
-| Testablauf             | 1. Terminal öffnen<br>2. Skript `./scripts/security-group/delete_security_group.bash` ausführen<br>3. Bestehende SGs anzeigen lassen<br>4. ID eingeben und löschen |
-| Effektives Ergebnis    | Security Group wird gelöscht und Erfolgsmeldung angezeigt                  |
-| Screenshotg / Logfiles | -                                                                          |
-| Problemstellungen      | - Security Group ist noch in Verwendung                                    |
+| Testfall 3              | Löschen einer Security Group über `securitygroup_delete.bash`                                                                                      |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Voraussetzungen        | - AWS CLI ist konfiguriert<br>- Benutzer hat Berechtigungen zum Löschen von Security Groups<br>- Eine Security Group existiert.                     |
+| Erwartetes Ergebnis    | Die angegebene Security Group wird erfolgreich gelöscht.                                                                                            |
+| Testablauf             | 1. Terminal öffnen<br>2. Script `./scripts/securitygroup_delete.bash` ausführen<br>3. Bestehende SGs anzeigen lassen<br>4. ID eingeben und löschen. |
+| Effektives Ergebnis    | Security Group wird gelöscht und Erfolgsmeldung angezeigt.                                                                                          |
+| Screenshotg / Logfiles | -                                                                                                                                                   |
+| Problemstellungen      | - Security Group ist noch in Verwendung                                                                                                             |
 | Testergebnis           | Erfolgreich / Fehler bei in Benutzung befindlicher SG                      |
 
 &nbsp;
@@ -920,4 +920,4 @@ Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführ
 * ChatGPT (2025, Mai 09). *Antwort von ChatGPT auf die Frage: Wir wird das Risiko-Level Berechnet?* ChatGPT: https://chatgpt.com
 * ChatGPT (2025, Mai 12). *Antwort von ChatGPT auf die Frage: Wie ist das Backlog hierarchisch gegliedert?* ChatGPT: https://chatgpt.com
 * Text to ASCII Art Generator (2025, Mai 22): https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
-* GIF-Converter (2025, Juni 15): https://www.adobe.com/de/express/feature/video/convert/video-to-gif
+* Mp4 to GIF-Converter (2025, Juni 15): https://www.adobe.com/de/express/feature/video/convert/video-to-gif
