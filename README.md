@@ -502,7 +502,7 @@ fi
 
 &nbsp;
 
-__EC2 Script:__  
+__EC2 Menu Script:__  
 
 Das EC2-Script übernimmt die vollständige Bereitstellung, Konfiguration sowie das Löschen von EC2-Instanzen. Es beinhaltet die gleichen Variablen wie das Main-Script und ist ähnlich aufgebaut. Das Script bietet dem Benutzer ein übersichtliches Menü zur Auswahl verschiedener Operationen, darunter das Erstellen, Anzeigen und Löschen von EC2-Instanzen.
 
@@ -692,7 +692,71 @@ log() {
     fi
 }
 ```
-Aktuelles Abbild – variables.bash / logging function | Erstellt von: Marlon Burri | Stand: 15.06.2025 | Version: 1.0
+*Aktuelles Abbild – variables.bash / logging function | Erstellt von: Marlon Burri | Stand: 15.06.2025 | Version: 1.0*
+
+&nbsp;
+
+__Task scripts:__ 
+
+In meinem Projekt wurden die Skripte in zwei Hauptkategorien unterteilt: Menu-Scripte und Task-Scripte. Die Menu-Scripte dienen der grafisch unterstütztung und Darstellung von Auswahlmöglichkeiten innerhalb der Kommandozeilenoberfläche. Sie bilden sozusagen das interaktive Frontend des Tools und führen die Benutzer/innen durch das Menüsystem.
+
+Die Task-Scripte hingegen übernehmen die eigentliche Umsetzung der gewünschten Funktionen, wie etwa das Erstellen, Löschen oder Auflisten von AWS-Ressourcen z.B EC2-Instanzen, Security Groups, Subnetzen usw. Diese Scripte wurden nach einem klar definierten und wiederverwendbaren Aufbauprinzip entwickelt. Dadurch können sie nicht nur vom Hauptmenü aus aufgerufen, sondern auch völlig eigenständig und isoliert ausgeführt werden. Das ist besonders hilfreich beim Debugging, bei Tests oder für den gezielten Einsatz in automatisierten Prozessen.
+
+Jedes Task-Script beginnt mit dem Laden einer zentralen Initialisierungsdatei (```init_env.bash```), die für eine einheitliche Umgebung sorgt. Anschließend erfolgt ein strukturierter Logeintrag, um Startzeit und Scriptname zu dokumentieren. Die eigentliche Logik ist in einer klar benannten Funktion gekapselt, was die Lesbarkeit und die Wartung vereinfacht. Fehlerbehandlung, Nutzereingaben und Rückgabewerte sind standardisiert umgesetzt. Zusätzlich wird durch eine vorgelagerte Funktionsprüfung (```check_aws_requirements```) sichergestellt, dass notwendige Voraussetzungen wie gültige Credentials oder die Verfügbarkeit der AWS CLI erfüllt sind. Diese strukturierte Trennung und der modulare Aufbau sorgen nicht nur für eine hohe Wartbarkeit, sondern auch für Flexibilität im Umgang mit den einzelnen Komponenten des Projekts. Um den strukturellen Aufbau exemplarisch darzustellen wurde das ```securitygroup_delete.bash``` genommen, das genau nach diesem Prinzip aufgebaut ist und tadellos funktioniert.
+
+```bash
+#!/bin/bash
+source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
+
+log "INFO" "Starting Script: $(basename "$0")"
+
+# delete Security Group
+delete_security_group() {
+    #read -rp "Enter the AWS region: " region
+
+    #if [[ -z "$AWS_REGION" ]]; then
+        #log "ERROR" "Region was not specified."
+        #echo "Region is required."
+        #return 1
+    #fi
+
+    #get security group
+    echo "Fetching existing Security Groups in region '$AWS_REGION'..."
+    aws ec2 describe-security-groups \
+        --region "$AWS_REGION" \
+        --query "SecurityGroups[*].{ID:GroupId,Name:GroupName,Description:Description,VPC:VpcId}" \
+        --output table
+
+    read -rp "Enter the Security Group ID to delete (e.g., sg-0abc1234def567890): " sg_id
+
+    if [[ -z "$sg_id" ]]; then
+        log "ERROR" "Security Group ID has not been set."
+        echo "Security Group ID is required."
+        return 1
+    fi
+
+    log "INFO" "Try to delete Security Group '$sg_id' in Region '$AWS_REGION'..."
+    echo "Deleting Security Group '$sg_id'..."
+
+    if aws ec2 delete-security-group --group-id "$sg_id" --region "$AWS_REGION"; then
+        log "SUCCESS" "Security Group '$sg_id' deleted successfully."
+        echo "Security Group '$sg_id' deleted successfully."
+    else
+        log "ERROR" "Error deleting the security group '$sg_id'. Possibly in use or incorrect ID."
+        echo "Failed to delete Security Group. It might be in use or the ID is incorrect."
+        return 1
+    fi
+
+    return 0
+}
+
+# run functions
+check_aws_requirements
+delete_security_group
+
+# end of script
+```
+*Aktuelles Abbild – securitygroup_delete.bash | Erstellt von: Marlon Burri | Stand: 15.06.2025 | Version: 1.0*
 
 &nbsp;
 

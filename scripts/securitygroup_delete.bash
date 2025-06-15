@@ -3,12 +3,12 @@ source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
 log "INFO" "Starting Script: $(basename "$0")"
 
-# Delete an existing Security Group
+# delete Security Group
 delete_security_group() {
     #read -rp "Enter the AWS region: " region
 
     #if [[ -z "$AWS_REGION" ]]; then
-        #log "ERROR" "Region wurde nicht angegeben."
+        #log "ERROR" "Region was not specified."
         #echo "Region is required."
         #return 1
     #fi
