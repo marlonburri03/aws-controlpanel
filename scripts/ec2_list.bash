@@ -29,6 +29,7 @@ if ! aws sts get-caller-identity &> /dev/null; then
 fi
 
 # run functions
+check_aws_requirements
 list_ec2_instances
 
 # end of script
