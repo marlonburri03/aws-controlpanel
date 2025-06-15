@@ -17,7 +17,7 @@ list_security_groups() {
     echo "Fetching Security Groups in region '$AWS_REGION'..."
 
     aws ec2 describe-security-groups \
-        --region "$region" \
+        --region "$AWS_REGION" \
         --query "SecurityGroups[*].{ID:GroupId,Name:GroupName,Description:Description,VPC:VpcId}" \
         --output table
 }

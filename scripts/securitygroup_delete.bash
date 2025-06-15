@@ -31,7 +31,7 @@ delete_security_group() {
     log "INFO" "Try to delete Security Group '$sg_id' in Region '$AWS_REGION'..."
     echo "Deleting Security Group '$sg_id'..."
 
-    if aws ec2 delete-security-group --group-id "$sg_id" --region "$region"; then
+    if aws ec2 delete-security-group --group-id "$sg_id" --region "$AWS_REGION"; then
         log "SUCCESS" "Security Group '$sg_id' deleted successfully."
         echo "Security Group '$sg_id' deleted successfully."
     else

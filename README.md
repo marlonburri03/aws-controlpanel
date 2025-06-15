@@ -671,7 +671,7 @@ runcmd:
 __Logging Funktion:__  
 
 Zur strukturierten Ausgabe von Statusmeldungen und Fehlermeldungen kommt im Script eine einfache Logging-Funktion zum Einsatz.
-Die Funktion ```log()``` schreibt Nachrichten mit einem Zeitstempel und einem Schweregrad (z. B. ```INFO```, ```ERROR```, ```DEBUG```) in eine definierte Logdatei sowie auch auf die Konsole. Die Ausgabe richtet sich nach dem konfigurierten Logging-Level (```$LOGLEVEL```). So kann beispielsweise festgelegt werden, dass nur Fehlermeldungen (```ERROR```) oder auch allgemeine Informationen (```INFO```) und Debug-Ausgaben (```DEBUG```) protokolliert werden. Dadurch wird das Skript transparenter und besser nachvollziehbar, insbesondere bei der Fehleranalyse oder bei automatisierten Abläufen wie das erstellen einer Ressource in AWS. Die definierte Logdatei (```$LOGFILE```) erleichtert zudem die spätere Auswertung und Dokumentation der ausgeführten Aktionen.
+Die Funktion ```log()``` schreibt Nachrichten mit einem Zeitstempel und einem Schweregrad (z. B. ```INFO```, ```ERROR```, ```DEBUG```) in eine definierte Logdatei sowie auch auf die Konsole. Die Ausgabe richtet sich nach dem konfigurierten Logging-Level (```$LOGLEVEL```). So kann beispielsweise festgelegt werden, dass nur Fehlermeldungen (```ERROR```) oder auch allgemeine Informationen (```INFO```) und Debug-Ausgaben (```DEBUG```) protokolliert werden. Dadurch wird das Script transparenter und besser nachvollziehbar, insbesondere bei der Fehleranalyse oder bei automatisierten Abläufen wie das erstellen einer Ressource in AWS. Die definierte Logdatei (```$LOGFILE```) erleichtert zudem die spätere Auswertung und Dokumentation der ausgeführten Aktionen.
 
 ```bash
 # logging Configuration 

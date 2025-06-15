@@ -16,18 +16,6 @@ list_ec2_instances() {
     log "SUCCESS" "Successfully listed EC2 instances."
 }
 
-# Check if AWS CLI is installed 
-if ! command -v aws &> /dev/null; then
-    log "ERROR" "AWS CLI is not installed. Please install it first."
-    exit 1
-fi
-
-# Check if user is authenticated
-if ! aws sts get-caller-identity &> /dev/null; then
-    log "ERROR" "You are not authenticated with AWS. Please configure your credentials."
-    exit 1
-fi
-
 # run functions
 check_aws_requirements
 list_ec2_instances
