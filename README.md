@@ -773,6 +773,8 @@ c -->|Nein|e[Analyse der Fehlerursache]
 e --> f[Behebung des Fehlers]
 f --> b
 ```
+&nbsp;
+
 Getestet werden die jeweiligen Prozesse zur Erstellung und Löschung von AWS-Ressourcen, wie z. B. EC2-Instanzen oder Security Groups, sowie deren Funktionalität und Ablauf im Terminal. Alle Testfälle sind so konzipiert, dass sie gemeinsam die definierten Projektziele vollständig abdecken. Ein erfolgreiches Bestehen aller Testfälle bestätigt die korrekte Umsetzung des AWS-Controlpanels.
 
 Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführt. Diese befindet sich auf meinem vorhandenen Laptop, wie in der Projektbeschreibung definiert.
@@ -785,7 +787,7 @@ Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführ
 | Erwartetes Ergebnis    | Das Hauptmenü wird im Terminal angezeigt. Es stehen Auswahlmöglichkeiten wie EC2, VPC, Subnet und Security Group zur Verfügung. |
 | Testablauf             | 1. Terminal öffnen<br>2. Im Projektverzeichnis `./bin/main.bash` ausführen<br>3. Menüauswahl wird sichtbar |
 | Effektives Ergebnis    | Menü erscheint und reagiert auf Benutzereingabe                            |
-| Screenshotg / Logfiles | -                                                                          |
+| Screenshotg / Logfiles | ![Testfall1](img/Testing/Testfall1.gif) *Screencapture Testfall 1*         | 
 | Problemstellungen      | -                                                                          |
 | Testergebnis           | Erfolgreich                                                                |
 
@@ -794,7 +796,7 @@ Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführ
 | Testfall 2             | Navigation ins EC2-Menü über Hauptmenü                                    |
 |------------------------|----------------------------------------------------------------------------|
 | Voraussetzungen        | - Hauptmenü ist geöffnet                                                   |
-| Erwartetes Ergebnis    | EC2-spezifisches Menü wird geladen und zeigt EC2-spezifische Aktionen an  |
+| Erwartetes Ergebnis    | EC2-Menü wird geladen und zeigt EC2-spezifische Aktionen an  |
 | Testablauf             | 1. Hauptmenü starten<br>2. Option „EC2“ auswählen                          |
 | Effektives Ergebnis    | EC2-Menü erscheint                                                         |
 | Screenshotg / Logfiles | -                                                                          |
