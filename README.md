@@ -761,14 +761,15 @@ delete_security_group
 &nbsp;
 
 # 6 Testverfahren
+
 Für die Durchführung des Testing wurde ein strukturierter Ablauf festgelegt, um sicherzustellen, dass alle Testfälle vollständig und erfolgreich abgeschlossen werden.
 
 ```mermaid
 flowchart TD
 a[Definition der Testfälle] --> b[Ausführung der Testfälle]
 b --> c{Test erfolgreich?}
-c -->|ja|d[Dokumentation der Testergebnisse]
-c -->|nein|e[Analyse der Fehlerursache]
+c -->|Ja|d[Dokumentation der Testergebnisse]
+c -->|Nein|e[Analyse der Fehlerursache]
 e --> f[Behebung des Fehlers]
 f --> b
 ```
@@ -776,19 +777,18 @@ Getestet werden die jeweiligen Prozesse zur Bereitstellung und Löschung einer v
 
 Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführt. Diese befindet sich auf meinem vorhandenen Laptop, wie in der Projektbeschreibung definiert.
 
-| Testfall               | Start des Hauptmenüs über `main.bash`                                      |
+## 6.1 Testfälle
+
+| Testfall 1             | Start des Hauptmenüs über `main.bash`                                     |
 |------------------------|----------------------------------------------------------------------------|
-| Voraussetzungen        | - Bash ist installiert                                                     |
-|                        | - AWS CLI ist konfiguriert                                                 |
-|                        | - Zugriff auf das lokale Repository mit allen Skripten                     |
+| Voraussetzungen        | - Bash ist installiert<br>- AWS CLI ist konfiguriert<br>- Zugriff auf das lokale Repository mit allen Scripten |
 | Erwartetes Ergebnis    | Das Hauptmenü wird im Terminal angezeigt. Es stehen Auswahlmöglichkeiten wie EC2, VPC, Subnet und Security Group zur Verfügung. |
-| Testablauf             | 1. Terminal öffnen                                                         |
-|                        | 2. Im Projektverzeichnis `./main.bash` ausführen                           |
-|                        | 3. Menüauswahl wird sichtbar                                               |
+| Testablauf             | 1. Terminal öffnen<br>2. Im Projektverzeichnis `./bin/main.bash` ausführen<br>3. Menüauswahl wird sichtbar |
 | Effektives Ergebnis    | Menü erscheint und reagiert auf Benutzereingabe                            |
 | Screenshotg / Logfiles | -                                                                          |
 | Problemstellungen      | -                                                                          |
 | Testergebnis           | Erfolgreich                                                                |
+
 
 
 # 7 Projektabschluss
