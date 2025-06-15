@@ -781,15 +781,15 @@ Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführ
 
 ## 6.1 Testfälle
 
-| Testfall 1             | Start des Hauptmenüs über `main.bash`                                     |
-|------------------------|----------------------------------------------------------------------------|
-| Voraussetzungen        | - Bash ist installiert<br>- AWS CLI ist konfiguriert<br>- Zugriff auf das lokale Repository mit allen Scripten |
-| Erwartetes Ergebnis    | Das Hauptmenü wird im Terminal angezeigt. Es stehen Auswahlmöglichkeiten wie EC2, VPC, Subnet und Security Group zur Verfügung. |
-| Testablauf             | 1. Terminal öffnen<br>2. Im Projektverzeichnis `./bin/main.bash` ausführen<br>3. Menüauswahl wird sichtbar |
-| Effektives Ergebnis    | Menü erscheint und reagiert auf Benutzereingabe                            |
-| Screenshotg / Logfiles | ![Testfall1](img/Testing/Testfall1.gif) *Screencapture Testfall 1*         | 
-| Problemstellungen      | -                                                                          |
-| Testergebnis           | Erfolgreich                                                                |
+| Testfall 1             | Start des Hauptmenüs über `main.bash`                                                                                            |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| Voraussetzungen        | - Bash ist installiert<br>- AWS CLI ist konfiguriert<br>- Zugriff auf das lokale Repository mit allen Scripten                   |
+| Erwartetes Ergebnis    | Das Hauptmenü wird im Terminal angezeigt. Es stehen Auswahlmöglichkeiten wie EC2, VPC, Subnet und Security Group zur Verfügung.  |
+| Testablauf             | 1. Terminal öffnen<br>2. Im Projektverzeichnis `./bin/main.bash` ausführen<br>3. Menüauswahl wird sichtbar.                      |
+| Effektives Ergebnis    | Menü erscheint und reagiert auf Benutzereingabe                                                                                  |
+| Screenshotg / Logfiles | ![Testfall1](img/Testing/Testfall1.gif)<br>*Screencapture Main-Menu Script*                                                      |
+| Problemstellungen      | -                                                                                                                                |
+| Testergebnis           | Erfolgreich                                                                                                                      |
 
 &nbsp;
 
