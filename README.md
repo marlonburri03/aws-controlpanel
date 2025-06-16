@@ -372,6 +372,9 @@ Abgeschlossene User Storys:
 
 __Sprint Planning:__
 
+![Sprint4Planning](img/Sprint4Planning.png)
+*Screenshot von meinem Sprint 4 Backlog in Jira.*
+
 __Sprint Review:__
 
 ### 3.4.5 Sprint 5
