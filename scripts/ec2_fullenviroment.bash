@@ -8,13 +8,6 @@ log "INFO" "Starting script: $(basename "$0")"
 [[ -z "$VPC_CIDR" ]] && read -p "Enter VPC CIDR (e.g., 10.0.0.0/16): " VPC_CIDR
 [[ -z "$PUBLIC_SUBNET_CIDR" ]] && read -p "Enter Public Subnet CIDR (e.g., 10.0.1.0/24): " PUBLIC_SUBNET_CIDR
 
-# ...
-
-# Beispiel: Region ggf. vor dem Start setzen oder abfragen, damit AVAILABILITY_ZONE klappt
-[[ -z "$AWS_REGION" ]] && read -p "Enter AWS Region (e.g., us-east-1): " AWS_REGION
-
-# ...
-
 create_vpc() {
   log "INFO" "Creating VPC..."
   VPC_ID=$(aws ec2 create-vpc \
@@ -86,18 +79,13 @@ select_user_data_file() {
 launch_ec2_instance() {
   log "INFO" "Launching EC2 instance..."
 
-  # Pfad zu USER_DATA_FILE anpassen, falls Windows-Pfad (C:/... oder c:/...) vorhanden ist
-  # Beispiel für Umwandlung in WSL-Pfad:
-  # Falls Sie WSL verwenden, könnte man so machen:
+
+# get user data file
   if [[ "$USER_DATA_FILE" =~ ^[a-zA-Z]:\\ ]]; then
-    # Beispiel: C:\Users\... -> /mnt/c/Users/...
-    # Dazu können Sie eine Umwandlung mit sed machen
+  
     USER_DATA_FILE=$(echo "$USER_DATA_FILE" | sed -E 's#^([a-zA-Z]):\\#\/mnt\/\L\1\/#' | tr '\\' '/')
   fi
 
-  # Alternativ: Prüfen Sie manuell, ob der Pfad passt
-
-  # Starten mit user-data als file:// Pfad - sicherstellen, dass Pfad keine Leerzeichen/Sonderzeichen hat
   aws ec2 run-instances \
     --image-id "$AMI_ID" \
     --instance-type "$INSTANCE_TYPE" \

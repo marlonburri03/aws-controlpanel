@@ -502,7 +502,7 @@ fi
 
 &nbsp;
 
-__EC2 Script:__  
+__EC2 Menu Script:__  
 
 Das EC2-Script übernimmt die vollständige Bereitstellung, Konfiguration sowie das Löschen von EC2-Instanzen. Es beinhaltet die gleichen Variablen wie das Main-Script und ist ähnlich aufgebaut. Das Script bietet dem Benutzer ein übersichtliches Menü zur Auswahl verschiedener Operationen, darunter das Erstellen, Anzeigen und Löschen von EC2-Instanzen.
 
@@ -668,7 +668,238 @@ runcmd:
 
 &nbsp;
 
+__Logging Funktion:__  
+
+Zur strukturierten Ausgabe von Statusmeldungen und Fehlermeldungen kommt im Script eine einfache Logging-Funktion zum Einsatz.
+Die Funktion ```log()``` schreibt Nachrichten mit einem Zeitstempel und einem Schweregrad (z. B. ```INFO```, ```ERROR```, ```DEBUG```) in eine definierte Logdatei sowie auch auf die Konsole. Die Ausgabe richtet sich nach dem konfigurierten Logging-Level (```$LOGLEVEL```). So kann beispielsweise festgelegt werden, dass nur Fehlermeldungen (```ERROR```) oder auch allgemeine Informationen (```INFO```) und Debug-Ausgaben (```DEBUG```) protokolliert werden. Dadurch wird das Script transparenter und besser nachvollziehbar, insbesondere bei der Fehleranalyse oder bei automatisierten Abläufen wie das erstellen einer Ressource in AWS. Die definierte Logdatei (```$LOGFILE```) erleichtert zudem die spätere Auswertung und Dokumentation der ausgeführten Aktionen.
+
+```bash
+# logging Configuration 
+LOGFILE="$LOGDIR/aws-control.log"  
+LOGLEVEL="INFO"                     
+
+# logging function 
+log() {
+    local level="$1"
+    local message="$2"
+    local timestamp
+    timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+
+    
+    if [[ "$level" == "ERROR" || "$level" == "$LOGLEVEL" || "$LOGLEVEL" == "DEBUG" ]]; then
+        echo "[$timestamp] [$level] $message" >> "$LOGFILE"
+        echo -e "[$timestamp] [$level] $message"
+    fi
+}
+```
+*Aktuelles Abbild – variables.bash / logging function | Erstellt von: Marlon Burri | Stand: 15.06.2025 | Version: 1.0*
+
+&nbsp;
+
+__Task scripts:__ 
+
+In meinem Projekt wurden die Scripte in zwei Hauptkategorien unterteilt: Menu-Scripte und Task-Scripte. Die Menu-Scripte dienen der grafisch unterstütztung und Darstellung von Auswahlmöglichkeiten innerhalb der Kommandozeilenoberfläche. Sie bilden sozusagen das interaktive Frontend des Tools und führen die Benutzer/innen durch das Menüsystem.
+
+Die Task-Scripte hingegen übernehmen die eigentliche Umsetzung der gewünschten Funktionen, wie etwa das Erstellen, Löschen oder Auflisten von AWS-Ressourcen z.B EC2-Instanzen, Security Groups, Subnetzen usw. Diese Scripte wurden nach einem klar definierten und wiederverwendbaren Aufbauprinzip entwickelt. Dadurch können sie nicht nur vom Hauptmenü aus aufgerufen, sondern auch völlig eigenständig und isoliert ausgeführt werden. Das ist besonders hilfreich beim Debugging, bei Tests oder für den gezielten Einsatz in automatisierten Prozessen.
+
+Jedes Task-Script beginnt mit dem Laden einer zentralen Initialisierungsdatei (```init_env.bash```), die für eine einheitliche Umgebung sorgt. Anschließend erfolgt ein strukturierter Logeintrag, um Startzeit und Scriptname zu dokumentieren. Die eigentliche Logik ist in einer klar benannten Funktion gekapselt, was die Lesbarkeit und die Wartung vereinfacht. Fehlerbehandlung, Nutzereingaben und Rückgabewerte sind standardisiert umgesetzt. Zusätzlich wird durch eine vorgelagerte Funktionsprüfung (```check_aws_requirements```) sichergestellt, dass notwendige Voraussetzungen wie gültige Credentials oder die Verfügbarkeit der AWS CLI erfüllt sind. Diese strukturierte Trennung und der modulare Aufbau sorgen nicht nur für eine hohe Wartbarkeit, sondern auch für Flexibilität im Umgang mit den einzelnen Komponenten des Projekts. Um den strukturellen Aufbau exemplarisch darzustellen wurde das ```securitygroup_delete.bash``` genommen, das genau nach diesem Prinzip aufgebaut ist und tadellos funktioniert.
+
+```bash
+#!/bin/bash
+source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
+
+log "INFO" "Starting Script: $(basename "$0")"
+
+# delete Security Group
+delete_security_group() {
+    #read -rp "Enter the AWS region: " region
+
+    #if [[ -z "$AWS_REGION" ]]; then
+        #log "ERROR" "Region was not specified."
+        #echo "Region is required."
+        #return 1
+    #fi
+
+    #get security group
+    echo "Fetching existing Security Groups in region '$AWS_REGION'..."
+    aws ec2 describe-security-groups \
+        --region "$AWS_REGION" \
+        --query "SecurityGroups[*].{ID:GroupId,Name:GroupName,Description:Description,VPC:VpcId}" \
+        --output table
+
+    read -rp "Enter the Security Group ID to delete (e.g., sg-0abc1234def567890): " sg_id
+
+    if [[ -z "$sg_id" ]]; then
+        log "ERROR" "Security Group ID has not been set."
+        echo "Security Group ID is required."
+        return 1
+    fi
+
+    log "INFO" "Try to delete Security Group '$sg_id' in Region '$AWS_REGION'..."
+    echo "Deleting Security Group '$sg_id'..."
+
+    if aws ec2 delete-security-group --group-id "$sg_id" --region "$AWS_REGION"; then
+        log "SUCCESS" "Security Group '$sg_id' deleted successfully."
+        echo "Security Group '$sg_id' deleted successfully."
+    else
+        log "ERROR" "Error deleting the security group '$sg_id'. Possibly in use or incorrect ID."
+        echo "Failed to delete Security Group. It might be in use or the ID is incorrect."
+        return 1
+    fi
+
+    return 0
+}
+
+# run functions
+check_aws_requirements
+delete_security_group
+
+# end of script
+```
+*Aktuelles Abbild – securitygroup_delete.bash | Erstellt von: Marlon Burri | Stand: 15.06.2025 | Version: 1.0*
+
+&nbsp;
+
 # 6 Testverfahren
+
+Für die Durchführung des Testing wurde ein strukturierter Ablauf festgelegt, um sicherzustellen, dass alle Testfälle vollständig und erfolgreich abgeschlossen werden.
+
+```mermaid
+flowchart TD
+a[Definition der Testfälle] --> b[Ausführung der Testfälle]
+b --> c{Test erfolgreich?}
+c -->|Ja|d[Dokumentation der Testergebnisse]
+c -->|Nein|e[Analyse der Fehlerursache]
+e --> f[Behebung des Fehlers]
+f --> b
+```
+&nbsp;
+
+Getestet werden die jeweiligen Prozesse zur Erstellung und Löschung von AWS-Ressourcen, wie z. B. EC2-Instanzen oder Security Groups, sowie deren Funktionalität und Ablauf im Terminal. Alle Testfälle sind so konzipiert, dass sie gemeinsam die definierten Projektziele vollständig abdecken. Ein erfolgreiches Bestehen aller Testfälle bestätigt die korrekte Umsetzung des AWS-Controlpanels.
+
+Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführt. Diese befindet sich auf meinem vorhandenen Laptop, wie in der Projektbeschreibung definiert.
+
+## 6.1 Testfälle
+
+| Testfall 1             | Start des Hauptmenüs über `main.bash`                                                                                            |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| Voraussetzungen        | - Bash ist installiert<br>- AWS CLI ist konfiguriert<br>- Zugriff auf das lokale Repository mit allen Scripten                   |
+| Erwartetes Ergebnis    | Das Hauptmenü wird im Terminal angezeigt.<br> Es stehen Auswahlmöglichkeiten wie EC2, VPC, Subnet und Security Group zur Verfügung.  |
+| Testablauf             | 1. Terminal öffnen<br>2. Im Projektverzeichnis `./bin/main.bash` ausführen<br>3. Menüauswahl wird sichtbar.                      |
+| Effektives Ergebnis    | Menü erscheint und reagiert auf Benutzereingabe                                                                                  |
+| Screenshotg / Logfiles | ![Testfall1](img/Testing/Testfall1.gif)<br>*GIF Main-Menu Script*                                                                |
+| Problemstellungen      | -                                                                                                                                |
+| Testergebnis           | Erfolgreich                                                                                                                      |
+
+&nbsp;
+
+| Testfall 2             | Navigation ins EC2-Menü über Hauptmenü                                       |
+|------------------------|------------------------------------------------------------------------------|
+| Voraussetzungen        | - Hauptmenü ist geöffnet                                                     |
+| Erwartetes Ergebnis    | EC2-Menü wird geladen und zeigt EC2-spezifische Aktionen an.                 |
+| Testablauf             | 1. Hauptmenü starten<br>2. Option „EC2“ auswählen                            |
+| Effektives Ergebnis    | EC2-Menü erscheint                                                           |
+| Screenshotg / Logfiles | ![Testfall2](img/Testing/Testfall2.gif)<br>*GIF EC2-Menu Script*             |
+| Problemstellungen      | -                                                                            |
+| Testergebnis           | Erfolgreich                                                                  |
+
+&nbsp;
+
+| Testfall 3              | Löschen einer Security Group über `securitygroup_delete.bash`                                                                                      |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Voraussetzungen        | - AWS CLI ist konfiguriert<br>- Benutzer hat Berechtigungen zum Löschen von Security Groups<br>- Eine Security Group existiert.                     |
+| Erwartetes Ergebnis    | Die angegebene Security Group wird erfolgreich gelöscht.                                                                                            |
+| Testablauf             | 1. Terminal öffnen<br>2. Script `./scripts/securitygroup_delete.bash` ausführen<br>3. Bestehende SGs anzeigen lassen<br>4. ID eingeben und löschen. |
+| Effektives Ergebnis    | Security Group wird gelöscht und Erfolgsmeldung angezeigt.                                                                                          |
+| Screenshotg / Logfiles | -                                                                                                                                                   |
+| Problemstellungen      | - Security Group ist noch in Verwendung                                                                                                             |
+| Testergebnis           | Erfolgreich / Fehler bei in Benutzung befindlicher SG                      |
+
+&nbsp;
+
+| Testfall 4              | Fehlende Eingabe einer Security Group ID                                  |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - AWS CLI ist konfiguriert<br>- Skript ist vorhanden                      |
+| Erwartetes Ergebnis    | Das Skript bricht ab und meldet, dass keine gültige ID eingegeben wurde.   |
+| Testablauf             | 1. Skript starten<br>2. Bei der Abfrage keine ID eingeben<br>3. Bestätigen |
+| Effektives Ergebnis    | Fehlermeldung wird ausgegeben<br>Skript wird abgebrochen                   |
+| Screenshotg / Logfiles | -                                                                          |
+| Problemstellungen      | -                                                                          |
+| Testergebnis           | Erfolgreich                                                                |
+
+&nbsp;
+
+| Testfall 5             | Erstellen einer EC2-Instanz                                               |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - AWS CLI konfiguriert<br>- Zugriff auf passende Subnet/Security Group   |
+| Erwartetes Ergebnis    | Eine neue EC2-Instanz wird erstellt und angezeigt                         |
+| Testablauf             | 1. EC2-Menü öffnen<br>2. Instanzparameter angeben<br>3. Erstellung starten |
+| Effektives Ergebnis    | EC2-Instanz erscheint in der AWS-Konsole                                  |
+| Screenshotg / Logfiles | -                                                                          |
+| Problemstellungen      | - Falscher AMI oder fehlende Rechte                                       |
+| Testergebnis           | Erfolgreich / Fehler erkannt                                              |
+
+&nbsp;
+
+| Testfall 6             | Löschen einer EC2-Instanz                                                 |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - EC2-Instanz existiert<br>- AWS CLI ist eingerichtet                     |
+| Erwartetes Ergebnis    | Instanz wird beendet und gelöscht                                         |
+| Testablauf             | 1. EC2-Menü öffnen<br>2. Instanz auswählen<br>3. Löschen bestätigen         |
+| Effektives Ergebnis    | Instanz nicht mehr sichtbar                                                |
+| Screenshotg / Logfiles | -                                                                          |
+| Problemstellungen      | - Fehlende Berechtigung oder Instanz-ID falsch                            |
+| Testergebnis           | Erfolgreich                                                                |
+
+&nbsp;
+
+| Testfall 7             | Erstellen eines Subnetzes                                                 |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - VPC existiert<br>- AWS CLI ist bereit                                   |
+| Erwartetes Ergebnis    | Neues Subnetz wird angelegt                                               |
+| Testablauf             | 1. Subnet-Skript starten<br>2. VPC und CIDR angeben<br>3. Subnetz erstellen |
+| Effektives Ergebnis    | Subnetz wird erfolgreich in AWS erstellt                                  |
+| Screenshotg / Logfiles | -                                                                          |
+| Problemstellungen      | - CIDR-Konflikte                                                           |
+| Testergebnis           | Erfolgreich                                                                |
+
+&nbsp;
+
+| Testfall 8             | Auflisten aller Security Groups                                            |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - AWS CLI eingerichtet                                                     |
+| Erwartetes Ergebnis    | Liste aller SGs wird im Terminal angezeigt                                |
+| Testablauf             | 1. SG-Skript starten<br>2. Liste anzeigen lassen                           |
+| Effektives Ergebnis    | Übersicht im Terminal                                                      |
+| Screenshotg / Logfiles | -                                                                          |
+| Problemstellungen      | -                                                                          |
+| Testergebnis           | Erfolgreich                                                                |
+
+&nbsp;
+
+| Testfall 9             | Logging der Skriptausgabe                                                  |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - `log()`-Funktion implementiert<br>- LOGLEVEL korrekt gesetzt             |
+| Erwartetes Ergebnis    | Jeder Schritt wird mit Zeitstempel geloggt                                |
+| Testablauf             | 1. Skript mit Logging starten<br>2. Terminalausgabe prüfen<br>3. Logdatei kontrollieren |
+| Effektives Ergebnis    | Logfile-Einträge vorhanden                                                 |
+| Screenshotg / Logfiles | Logdatei: `aws-control.log`                                                |
+| Problemstellungen      | -                                                                          |
+| Testergebnis           | Erfolgreich                                                                |
+
+&nbsp;
+
+| Testfall 10            | Direkter Aufruf eines Task-Skripts ohne Hauptmenü                          |
+|------------------------|----------------------------------------------------------------------------|
+| Voraussetzungen        | - Zugriff auf Skript<br>- AWS CLI konfiguriert                             |
+| Erwartetes Ergebnis    | Task wird unabhängig vom Menü ausgeführt                                  |
+| Testablauf             | 1. Terminal öffnen<br>2. Skript direkt starten<br>3. Ergebnis prüfen       |
+| Effektives Ergebnis    | Task wird ordnungsgemäß ausgeführt                                         |
+| Screenshotg / Logfiles | -                                                                          |
+| Problemstellungen      | -                                                                          |
+| Testergebnis           | Erfolgreich                                                                |
+
+&nbsp;
 
 # 7 Projektabschluss
 
@@ -689,3 +920,4 @@ runcmd:
 * ChatGPT (2025, Mai 09). *Antwort von ChatGPT auf die Frage: Wir wird das Risiko-Level Berechnet?* ChatGPT: https://chatgpt.com
 * ChatGPT (2025, Mai 12). *Antwort von ChatGPT auf die Frage: Wie ist das Backlog hierarchisch gegliedert?* ChatGPT: https://chatgpt.com
 * Text to ASCII Art Generator (2025, Mai 22): https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+* Mp4 to GIF-Converter (2025, Juni 15): https://www.adobe.com/de/express/feature/video/convert/video-to-gif

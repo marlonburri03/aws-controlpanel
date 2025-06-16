@@ -29,19 +29,9 @@ print_header() {
     echo -e "${NC}"
 }
 
-
 # logging Configuration 
 LOGFILE="$LOGDIR/aws-control.log"  
-LOGLEVEL="INFO"                    # Log level: INFO | DEBUG | ERROR | WARN
-
-# ensure necessary directories exist 
-mkdir -p "$LOGDIR" "$VARDIR" "$TMPDIR"
-
-# cleanup function for temp files on exit 
-cleanup() {
-    rm -rf "$TMPDIR"
-}
-trap cleanup EXIT
+LOGLEVEL="INFO"                     
 
 # logging function 
 log() {
@@ -57,16 +47,25 @@ log() {
     fi
 }
 
+# ensure necessary directories exist 
+mkdir -p "$LOGDIR" "$VARDIR" "$TMPDIR"
+
+# cleanup function for temp files on exit 
+cleanup() {
+    rm -rf "$TMPDIR"
+}
+trap cleanup EXIT
+
 # requirements check
 check_aws_requirements() {
-    # Prüft, ob die AWS CLI installiert ist
+    # checks if AWS CLI is installed
     if ! command -v aws &> /dev/null; then
         log "ERROR" "AWS CLI is not installed."
         echo "AWS CLI is not installed. Please install it first."
         exit 1
     fi
 
-    # Prüft, ob gültige AWS-Credentials vorhanden sind
+    # checks if valid AWS credentials are present
     if ! aws sts get-caller-identity &> /dev/null; then
         log "ERROR" "AWS credentials are missing or invalid."
         echo "No valid AWS credentials found. Please configure your AWS credentials."
