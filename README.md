@@ -43,15 +43,15 @@ flowchart LR
 
 ## 2.1 Problemstellung
 
-Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen, VPCs, Security Groups und mehr vollständig automatisiert per Skript erstellen und verwalten. Als wir im AWS-Cloud Modul vermehrt EC2-Instanzen sowie die dazugehörigen VPCs und Subnetze manuell erstellen musste, wurde mir schnell klar, dass dieser Prozess automatisiert werden muss. So entstand die Idee zum Control Panel. Der entscheidende Vorteil dabei ist, dass die Nutzung der AWS-Weboberfläche nahezu überflüssig wird. In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren.
+Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen, VPCs, Security Groups und mehr vollständig automatisiert per Script erstellen und verwalten. Als wir im AWS-Cloud Modul vermehrt EC2-Instanzen sowie die dazugehörigen VPCs und Subnetze manuell erstellen musste, wurde mir schnell klar, dass dieser Prozess automatisiert werden muss. So entstand die Idee zum Control Panel. Der entscheidende Vorteil dabei ist, dass die Nutzung der AWS-Weboberfläche nahezu überflüssig wird. In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren.
 
 
 ## 2.2 Aufgabenstellung
 
 Basierend auf der Problembeschreibung ist das Ziel dieses Projekts die Entwicklung eines Control Panels zur Verwaltung und Bereitstellung von AWS-Ressourcen. 
-Das System soll es ermöglichen, EC2-Instanzen, VPCs, Security Groups und weitere Cloud-Ressourcen vollständig per Skript zu erstellen und zu verwalten, wodurch die Nutzung der AWS-Weboberfläche weitgehend überflüssig gemacht wird. 
+Das System soll es ermöglichen, EC2-Instanzen, VPCs, Security Groups und weitere Cloud-Ressourcen vollständig per Script zu erstellen und zu verwalten, wodurch die Nutzung der AWS-Weboberfläche weitgehend überflüssig gemacht wird. 
 Diese Automatisierung soll effizient, fehlerfrei und schnell erfolgen. Für die Umsetzung wird AWS-CLI, Bash und Cloud-init verwendet. 
-Der gesamte Prozess der Ressourcenbereitstellung und Verwaltung wird durch Skripte automatisiert welche sicherstellen, dass alle notwendigen Aufgaben effizient und ohne manuelle Eingriffe durchgeführt werden.
+Der gesamte Prozess der Ressourcenbereitstellung und Verwaltung wird durch Scripte automatisiert welche sicherstellen, dass alle notwendigen Aufgaben effizient und ohne manuelle Eingriffe durchgeführt werden.
 
 ## 2.3 Ziele
 
@@ -61,7 +61,7 @@ Dabei sollen EC2-Instanzen, Netzwerke (VPCs, Subnets, Gateways), Security Groups
 Ziel ist es, manuelle Arbeitsschritte vollständig zu eliminieren und die Bereitstellung zu automatisieren.
 
 * __Unabhängigkeit von der Weboberfläche:__
-Vollständige Steuerung und Verwaltung von AWS-Ressourcen über die Shell mit Skripte welche mittels Bash auf die AWS CLI zugreiffen. 
+Vollständige Steuerung und Verwaltung von AWS-Ressourcen über die Shell mit Scripte welche mittels Bash auf die AWS CLI zugreiffen. 
 Die Notwendigkeit, die AWS Management Console zu nutzen, soll entfallen, um die Verwaltung und Bereitstellung der Ressourcen effizienter und einfacher zu gestalten.
 
 * __Standardisierung und Wiederverwendbarkeit:__
@@ -132,7 +132,7 @@ Die Validierung des Codes findet Vortlaufend während der Entwicklung statt. Am 
 
 __Nicht Teil des Projektes:__  
 
-Das Bereitstellen von weiteren Ressourcen, abgesehen von EC2-Instanzen, VPCs, Security Groups usw. ist nicht vorgesehen. Im Rahmen des Projekts werden Ressourcen ausschliesslich per Skript erstellt und gelöscht. Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgt nicht automatisiert und ist auch nicht Bestandteil des Projekt.
+Das Bereitstellen von weiteren Ressourcen, abgesehen von EC2-Instanzen, VPCs, Security Groups usw. ist nicht vorgesehen. Im Rahmen des Projekts werden Ressourcen ausschliesslich per Script erstellt und gelöscht. Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgt nicht automatisiert und ist auch nicht Bestandteil des Projekt.
 
 __Risikoanalyse:__  
 
@@ -158,9 +158,9 @@ Das Risiko-Level  wird in folgende Gruppen Eingestuft:
 
 | Risiko-ID | Beschreibung                                                                    | Wahrscheinlichkeit | Auswirkung   | Risiko-Level | Farbe            | Massnahmen                                                           |
 |-----------|---------------------------------------------------------------------------------|--------------------|--------------|--------------|------------------|----------------------------------------------------------------------|
-| R1        | Skript löscht versehentlich Ressourcen ohne Rückfrage                           | 2 (niedrig)        | 2 (niedrig)  | 4            | 🟢Niedrig       | --confirm-Abfrage einbauen, dry-run verwenden, Logging aktivieren    |
+| R1        | Script löscht versehentlich Ressourcen ohne Rückfrage                           | 2 (niedrig)        | 2 (niedrig)  | 4            | 🟢Niedrig       | --confirm-Abfrage einbauen, dry-run verwenden, Logging aktivieren    |
 | R2        | IAM-Rollen sind unzureichend konfiguriert                                       | 2 (niedrig)        | 3 (hoch)     | 6            | 🟡Mittel        | IAM-Rollen prüfen und anpassen, Least-Privilege-Prinzip umsetzen     |
-| R3        | Skriptfehler durch fehlende Validierung oder Error Handling                     | 3 (mittel)         | 3 (mittel)   | 9            | 🟡Mittel        | set -e, trap, und Code regelmässig Validieren                        |                  |
+| R3        | Scriptfehler durch fehlende Validierung oder Error Handling                     | 3 (mittel)         | 3 (mittel)   | 9            | 🟡Mittel        | set -e, trap, und Code regelmässig Validieren                        |                  |
 | R4        | Unkontrollierte Ressourcenerstellung                                            | 3 (mittel)         | 4 (hoch)     | 12           | 🟠Hoch          | Ressourcen mit Tags versehen, regelmässige Bereinigung               |
 | R5        | Falsch konfigurierter Code mit sensiblen Daten oder fehlerhaften Berechtigungen | 3 (mittel)         | 5 (sehr hoch)| 15           | 🔴Sehr hoch     | Zugangsdaten nicht als Klartext speichern, SSH-Keys für EC2 nutzen   |
 
@@ -507,7 +507,7 @@ __EC2 Script:__
 Das EC2-Script übernimmt die vollständige Bereitstellung, Konfiguration sowie das Löschen von EC2-Instanzen. Es beinhaltet die gleichen Variablen wie das Main-Script und ist ähnlich aufgebaut. Das Script bietet dem Benutzer ein übersichtliches Menü zur Auswahl verschiedener Operationen, darunter das Erstellen, Anzeigen und Löschen von EC2-Instanzen.
 
 Der Header ist bewusst schlicht gehalten, ohne eine ASCII-Schriftzug jedoch wird dennoch klar anzeigt, in welchem Menü sich der Benutzer befindet.
-Bei der Auswahl einer Option wird ein separater Bash-Prozess gestartet, der das jeweils referenzierte Unterskript ausführt (z. B. ```ec2_create.bash```, ```ec2_list.bash```, ```ec2_delete.bash```). Nach Abschluss des Prozesses gibt das Script eine Zusammenfassung der ausgeführten Aktion aus und kehrt nach bestätigung des Anwenders ins EC2-Menü zurück.
+Bei der Auswahl einer Option wird ein separater Bash-Prozess gestartet, der das jeweils referenzierte Unterscript ausführt (z. B. ```ec2_create.bash```, ```ec2_list.bash```, ```ec2_delete.bash```). Nach Abschluss des Prozesses gibt das Script eine Zusammenfassung der ausgeführten Aktion aus und kehrt nach bestätigung des Anwenders ins EC2-Menü zurück.
 
 Zur Ausführung des Scripts wurde eine Hauptschleife definiert. Die Funktion ruft in einer Endlosschleife wiederholt folgende vier Funktionen auf:
 
@@ -517,9 +517,9 @@ Zur Ausführung des Scripts wurde eine Hauptschleife definiert. Die Funktion ruf
 
 ```handle_input``` – verarbeitet die Benutzereingabe.
 
-```pause``` – hält das Skript kurz an, bis der Benutzer eine Taste drückt.
+```pause``` – hält das Script kurz an, bis der Benutzer eine Taste drückt.
 
-Der ```if```-Block am Ende sorgt dafür, dass die Funktion nur ausgeführt wird, wenn das Script direkt aufgerufen wird, nicht wenn es von einem anderen Script importiert oder gesourced wird. Das macht das Skript modular und wiederverwendbar.
+Der ```if```-Block am Ende sorgt dafür, dass die Funktion nur ausgeführt wird, wenn das Script direkt aufgerufen wird, nicht wenn es von einem anderen Script importiert oder gesourced wird. Das macht das Script modular und wiederverwendbar.
 
 ```bash
 #!/bin/bash
