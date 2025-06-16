@@ -15,17 +15,19 @@ print_header() {
     local menu_name
     menu_name=$(echo "$script_name" | sed 's/_menu\.bash//' | tr '[:lower:]' '[:upper:]')
 
+    local session_info="$USER@$HOSTNAME | $(date '+%Y-%m-%d %H:%M')"
+
     echo -e "${BOLD_WHITE}"
-    echo "╔══════════════════════════════════════════════════════════════╗"
-    echo "║                                                              ║"
+    echo "╔════════════════════════════════════════════════════════════════════╗"
+    echo "║                                                                    ║"
     echo -ne "║"
     echo -ne "${BOLD_YELLOW}"
-    printf "%*sMENU%*s" $(((62 - ${#menu_name}) / 2)) "$menu_name " $(((61 - ${#menu_name}) / 2)) ""
+    printf "%*s%*s" $(((68 + ${#menu_name}) / 2)) "$menu_name MENU" $(((67 - ${#menu_name}) / 2)) ""
     echo -e "${BOLD_WHITE}║"
-    echo "║                                                              ║"
-    echo "╠══════════════════════════════════════════════════════════════╣"
-    printf "║ Session Info : %-45s ║\n" "$USER@$HOSTNAME | $DATE"
-    echo "╚══════════════════════════════════════════════════════════════╝"
+    echo "║                                                                    ║"
+    echo "╠════════════════════════════════════════════════════════════════════╣"
+    printf "║ Session Info : %-53s ║\n" "$session_info"
+    echo "╚════════════════════════════════════════════════════════════════════╝"
     echo -e "${NC}"
 }
 
