@@ -345,6 +345,18 @@ Für diesen Sprint wurde erneut eine Kapazität von fünf Story Points festgeleg
 
 __Sprint Review:__
 
+Abgeschlossene User Storys:  
+
+* [SCRUM-19, Logging einbauen](https://marlon-burri.atlassian.net/browse/SCRUM-19)✅-DONE
+* [SCRUM-20, Fehlerbehandlung verbessern](https://marlon-burri.atlassian.net/browse/SCRUM-20)✅-DONE
+* [SCRUM-21, Design überarbeiten](https://marlon-burri.atlassian.net/browse/SCRUM-21)✅-DONE
+* [SCRUM-22, Bedienbarkeit Prüfen](https://marlon-burri.atlassian.net/browse/SCRUM-22)✅-DONE
+* [SCRUM-61, Testing durchführen](https://marlon-burri.atlassian.net/browse/SCRUM-61)✅-DONE
+
+
+![Sprint3Review](img/Sprint3Review.png)
+*Screenshot von meiner Timeline nach dem dritten Sprint.*
+
 ### 3.4.4 Sprint 4
 
 __Sprint Planning:__
