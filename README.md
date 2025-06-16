@@ -823,7 +823,7 @@ Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführ
 | Erwartetes Ergebnis    | Das Skript bricht ab und meldet, dass keine gültige ID eingegeben wurde.   |
 | Testablauf             | 1. Skript starten<br>2. Bei der Abfrage keine ID eingeben<br>3. Bestätigen |
 | Effektives Ergebnis    | Fehlermeldung wird ausgegeben<br>Skript wird abgebrochen                   |
-| Screenshotg / Logfiles | -                                                                          |
+| Screenshotg / Logfiles | ![Testfall4](img/Testing/Testfall4.gif)<br>*GIF Wrong Input Script*                                                                            |
 | Problemstellungen      | -                                                                          |
 | Testergebnis           | Erfolgreich                                                                |
 
