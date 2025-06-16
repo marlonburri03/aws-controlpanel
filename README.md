@@ -313,7 +313,7 @@ um den formalen und inhaltlichen Anforderungen besser zu entsprechen.
 Der zweite Sprint konzentrierte sich vollständig auf die Umsetzung der Scripte. Ziel war es, ein erstes funktionsfähiges Control Panel zu entwickeln, das die grundlegenden Anforderungen des Projekts erfüllt.
 Das Sprintziel wurde vollständig erreicht, alle eingeplanten User Stories sowie die zugehörigen Subtasks konnten erfolgreich umgesetzt werden.
 In [Abschnitt 5](https://gitlab.com/semesterarbeiten1/1-semester/aws-controlpanel#5-umsetzung) der Projektdokumentation, der sich mit der technischen Umsetzung befasst, wurden sämtliche Arbeitsschritte nachvollziehbar dokumentiert, 
-inklusive relevanter Codeausschnitte und unterstützender Screenshots. Als Nächstes steht das Testen sowie die Erweiterung und Optimierung einzelner Funktionen der SCripte an. 
+inklusive relevanter Codeausschnitte und unterstützender Screenshots. Als Nächstes steht das Testen sowie die Erweiterung und Optimierung einzelner Funktionen der Scripte an. 
 
 Abgeschlossene User Storys:  
 
@@ -344,6 +344,17 @@ Für diesen Sprint wurde erneut eine Kapazität von fünf Story Points festgeleg
 *Screenshot von meinem Sprint 3 Backlog in Jira.*
 
 __Sprint Review:__
+
+Zu Beginn der Sprint Review wurden die abgeschlossenen User Stories präsentiert und der aktuelle Stand der Arbeit aufgezeigt. 
+Der dritte Sprint konnte erfolgreich abgeschlossen werden, sodass mir in den kommenden Wochen noch ausreichend Zeit bleibt, einen sauberen Projektabschluss vorzubereiten und bei einzelnen Punkten der Bewertungsmatrix weitere Verbesserungen vorzunehmen.
+
+Zu diesem Zweck habe ich gemeinsam mit der Lehrperson die Bewertungsmatrix durchgesehen. Dabei wurde deutlich, dass insbesondere Punkt 5, die Reflexionstiefe, noch Optimierungspotenzial bietet. 
+Konkret wurde bemängelt, dass in meinen bisherigen Sprint Reviews zu wenig auf mögliche Vorbehalte gegenüber meiner Lösung eingegangen wurde. 
+Ebenso fehlte eine kritische Auseinandersetzung mit alternativen Lösungsansätzen oder Programmiersprachen, die sich ebenfalls für die Umsetzung der Semesterarbeit geeignet hätten.
+Insgesamt bin ich jedoch sehr zufrieden mit der bisher geleisteten Arbeit und blicke zuversichtlich auf den Abschluss der Semesterarbeit. 
+Das Sprint-Ziel von Sprint 3 wurde vollständig erreicht, alle geplanten User Stories konnten erfolgreich umgesetzt werden.
+
+Im nächsten Sprint steht die Finalisierung der Arbeit im Fokus. Dabei geht es vor allem um die Fertigstellung des Projektabschlusses sowie um die sorgfältige Kontrolle und Überarbeitung der gesamten Arbeit.
 
 Abgeschlossene User Storys:  
 
