@@ -941,6 +941,20 @@ pie title Durchgeführte Testfälle
 # 7 Projektabschluss
 
 ## 7.1 Technisches Fazit
+Diese Semesterarbeit Arbeit bietet eine solide technische Grundlage für die automatisierte Verwaltung von AWS-Ressourcen. 
+Durch ein eigens entwickeltes Control Panel konnten Ressourcen in AWS effizient bereitgestellt, konfiguriert und gelöscht werden. 
+Die modulare Scriptstruktur und die Benutzerfreundliche Eingabeführung erleichtern den Umgang mit der AWS-Infrastruktur erheblich 
+und zeigen klar die Vorteile automatisierter Prozesse gegenüber manuellen Abläufen.
+
+Trotz der funktionalen Umsetzung wirft das Projekt bei näherer Betrachtung Fragen hinsichtlich Skalierbarkeit und langfristiger Verwaltbarkeit auf. 
+Ziel war es, ein Tool zu entwickeln, das komplett Unabhängig von der Weboberfläche funktioniert. Dieses Ziel wurde grundsätzlich erreicht,
+allerdings mussten dafür bestimmte Parameter eingeschränkt oder mit Standardwerten versehen werden, etwa bei der Auswahl eines SSH-Keys oder der AWS-Region.
+Da die Entwicklung in einer isolierten Testumgebung stattfand, bleibt offen, wie gut sich das Control Panel in realen Szenarien bewährt und welchen tatsächlichen Mehrwert es dort generiert.
+
+Die Benutzerfreundlichkeit konnte durch die Reduktion konfigurierbarer Optionen deutlich verbessert werden. Einige Parameter müssen jedoch weiterhin manuell eingegeben werden, 
+da keine praktikablen Standardwerte definiert werden konnten. Zukünftige Erweiterungen wie vordefinierte Profile oder dynamische Ressourcenabfragen bieten hier weiteres Optimierungspotenzial.
+Insgesamt zeigt die Arbeit grossartig, wie sich Cloud-Ressourcen in AWS mithilfe eines eigenen Control Panels strukturiert und automatisiert verwalten lassen. 
+Mit Blick auf Themen wie Sicherheit, Fehlerbehandlung und Mehrbenutzerfähigkeit bildet das Projekt eine wertvolle Grundlage für weiterführende Entwicklungen.
 
 ## 7.2 Persönliches Fazit
 
