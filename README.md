@@ -372,6 +372,17 @@ Abgeschlossene User Storys:
 
 __Sprint Planning:__
 
+Wie vor jedem Sprint mussten zunächst alle User Storys gemäss der [Definition of Done (DoD)](https://gitlab.com/semesterarbeiten1/1-semester/aws-controlpanel#32-definition-of-ready-dor) 
+vollständig und korrekt vorbereitet werden. Ziel des vierten Sprints war es, die letzten Schritte zur Fertigstellung der Semesterarbeit umzusetzen. Dazu gehörten insbesondere der 
+Projektabschluss mit technischem und persönlichem Fazit sowie das Verfassen des Schlussworts.
+
+Zusätzlich wurde eine separate User Story erstellt, welche die abschließende Prüfung der Quellen sowie die Überarbeitung des Glossars beinhaltete. 
+Nach Abschluss dieses Sprints sollte die Semesterarbeit in einem abgabereifen Zustand sein.
+
+Der vierte Sprint wurde für den Zeitraum vom __16. Juni bis 30. Juni 2025__ angesetzt und entsprechend in Jira erfasst. 
+Die dazugehörigen User Storys wurden ins Sprint Backlog verschoben. Wie in den vorherigen Sprints wurde die verfügbare Kapazität mit __fünf Story Points__ festgelegt 
+und auf die einzelnen Aufgaben verteilt.
+
 ![Sprint4Planning](img/Sprint4Planning.png)
 *Screenshot von meinem Sprint 4 Backlog in Jira.*
 
