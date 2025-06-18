@@ -941,7 +941,7 @@ pie title Durchgeführte Testfälle
 # 7 Projektabschluss
 
 ## 7.1 Technisches Fazit
-Diese Semesterarbeit Arbeit bietet eine solide technische Grundlage für die automatisierte Verwaltung von AWS-Ressourcen. 
+Diese Semesterarbeit bietet eine solide technische Grundlage für die automatisierte Verwaltung von AWS-Ressourcen. 
 Durch ein eigens entwickeltes Control Panel konnten Ressourcen in AWS effizient bereitgestellt, konfiguriert und gelöscht werden. 
 Die modulare Scriptstruktur und die Benutzerfreundliche Eingabeführung erleichtern den Umgang mit der AWS-Infrastruktur erheblich 
 und zeigen klar die Vorteile automatisierter Prozesse gegenüber manuellen Abläufen.
