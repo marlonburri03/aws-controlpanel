@@ -927,6 +927,17 @@ Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführ
 
 &nbsp;
 
+__Testresultat:__  
+Alle definierten Tests waren erfolgreich. Das Resultat ist entsprechend in folgender Grafik dargestellt.
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#00FF00', 'pie2': '#ff0000'}}}%%
+pie title Durchgeführte Testfälle
+    "Erfolgreich: 10" : 10
+    "Fehlgeschlagen: 0" : 0
+```
+
+
 # 7 Projektabschluss
 
 ## 7.1 Technisches Fazit
