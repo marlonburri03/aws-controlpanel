@@ -84,7 +84,7 @@ Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so 
 | Sprint 2         | Netzwerkautomatisierung, Server Deployment und Automatisierung       | 19.05.25 – 02.06.25          | Automatisierte Erstellung der Infrastruktur (Instanzen, VPCs, Subnets etc.).|
 | Sprint 3         | Optimierung und Bedienbarkeit und Testing                            | 02.06.25 – 16.06.25          | Code verbessern, Logging und Fehlerbehandlung einbauen, erste Tests.        |
 | Sprint 4         | Dokumentation Nachbearbeitung                                        | 16.06.25 – 30.06.25          | Finales Testing und Dokumentation abschliessen.                             |
-| Sprint 5         | Finalisierung der Semesterarbeit                                     | 30.06.25 – 09.07.25          | Dokumentation Abschliessen und Projekt abgabebereit machen.                 |
+| Sprint 5         | Finalisierung der Semesterarbeit                                     | 30.06.25 – 09.07.25          | Dokumentation Prüfen und Projekt abgabebereit machen.                 |
 
 &nbsp;
 
@@ -735,9 +735,9 @@ log() {
 
 __Task scripts:__ 
 
-In meinem Projekt wurden die Scripte in zwei Hauptkategorien unterteilt: Menu-Scripte und Task-Scripte. Die Menu-Scripte dienen der grafisch unterstütztung und Darstellung von Auswahlmöglichkeiten innerhalb der Kommandozeilenoberfläche. Sie bilden sozusagen das interaktive Frontend des Tools und führen die Benutzer/innen durch das Menüsystem.
+In meinem Projekt wurden die Scripte in zwei Hauptkategorien unterteilt: Menu-Scripte und Task-Scripte. Die Menu-Scripte befinden sich im Ordner ```bin``` und dienen der grafisch unterstütztung und Darstellung von Auswahlmöglichkeiten innerhalb der Kommandozeilenoberfläche. Sie bilden sozusagen das interaktive Frontend des Tools und führen die Benutzer/innen durch das Menüsystem.
 
-Die Task-Scripte hingegen übernehmen die eigentliche Umsetzung der gewünschten Funktionen, wie etwa das Erstellen, Löschen oder Auflisten von AWS-Ressourcen z.B EC2-Instanzen, Security Groups, Subnetzen usw. Diese Scripte wurden nach einem klar definierten und wiederverwendbaren Aufbauprinzip entwickelt. Dadurch können sie nicht nur vom Hauptmenü aus aufgerufen, sondern auch völlig eigenständig und isoliert ausgeführt werden. Das ist besonders hilfreich beim Debugging, bei Tests oder für den gezielten Einsatz in automatisierten Prozessen.
+Die Task-Scripte hingegen liegen im Ordner ```scripts``` übernehmen die eigentliche Umsetzung der gewünschten Funktionen, wie etwa das Erstellen, Löschen oder Auflisten von AWS-Ressourcen z.B EC2-Instanzen, Security Groups, Subnetzen usw. Diese Scripte wurden nach einem klar definierten und wiederverwendbaren Aufbauprinzip entwickelt. Dadurch können sie nicht nur vom Hauptmenü aus aufgerufen, sondern auch völlig eigenständig und isoliert ausgeführt werden. Das ist besonders hilfreich beim Debugging, bei Tests oder für den gezielten Einsatz in automatisierten Prozessen.
 
 Jedes Task-Script beginnt mit dem Laden einer zentralen Initialisierungsdatei (```init_env.bash```), die für eine einheitliche Umgebung sorgt. Anschließend erfolgt ein strukturierter Logeintrag, um Startzeit und Scriptname zu dokumentieren. Die eigentliche Logik ist in einer klar benannten Funktion gekapselt, was die Lesbarkeit und die Wartung vereinfacht. Fehlerbehandlung, Nutzereingaben und Rückgabewerte sind standardisiert umgesetzt. Zusätzlich wird durch eine vorgelagerte Funktionsprüfung (```check_aws_requirements```) sichergestellt, dass notwendige Voraussetzungen wie gültige Credentials oder die Verfügbarkeit der AWS CLI erfüllt sind. Diese strukturierte Trennung und der modulare Aufbau sorgen nicht nur für eine hohe Wartbarkeit, sondern auch für Flexibilität im Umgang mit den einzelnen Komponenten des Projekts. Um den strukturellen Aufbau exemplarisch darzustellen wurde das ```securitygroup_delete.bash``` genommen, das genau nach diesem Prinzip aufgebaut ist und tadellos funktioniert.
 
