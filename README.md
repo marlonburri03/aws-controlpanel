@@ -78,13 +78,13 @@ Das Tool wird eingesetzt, da es im agilen Projektmanagement üblich ist, dass es
 Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so einen optimalen Überblick über den Projektverlauf.
 
 **Der Zeitplan für die Projektsprints sieht wie folgt aus:**
-| Sprint           | Titel                                 | Zeitraum                     | Ziel                                                                      |
-|------------------|---------------------------------------|------------------------------|---------------------------------------------------------------------------|
-| Sprint 1         | Grundlagen und Initialisierung        | 05.05.25 – 19.05.25          | Projektstruktur, Planung, AWS-Zugriffe einrichten, erstes Basis Script.   |
-| Sprint 2         | Netzwerkautomatisierung               | 19.05.25 – 02.06.25          | Automatisierte Erstellung der Infrastruktur (VPCs, Subnets, Routing etc.) |
-| Sprint 3         | Server Deployment und Automatisierung | 02.06.25 – 16.06.25          | EC2-Instanzen automatisiert erstellen/löschen und konfigurieren.          |
-| Sprint 4         | Optimierung und Bedienbarkeit         | 16.06.25 – 30.06.25          | Code verbessern, Logging und Fehlerbehandlung einbauen.                   |
-| Sprint 5         | Finalisierung und Nachbearbeitung     | 30.06.25 – 09.07.25          | Finales Testing und Dokumentation abschliessen.                            |
+| Sprint           | Titel                                                                | Zeitraum                     | Ziel                                                                        |
+|------------------|----------------------------------------------------------------------|------------------------------|-----------------------------------------------------------------------------|
+| Sprint 1         | Grundlagen und Initialisierung                                       | 05.05.25 – 19.05.25          | Projektstruktur, Planung, AWS-Zugriffe einrichten, erstes Basis Script.     |
+| Sprint 2         | Netzwerkautomatisierung, Server Deployment und Automatisierung       | 19.05.25 – 02.06.25          | Automatisierte Erstellung der Infrastruktur (Instanzen, VPCs, Subnets etc.).|
+| Sprint 3         | Optimierung und Bedienbarkeit und Testing                            | 02.06.25 – 16.06.25          | Code verbessern, Logging und Fehlerbehandlung einbauen, erste Tests.        |
+| Sprint 4         | Dokumentation Nachbearbeitung                                        | 16.06.25 – 30.06.25          | Finales Testing und Dokumentation abschliessen.                             |
+| Sprint 5         | Finalisierung der Semesterarbeit                                     | 30.06.25 – 09.07.25          | Dokumentation Abschliessen und Projekt abgabebereit machen.                 |
 
 &nbsp;
 
