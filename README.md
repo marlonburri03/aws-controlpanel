@@ -376,7 +376,7 @@ Wie vor jedem Sprint mussten zunächst alle User Storys gemäss der [Definition 
 vollständig und korrekt vorbereitet werden. Ziel des vierten Sprints war es, die letzten Schritte zur Fertigstellung der Semesterarbeit umzusetzen. Dazu gehörten insbesondere der 
 Projektabschluss mit technischem und persönlichem Fazit sowie das Verfassen des Schlussworts.
 
-Zusätzlich wurde eine separate User Story erstellt, welche die abschließende Prüfung der Quellen sowie die Überarbeitung des Glossars beinhaltete. 
+Zusätzlich wurde eine separate User Story erstellt, welche die abschliessende Prüfung der Quellen sowie die Überarbeitung des Glossars beinhaltete. 
 Nach Abschluss dieses Sprints sollte die Semesterarbeit in einem abgabereifen Zustand sein.
 
 Der vierte Sprint wurde für den Zeitraum vom __16. Juni bis 30. Juni 2025__ angesetzt und entsprechend in Jira erfasst. 
@@ -739,7 +739,7 @@ In meinem Projekt wurden die Scripte in zwei Hauptkategorien unterteilt: Menu-Sc
 
 Die Task-Scripte hingegen liegen im Ordner ```scripts``` übernehmen die eigentliche Umsetzung der gewünschten Funktionen, wie etwa das Erstellen, Löschen oder Auflisten von AWS-Ressourcen z.B EC2-Instanzen, Security Groups, Subnetzen usw. Diese Scripte wurden nach einem klar definierten und wiederverwendbaren Aufbauprinzip entwickelt. Dadurch können sie nicht nur vom Hauptmenü aus aufgerufen, sondern auch völlig eigenständig und isoliert ausgeführt werden. Das ist besonders hilfreich beim Debugging, bei Tests oder für den gezielten Einsatz in automatisierten Prozessen.
 
-Jedes Task-Script beginnt mit dem Laden einer zentralen Initialisierungsdatei (```init_env.bash```), die für eine einheitliche Umgebung sorgt. Anschließend erfolgt ein strukturierter Logeintrag, um Startzeit und Scriptname zu dokumentieren. Die eigentliche Logik ist in einer klar benannten Funktion gekapselt, was die Lesbarkeit und die Wartung vereinfacht. Fehlerbehandlung, Nutzereingaben und Rückgabewerte sind standardisiert umgesetzt. Zusätzlich wird durch eine vorgelagerte Funktionsprüfung (```check_aws_requirements```) sichergestellt, dass notwendige Voraussetzungen wie gültige Credentials oder die Verfügbarkeit der AWS CLI erfüllt sind. Diese strukturierte Trennung und der modulare Aufbau sorgen nicht nur für eine hohe Wartbarkeit, sondern auch für Flexibilität im Umgang mit den einzelnen Komponenten des Projekts. Um den strukturellen Aufbau exemplarisch darzustellen wurde das ```securitygroup_delete.bash``` genommen, das genau nach diesem Prinzip aufgebaut ist und tadellos funktioniert.
+Jedes Task-Script beginnt mit dem Laden einer zentralen Initialisierungsdatei (```init_env.bash```), die für eine einheitliche Umgebung sorgt. Anschliessend erfolgt ein strukturierter Logeintrag, um Startzeit und Scriptname zu dokumentieren. Die eigentliche Logik ist in einer klar benannten Funktion gekapselt, was die Lesbarkeit und die Wartung vereinfacht. Fehlerbehandlung, Nutzereingaben und Rückgabewerte sind standardisiert umgesetzt. Zusätzlich wird durch eine vorgelagerte Funktionsprüfung (```check_aws_requirements```) sichergestellt, dass notwendige Voraussetzungen wie gültige Credentials oder die Verfügbarkeit der AWS CLI erfüllt sind. Diese strukturierte Trennung und der modulare Aufbau sorgen nicht nur für eine hohe Wartbarkeit, sondern auch für Flexibilität im Umgang mit den einzelnen Komponenten des Projekts. Um den strukturellen Aufbau exemplarisch darzustellen wurde das ```securitygroup_delete.bash``` genommen, das genau nach diesem Prinzip aufgebaut ist und tadellos funktioniert.
 
 ```bash
 #!/bin/bash
@@ -814,7 +814,7 @@ f --> b
 
 Getestet werden die jeweiligen Prozesse zur Erstellung und Löschung von AWS-Ressourcen, wie z. B. EC2-Instanzen oder Security Groups, sowie deren Funktionalität und Ablauf im Terminal. Alle Testfälle sind so konzipiert, dass sie gemeinsam die definierten Projektziele vollständig abdecken. Ein erfolgreiches Bestehen aller Testfälle bestätigt die korrekte Umsetzung des AWS-Controlpanels.
 
-Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführt. Diese befindet sich auf meinem vorhandenen Laptop, wie in der Projektbeschreibung definiert.
+Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführt. Diese befindet sich auf meinem vorhandenen Laptop, wie in der Projektbeschreibung definiert.
 
 ## 6.1 Testfälle
 
@@ -931,7 +931,7 @@ Die Tests werden ausschließlich in der definierten Projektumgebung durchgeführ
 | Voraussetzungen        | - Zugriff auf Skript<br>- AWS CLI konfiguriert                             |
 | Erwartetes Ergebnis    | Task wird unabhängig vom Menü ausgeführt                                  |
 | Testablauf             | 1. Terminal öffnen<br>2. Skript direkt starten<br>3. Ergebnis prüfen       |
-| Effektives Ergebnis    | Task wird ordnungsgemäß ausgeführt                                         |
+| Effektives Ergebnis    | Task wird ordnungsgemäss ausgeführt                                         |
 | Screenshotg / Logfiles | -                                                                          |
 | Problemstellungen      | -                                                                          |
 | Testergebnis           | Erfolgreich                                                                |
@@ -988,6 +988,8 @@ Darüber hinaus könnte das Tool um zusätzliche AWS-Dienste wie S3, RDS, IAM us
 Ein weiterer Schritt in Richtung professioneller Infrastrukturverwaltung wäre die Anbindung an deklarative Tools wie z.B Terraform. Dadurch könnten wiederholbare, versionierbare und überprüfbare Deployments realisiert werden. In diesem Zusammenhang wäre auch der Einsatz von CI/CD-Pipelines sinnvoll, um die Bereitstellung und Aktualisierung des Control Panels sowie der zugrunde liegenden Infrastruktur automatisiert und kontrolliert ablaufen zu lassen. Dies würde die Wartbarkeit verbessern, manuelle Fehler reduzieren und die Entwicklung deutlich beschleunigen.
 
 # 8 Schlusswort
+
+Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funktionale Lösung zur Verwaltung von Cloud-Ressourcen darstellt, sondern auch eine wertvolle Lernerfahrung in Bezug auf Automatisierung, Strukturierung und den praktischen Umgang mit der AWS-CLI war. Die Umsetzung hat gezeigt, wie durchdachte Planung und kontinuierliche Verbesserung zu einem Werkzeug führen können, das sowohl technisch robust als auch benutzerfreundlich ist. Das Projekt bildet eine solide Grundlage für zukünftige Erweiterungen und bietet viele Ansatzpunkte, um es weiterzuentwickeln und noch stärker an professionelle Anforderungen anzupassen.
 
 ## 8.1 Glossar
 
