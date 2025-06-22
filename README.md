@@ -43,7 +43,7 @@ flowchart LR
 
 ## 2.1 Problemstellung
 
-Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen, VPCs, Security Groups und mehr vollständig automatisiert per Script erstellen und verwalten. Als wir im AWS-Cloud Modul vermehrt EC2-Instanzen sowie die dazugehörigen VPCs und Subnetze manuell erstellen musste, wurde mir schnell klar, dass dieser Prozess automatisiert werden muss. So entstand die Idee zum Control Panel. Der entscheidende Vorteil dabei ist, dass die Nutzung der AWS-Weboberfläche nahezu überflüssig wird. In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren.
+Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen[^3], VPCs[^4], Security Groups und mehr vollständig automatisiert per Script erstellen und verwalten. Als wir im AWS-Cloud Modul vermehrt EC2-Instanzen sowie die dazugehörigen VPCs und Subnetze manuell erstellen musste, wurde mir schnell klar, dass dieser Prozess automatisiert werden muss. So entstand die Idee zum Control Panel. Der entscheidende Vorteil dabei ist, dass die Nutzung der AWS-Weboberfläche nahezu überflüssig wird. In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren.
 
 
 ## 2.2 Aufgabenstellung
@@ -92,7 +92,7 @@ Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so 
 
 * AI-Tools (Chatgpt, Gemini, Copilot etc.)
 * AWS-Academy
-* AWS-CLI [^1]
+* AWS-CLI
 * Bash
 * Cloud-init
 * Git
@@ -119,7 +119,7 @@ Die komplette Dokumentation des Projekts wird fortlaufend in einer Markdown Date
 __Arbeitsumgebung:__  
 
 Die Umsetzung der Arbeit erfolgt lokal auf meinem Laptop. Der Bash-Code wird dort entwickelt und anschliessend in mein GitLab-Projekt gepusht.
-Über die AWS-CLI [^1] werden die benötigten Ressourcen in der AWS-Cloud erstellt, verwaltet und aufgerufen.
+Über die AWS-CLI werden die benötigten Ressourcen in der AWS-Cloud erstellt, verwaltet und aufgerufen.
 Als Code-Editor kommt Visual Studio Code zum Einsatz. Zur Veranschaulichung habe ich mit draw.io eine schematische Darstellung meiner Arbeitsumgebung erstellt.
 
 ![Arbeitsumgebung](img/Architecture.png)
@@ -971,7 +971,7 @@ Mit Blick auf Themen wie Sicherheit, Fehlerbehandlung und Mehrbenutzerfähigkeit
 ## 7.2 Persönliches Fazit
 
 Die Arbeit an diesem Projekt war anspruchsvoll und forderte mich fachlich heraus. Gleichzeitig war es aber auch eine Gelegenheit zu persönlichen Weiterentwicklung.
-Durch die Entwicklung eines eigenen AWS-Control Panels konnte ich mein Verständnis für die Automatisierung und Steuerung von Cloud-Ressourcen mit der AWS CLI und Bash-Skripten deutlich vertiefen. Der Aufbau eines übersichtlichen und funktionalen Control Panels erforderte nicht nur technisches Know-how, sondern auch ein gutes Gespür für Benutzerführung und Prozessgestaltung.
+Durch die Entwicklung eines eigenen AWS-Control Panels konnte ich mein Verständnis für die Automatisierung und Steuerung von Cloud-Ressourcen mit der AWS CLI und Bash-Scripten[^2] deutlich vertiefen. Der Aufbau eines übersichtlichen und funktionalen Control Panels erforderte nicht nur technisches Know-how, sondern auch ein gutes Gespür für Benutzerführung und Prozessgestaltung.
 
 Ein wichtiger Punkt, der mir während der Umsetzung besonders bewusst wurde, war die klare Abgrenzung. Sei es bei der Auswahl und Verknüpfung von AWS-Diensten oder der automatisierten Erstellung von Ressourcen wie EC2-Instanzen, VPCs, Security Groups usw. Dabei zeigte sich, wie wichtig eine sorgfältige Planung und ein schrittweises, iteratives Vorgehen sind, um auch bei komplexeren Anforderungen den Überblick zu behalten und stabile Ergebnisse zu erzielen.
 
@@ -989,7 +989,7 @@ Ein weiterer Schritt in Richtung professioneller Infrastrukturverwaltung wäre d
 
 # 8 Schlusswort
 
-Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funktionale Lösung zur Verwaltung von Cloud-Ressourcen darstellt, sondern auch eine wertvolle Lernerfahrung in Bezug auf Automatisierung, Strukturierung und den praktischen Umgang mit der AWS-CLI [^1] war. Die Umsetzung hat gezeigt, wie durchdachte Planung und kontinuierliche Verbesserung zu einem Werkzeug führen können, das sowohl technisch robust als auch benutzerfreundlich ist. Das Projekt bildet eine solide Grundlage für zukünftige Erweiterungen und bietet viele Ansatzpunkte, um es weiterzuentwickeln und noch stärker an professionelle Anforderungen anzupassen.
+Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funktionale Lösung zur Verwaltung von Cloud-Ressourcen darstellt, sondern auch eine wertvolle Lernerfahrung in Bezug auf Automatisierung, Strukturierung und den praktischen Umgang mit der AWS-CLI war. Die Umsetzung hat gezeigt, wie durchdachte Planung und kontinuierliche Verbesserung zu einem Werkzeug führen können, das sowohl technisch robust als auch benutzerfreundlich ist. Das Projekt bildet eine solide Grundlage für zukünftige Erweiterungen und bietet viele Ansatzpunkte, um es weiterzuentwickeln und noch stärker an professionelle Anforderungen anzupassen.
 
 ## 8.2 Quellenverzeichnis
 
@@ -1019,4 +1019,5 @@ Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funkt
 [^16]: Definition of Done (DoD) sind festgelegte Kriterien, wann eine Aufgabe oder User Story als vollständig erledigt gilt.  
 [^17]: Definition of Ready (DoR) sind Voraussetzungen, die erfüllt sein müssen, bevor eine User Story bearbeitet werden kann.  
 [^18]: Jira ist ein Projektmanagement-Tool zur Planung, Verwaltung und Visualisierung von Aufgaben und Sprints.  
-[^19]: Git / GitLab sind Versionsverwaltungssystem bzw. Plattform zur Quellcode-Verwaltung, Kollaboration und Nachverfolgung von Änderungen.  
+[^19]: Git / GitLab sind Versionsverwaltungssystem bzw. Plattform zur Quellcode-Verwaltung, Kollaboration und Nachverfolgung von Änderungen.
+[^20]: Bourne Again SHell (Bash) ist eine Unix-Shell und Skriptsprache, die häufig für die Automatisierung von Aufgaben und als Kommandozeile verwendet wird.
