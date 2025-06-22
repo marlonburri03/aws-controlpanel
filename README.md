@@ -952,6 +952,7 @@ pie title Durchgeführte Testfälle
 # 7 Projektabschluss
 
 ## 7.1 Technisches Fazit
+
 Diese Semesterarbeit bietet eine solide technische Grundlage für die automatisierte Verwaltung von AWS-Ressourcen. 
 Durch ein eigens entwickeltes Control Panel konnten Ressourcen in AWS effizient bereitgestellt, konfiguriert und gelöscht werden. 
 Die modulare Scriptstruktur und die Benutzerfreundliche Eingabeführung erleichtern den Umgang mit der AWS-Infrastruktur erheblich 
@@ -968,6 +969,15 @@ Insgesamt zeigt die Arbeit grossartig, wie sich Cloud-Ressourcen in AWS mithilfe
 Mit Blick auf Themen wie Sicherheit, Fehlerbehandlung und Mehrbenutzerfähigkeit bildet das Projekt eine wertvolle Grundlage für weiterführende Entwicklungen.
 
 ## 7.2 Persönliches Fazit
+
+Die Arbeit an diesem Projekt war anspruchsvoll und forderte mich fachlich heraus. Gleichzeitig war es aber auch eine Gelegenheit zu persönlichen Weiterentwicklung.
+Durch die Entwicklung eines eigenen AWS-Control Panels konnte ich mein Verständnis für die Automatisierung und Steuerung von Cloud-Ressourcen mit der AWS CLI und Bash-Skripten deutlich vertiefen. Der Aufbau eines übersichtlichen und funktionalen Control Panels erforderte nicht nur technisches Know-how, sondern auch ein gutes Gespür für Benutzerführung und Prozessgestaltung.
+
+Ein wichtiger Punkt, der mir während der Umsetzung besonders bewusst wurde, war die klare Abgrenzung. Sei es bei der Auswahl und Verknüpfung von AWS-Diensten oder der automatisierten Erstellung von Ressourcen wie EC2-Instanzen, VPCs, Security Groups usw. Dabei zeigte sich, wie wichtig eine sorgfältige Planung und ein schrittweises, iteratives Vorgehen sind, um auch bei komplexeren Anforderungen den Überblick zu behalten und stabile Ergebnisse zu erzielen.
+
+Trotz vieler positiver Erfahrungen hat das Projekt auch Grenzen aufgezeigt. Insbesondere hätte ich mir mehr Zeit gewünscht, um Aspekte wie die Skalierbarkeit der Ressourcen und die Erweiterbarkeit des Tools um noch mehr unabhängigkeit gegenüber der Weboberläche zu schaffen. Gleichzeitig war es genau diese Auseinandersetzung mit technischen Herausforderungen, die mir half, wichtige Soft Skills wie Ausdauer, Problemlösungskompetenz und strukturiertes Denken weiterzuentwickeln.
+
+Insgesamt hat mir dieses Projekt gezeigt, wie erfüllend es sein kann, eine Lösung von Grund auf zu konzipieren und umzusetzen. Und wie wichtig es ist, stets offen für neue Technologien und Denkansätze zu bleiben, um sich sowohl fachlich als auch persönlich weiterzuentwickeln.
 
 ## 7.3 Mögliche Weiterentwicklung
 
