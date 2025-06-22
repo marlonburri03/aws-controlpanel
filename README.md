@@ -1008,8 +1008,8 @@ Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funkt
 [^5]: __Subnet__ ist ein Teilnetz innerhalb einer VPC, das IP-Adressen segmentiert und Routing strukturiert.  
 [^6]: __Security Group__ ist eine virtuelle Firewall, die ein- und ausgehenden Datenverkehr für AWS-Ressourcen wie EC2-Instanzen regelt.  
 [^7]: __Cloud-init__ ist ein Konfigurationssystem, das bei der Initialisierung von Cloud-Instanzen automatisch Konfigurationen und Installationen ausführt.  
-[^8]: __Infrastructure as Code (IaC)__ ist ein Konzept, bei dem Infrastruktur mit Code definiert und versioniert wird, anstatt manuell über die Weboberfläche.  
-[^9]: __Modularisierung__ beschreibt die Strukturierung des Codes in eigenständige, wiederverwendbare Module (z. B. separate Skripte für EC2, VPC etc.).  
+[^8]: __Infrastructure as Code (IaC)__ ist ein Konzept, bei dem Infrastruktur mit Code definiert und versioniert wird.  
+[^9]: __Modularisierung__ beschreibt die Strukturierung des Codes in eigenständige, wiederverwendbare Module (z. B. separate Skripte).  
 [^10]: __Logging__ bedeutet die Protokollierung von Aktionen und Fehlermeldungen zur besseren Nachvollziehbarkeit und Fehlersuche.  
 [^11]: __Fehlerbehandlung__ ist die strukturierte Erkennung und Reaktion auf Fehlerzustände im Skript (z. B. falsche Eingaben, fehlende Ressourcen).  
 [^12]: __Init-Script__ ist das zentrale Skript zur Initialisierung der Umgebung, z. B. zur Festlegung von Farben, Variablen, Logging-Pfaden.  
@@ -1020,4 +1020,4 @@ Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funkt
 [^17]: __Definition of Ready (DoR)__ sind Voraussetzungen, die erfüllt sein müssen, bevor eine User Story bearbeitet werden kann.  
 [^18]: __Jira__ ist ein Projektmanagement-Tool zur Planung, Verwaltung und Visualisierung von Aufgaben und Sprints.  
 [^19]: __Git / GitLab__ sind Versionsverwaltungssystem bzw. Plattform zur Quellcode-Verwaltung, Kollaboration und Nachverfolgung von Änderungen.
-[^20]: __Bourne Again SHell (Bash)__ ist eine Unix-Shell und Skriptsprache, die häufig für die Automatisierung von Aufgaben und als Kommandozeile verwendet wird.
+[^20]: __Bourne Again Shell (Bash)__ ist eine Unix-Shell und Skriptsprache, die häufig für die Automatisierung von Aufgaben und als Kommandozeile verwendet wird.
