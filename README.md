@@ -50,7 +50,7 @@ Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen, VPCs, Sec
 
 Basierend auf der Problembeschreibung ist das Ziel dieses Projekts die Entwicklung eines Control Panels zur Verwaltung und Bereitstellung von AWS-Ressourcen. 
 Das System soll es ermöglichen, EC2-Instanzen, VPCs, Security Groups und weitere Cloud-Ressourcen vollständig per Script zu erstellen und zu verwalten, wodurch die Nutzung der AWS-Weboberfläche weitgehend überflüssig gemacht wird. 
-Diese Automatisierung soll effizient, fehlerfrei und schnell erfolgen. Für die Umsetzung wird AWS-CLI [^1], Bash und Cloud-init verwendet. 
+Diese Automatisierung soll effizient, fehlerfrei und schnell erfolgen. Für die Umsetzung wird AWS-CLI:[^1], Bash und Cloud-init verwendet. 
 Der gesamte Prozess der Ressourcenbereitstellung und Verwaltung wird durch Scripte automatisiert welche sicherstellen, dass alle notwendigen Aufgaben effizient und ohne manuelle Eingriffe durchgeführt werden.
 
 ## 2.3 Ziele
@@ -993,9 +993,11 @@ Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funkt
 
 ## 8.1 Glossar
 
+
+
 | Begriff                          | Erklärung |
 |----------------------------------|----------|
-| [^1] **AWS CLI**                  | Kommandozeilentool zur Verwaltung von AWS-Ressourcen. Es erlaubt das Ausführen von Befehlen zur Automatisierung von Aufgaben in der AWS-Cloud. |
+| [^1]:**AWS CLI**                  | Kommandozeilentool zur Verwaltung von AWS-Ressourcen. Es erlaubt das Ausführen von Befehlen zur Automatisierung von Aufgaben in der AWS-Cloud. |
 | **Bash-Skript**                  | Ein in der Shell ausgeführtes Skript, das Befehle automatisiert. In deinem Projekt bildet es das Fundament für das Control Panel.              |
 | **EC2-Instanz**                  | Eine virtuelle Maschine in der AWS-Cloud, die verschiedene Aufgaben übernimmt, z. B. als Webserver oder Datenbankserver.                       |
 | **VPC (Virtual Private Cloud)**  | Ein isolierter Netzwerkbereich in AWS, in dem du deine Ressourcen betreiben kannst.                                                            |
