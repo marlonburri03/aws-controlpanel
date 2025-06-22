@@ -981,6 +981,12 @@ Insgesamt hat mir dieses Projekt gezeigt, wie erfüllend es sein kann, eine Lös
 
 ## 7.3 Mögliche Weiterentwicklung
 
+Das Projekt bietet vielfältige Möglichkeiten zur Weiterentwicklung. Eine sinnvolle Erweiterung wäre die Einführung einer rollenbasierten Benutzer- und Rechteverwaltung, um den Zugriff auf bestimmte Funktionen gezielt steuern zu können und so den Einsatz im Arbeitsumfeld zu ermöglichen. Nebst dem schon bestehenden Logging würde auch die Integration von einer zusätzlichen Monitoring-Funktion zur besseren Nachvollziehbarkeit und Stabilität des Systems beitragen.
+
+Darüber hinaus könnte das Tool um zusätzliche AWS-Dienste wie S3, RDS, IAM usw. erweitert werden, um eine ganzheitlichere Verwaltung der Cloud-Infrastruktur zu ermöglichen. Ebenso wäre es denkbar, Skalierungsfunktionen zu integrieren, mit denen komplexere Umgebungen welche mit mehreren EC2-Instanzen, Subnetzen oder Load Balancern, automatisch bereitgestellt werden könnten.
+
+Ein weiterer Schritt in Richtung professioneller Infrastrukturverwaltung wäre die Anbindung an deklarative Tools wie z.B Terraform. Dadurch könnten wiederholbare, versionierbare und überprüfbare Deployments realisiert werden. In diesem Zusammenhang wäre auch der Einsatz von CI/CD-Pipelines sinnvoll, um die Bereitstellung und Aktualisierung des Control Panels sowie der zugrunde liegenden Infrastruktur automatisiert und kontrolliert ablaufen zu lassen. Dies würde die Wartbarkeit verbessern, manuelle Fehler reduzieren und die Entwicklung deutlich beschleunigen.
+
 # 8 Schlusswort
 
 ## 8.1 Glossar
