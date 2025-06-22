@@ -50,7 +50,7 @@ Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen, VPCs, Sec
 
 Basierend auf der Problembeschreibung ist das Ziel dieses Projekts die Entwicklung eines Control Panels zur Verwaltung und Bereitstellung von AWS-Ressourcen. 
 Das System soll es ermöglichen, EC2-Instanzen, VPCs, Security Groups und weitere Cloud-Ressourcen vollständig per Script zu erstellen und zu verwalten, wodurch die Nutzung der AWS-Weboberfläche weitgehend überflüssig gemacht wird. 
-Diese Automatisierung soll effizient, fehlerfrei und schnell erfolgen. Für die Umsetzung wird AWS-CLI, Bash und Cloud-init verwendet. 
+Diese Automatisierung soll effizient, fehlerfrei und schnell erfolgen. Für die Umsetzung wird [AWS-CLI](#aws-cli), Bash und Cloud-init verwendet. 
 Der gesamte Prozess der Ressourcenbereitstellung und Verwaltung wird durch Scripte automatisiert welche sicherstellen, dass alle notwendigen Aufgaben effizient und ohne manuelle Eingriffe durchgeführt werden.
 
 ## 2.3 Ziele
@@ -992,6 +992,28 @@ Ein weiterer Schritt in Richtung professioneller Infrastrukturverwaltung wäre d
 Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funktionale Lösung zur Verwaltung von Cloud-Ressourcen darstellt, sondern auch eine wertvolle Lernerfahrung in Bezug auf Automatisierung, Strukturierung und den praktischen Umgang mit der AWS-CLI war. Die Umsetzung hat gezeigt, wie durchdachte Planung und kontinuierliche Verbesserung zu einem Werkzeug führen können, das sowohl technisch robust als auch benutzerfreundlich ist. Das Projekt bildet eine solide Grundlage für zukünftige Erweiterungen und bietet viele Ansatzpunkte, um es weiterzuentwickeln und noch stärker an professionelle Anforderungen anzupassen.
 
 ## 8.1 Glossar
+
+| Begriff                          | Erklärung |
+|----------------------------------|----------|
+| <a name="aws-cli"></a>**AWS CLI**       | Kommandozeilentool zur Verwaltung von AWS-Ressourcen. Es erlaubt das Ausführen von Befehlen zur Automatisierung von Aufgaben in der AWS-Cloud. |
+| **Bash-Skript**                  | Ein in der Shell ausgeführtes Skript, das Befehle automatisiert. In deinem Projekt bildet es das Fundament für das Control Panel.              |
+| **EC2-Instanz**                  | Eine virtuelle Maschine in der AWS-Cloud, die verschiedene Aufgaben übernimmt, z. B. als Webserver oder Datenbankserver.                       |
+| **VPC (Virtual Private Cloud)**  | Ein isolierter Netzwerkbereich in AWS, in dem du deine Ressourcen betreiben kannst.                                                            |
+| **Subnet**                       | Ein Teilnetz innerhalb einer VPC, das IP-Adressen segmentiert und Routing strukturiert.                                                        |
+| **Security Group**               | Eine virtuelle Firewall, die ein- und ausgehenden Datenverkehr für AWS-Ressourcen wie EC2-Instanzen regelt.                                    |
+| **Cloud-init**                   | Ein Konfigurationssystem, das bei der Initialisierung von Cloud-Instanzen automatisch Konfigurationen und Installationen ausführt.             |
+| **Infrastructure as Code (IaC)** | Konzept, bei dem Infrastruktur mit Code definiert und versioniert wird, anstatt manuell über die Weboberfläche.                                |
+| **Modularisierung**              | Strukturierung des Codes in eigenständige, wiederverwendbare Module (z. B. separate Skripte für EC2, VPC etc.).                                |
+| **Logging**                      | Protokollierung von Aktionen und Fehlermeldungen zur besseren Nachvollziehbarkeit und Fehlersuche.                                             |
+| **Fehlerbehandlung**             | Strukturierte Erkennung und Reaktion auf Fehlerzustände im Skript (z. B. falsche Eingaben, fehlende Ressourcen).                               |
+| **Init-Skript**                  | Zentrales Skript zur Initialisierung der Umgebung, z. B. zur Festlegung von Farben, Variablen, Logging-Pfaden.                                 |
+| **CI/CD-Pipeline**               | Automatisierte Abläufe zur kontinuierlichen Integration und Bereitstellung (z. B. für Code-Updates oder Infrastrukturänderungen).              |
+| **SCRUM**                        | Agile Projektmanagementmethode, bei der in kurzen, iterativen Zyklen (Sprints) gearbeitet wird.                                                |
+| **User Story**                   | Eine Beschreibung aus Sicht eines Nutzers, die eine Funktion oder ein Ziel des Systems formuliert.                                             |
+| **Definition of Done (DoD)**     | Festgelegte Kriterien, wann eine Aufgabe oder User Story als vollständig erledigt gilt.                                                        |
+| **Definition of Ready (DoR)**    | Voraussetzungen, die erfüllt sein müssen, bevor eine User Story bearbeitet werden kann.                                                        |
+| **Jira**                         | Projektmanagement-Tool zur Planung, Verwaltung und Visualisierung von Aufgaben und Sprints.                                                    |
+| **Git / GitLab**                 | Versionsverwaltungssystem bzw. Plattform zur Quellcode-Verwaltung, Kollaboration und Nachverfolgung von Änderungen.                            |
 
 
 ## 8.2 Quellenverzeichnis
