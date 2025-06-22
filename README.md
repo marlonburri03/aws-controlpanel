@@ -11,7 +11,7 @@
 
 ## 1 Einleitung
 
-In diesem Projekt wird ein Bash-basiertes Control Panel für AWS entwickelt, das eine einfache und effiziente Verwaltung sowie Administration von Cloud-Ressourcen ermöglicht. Diese Arbeit basiert auf dem erarbeiteten Fachwissen aus dem ersten Semester des Lehrgangs zum dipl. Informatiker HF mit Vertiefung in Cloud Native. Diese Arbeit wurde von Marlon Burri geschrieben und ist eine Einzelarbeit.
+In diesem Projekt wird ein Bash[^20]-basiertes Control Panel für AWS entwickelt, das eine einfache und effiziente Verwaltung sowie Administration von Cloud-Ressourcen ermöglicht. Diese Arbeit basiert auf dem erarbeiteten Fachwissen aus dem ersten Semester des Lehrgangs zum dipl. Informatiker HF mit Vertiefung in Cloud Native. Diese Arbeit wurde von Marlon Burri geschrieben und ist eine Einzelarbeit.
 
 
 ## 1.1 Behandelte Module
@@ -43,20 +43,20 @@ flowchart LR
 
 ## 2.1 Problemstellung
 
-Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen[^3], VPCs[^4], Security Groups und mehr vollständig automatisiert per Script erstellen und verwalten. Als wir im AWS-Cloud Modul vermehrt EC2-Instanzen sowie die dazugehörigen VPCs und Subnetze manuell erstellen musste, wurde mir schnell klar, dass dieser Prozess automatisiert werden muss. So entstand die Idee zum Control Panel. Der entscheidende Vorteil dabei ist, dass die Nutzung der AWS-Weboberfläche nahezu überflüssig wird. In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren.
+Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen[^3], VPCs[^4], Security Groups[^6] und mehr vollständig automatisiert per Script erstellen und verwalten. Als wir im AWS-Cloud Modul vermehrt EC2-Instanzen sowie die dazugehörigen VPCs und Subnetze[^5] manuell erstellen musste, wurde mir schnell klar, dass dieser Prozess automatisiert werden muss. So entstand die Idee zum Control Panel. Der entscheidende Vorteil dabei ist, dass die Nutzung der AWS-Weboberfläche nahezu überflüssig wird. In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren.
 
 
 ## 2.2 Aufgabenstellung
 
 Basierend auf der Problembeschreibung ist das Ziel dieses Projekts die Entwicklung eines Control Panels zur Verwaltung und Bereitstellung von AWS-Ressourcen. 
 Das System soll es ermöglichen, EC2-Instanzen, VPCs, Security Groups und weitere Cloud-Ressourcen vollständig per Script zu erstellen und zu verwalten, wodurch die Nutzung der AWS-Weboberfläche weitgehend überflüssig gemacht wird. 
-Diese Automatisierung soll effizient, fehlerfrei und schnell erfolgen. Für die Umsetzung wird AWS-CLI[^1], Bash und Cloud-init verwendet. 
+Diese Automatisierung soll effizient, fehlerfrei und schnell erfolgen. Für die Umsetzung wird AWS-CLI[^1], Bash und Cloud-init[^7] verwendet. 
 Der gesamte Prozess der Ressourcenbereitstellung und Verwaltung wird durch Scripte automatisiert welche sicherstellen, dass alle notwendigen Aufgaben effizient und ohne manuelle Eingriffe durchgeführt werden.
 
 ## 2.3 Ziele
 
 * __Effizienzsteigerung und Automatisierung:__
-Entwicklung eines Control Panel für die Verwaltung von AWS-Ressourcen mithilfe von Infrastructure-as-Code (IaC). 
+Entwicklung eines Control Panel für die Verwaltung von AWS-Ressourcen mithilfe von Infrastructure-as-Code (IaC)[^8]. 
 Dabei sollen EC2-Instanzen, Netzwerke (VPCs, Subnets, Gateways), Security Groups und weitere AWS-Ressourcen durch Code automatisch erstellt, konfiguriert und verwaltet werden. 
 Ziel ist es, manuelle Arbeitsschritte vollständig zu eliminieren und die Bereitstellung zu automatisieren.
 
@@ -67,11 +67,11 @@ Die Notwendigkeit, die AWS Management Console zu nutzen, soll entfallen, um die 
 * __Standardisierung und Wiederverwendbarkeit:__
 Aufbau einer strukturierten IaC-Codelogik mit wiederverwendbaren Templates und Parametern für verschiedene AWS-Komponenten. 
 Dadurch können identische Setups mehrfach verwendet und standardisiert werden. 
-Die Lösung soll versioniert über GitLab verwaltet werden, um Änderungen nachvollziehbar zu dokumentieren.
+Die Lösung soll versioniert über GitLab[^19] verwaltet werden, um Änderungen nachvollziehbar zu dokumentieren.
 
 
 ## 2.4 Terminplan
-Zur Planung des Projektablaufs wird in Jira ein Gantt-Chart verwendet. 
+Zur Planung des Projektablaufs wird in Jira[^18] ein Gantt-Chart verwendet. 
 Dieses dient dazu, eine Übersicht und zeitliche Strukturierung der User Stories zu erhalten. 
 Änderungen können flexibel vorgenommen werden, was eine sofortige Anpassung des Plans ermöglicht. 
 Das Tool wird eingesetzt, da es im agilen Projektmanagement üblich ist, dass es zu Veränderungen kommt. 
@@ -82,7 +82,7 @@ Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so 
 |------------------|----------------------------------------------------------------------|------------------------------|-----------------------------------------------------------------------------|
 | Sprint 1         | Grundlagen und Initialisierung                                       | 05.05.25 – 19.05.25          | Projektstruktur, Planung, AWS-Zugriffe einrichten, erstes Basis Script.     |
 | Sprint 2         | Netzwerkautomatisierung, Server Deployment und Automatisierung       | 19.05.25 – 02.06.25          | Automatisierte Erstellung der Infrastruktur (Instanzen, VPCs, Subnets etc.).|
-| Sprint 3         | Optimierung und Bedienbarkeit und Testing                            | 02.06.25 – 16.06.25          | Code verbessern, Logging und Fehlerbehandlung einbauen, erste Tests.        |
+| Sprint 3         | Optimierung und Bedienbarkeit und Testing                            | 02.06.25 – 16.06.25          | Code verbessern, Logging[^10] und Fehlerbehandlung[^11] einbauen, erste Tests.        |
 | Sprint 4         | Dokumentation Nachbearbeitung                                        | 16.06.25 – 30.06.25          | Finales Testing und Dokumentation abschliessen.                             |
 | Sprint 5         | Finalisierung der Semesterarbeit                                     | 30.06.25 – 09.07.25          | Dokumentation Prüfen und Projekt abgabebereit machen.                 |
 
@@ -106,7 +106,7 @@ Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so 
 
 __Projektmethodik:__  
 
-Für die Umsetzung des Projekts wird SCRUM als agile Projektmanagementmethode verwendet. 
+Für die Umsetzung des Projekts wird SCRUM[^14] als agile Projektmanagementmethode verwendet. 
 Die Entwicklung erfolgt iterativ wodurch regelmässige Zwischenergebnisse abgeliefert und überprüft werden können. 
 Bei Bedarf kann am Ende jeder Iteration das weitere Vorgehen angepasst werden. 
 
@@ -193,7 +193,7 @@ Projekt
 &nbsp;
 
 ## 3.1 Bestandteile User Story
-Eine User Story ist eine zentrale Einheit im agilen Arbeiten. Sie beschreibt kein einzelnes Feature, sondern ein spezifisches, kleines Endziel aus Sicht des Anwenders. Dabei handelt es sich um eine klare und leicht verständliche Beschreibung einer Aufgabe, die einem bestimmten Muster folgt. User Storys werden meist in einem einfachen Satz formuliert, der den Zweck deutlich macht. Die typische Struktur lautet:
+Eine User Story[^15] ist eine zentrale Einheit im agilen Arbeiten. Sie beschreibt kein einzelnes Feature, sondern ein spezifisches, kleines Endziel aus Sicht des Anwenders. Dabei handelt es sich um eine klare und leicht verständliche Beschreibung einer Aufgabe, die einem bestimmten Muster folgt. User Storys werden meist in einem einfachen Satz formuliert, der den Zweck deutlich macht. Die typische Struktur lautet:
 
 > „Als [Rolle] möchte ich [Ziel], damit [Nutzen].“  
 
@@ -205,13 +205,13 @@ Dieses Muster wurde konsequent für alle User Storys in diesem Projekt verwendet
 *Screenshot einer User Story*  
 &nbsp;
 
-Weitere wichtige Bestandteile einer User Story sind die Akzeptanzkriterien, die festlegen, wann eine Story als erfüllt gilt. Ebenso sollten Abhängigkeiten zu anderen Teams oder Tasks klar beschrieben werden. Ausserdem ist das Einhalten der Definition of Done (DoD) entscheidend, um sicherzustellen, dass alle Qualitätsanforderungen erfüllt sind. Bevor eine User Story in einen Sprint aufgenommen wird, erfolgt ausserdem eine Aufwandsschätzung in Form von Story Points, um den Umfang besser planen zu können.
+Weitere wichtige Bestandteile einer User Story sind die Akzeptanzkriterien, die festlegen, wann eine Story als erfüllt gilt. Ebenso sollten Abhängigkeiten zu anderen Teams oder Tasks klar beschrieben werden. Ausserdem ist das Einhalten der Definition of Done (DoD)[^16] entscheidend, um sicherzustellen, dass alle Qualitätsanforderungen erfüllt sind. Bevor eine User Story in einen Sprint aufgenommen wird, erfolgt ausserdem eine Aufwandsschätzung in Form von Story Points, um den Umfang besser planen zu können.
 
 &nbsp;
 
 ## 3.2 Definition of Ready (DoR)
 
-Die Definition of Ready besteht aus individuell festgelegten Kriterien, die definieren, welche Voraussetzungen eine User Story im Product Backlog erfüllen muss, bevor sie in einen Sprint aufgenommen werden kann. 
+Die Definition of Ready[^17] besteht aus individuell festgelegten Kriterien, die definieren, welche Voraussetzungen eine User Story im Product Backlog erfüllen muss, bevor sie in einen Sprint aufgenommen werden kann. 
 Sie stellt sicher, dass das Team ein gemeinsames Verständnis der Aufgabe hat und diese realistisch umsetzbar ist.
 
 * __Inhaltliche Anforderungen:__ Die User Story enthält eine vollständige Beschreibung mit allen relevanten Informationen, und das Ziel der Story ist klar definiert. Zudem sind alle notwendigen Akzeptanzkriterien formuliert, und die Story wurde vom Product Owner gegengelesen.
@@ -429,7 +429,7 @@ Für das Design kam die Star-Wars-Schriftart aus dem ASCII-Generator von [Patorj
 
 Zu Beginn wurden die Variablen und Farbdefinitionen in separate Scripts ausgelagert, um eine zentrale und wiederverwendbare Struktur für alle weiteren Scripts zu schaffen. 
 Anschliessend wurde ein Hauptmenü entwickelt, das dem Benutzer verschiedene Auswahlmöglichkeiten wie EC2, VPC, Subnetze und Security Groups bietet. 
-Jede dieser Kategorien ist über ein eigenes Script organisiert. Das Vorgehen basiert auf einer klaren Trennung der Funktionalitäten (Modularisierung) und kann beliebig erweitert werden, um eine noch Benutzerfreundliche Bedienung zu gewährleisten
+Jede dieser Kategorien ist über ein eigenes Script organisiert. Das Vorgehen basiert auf einer klaren Trennung der Funktionalitäten (Modularisierung[^9]) und kann beliebig erweitert werden, um eine noch Benutzerfreundliche Bedienung zu gewährleisten
 
 ```bash
 #!/bin/bash
@@ -739,7 +739,7 @@ In meinem Projekt wurden die Scripte in zwei Hauptkategorien unterteilt: Menu-Sc
 
 Die Task-Scripte hingegen liegen im Ordner ```scripts``` übernehmen die eigentliche Umsetzung der gewünschten Funktionen, wie etwa das Erstellen, Löschen oder Auflisten von AWS-Ressourcen z.B EC2-Instanzen, Security Groups, Subnetzen usw. Diese Scripte wurden nach einem klar definierten und wiederverwendbaren Aufbauprinzip entwickelt. Dadurch können sie nicht nur vom Hauptmenü aus aufgerufen, sondern auch völlig eigenständig und isoliert ausgeführt werden. Das ist besonders hilfreich beim Debugging, bei Tests oder für den gezielten Einsatz in automatisierten Prozessen.
 
-Jedes Task-Script beginnt mit dem Laden einer zentralen Initialisierungsdatei (```init_env.bash```), die für eine einheitliche Umgebung sorgt. Anschliessend erfolgt ein strukturierter Logeintrag, um Startzeit und Scriptname zu dokumentieren. Die eigentliche Logik ist in einer klar benannten Funktion gekapselt, was die Lesbarkeit und die Wartung vereinfacht. Fehlerbehandlung, Nutzereingaben und Rückgabewerte sind standardisiert umgesetzt. Zusätzlich wird durch eine vorgelagerte Funktionsprüfung (```check_aws_requirements```) sichergestellt, dass notwendige Voraussetzungen wie gültige Credentials oder die Verfügbarkeit der AWS CLI erfüllt sind. Diese strukturierte Trennung und der modulare Aufbau sorgen nicht nur für eine hohe Wartbarkeit, sondern auch für Flexibilität im Umgang mit den einzelnen Komponenten des Projekts. Um den strukturellen Aufbau exemplarisch darzustellen wurde das ```securitygroup_delete.bash``` genommen, das genau nach diesem Prinzip aufgebaut ist und tadellos funktioniert.
+Jedes Task-Script beginnt mit dem Laden einer zentralen Initialisierungsdatei[^12] (```init_env.bash```), die für eine einheitliche Umgebung sorgt. Anschliessend erfolgt ein strukturierter Logeintrag, um Startzeit und Scriptname zu dokumentieren. Die eigentliche Logik ist in einer klar benannten Funktion gekapselt, was die Lesbarkeit und die Wartung vereinfacht. Fehlerbehandlung, Nutzereingaben und Rückgabewerte sind standardisiert umgesetzt. Zusätzlich wird durch eine vorgelagerte Funktionsprüfung (```check_aws_requirements```) sichergestellt, dass notwendige Voraussetzungen wie gültige Credentials oder die Verfügbarkeit der AWS CLI erfüllt sind. Diese strukturierte Trennung und der modulare Aufbau sorgen nicht nur für eine hohe Wartbarkeit, sondern auch für Flexibilität im Umgang mit den einzelnen Komponenten des Projekts. Um den strukturellen Aufbau exemplarisch darzustellen wurde das ```securitygroup_delete.bash``` genommen, das genau nach diesem Prinzip aufgebaut ist und tadellos funktioniert.
 
 ```bash
 #!/bin/bash
@@ -985,7 +985,7 @@ Das Projekt bietet vielfältige Möglichkeiten zur Weiterentwicklung. Eine sinnv
 
 Darüber hinaus könnte das Tool um zusätzliche AWS-Dienste wie S3, RDS, IAM usw. erweitert werden, um eine ganzheitlichere Verwaltung der Cloud-Infrastruktur zu ermöglichen. Ebenso wäre es denkbar, Skalierungsfunktionen zu integrieren, mit denen komplexere Umgebungen welche mit mehreren EC2-Instanzen, Subnetzen oder Load Balancern, automatisch bereitgestellt werden könnten.
 
-Ein weiterer Schritt in Richtung professioneller Infrastrukturverwaltung wäre die Anbindung an deklarative Tools wie z.B Terraform. Dadurch könnten wiederholbare, versionierbare und überprüfbare Deployments realisiert werden. In diesem Zusammenhang wäre auch der Einsatz von CI/CD-Pipelines sinnvoll, um die Bereitstellung und Aktualisierung des Control Panels sowie der zugrunde liegenden Infrastruktur automatisiert und kontrolliert ablaufen zu lassen. Dies würde die Wartbarkeit verbessern, manuelle Fehler reduzieren und die Entwicklung deutlich beschleunigen.
+Ein weiterer Schritt in Richtung professioneller Infrastrukturverwaltung wäre die Anbindung an deklarative Tools wie z.B Terraform. Dadurch könnten wiederholbare, versionierbare und überprüfbare Deployments realisiert werden. In diesem Zusammenhang wäre auch der Einsatz von CI/CD-Pipelines[^13] sinnvoll, um die Bereitstellung und Aktualisierung des Control Panels sowie der zugrunde liegenden Infrastruktur automatisiert und kontrolliert ablaufen zu lassen. Dies würde die Wartbarkeit verbessern, manuelle Fehler reduzieren und die Entwicklung deutlich beschleunigen.
 
 # 8 Schlusswort
 
@@ -1001,23 +1001,23 @@ Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funkt
 
 ## 8.1 Glossar
 
-[^1]: AWS CLI ist ein Kommandozeilentool zur Verwaltung von AWS-Ressourcen. Es erlaubt das Ausführen von Befehlen zur Automatisierung von Aufgaben in der AWS-Cloud.  
-[^2]: Bash-Script ist ein in der Shell ausgeführtes Script, das Befehle automatisiert. In deinem Projekt bildet es das Fundament für das Control Panel.  
-[^3]: EC2-Instanz ist eine virtuelle Maschine in der AWS-Cloud, die verschiedene Aufgaben übernimmt, z. B. als Webserver oder Datenbankserver.  
-[^4]: VPC (Virtual Private Cloud) ist ein isolierter Netzwerkbereich in AWS, in dem du deine Ressourcen betreiben kannst.  
-[^5]: Subnet ist ein Teilnetz innerhalb einer VPC, das IP-Adressen segmentiert und Routing strukturiert.  
-[^6]: Security Group ist eine virtuelle Firewall, die ein- und ausgehenden Datenverkehr für AWS-Ressourcen wie EC2-Instanzen regelt.  
-[^7]: Cloud-init ist ein Konfigurationssystem, das bei der Initialisierung von Cloud-Instanzen automatisch Konfigurationen und Installationen ausführt.  
-[^8]: Infrastructure as Code (IaC) ist ein Konzept, bei dem Infrastruktur mit Code definiert und versioniert wird, anstatt manuell über die Weboberfläche.  
-[^9]: Modularisierung beschreibt die Strukturierung des Codes in eigenständige, wiederverwendbare Module (z. B. separate Skripte für EC2, VPC etc.).  
-[^10]: Logging bedeutet die Protokollierung von Aktionen und Fehlermeldungen zur besseren Nachvollziehbarkeit und Fehlersuche.  
-[^11]: Fehlerbehandlung ist die strukturierte Erkennung und Reaktion auf Fehlerzustände im Skript (z. B. falsche Eingaben, fehlende Ressourcen).  
-[^12]: Init-Skript ist das zentrale Skript zur Initialisierung der Umgebung, z. B. zur Festlegung von Farben, Variablen, Logging-Pfaden.  
-[^13]: CI/CD-Pipeline sind automatisierte Abläufe zur kontinuierlichen Integration und Bereitstellung (z. B. für Code-Updates oder Infrastrukturänderungen).  
-[^14]: SCRUM ist eine agile Projektmanagementmethode, bei der in kurzen, iterativen Zyklen (Sprints) gearbeitet wird.  
-[^15]: User Story ist eine Beschreibung aus Sicht eines Nutzers, die eine Funktion oder ein Ziel des Systems formuliert.  
-[^16]: Definition of Done (DoD) sind festgelegte Kriterien, wann eine Aufgabe oder User Story als vollständig erledigt gilt.  
-[^17]: Definition of Ready (DoR) sind Voraussetzungen, die erfüllt sein müssen, bevor eine User Story bearbeitet werden kann.  
-[^18]: Jira ist ein Projektmanagement-Tool zur Planung, Verwaltung und Visualisierung von Aufgaben und Sprints.  
-[^19]: Git / GitLab sind Versionsverwaltungssystem bzw. Plattform zur Quellcode-Verwaltung, Kollaboration und Nachverfolgung von Änderungen.
-[^20]: Bourne Again SHell (Bash) ist eine Unix-Shell und Skriptsprache, die häufig für die Automatisierung von Aufgaben und als Kommandozeile verwendet wird.
+[^1]: __AWS CLI__ ist ein Kommandozeilentool zur Verwaltung von AWS-Ressourcen. Es erlaubt das Ausführen von Befehlen zur Automatisierung von Aufgaben in der AWS-Cloud.  
+[^2]: __Bash-Script__ ist ein in der Shell ausgeführtes Script, das Befehle automatisiert. In deinem Projekt bildet es das Fundament für das Control Panel.  
+[^3]: __EC2-Instanz__ ist eine virtuelle Maschine in der AWS-Cloud, die verschiedene Aufgaben übernimmt, z. B. als Webserver oder Datenbankserver.  
+[^4]: __VPC (Virtual Private Cloud__ ist ein isolierter Netzwerkbereich in AWS, in dem du deine Ressourcen betreiben kannst.  
+[^5]: __Subnet__ ist ein Teilnetz innerhalb einer VPC, das IP-Adressen segmentiert und Routing strukturiert.  
+[^6]: __Security Group__ ist eine virtuelle Firewall, die ein- und ausgehenden Datenverkehr für AWS-Ressourcen wie EC2-Instanzen regelt.  
+[^7]: __Cloud-init__ ist ein Konfigurationssystem, das bei der Initialisierung von Cloud-Instanzen automatisch Konfigurationen und Installationen ausführt.  
+[^8]: __Infrastructure as Code (IaC)__ ist ein Konzept, bei dem Infrastruktur mit Code definiert und versioniert wird, anstatt manuell über die Weboberfläche.  
+[^9]: __Modularisierung__ beschreibt die Strukturierung des Codes in eigenständige, wiederverwendbare Module (z. B. separate Skripte für EC2, VPC etc.).  
+[^10]: __Logging__ bedeutet die Protokollierung von Aktionen und Fehlermeldungen zur besseren Nachvollziehbarkeit und Fehlersuche.  
+[^11]: __Fehlerbehandlung__ ist die strukturierte Erkennung und Reaktion auf Fehlerzustände im Skript (z. B. falsche Eingaben, fehlende Ressourcen).  
+[^12]: __Init-Script__ ist das zentrale Skript zur Initialisierung der Umgebung, z. B. zur Festlegung von Farben, Variablen, Logging-Pfaden.  
+[^13]: __CI/CD-Pipeline__ sind automatisierte Abläufe zur kontinuierlichen Integration und Bereitstellung (z. B. für Code-Updates oder Infrastrukturänderungen).  
+[^14]: __SCRUM__ ist eine agile Projektmanagementmethode, bei der in kurzen, iterativen Zyklen (Sprints) gearbeitet wird.  
+[^15]: __User Story__ ist eine Beschreibung aus Sicht eines Nutzers, die eine Funktion oder ein Ziel des Systems formuliert.  
+[^16]: __Definition of Done (DoD)__ sind festgelegte Kriterien, wann eine Aufgabe oder User Story als vollständig erledigt gilt.  
+[^17]: __Definition of Ready (DoR)__ sind Voraussetzungen, die erfüllt sein müssen, bevor eine User Story bearbeitet werden kann.  
+[^18]: __Jira__ ist ein Projektmanagement-Tool zur Planung, Verwaltung und Visualisierung von Aufgaben und Sprints.  
+[^19]: __Git / GitLab__ sind Versionsverwaltungssystem bzw. Plattform zur Quellcode-Verwaltung, Kollaboration und Nachverfolgung von Änderungen.
+[^20]: __Bourne Again SHell (Bash)__ ist eine Unix-Shell und Skriptsprache, die häufig für die Automatisierung von Aufgaben und als Kommandozeile verwendet wird.
