@@ -848,7 +848,7 @@ Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführ
 | Erwartetes Ergebnis    | Die angegebene Security Group wird erfolgreich gelöscht.                                                                                            |
 | Testablauf             | 1. Terminal öffnen<br>2. Script `./scripts/securitygroup_delete.bash` ausführen<br>3. Bestehende SGs anzeigen lassen<br>4. ID eingeben und löschen. |
 | Effektives Ergebnis    | Security Group wird gelöscht und Erfolgsmeldung angezeigt.                                                                                          |
-| Screenshotg / Logfiles | -                                                                                                                                                   |
+| Screenshotg / Logfiles | ![Testfall3](img/Testing/Testfall3.gif)<br>*Delete Security Group*                                                                                                                                                    |
 | Problemstellungen      | - Security Group ist noch in Verwendung                                                                                                             |
 | Testergebnis           | Erfolgreich / Fehler bei in Benutzung befindlicher SG                      |
 
@@ -872,7 +872,7 @@ Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführ
 | Erwartetes Ergebnis    | Eine neue EC2-Instanz wird erstellt und angezeigt                         |
 | Testablauf             | 1. EC2-Menü öffnen<br>2. Instanzparameter angeben<br>3. Erstellung starten |
 | Effektives Ergebnis    | EC2-Instanz erscheint in der AWS-Konsole                                  |
-| Screenshotg / Logfiles | -                                                                          |
+| Screenshotg / Logfiles | ![Testfall5](img/Testing/Testfall5.gif)<br>*EC2 creation*                                                                          |
 | Problemstellungen      | - Falscher AMI oder fehlende Rechte                                       |
 | Testergebnis           | Erfolgreich / Fehler erkannt                                              |
 
@@ -884,7 +884,7 @@ Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführ
 | Erwartetes Ergebnis    | Instanz wird beendet und gelöscht                                         |
 | Testablauf             | 1. EC2-Menü öffnen<br>2. Instanz auswählen<br>3. Löschen bestätigen         |
 | Effektives Ergebnis    | Instanz nicht mehr sichtbar                                                |
-| Screenshotg / Logfiles | -                                                                          |
+| Screenshotg / Logfiles | ![Testfall6](img/Testing/Testfall6.gif)<br>*EC2 delete*                                                                          |
 | Problemstellungen      | - Fehlende Berechtigung oder Instanz-ID falsch                            |
 | Testergebnis           | Erfolgreich                                                                |
 
@@ -896,7 +896,7 @@ Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführ
 | Erwartetes Ergebnis    | Neues Subnetz wird angelegt                                               |
 | Testablauf             | 1. Subnet-Skript starten<br>2. VPC und CIDR angeben<br>3. Subnetz erstellen |
 | Effektives Ergebnis    | Subnetz wird erfolgreich in AWS erstellt                                  |
-| Screenshotg / Logfiles | -                                                                          |
+| Screenshotg / Logfiles | ![Testfall7](img/Testing/Testfall7.gif)<br>*Subnet creation*                                                                          |
 | Problemstellungen      | - CIDR-Konflikte                                                           |
 | Testergebnis           | Erfolgreich                                                                |
 
@@ -908,7 +908,7 @@ Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführ
 | Erwartetes Ergebnis    | Liste aller SGs wird im Terminal angezeigt                                |
 | Testablauf             | 1. SG-Skript starten<br>2. Liste anzeigen lassen                           |
 | Effektives Ergebnis    | Übersicht im Terminal                                                      |
-| Screenshotg / Logfiles | -                                                                          |
+| Screenshotg / Logfiles | ![Testfall8](img/Testing/Testfall8.gif)<br>*List Security Groups*                                                                          |
 | Problemstellungen      | -                                                                          |
 | Testergebnis           | Erfolgreich                                                                |
 
@@ -932,7 +932,7 @@ Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführ
 | Erwartetes Ergebnis    | Task wird unabhängig vom Menü ausgeführt                                  |
 | Testablauf             | 1. Terminal öffnen<br>2. Skript direkt starten<br>3. Ergebnis prüfen       |
 | Effektives Ergebnis    | Task wird ordnungsgemäss ausgeführt                                         |
-| Screenshotg / Logfiles | -                                                                          |
+| Screenshotg / Logfiles | ![Testfall10](img/Testing/Testfall10.gif)<br>*List EC2*                                                                          |
 | Problemstellungen      | -                                                                          |
 | Testergebnis           | Erfolgreich                                                                |
 
