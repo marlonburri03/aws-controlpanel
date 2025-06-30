@@ -37,17 +37,28 @@ list_matching_subnets() {
         --query 'SecurityGroups[0].VpcId' \
         --output text)
 
-    if [[ -z "$vpc_id" ]]; then
-        log "ERROR" "VPC of the Security Group $security_group_id couldnt be found."
+    echo "DEBUG: VPC ID: $vpc_id"
+
+    if [[ -z "$vpc_id" || "$vpc_id" == "None" ]]; then
+        log "ERROR" "VPC of the Security Group $security_group_id couldn't be found."
         return 1
     fi
 
-    #log "INFO" "Liste Subnets in VPC $vpc_id"
     echo "Verfügbare Subnets in VPC $vpc_id:"
-    aws ec2 describe-subnets \
+
+    local subnets=$(aws ec2 describe-subnets \
         --filters "Name=vpc-id,Values=$vpc_id" \
         --query 'Subnets[*].[SubnetId,VpcId,AvailabilityZone,CidrBlock]' \
-        --output table
+        --output table 2>/dev/null)
+
+    echo "DEBUG: Subnet-Abfrage abgeschlossen"
+
+    if [[ -z "$subnets" || "$subnets" == *"None"* ]]; then
+        echo "Keine Subnets in diesem VPC vorhanden."
+        return 1
+    else
+        echo "$subnets"
+    fi
 }
 
 #list_instance_types() {
@@ -197,13 +208,18 @@ create_ec2_instance() {
     aws ec2 wait instance-running --instance-ids "$INSTANCE_ID"
 
     PUBLIC_IP=$(aws ec2 describe-instances \
-      --instance-ids "$INSTANCE_ID" \
-      --query 'Reservations[0].Instances[0].PublicIpAddress' \
-      --output text)
+  --instance-ids "$INSTANCE_ID" \
+  --query 'Reservations[0].Instances[0].PublicIpAddress' \
+  --output text)
 
-    log "INFO" "Instance $INSTANCE_ID has been started withIP $PUBLIC_IP"
+if [[ "$PUBLIC_IP" == "None" || -z "$PUBLIC_IP" ]]; then
+    log "WARN" "Instance $INSTANCE_ID has no Public IP address assigned."
+    echo "Hinweis: Der Instanz wurde keine Public IP-Adresse zugewiesen."
+    echo "Stelle sicher, dass das Subnet Public IPs zuweist (MapPublicIpOnLaunch=true) oder verwende ein Elastic IP."
+else
+    log "INFO" "Instance $INSTANCE_ID has been started with Public IP $PUBLIC_IP"
     echo "Instance is started. Public IP: $PUBLIC_IP"
-    return 0
+fi
 }
 
 # run functions
