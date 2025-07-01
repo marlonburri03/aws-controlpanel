@@ -7,23 +7,23 @@ packages:
   - gnupg-agent<
   - software-properties-common
 
-# ipv4 forwarding aktivieren, notwendig für CIS gehärtete Instanzen
+# enable ipv4 forwarding
 write_files:
   - path: /etc/sysctl.d/enabled_ipv4_forwarding.conf
     content: |
       net.ipv4.conf.all.forwarding=1
 
 
-# Erstelle die Docker Group
+# create docker group
 groups:
   - docker
 
-# Ergänze den per default erstellten User zur Docker Group
+# set default user
 system_info:
   default_user:
     groups: [docker]
 
-# Install Docker and Podman: fixieren auf stabile Versionen
+# install docker and podman
 runcmd:
   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
   - add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
