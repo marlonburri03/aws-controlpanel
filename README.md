@@ -856,10 +856,10 @@ Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführ
 
 | Testfall 4              | Fehlende Eingabe einer Security Group ID                                  |
 |------------------------|----------------------------------------------------------------------------|
-| Voraussetzungen        | - AWS CLI ist konfiguriert<br>- Skript ist vorhanden                      |
-| Erwartetes Ergebnis    | Das Skript bricht ab und meldet, dass keine gültige ID eingegeben wurde.   |
-| Testablauf             | 1. Skript starten<br>2. Bei der Abfrage keine ID eingeben<br>3. Bestätigen |
-| Effektives Ergebnis    | Fehlermeldung wird ausgegeben<br>Skript wird abgebrochen                   |
+| Voraussetzungen        | - AWS CLI ist konfiguriert<br>- Script ist vorhanden                      |
+| Erwartetes Ergebnis    | Das Script bricht ab und meldet, dass keine gültige ID eingegeben wurde.   |
+| Testablauf             | 1. Script starten<br>2. Bei der Abfrage keine ID eingeben<br>3. Bestätigen |
+| Effektives Ergebnis    | Fehlermeldung wird ausgegeben<br>Script wird abgebrochen                   |
 | Screenshotg / Logfiles | ![Testfall4](img/Testing/Testfall4.gif)<br>*GIF Wrong Input Script*                                                                            |
 | Problemstellungen      | -                                                                          |
 | Testergebnis           | Erfolgreich                                                                |
@@ -894,7 +894,7 @@ Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführ
 |------------------------|----------------------------------------------------------------------------|
 | Voraussetzungen        | - VPC existiert<br>- AWS CLI ist bereit                                   |
 | Erwartetes Ergebnis    | Neues Subnetz wird angelegt                                               |
-| Testablauf             | 1. Subnet-Skript starten<br>2. VPC und CIDR angeben<br>3. Subnetz erstellen |
+| Testablauf             | 1. Subnet-Script starten<br>2. VPC und CIDR angeben<br>3. Subnetz erstellen |
 | Effektives Ergebnis    | Subnetz wird erfolgreich in AWS erstellt                                  |
 | Screenshotg / Logfiles | ![Testfall7](img/Testing/Testfall7.gif)<br>*Subnet creation*                                                                          |
 | Problemstellungen      | - CIDR-Konflikte                                                           |
@@ -906,7 +906,7 @@ Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführ
 |------------------------|----------------------------------------------------------------------------|
 | Voraussetzungen        | - AWS CLI eingerichtet                                                     |
 | Erwartetes Ergebnis    | Liste aller SGs wird im Terminal angezeigt                                |
-| Testablauf             | 1. SG-Skript starten<br>2. Liste anzeigen lassen                           |
+| Testablauf             | 1. SG-Script starten<br>2. Liste anzeigen lassen                           |
 | Effektives Ergebnis    | Übersicht im Terminal                                                      |
 | Screenshotg / Logfiles | ![Testfall8](img/Testing/Testfall8.gif)<br>*List Security Groups*                                                                          |
 | Problemstellungen      | -                                                                          |
@@ -914,11 +914,11 @@ Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführ
 
 &nbsp;
 
-| Testfall 9             | Logging der Skriptausgabe                                                  |
+| Testfall 9             | Logging der Scriptausgabe                                                  |
 |------------------------|----------------------------------------------------------------------------|
 | Voraussetzungen        | - `log()`-Funktion implementiert<br>- LOGLEVEL korrekt gesetzt             |
 | Erwartetes Ergebnis    | Jeder Schritt wird mit Zeitstempel geloggt                                |
-| Testablauf             | 1. Skript mit Logging starten<br>2. Terminalausgabe prüfen<br>3. Logdatei kontrollieren |
+| Testablauf             | 1. Script mit Logging starten<br>2. Terminalausgabe prüfen<br>3. Logdatei kontrollieren |
 | Effektives Ergebnis    | Logfile-Einträge vorhanden                                                 |
 | Screenshotg / Logfiles | Logdatei: `aws-control.log`                                                |
 | Problemstellungen      | -                                                                          |
@@ -926,11 +926,11 @@ Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführ
 
 &nbsp;
 
-| Testfall 10            | Direkter Aufruf eines Task-Skripts ohne Hauptmenü                          |
+| Testfall 10            | Direkter Aufruf eines Task-Scripts ohne Hauptmenü                          |
 |------------------------|----------------------------------------------------------------------------|
-| Voraussetzungen        | - Zugriff auf Skript<br>- AWS CLI konfiguriert                             |
+| Voraussetzungen        | - Zugriff auf Script<br>- AWS CLI konfiguriert                             |
 | Erwartetes Ergebnis    | Task wird unabhängig vom Menü ausgeführt                                  |
-| Testablauf             | 1. Terminal öffnen<br>2. Skript direkt starten<br>3. Ergebnis prüfen       |
+| Testablauf             | 1. Terminal öffnen<br>2. Script direkt starten<br>3. Ergebnis prüfen       |
 | Effektives Ergebnis    | Task wird ordnungsgemäss ausgeführt                                         |
 | Screenshotg / Logfiles | ![Testfall10](img/Testing/Testfall10.gif)<br>*List EC2*                                                                          |
 | Problemstellungen      | -                                                                          |
@@ -1010,10 +1010,10 @@ Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funkt
 [^6]: __Security Group__ ist eine virtuelle Firewall, die ein- und ausgehenden Datenverkehr für AWS-Ressourcen wie EC2-Instanzen regelt.  
 [^7]: __Cloud-init__ ist ein Konfigurationssystem, das bei der Initialisierung von Cloud-Instanzen automatisch Konfigurationen und Installationen ausführt.  
 [^8]: __Infrastructure as Code (IaC)__ ist ein Konzept, bei dem Infrastruktur mit Code definiert und versioniert wird.  
-[^9]: __Modularisierung__ beschreibt die Strukturierung des Codes in eigenständige, wiederverwendbare Module (z. B. separate Skripte).  
+[^9]: __Modularisierung__ beschreibt die Strukturierung des Codes in eigenständige, wiederverwendbare Module (z. B. separate Scripte).  
 [^10]: __Logging__ bedeutet die Protokollierung von Aktionen und Fehlermeldungen zur besseren Nachvollziehbarkeit und Fehlersuche.  
-[^11]: __Fehlerbehandlung__ ist die strukturierte Erkennung und Reaktion auf Fehlerzustände im Skript (z. B. falsche Eingaben, fehlende Ressourcen).  
-[^12]: __Init-Script__ ist das zentrale Skript zur Initialisierung der Umgebung, z. B. zur Festlegung von Farben, Variablen, Logging-Pfaden.  
+[^11]: __Fehlerbehandlung__ ist die strukturierte Erkennung und Reaktion auf Fehlerzustände im Script (z. B. falsche Eingaben, fehlende Ressourcen).  
+[^12]: __Init-Script__ ist das zentrale Script zur Initialisierung der Umgebung, z. B. zur Festlegung von Farben, Variablen, Logging-Pfaden.  
 [^13]: __CI/CD-Pipeline__ sind automatisierte Abläufe zur kontinuierlichen Integration und Bereitstellung (z. B. für Code-Updates oder Infrastrukturänderungen).  
 [^14]: __SCRUM__ ist eine agile Projektmanagementmethode, bei der in kurzen, iterativen Zyklen (Sprints) gearbeitet wird.  
 [^15]: __User Story__ ist eine Beschreibung aus Sicht eines Nutzers, die eine Funktion oder ein Ziel des Systems formuliert.  
@@ -1021,4 +1021,4 @@ Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funkt
 [^17]: __Definition of Ready (DoR)__ sind Voraussetzungen, die erfüllt sein müssen, bevor eine User Story bearbeitet werden kann.  
 [^18]: __Jira__ ist ein Projektmanagement-Tool zur Planung, Verwaltung und Visualisierung von Aufgaben und Sprints.  
 [^19]: __Git / GitLab__ sind Versionsverwaltungssystem bzw. Plattform zur Quellcode-Verwaltung, Kollaboration und Nachverfolgung von Änderungen.
-[^20]: __Bourne Again Shell (Bash)__ ist eine Unix-Shell und Skriptsprache, die häufig für die Automatisierung von Aufgaben und als Kommandozeile verwendet wird.
+[^20]: __Bourne Again Shell (Bash)__ ist eine Unix-Shell und Scriptsprache, die häufig für die Automatisierung von Aufgaben und als Kommandozeile verwendet wird.
