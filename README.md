@@ -43,7 +43,7 @@ flowchart LR
 
 ## 2.1 Problemstellung
 
-Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen[^3], VPCs[^4], Security Groups[^6] und mehr vollständig automatisiert per Script erstellen und verwalten. Als wir im AWS-Cloud Modul vermehrt EC2-Instanzen sowie die dazugehörigen VPCs und Subnetze[^5] manuell erstellen musste, wurde mir schnell klar, dass dieser Prozess automatisiert werden muss. So entstand die Idee zum Control Panel. Der entscheidende Vorteil dabei ist, dass die Nutzung der AWS-Weboberfläche nahezu überflüssig wird. In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren.
+Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen[^3], VPCs[^4], Security Groups[^6] vollständig automatisiert per Script erstellen und verwalten. Als wir im AWS-Cloud Modul vermehrt EC2-Instanzen sowie die dazugehörigen VPCs und Subnetze[^5] manuell erstellen musste, wurde mir schnell klar, dass dieser Prozess automatisiert werden muss. So entstand die Idee zum Control Panel. Der entscheidende Vorteil dabei ist, dass die Nutzung der AWS-Weboberfläche nahezu überflüssig wird. In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren.
 
 
 ## 2.2 Aufgabenstellung
@@ -387,6 +387,21 @@ und auf die einzelnen Aufgaben verteilt.
 *Screenshot von meinem Sprint 4 Backlog in Jira.*
 
 __Sprint Review:__
+
+Die Sprint Review des vierten Sprints wurde eigenständig und ohne Beteiligung der Fachlehrperson durchgeführt. Im Rahmen der Review wurde überprüft, ob alle User Stories gemäss der Definition of Done (DoD) erfolgreich abgeschlossen wurden.
+
+Der Fokus des vierten Sprints lag auf dem Verfassen eines technischen sowie persönlichen Fazits, der Überprüfung aller Quellenangaben und dem Erstellen des Glossars. Ziel war es, die Semesterarbeit nach Abschluss dieses Sprints abgabebereit zu haben, dieses Ziel wurde vollständig erreicht.
+
+Im nächsten und letzten Sprint steht nur noch der Feinschliff an. Dieser umfasst die grammatikalische Korrektur des Textes sowie das optionale Ergänzen einzelner Inhalte, falls notwendig.
+
+* [SCRUM-26, Fazit schreiben](https://marlon-burri.atlassian.net/browse/SCRUM-26)✅-DONE
+* [SCRUM-62, Projektabschluss](https://marlon-burri.atlassian.net/browse/SCRUM-62)✅-DONE
+* [SCRUM-27, Glossar und Quellen Prüfen](https://marlon-burri.atlassian.net/browse/SCRUM-27)✅-DONE
+* [SCRUM-25, Dokumentation ergänzen](https://marlon-burri.atlassian.net/browse/SCRUM-25)✅-DONE
+* [SCRUM-28, Dokumentation überprüfen](https://marlon-burri.atlassian.net/browse/SCRUM-28)✅-DONE
+
+![Sprint4Review](img/Sprint4Review.png)
+*Screenshot von meiner Timeline nach dem vierten Sprint.*
 
 ### 3.4.5 Sprint 5
 
