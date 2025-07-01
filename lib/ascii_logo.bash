@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 print_ascii_logo() {
     echo -e "${WHITE}"
     echo "                     .__        ___.   _______  ________  "

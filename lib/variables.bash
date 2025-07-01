@@ -5,7 +5,6 @@ DATE=$(date +"%Y-%m-%d %H:%M")
 USER=$(whoami)                   
 HOST=$(hostname)
 
-
 print_header() {
     clear
 

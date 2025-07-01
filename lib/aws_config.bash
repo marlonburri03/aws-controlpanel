@@ -3,7 +3,6 @@
 # Standardregion für AWS-CLI-Befehle
 AWS_REGION="us-east-1"
 
-
 # Standard-Availability Zones für Subnets
 #AZ1="${AWS_REGION}a"
 #AZ2="${AWS_REGION}b"
