@@ -41,8 +41,8 @@ create_security_group() {
         --region "$AWS_REGION" 2>>"$LOGFILE"
 
     echo "Security Group '$sg_name' created with ID: $sg_id"
-    echo "Applying standard Linux rules..."
-    log "INFO" "Applying standard Linux rules to Security Group $sg_id..."
+    echo "Applying standard rules..."
+    log "INFO" "Applying standard rules to Security Group $sg_id..."
 
     # allow SSH
     aws ec2 authorize-security-group-ingress \

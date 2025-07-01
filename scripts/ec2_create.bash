@@ -44,17 +44,17 @@ list_matching_subnets() {
         return 1
     fi
 
-    echo "Verfügbare Subnets in VPC $vpc_id:"
+    echo "Available subnets in VPC $vpc_id:"
 
     local subnets=$(aws ec2 describe-subnets \
         --filters "Name=vpc-id,Values=$vpc_id" \
         --query 'Subnets[*].[SubnetId,VpcId,AvailabilityZone,CidrBlock]' \
         --output table 2>/dev/null)
 
-    echo "DEBUG: Subnet-Abfrage abgeschlossen"
+    echo "DEBUG: Subnet query completed"
 
     if [[ -z "$subnets" || "$subnets" == *"None"* ]]; then
-        echo "Keine Subnets in diesem VPC vorhanden."
+        echo "No subnets exist in this VPC."
         return 1
     else
         echo "$subnets"
@@ -125,10 +125,10 @@ create_ec2_instance() {
     #read -rp "Set Key Pair name (z.B. VOCKEY): " KEY_NAME
 
     list_security_groups
-    read -rp "Gib die Security Group ID ein (z.B. sg-0123456789abcdef0): " SECURITY_GROUP_ID
+    read -rp "Enter the Security Group ID (z.B. sg-0123456789abcdef0): " SECURITY_GROUP_ID
 
     list_matching_subnets "$SECURITY_GROUP_ID"
-    read -rp "Gib die Subnet ID ein (z.B. subnet-0abc1234567890def): " SUBNET_ID
+    read -rp "Enter the Subnet ID (z.B. subnet-0abc1234567890def): " SUBNET_ID
 
     # check if Security Group and Subnet belong to same VPC 
     SEC_GROUP_VPC_ID=$(aws ec2 describe-security-groups \
@@ -214,8 +214,8 @@ create_ec2_instance() {
 
 if [[ "$PUBLIC_IP" == "None" || -z "$PUBLIC_IP" ]]; then
     log "WARN" "Instance $INSTANCE_ID has no Public IP address assigned."
-    echo "Hinweis: Der Instanz wurde keine Public IP-Adresse zugewiesen."
-    echo "Stelle sicher, dass das Subnet Public IPs zuweist (MapPublicIpOnLaunch=true) oder verwende ein Elastic IP."
+    echo "Note: No public IP address has been assigned to the instance."
+    echo "Make sure the subnet assigns public IPs (MapPublicIpOnLaunch=true) or use an Elastic IP."
 else
     log "INFO" "Instance $INSTANCE_ID has been started with Public IP $PUBLIC_IP"
     echo "Instance is started. Public IP: $PUBLIC_IP"

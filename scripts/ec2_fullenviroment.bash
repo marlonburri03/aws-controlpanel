@@ -79,7 +79,6 @@ select_user_data_file() {
 launch_ec2_instance() {
   log "INFO" "Launching EC2 instance..."
 
-
 # get user data file
   if [[ "$USER_DATA_FILE" =~ ^[a-zA-Z]:\\ ]]; then
   
@@ -116,6 +115,6 @@ create_route_table
 select_user_data_file
 launch_ec2_instance
 
-log "SUCCESS" "Fertig! EC2-Instanz '$INSTANCE_NAME' wurde erstellt."
+log "SUCCESS" "Done! EC2 instance '$INSTANCE_NAME' has been created."
 
 # end of script
