@@ -407,6 +407,9 @@ Im nächsten und letzten Sprint steht nur noch der Feinschliff an. Dieser umfass
 
 __Sprint Planning:__
 
+Der fünfte und letzte Sprint befasst sich mit der Finalisierung der Semesterarbeit. Ziel ist es nach diesem Sprint die Semesterarbeit vollständig und abgabebereit zu haben. Es werden einzelne Feinschliffe noch gemacht falls nötig und der ganze Text und Code auf die richtigkeit geprüft. Der Sprint startet am __30. Juni__ und geht bis und mit dem __9. Juli 2025__ wobei dies auch gerade das Abgebedatum des Projekts ist.
+
+__Sprint Review:__
 
 # 4 Lösungsdesign
 
