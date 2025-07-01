@@ -19,7 +19,7 @@ pause() {
     read -rp "Press [Enter] to continue..."
 }
 
-# handle input
+# get input
 handle_input() {
     read -rp "Select an option: " choice
     case "$choice" in
@@ -53,7 +53,6 @@ handle_input() {
     esac
 }
 
-
 # main loop
 main_ec2_menu() {
     while true; do
@@ -64,7 +63,7 @@ main_ec2_menu() {
     done
 }
 
-# Only executes if it runs directly
+# only executes if it runs directly
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     main_ec2_menu
 fi

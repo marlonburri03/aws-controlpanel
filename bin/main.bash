@@ -3,7 +3,6 @@
 # variables
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
-
 # header 
 print_header() {
     clear
@@ -72,7 +71,6 @@ read_input() {
     esac
 }
 
-
 # pause
 pause() {
     read -rp "Press [Enter] key to continue..."
@@ -88,8 +86,7 @@ main() {
     done
 }
 
-
-# Only executes if it runs directly
+# only executes if it runs directly
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     main
 fi

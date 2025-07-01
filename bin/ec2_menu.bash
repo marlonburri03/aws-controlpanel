@@ -1,9 +1,7 @@
 #!/bin/bash
 
 # variables
-#source "$(dirname "$0")/init_env.bash"
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
-
 
 # menu
 show_menu() {
@@ -22,7 +20,7 @@ pause() {
     read -rp "Press [Enter] to continue..."
 }
 
-# handle input
+# get input
 handle_input() {
     read -rp "Select an option: " choice
     case "$choice" in
@@ -58,8 +56,6 @@ handle_input() {
             ;;
     esac
 }
-
-
 
 # main loop
 main_ec2_menu() {
