@@ -43,22 +43,17 @@ flowchart LR
 
 ## 2.1 Problemstellung
 
-Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen[^3], VPCs[^4], Security Groups[^6] vollständig automatisiert per Script erstellen und verwalten. Als wir im AWS-Cloud Modul vermehrt EC2-Instanzen sowie die dazugehörigen VPCs und Subnetze[^5] manuell erstellen musste, wurde mir schnell klar, dass dieser Prozess automatisiert werden muss. So entstand die Idee zum Control Panel. Der entscheidende Vorteil dabei ist, dass die Nutzung der AWS-Weboberfläche nahezu überflüssig wird. In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren.
+Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen[^3], VPCs[^4], Security Groups[^6] vollständig automatisiert per Script erstellen und verwalten. Als wir in der Schule im AWS-Cloud Modul vermehrt EC2-Instanzen sowie die dazugehörigen VPCs und Subnetze[^5] manuell erstellen musste, wurde mir schnell klar, dass dieser Prozess automatisiert werden muss. So entstand die Idee zum Control Panel. Der entscheidende Vorteil dabei ist, dass die Nutzung der AWS-Weboberfläche nahezu überflüssig wird. In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren.
 
 
 ## 2.2 Aufgabenstellung
 
-Basierend auf der Problembeschreibung ist das Ziel dieses Projekts die Entwicklung eines Control Panels zur Verwaltung und Bereitstellung von AWS-Ressourcen. 
-Das System soll es ermöglichen, EC2-Instanzen, VPCs, Security Groups und weitere Cloud-Ressourcen vollständig per Script zu erstellen und zu verwalten, wodurch die Nutzung der AWS-Weboberfläche weitgehend überflüssig gemacht wird. 
-Diese Automatisierung soll effizient, fehlerfrei und schnell erfolgen. Für die Umsetzung wird AWS-CLI[^1], Bash und Cloud-init[^7] verwendet. 
-Der gesamte Prozess der Ressourcenbereitstellung und Verwaltung wird durch Scripte automatisiert welche sicherstellen, dass alle notwendigen Aufgaben effizient und ohne manuelle Eingriffe durchgeführt werden.
+Basierend auf der Problembeschreibung ist das Ziel dieses Projekts die Entwicklung eines Control Panels zur Verwaltung und Bereitstellung von AWS-Ressourcen. Das Control Panel soll ermöglichen, AWS-Ressourcen vollständig per Script zu erstellen und zu verwalten, wodurch die Nutzung der Weboberfläche weitgehend überflüssig gemacht wird. Diese Automatisierung soll effizient, fehlerfrei und schnell erfolgen. Für die Umsetzung wird AWS-CLI[^1], Bash und Cloud-init[^7] verwendet. Der gesamte Prozess der Ressourcenbereitstellung und Verwaltung wird durch Scripte automatisiert welche sicherstellen, dass alle notwendigen Aufgaben effizient und ohne manuelle Eingriffe durchgeführt werden.
 
 ## 2.3 Ziele
 
 * __Effizienzsteigerung und Automatisierung:__
-Entwicklung eines Control Panel für die Verwaltung von AWS-Ressourcen mithilfe von Infrastructure-as-Code (IaC)[^8]. 
-Dabei sollen EC2-Instanzen, Netzwerke (VPCs, Subnets, Gateways), Security Groups und weitere AWS-Ressourcen durch Code automatisch erstellt, konfiguriert und verwaltet werden. 
-Ziel ist es, manuelle Arbeitsschritte vollständig zu eliminieren und die Bereitstellung zu automatisieren.
+Durch die Entwicklung eines Control Panel für die Verwaltung von AWS-Ressourcen mithilfe von Infrastructure-as-Code (IaC)[^8], soll die effizenz beim Arbeiten im AWS-Umfeld gesteigert werden. Der Zweck ist es EC2-Instanzen, VPCs, Subnets, Security Groups und andere AWS-Ressourcen durch Code automatisch zu erstellen, zu konfigurieren und zu verwalten. Dadurch sollten manuelle Arbeitsschritte vollständig wegfallen und die Bereitstellung automatisiert werden.
 
 * __Unabhängigkeit von der Weboberfläche:__
 Vollständige Steuerung und Verwaltung von AWS-Ressourcen über die Shell mit Scripte welche mittels Bash auf die AWS CLI zugreiffen. 
@@ -178,9 +173,8 @@ __Platzhalter Screenshot Jira Timeline__
 Die Timeline bietet einen strukturierten Überblick über alle geplanten Sprints. Änderungen an Tasks oder User Stories werden in Echtzeit sichtbar, was die Visualisierung der Projektumsetzung erleichtert.  
 
 In Scrum werden Anforderungen hierarchisch gegliedert, um komplexe Aufgaben übersichtlich zu strukturieren. 
-Epics bilden dabei die oberste Ebene. Sie beschreiben grosse, übergeordnete Anforderungen, die mehrere Sprints umfassen und in kleinere User Stories unterteilt werden. 
-User Stories stellen konkrete Anforderungen aus Sicht des Nutzers dar und sind so formuliert, dass sie innerhalb eines Sprints umgesetzt werden können. 
-Zur weiteren Aufteilung und besseren Planung können User Stories in Subtasks untergliedert werden. 
+Epics bilden dabei die oberste Ebene. Sie beschreiben grössere, übergeordnete Anforderungen, die über mehrere Sprints hinweg bearbeitet werden müssen und in kleinere User Stories unterteilt werden. 
+Die User Stories stellen dabei konkrete Anforderungen aus Sicht des Nutzers dar und sind so typischerweise so komplex, dass sie innerhalb eines Sprints umgesetzt werden können. Zur weiteren Aufteilung und besseren Planung können User Stories in Subtasks untergliedert werden. 
 Das sind kleinere technische oder organisatorische Aufgaben, die für die Umsetzung der jeweiligen Story notwendig sind. *(Dieser Text wurde mithilfe von ChatGPT geschrieben, 2025).*  
 
 ```
@@ -211,8 +205,8 @@ Weitere wichtige Bestandteile einer User Story sind die Akzeptanzkriterien, die 
 
 ## 3.2 Definition of Ready (DoR)
 
-Die Definition of Ready[^17] besteht aus individuell festgelegten Kriterien, die definieren, welche Voraussetzungen eine User Story im Product Backlog erfüllen muss, bevor sie in einen Sprint aufgenommen werden kann. 
-Sie stellt sicher, dass das Team ein gemeinsames Verständnis der Aufgabe hat und diese realistisch umsetzbar ist.
+Die Definition of Ready[^17] besteht aus individuellen festgelegten Kriterien die definieren, welche Voraussetzungen eine User Story im Product Backlog erfüllen muss, damit sie in das Sprint Backlog aufgenommen werden kann. 
+Sie stellt sicher, dass das Team ein einheitliches und gemeinsames Verständnis der Aufgabe hat und diese realistisch umsetzbar ist.
 
 * __Inhaltliche Anforderungen:__ Die User Story enthält eine vollständige Beschreibung mit allen relevanten Informationen, und das Ziel der Story ist klar definiert. Zudem sind alle notwendigen Akzeptanzkriterien formuliert, und die Story wurde vom Product Owner gegengelesen.
 
@@ -226,7 +220,7 @@ Die Definition of Ready gilt einheitlich für alle User Stories im Projekt und w
 
 ## 3.3 Definition of Done (DoD)
 
-Die Definition of Done setzt sich aus individuell festgelegten Kriterien zusammen, die definieren, wann eine User Story als vollständig abgeschlossen gilt. Sie schafft ein einheitliches Verständnis von Qualität innerhalb des Teams.
+Die Definition of Done setzt sich aus individuell festgelegten Kriterien zusammen die definieren, wann eine User Story als vollständig abgeschlossen gilt. Sie schafft ein einheitliches Verständnis von Qualität innerhalb des Teams.
 
 * __Umsetzung der Anforderungen:__ Alle Anforderungen und Akzeptanzkriterien der User Story sind vollständig umgesetzt und funktionieren gemäss den Vorgaben.
 
@@ -244,9 +238,9 @@ In JIra wurde eine Automation Rule erstellt, welche die Kriterien der Definition
 
 ### 3.4.1 Sprint 1
 
-Ziel des ersten Sprints ist es, die Grundlagen und Voraussetzungen für das Projekt zu schaffen. 
-Dazu gehören unter anderem die Erstellung einer Risikoanalyse, die Planung des weiteren Vorgehens sowie die Dokumentation der Organisationsstruktur. 
-Am Ende des ersten Sprints sollen alle notwendigen Vorarbeiten geleistet sein, sodass mit der eigentlichen Umsetzung gestartet werden kann.
+Im ersten Sprint der Semesterarbeit geht es darum das Fundament und die Voraussetzungen für das Projekt zu schaffen. 
+Dazu gehört das Erstellen einer Risikoanalyse, die Planung des weiteren Vorgehens sowie die Dokumentation der Organisationsstruktur. 
+Ziel ist es, dass am Ende des ersten Sprints alle notwendigen Vorarbeiten gemacht sind, damit mit der eigentlichen Umsetzung des Projekts gestartet werden kann.
 
 __Sprint Planning:__  
 
@@ -258,7 +252,7 @@ Im Sprint Planning wurde zunächst ermittelt, wie viel Kapazität anhand von Sto
 Für den ersten Sprint wurde ein Ziel von fünf Storypoints gesetzt. Ein Storypoint entspricht dabei einem Arbeitstag mit acht Stunden Aufwand. 
 Entsprechend werden Aufgaben mit einem Gesamtaufwand von fünf Storypoints eingeplant. 
 
-Im Anschluss wurde in Jira der erste Sprint erstellt, welcher vom 5. Mai bis zum 19. Mai 2025 läuft. 
+Im Anschluss wurde in Jira der erste Sprint erstellt, welcher vom __5. Mai__ bis zum __19. Mai 2025__ läuft. 
 Abschliessend wurden falls erforderlich, Subtasks zu den Stories angelegt, um die Aufgaben besser strukturieren und aufteilen zu können.  
 
 ![Sprint1Planning](img/Sprint1Planning.png)
@@ -266,13 +260,13 @@ Abschliessend wurden falls erforderlich, Subtasks zu den Stories angelegt, um di
 
 __Sprint Review:__ 
 
-In der Sprint Review wurden die Ergebnisse des ersten Sprints vorgestellt und gemeinsam mit dem Projektmanagement-Lehrer Projektleiter besprochen. Dabei wurde gezielt Feedback eingeholt, um die weitere Projektarbeit zu verbessern. 
+In der Sprint Review wurden die Ergebnisse des ersten Sprints vorgestellt und gemeinsam mit dem Projektmanagement-Lehrer Projektleiter besprochen. Dabei wurde gezielt frühzeitig Feedback von ihm eingeholt, um diesm im Verlauf der Arbeit zu verbessern. 
 
-Ein wesentlicher Diskussionspunkt war die Deklaration von Inhalten, die mithilfe von künstlicher Intelligenz (KI) erstellt wurden. Es wurde festgelegt, dass solche Inhalte eindeutig deklariert und die verwendeten Prompts im Quellenverzeichnis aufgeführt werden sollen.
-Zudem wurde darüber diskutiert, ob zusätzlich zur Jira-Timeline ein Gantt-Diagramm erstellt werden soll, um den Projektplan visuell darzustellen. Nach gemeinsamer Absprache wurde entschieden, dass die Visualisierung über die Jira-Timeline ausreichend ist und somit kein separates Gantt-Diagramm erstellt wird. 
+Ein wichtiger Diskussionspunkt war die Deklaration von Inhalten, die mithilfe von künstlicher Intelligenz (KI) erstellt wurden. Es wurde von der Lehrperson festgelegt, dass solche Inhalte eindeutig gekennzeichnet werden und die verwendeten Prompts im Quellenverzeichnis aufgeführt werden sollen.
+Zudem wurde darüber diskutiert, ob zusätzlich zur Jira-Timeline ein Gantt-Diagramm erstellt werden sollte, um den Projektplan visuell darzustellen. Nach gemeinsamer Absprache wurde entschieden, dass die Visualisierung über die Jira-Timeline ausreichend ist und somit kein separates Gantt-Diagramm erstellt wird. 
 
 Insgesamt konnte der erste Sprint erfolgreich abgeschlossen werden, und die definierten Sprintziele wurden erreicht. Ziel war es, nach dem ersten Sprint mit der eigentlichen Umsetzung der Scripte beginnen zu können. 
-Dafür mussten zunächst alle notwendigen Vorbereitungen getroffen und abgeschlossen werden. Darüber hinaus wurde bereits im Voraus das Datum für das Sprint Review des zweiten Sprints festgelegt.  
+Dafür mussten zunächst alle notwendigen Vorbereitungen getroffen und abgeschlossen werden. Darüber hinaus wurde bereits im Voraus das Datum für das Sprint Review des zweiten Sprints festgelegt.
 
 
 Abgeschlossene User Storys:  
@@ -295,7 +289,7 @@ Seit dem letzten Mal, als die verbleibenden User Stories im Backlog betrachtet w
 
 Daher bestand der erste Schritt darin, für alle User Stories aussagekräftige Beschreibungen zu verfassen und passende Akzeptanzkriterien zu definieren, um eine klare Grundlage für die Umsetzung zu schaffen. Anschliessend wurde anhand der Story Points ermittelt, wie viel Kapazität zur Verfügung steht. Für den zweiten Sprint wurden User Stories im Gesamtumfang von fünf Story Points eingeplant.
 
-Zum Abschluss wurde in Jira der zweite Sprint erstellt, welcher vom 19. Mai bis zum 2. Juni 2025 läuft. Zusätzlich wurden für einige User Stories Sub-Tasks angelegt, um die Aufgaben innerhalb der Stories besser aufteilen und effizienter bearbeiten zu können.
+Zum Abschluss wurde in Jira der zweite Sprint erstellt, welcher vom __19. Mai__ bis zum __2. Juni 2025__ läuft. Zusätzlich wurden für einige User Stories Sub-Tasks angelegt, um die Aufgaben innerhalb der Stories besser aufteilen und effizienter bearbeiten zu können.
 
 ![Sprint2Planning](img/Sprint2Planning.png)
 *Screenshot von meinem Sprint 2 Backlog in Jira.*
@@ -338,7 +332,7 @@ Zusätzlich riet er dazu, die Scripte mit relokalisierbaren Pfaden auszustatten,
 Ausserdem betonte er, dass die Scripte eigenständig lauffähig sein sollen und nicht zwingend vom Hauptscript abhängig sein sollen.
 
 Dieses Feedback habe ich aufgenommen und in das Sprint Backlog eingearbeitet. Die erste Aufgabe im Sprint bestand daher darin, entsprechende User Stories zu formulieren und einzuplanen. 
-Für diesen Sprint wurde erneut eine Kapazität von fünf Story Points festgelegt, die auf die einzelnen User Stories verteilt wurden. Der dritte Sprint geht vom 2. Juni bis zum 16. Juni 2025.
+Für diesen Sprint wurde erneut eine Kapazität von fünf Story Points festgelegt, die auf die einzelnen User Stories verteilt wurden. Der dritte Sprint geht vom __2. Juni__ bis zum __16. Juni 2025__.
 
 ![Sprint3Planning](img/Sprint3Planning.png)
 *Screenshot von meinem Sprint 3 Backlog in Jira.*
@@ -412,6 +406,8 @@ Der fünfte und letzte Sprint befasst sich mit der Finalisierung der Semesterarb
 __Sprint Review:__
 
 # 4 Lösungsdesign
+
+In diesem Abschnitt befinden sich die Flowcharts der einzelnen Menüscripten. Dabei handelt es sich um eine Planung des Ablaufs, die entgültige Lösung könnte am ende auch anderst Umgesetzt werden.
 
 ## 4.1 Main Script
 
@@ -655,7 +651,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 fi
 ```
 
-> __Hinweis__: Dieses Script repräsentiert den aktuellen Arbeitsstand des EC2-Script. Es befindet sich in aktiver Entwicklung und stellt noch nicht die endgültige Version dar.
+> __Hinweis__: Dieses Script repräsentiert den aktuellen Arbeitsstand des EC2-Menu Script. Es befindet sich in aktiver Entwicklung und stellt noch nicht die endgültige Version dar.
 
 &nbsp;
 
@@ -664,7 +660,7 @@ fi
 
 &nbsp;
 
-Alle weiteren Submenüs wie ```vpc_menu.bash```, ```subnet_menu.bash``` und ```securitygroup_menu.bash``` wurden nach dem gleichen Schema wie das ```EC2_menu.bash``` entwickelt. Sie sind modular aufgebaut und können bei Bedarf auch unabhängig vom Main-Script ausgeführt werden.
+Alle weiteren Submenüs wie ```vpc_menu.bash```, ```subnet_menu.bash``` und ```securitygroup_menu.bash``` wurden nach dem gleichen Schema wie das ```ec2_menu.bash``` entwickelt. Sie sind modular aufgebaut und können bei Bedarf auch unabhängig vom Main-Script ausgeführt werden.
 
 Hinter jedem dieser Menüscripte stehen weitere Einzelscripte, die konkrete Aufgaben übernehmen wie z.B das Erstellen oder Löschen einer EC2-Instanz. Wählt der Benutzer eine entsprechende Option im Menü, wird er zur Eingabe relevanter Parameter aufgefordert, wie beispielsweise dem Namen der Instanz. Alternativ lassen sich diese Parameter auch direkt über die Kommandozeile beim Einzelaufruf der jeweiligen Scripte übergeben, was eine flexible und automatisierte Nutzung ermöglicht.
 
@@ -755,9 +751,9 @@ __Task scripts:__
 
 In meinem Projekt wurden die Scripte in zwei Hauptkategorien unterteilt: Menu-Scripte und Task-Scripte. Die Menu-Scripte befinden sich im Ordner ```bin``` und dienen der grafisch unterstütztung und Darstellung von Auswahlmöglichkeiten innerhalb der Kommandozeilenoberfläche. Sie bilden sozusagen das interaktive Frontend des Tools und führen die Benutzer/innen durch das Menüsystem.
 
-Die Task-Scripte hingegen liegen im Ordner ```scripts``` übernehmen die eigentliche Umsetzung der gewünschten Funktionen, wie etwa das Erstellen, Löschen oder Auflisten von AWS-Ressourcen z.B EC2-Instanzen, Security Groups, Subnetzen usw. Diese Scripte wurden nach einem klar definierten und wiederverwendbaren Aufbauprinzip entwickelt. Dadurch können sie nicht nur vom Hauptmenü aus aufgerufen, sondern auch völlig eigenständig und isoliert ausgeführt werden. Das ist besonders hilfreich beim Debugging, bei Tests oder für den gezielten Einsatz in automatisierten Prozessen.
+Die Task-Scripte hingegen liegen im Ordner ```scripts```. Die Scripte übernehmen die eigentliche Umsetzung der gewünschten Funktionen, wie etwa das Erstellen, Löschen oder Auflisten von AWS-Ressourcen wie z.B EC2-Instanzen. Diese Scripte wurden nach einem von mir definierten und wiederverwendbarem Aufbauprinzip entwickelt. Dadurch können sie nicht nur vom Hauptmenü aus aufgerufen, sondern auch völlig eigenständig und isoliert ausgeführt werden. Das ist besonders hilfreich beim Debugging, bei Tests oder für den gezielten Einsatz in automatisierten Prozessen.
 
-Jedes Task-Script beginnt mit dem Laden einer zentralen Initialisierungsdatei[^12] (```init_env.bash```), die für eine einheitliche Umgebung sorgt. Anschliessend erfolgt ein strukturierter Logeintrag, um Startzeit und Scriptname zu dokumentieren. Die eigentliche Logik ist in einer klar benannten Funktion gekapselt, was die Lesbarkeit und die Wartung vereinfacht. Fehlerbehandlung, Nutzereingaben und Rückgabewerte sind standardisiert umgesetzt. Zusätzlich wird durch eine vorgelagerte Funktionsprüfung (```check_aws_requirements```) sichergestellt, dass notwendige Voraussetzungen wie gültige Credentials oder die Verfügbarkeit der AWS CLI erfüllt sind. Diese strukturierte Trennung und der modulare Aufbau sorgen nicht nur für eine hohe Wartbarkeit, sondern auch für Flexibilität im Umgang mit den einzelnen Komponenten des Projekts. Um den strukturellen Aufbau exemplarisch darzustellen wurde das ```securitygroup_delete.bash``` genommen, das genau nach diesem Prinzip aufgebaut ist und tadellos funktioniert.
+Jedes Task-Script beginnt mit dem Laden einer zentralen Initialisierungsdatei[^12] (```init_env.bash```), die für eine einheitliche Umgebung sorgt. Anschliessend erfolgt ein strukturierter Logeintrag, um Startzeit und Scriptname zu dokumentieren. Die eigentliche Logik ist in einer eigener Funktion abgebildet, was die Lesbarkeit und die Wartung vereinfacht. Fehlerbehandlung, Nutzereingaben und Rückgabewerte sind standardisiert umgesetzt. Zusätzlich wird durch eine vorgelagerte Funktionsprüfung (```check_aws_requirements```) sichergestellt, dass notwendige Voraussetzungen wie gültige Credentials oder die Verfügbarkeit der AWS CLI erfüllt sind. Diese strukturierte Trennung und der modulare Aufbau sorgen nicht nur für eine hohe Wartbarkeit, sondern auch für Flexibilität im Umgang mit den einzelnen Komponenten des Projekts. Um den strukturellen Aufbau exemplarisch darzustellen wurde das ```securitygroup_delete.bash``` genommen, das genau nach diesem Prinzip aufgebaut ist und tadellos funktioniert.
 
 ```bash
 #!/bin/bash
@@ -817,7 +813,7 @@ delete_security_group
 
 # 6 Testverfahren
 
-Für die Durchführung des Testing wurde ein strukturierter Ablauf festgelegt, um sicherzustellen, dass alle Testfälle vollständig und erfolgreich abgeschlossen werden.
+Für die Durchführung des Testverfahren wurde ein Struktur für den Ablauf festgelegt, um sicherzustellen, dass alle Testfälle vollständig und erfolgreich abgeschlossen werden.
 
 ```mermaid
 flowchart TD
@@ -832,7 +828,7 @@ f --> b
 
 Getestet werden die jeweiligen Prozesse zur Erstellung und Löschung von AWS-Ressourcen, wie z. B. EC2-Instanzen oder Security Groups, sowie deren Funktionalität und Ablauf im Terminal. Alle Testfälle sind so konzipiert, dass sie gemeinsam die definierten Projektziele vollständig abdecken. Ein erfolgreiches Bestehen aller Testfälle bestätigt die korrekte Umsetzung des AWS-Controlpanels.
 
-Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführt. Diese befindet sich auf meinem vorhandenen Laptop, wie in der Projektbeschreibung definiert.
+Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführt. Diese befindet sich auf meinem persönlichen Laptop, wie in der Projektbeschreibung definiert.
 
 ## 6.1 Testfälle
 
@@ -971,43 +967,43 @@ pie title Durchgeführte Testfälle
 
 ## 7.1 Technisches Fazit
 
-Diese Semesterarbeit bietet eine solide technische Grundlage für die automatisierte Verwaltung von AWS-Ressourcen. 
-Durch ein eigens entwickeltes Control Panel konnten Ressourcen in AWS effizient bereitgestellt, konfiguriert und gelöscht werden. 
+Diese Semesterarbeit bietet eine stabile technische Grundlage für die automatisierte Verwaltung von AWS-Ressourcen. 
+Durch ein eigenes entwickeltes Control Panel können Ressourcen in AWS effizient bereitgestellt, konfiguriert und gelöscht werden. 
 Die modulare Scriptstruktur und die Benutzerfreundliche Eingabeführung erleichtern den Umgang mit der AWS-Infrastruktur erheblich 
 und zeigen klar die Vorteile automatisierter Prozesse gegenüber manuellen Abläufen.
 
-Trotz der funktionalen Umsetzung wirft das Projekt bei näherer Betrachtung Fragen hinsichtlich Skalierbarkeit und langfristiger Verwaltbarkeit auf. 
+Trotz der funktionalen Umsetzung wirft das Projekt bei näherer Betrachtung Fragen hinsichtlich Skalierbarkeit und der längerfristigen Verwaltbarkeit auf. 
 Ziel war es, ein Tool zu entwickeln, das komplett Unabhängig von der Weboberfläche funktioniert. Dieses Ziel wurde grundsätzlich erreicht,
 allerdings mussten dafür bestimmte Parameter eingeschränkt oder mit Standardwerten versehen werden, etwa bei der Auswahl eines SSH-Keys oder der AWS-Region.
 Da die Entwicklung in einer isolierten Testumgebung stattfand, bleibt offen, wie gut sich das Control Panel in realen Szenarien bewährt und welchen tatsächlichen Mehrwert es dort generiert.
 
 Die Benutzerfreundlichkeit konnte durch die Reduktion konfigurierbarer Optionen deutlich verbessert werden. Einige Parameter müssen jedoch weiterhin manuell eingegeben werden, 
 da keine praktikablen Standardwerte definiert werden konnten. Zukünftige Erweiterungen wie vordefinierte Profile oder dynamische Ressourcenabfragen bieten hier weiteres Optimierungspotenzial.
-Insgesamt zeigt die Arbeit grossartig, wie sich Cloud-Ressourcen in AWS mithilfe eines eigenen Control Panels strukturiert und automatisiert verwalten lassen. 
-Mit Blick auf Themen wie Sicherheit, Fehlerbehandlung und Mehrbenutzerfähigkeit bildet das Projekt eine wertvolle Grundlage für weiterführende Entwicklungen.
+Insgesamt zeigt die Arbeit sehr gut auf, wie sich Cloud-Ressourcen in AWS mithilfe eines eigenen Control Panels in Bash strukturiert und automatisiert verwalten lassen. 
+Mit hinblick auf Themen wie z.B Sicherheit, Fehlerbehandlung und Mehrbenutzerfähigkeit bildet das Projekt eine wertvolle Grundlage für eventuelle weiterführende Entwicklungen.
 
 ## 7.2 Persönliches Fazit
 
 Die Arbeit an diesem Projekt war anspruchsvoll und forderte mich fachlich heraus. Gleichzeitig war es aber auch eine Gelegenheit zu persönlichen Weiterentwicklung.
-Durch die Entwicklung eines eigenen AWS-Control Panels konnte ich mein Verständnis für die Automatisierung und Steuerung von Cloud-Ressourcen mit der AWS CLI und Bash-Scripten[^2] deutlich vertiefen. Der Aufbau eines übersichtlichen und funktionalen Control Panels erforderte nicht nur technisches Know-how, sondern auch ein gutes Gespür für Benutzerführung und Prozessgestaltung.
+Durch die Entwicklung des AWS-Control Panels konnte ich mein Verständnis für die Automatisierung und Steuerung von Cloud-Ressourcen mit der AWS CLI und Bash-Scripten[^2] deutlich vertiefen. Der Aufbau von einem nutzbaren Control Panels erforderte nicht nur technisches Know-how, sondern auch ein gewisses Gespür für die Prozessgestaltung und Benutzerführung.
 
-Ein wichtiger Punkt, der mir während der Umsetzung besonders bewusst wurde, war die klare Abgrenzung. Sei es bei der Auswahl und Verknüpfung von AWS-Diensten oder der automatisierten Erstellung von Ressourcen wie EC2-Instanzen, VPCs, Security Groups usw. Dabei zeigte sich, wie wichtig eine sorgfältige Planung und ein schrittweises, iteratives Vorgehen sind, um auch bei komplexeren Anforderungen den Überblick zu behalten und stabile Ergebnisse zu erzielen.
+Ein wichtiger Punkt, der mir vorallem während der Umsetzung der Arbeit besonders bewusst wurde, war die klare Abgrenzung. Sei es bei der Auswahl der Availability Zones von AWS oder der automatisierten Erstellung von Ressourcen wie EC2-Instanzen, VPCs, Security Groups usw. Dabei zeigte sich, wie wichtig eine sorgfältige Planung und ein schrittweises, iteratives Vorgehen sind, um auch bei komplexeren Anforderungen den Überblick zu behalten um im endeffekt ein stabiles Ergebnisse zu erzielen.
 
-Trotz vieler positiver Erfahrungen hat das Projekt auch Grenzen aufgezeigt. Insbesondere hätte ich mir mehr Zeit gewünscht, um Aspekte wie die Skalierbarkeit der Ressourcen und die Erweiterbarkeit des Tools um noch mehr unabhängigkeit gegenüber der Weboberläche zu schaffen. Gleichzeitig war es genau diese Auseinandersetzung mit technischen Herausforderungen, die mir half, wichtige Soft Skills wie Ausdauer, Problemlösungskompetenz und strukturiertes Denken weiterzuentwickeln.
+Trotz vieler positiver Erfahrungen hat mir das Projekt auch gewisse Grenzen aufgezeigt. Insbesondere hätte ich mir mehr Zeit gewünscht, um Aspekte wie z.B die Skalierbarkeit der Ressourcen und die Erweiterbarkeit des Tools um noch mehr unabhängigkeit gegenüber der Weboberläche zu schaffen. Gleichzeitig war es genau diese Auseinandersetzung mit den technischen sowie Planerischen Herausforderungen, die mir stark geholfen haben wichtige Soft Skills wie Ausdauer, Problemlösungskompetenz und strukturiertes Denken weiterzuentwickeln.
 
-Insgesamt hat mir dieses Projekt gezeigt, wie erfüllend es sein kann, eine Lösung von Grund auf zu konzipieren und umzusetzen. Und wie wichtig es ist, stets offen für neue Technologien und Denkansätze zu bleiben, um sich sowohl fachlich als auch persönlich weiterzuentwickeln.
+Insgesamt hat mir dieses Projekt gezeigt, wie erfüllend es sein kann, eine Lösung von Grund auf zu konzipieren und umzusetzen. Und wie wichtig es ist, stets offen für neue Technologien und Denkansätze zu bleiben, um sich sowohl fachlich als auch persönlich weiterentwickeln zu können.
 
 ## 7.3 Mögliche Weiterentwicklung
 
-Das Projekt bietet vielfältige Möglichkeiten zur Weiterentwicklung. Eine sinnvolle Erweiterung wäre die Einführung einer rollenbasierten Benutzer- und Rechteverwaltung, um den Zugriff auf bestimmte Funktionen gezielt steuern zu können und so den Einsatz im Arbeitsumfeld zu ermöglichen. Nebst dem schon bestehenden Logging würde auch die Integration von einer zusätzlichen Monitoring-Funktion zur besseren Nachvollziehbarkeit und Stabilität des Systems beitragen.
+Das Projekt bietet diverse Möglichkeiten zur Weiterentwicklung. Eine sinnvolle Erweiterung wäre die Einführung einer rollenbasierten Benutzer- und Rechteverwaltung, um den Zugriff auf bestimmte Funktionen gezielt steuern zu können und so den Einsatz im Arbeitsumfeld zu ermöglichen. Nebst dem schon bestehenden Logging würde auch die Integration von einer zusätzlichen Monitoring-Funktion zur besseren Nachvollziehbarkeit und Stabilität des Systems sinn ergeben.
 
-Darüber hinaus könnte das Tool um zusätzliche AWS-Dienste wie S3, RDS, IAM usw. erweitert werden, um eine ganzheitlichere Verwaltung der Cloud-Infrastruktur zu ermöglichen. Ebenso wäre es denkbar, Skalierungsfunktionen zu integrieren, mit denen komplexere Umgebungen welche mit mehreren EC2-Instanzen, Subnetzen oder Load Balancern, automatisch bereitgestellt werden könnten.
+Zusätzlich könnte das Tool noch erweitert werden und weitere AWS-Dienste wie z.B S3, RDS, IAM usw. integriert werden um diese über das Control Panel bereitstellen zu können. Ebenso wäre es denkbar, Skalierungsfunktionen zu integrieren. Mit welcher komplexere Umgebungen welche mit mehreren EC2-Instanzen, Subnetzen oder Load Balancern funktionieren, automatisch bereitgestellt werden könnten.
 
-Ein weiterer Schritt in Richtung professioneller Infrastrukturverwaltung wäre die Anbindung an deklarative Tools wie z.B Terraform. Dadurch könnten wiederholbare, versionierbare und überprüfbare Deployments realisiert werden. In diesem Zusammenhang wäre auch der Einsatz von CI/CD-Pipelines[^13] sinnvoll, um die Bereitstellung und Aktualisierung des Control Panels sowie der zugrunde liegenden Infrastruktur automatisiert und kontrolliert ablaufen zu lassen. Dies würde die Wartbarkeit verbessern, manuelle Fehler reduzieren und die Entwicklung deutlich beschleunigen.
+Ein weiterer Schritt in Richtung professioneller Infrastrukturverwaltung wäre die Anbindung an deklarative Tools wie z.B Terraform. Dadurch könnten wiederholbare, versionierbare und überprüfbare Deployments umgesetzt werden. In diesem Zusammenhang wäre auch der Einsatz von CI/CD-Pipelines[^13] sinnvoll, um die Bereitstellung und Aktualisierung des Control Panels sowie der darauf aufbauende Infrastruktur automatisiert und kontrolliert ablaufen zu lassen. Dies würde die Wartbarkeit verbessern, manuelle Fehler reduzieren und die Entwicklung deutlich beschleunigen.
 
 # 8 Schlusswort
 
-Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funktionale Lösung zur Verwaltung von Cloud-Ressourcen darstellt, sondern auch eine wertvolle Lernerfahrung in Bezug auf Automatisierung, Strukturierung und den praktischen Umgang mit der AWS-CLI war. Die Umsetzung hat gezeigt, wie durchdachte Planung und kontinuierliche Verbesserung zu einem Werkzeug führen können, das sowohl technisch robust als auch benutzerfreundlich ist. Das Projekt bildet eine solide Grundlage für zukünftige Erweiterungen und bietet viele Ansatzpunkte, um es weiterzuentwickeln und noch stärker an professionelle Anforderungen anzupassen.
+Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funktionierende Lösung zur Verwaltung von AWS-Ressourcen darstellt, sondern auch eine wertvolle persönliche Lernerfahrung in Bezug auf Automatisierung, Strukturierung und den praktischen Umgang mit der AWS-CLI für mich war. Die Umsetzung hat mir gezeigt, wie eine durchdachte Planung und die kontinuierliche Verbesserung zu einem Ergebniss führen kann, das sowohl technisch robust sowie auch benutzerfreundlich ist. Das Projekt bildet eine gute Grundlage für zukünftige Projekte und bietet viele Ansätze, um es weiternetwickel zu können und noch stärker an professionelle Anforderungen anzupassen.
 
 ## 8.2 Quellenverzeichnis
 
