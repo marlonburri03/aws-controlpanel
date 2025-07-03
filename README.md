@@ -407,7 +407,7 @@ __Sprint Review:__
 
 # 4 Lösungsdesign
 
-In diesem Abschnitt befinden sich die Flowcharts der einzelnen Menüscripten. Dabei handelt es sich um eine Planung des Ablaufs, die entgültige Lösung könnte am ende auch anderst Umgesetzt werden.
+In diesem Abschnitt befinden sich Flowcharts welche die einzelnen Menüscripten darstellen. Es handelt sich dabei sich um eine visualisierung meiner ursprünglichen Idee wie das Control Panel und die dazugehörigen Menu Scripte funkionieren sollten und dient zur groben Planung des Ablaufs. Die entgültige Lösung könnte am ende auch anderst Umgesetzt werden, dies würde aber explizit erwähnt werden.
 
 ## 4.1 Main Script
 
