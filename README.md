@@ -939,7 +939,7 @@ Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführ
 | Testablauf             | 1. Script mit Logging starten<br>2. Terminalausgabe prüfen<br>3. Logdatei kontrollieren |
 | Effektives Ergebnis    | Logfile-Einträge vorhanden                                                 |
 | Screenshotg / Logfiles | Logdatei: `aws-control.log`                                                |
-| Problemstellungen      | -                                                                          |
+| Problemstellungen      | ![Testfall9](img/Testing/Testfall9.png)<br>*Auszug vom Log* |                                                                 
 | Testergebnis           | Erfolgreich                                                                |
 
 &nbsp;
