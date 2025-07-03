@@ -938,8 +938,8 @@ Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführ
 | Erwartetes Ergebnis    | Jeder Schritt wird mit Zeitstempel geloggt                                |
 | Testablauf             | 1. Script mit Logging starten<br>2. Terminalausgabe prüfen<br>3. Logdatei kontrollieren |
 | Effektives Ergebnis    | Logfile-Einträge vorhanden                                                 |
-| Screenshotg / Logfiles | Logdatei: `aws-control.log`                                                |
-| Problemstellungen      | ![Testfall9](img/Testing/Testfall9.png)<br>*Auszug vom Log* |                                                                 
+| Screenshotg / Logfiles | ![Testfall9](img/Testing/Testfall9.png)<br>*Auszug von der Logdatei: `aws-control.log`* |
+| Problemstellungen      | -                                                                          |
 | Testergebnis           | Erfolgreich                                                                |
 
 &nbsp;
