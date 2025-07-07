@@ -11,7 +11,7 @@
 
 ## 1 Einleitung
 
-In diesem Projekt wird ein Bash[^20]-basiertes Control Panel für AWS entwickelt, das eine einfache und effiziente Verwaltung sowie Administration von Cloud-Ressourcen ermöglicht. Diese Arbeit basiert auf dem erarbeiteten Fachwissen aus dem ersten Semester des Lehrgangs zum dipl. Informatiker HF mit Vertiefung in Cloud Native. Diese Arbeit wurde von Marlon Burri geschrieben und ist eine Einzelarbeit.
+In diesem Projekt wird ein Bash[^20]-basiertes Control Panel für AWS[^21] entwickelt, welches eine einfache und effiziente Verwaltung sowie Administration von Cloud-Ressourcen ermöglicht. Die Arbeit basiert auf dem erarbeiteten Fachwissen aus dem ersten Semester des Lehrgangs zum dipl. Informatiker HF mit Vertiefung in Cloud Native und wurde von Marlon Burri als Einzelarbeit durchgeführt.
 
 
 ## 1.1 Behandelte Module
@@ -43,29 +43,33 @@ flowchart LR
 
 ## 2.1 Problemstellung
 
-Mit meinem AWS-Control Panel lassen sich Ressourcen wie EC2-Instanzen[^3], VPCs[^4], Security Groups[^6] vollständig automatisiert per Script erstellen und verwalten. Als wir in der Schule im AWS-Cloud Modul vermehrt EC2-Instanzen sowie die dazugehörigen VPCs und Subnetze[^5] manuell erstellen musste, wurde mir schnell klar, dass dieser Prozess automatisiert werden muss. So entstand die Idee zum Control Panel. Der entscheidende Vorteil dabei ist, dass die Nutzung der AWS-Weboberfläche nahezu überflüssig wird. In Kombination mit Cloud-init lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren.
+Mit dem Control Panel lassen sich AWS spezifische Cloud-Ressourcen wie z.B EC2-Instanzen[^3], VPCs[^4], Security Groups[^6] vollständig automatisiert per Script erstellen und verwalten. Als wir in der Schule im AWS-Cloud Modul vermehrt EC2-Instanzen sowie die dazugehörigen VPCs und Subnetze[^5] manuell erstellen mussten, wurde mir das schnell zu eintönig und mir stellte sich die Frage wie dies möglichst sinvoll automatisiert werden kann. So entstand die Idee zum Control Panel. Der entscheidende Vorteil dabei ist, dass die Nutzung der AWS-Weboberfläche nahezu überflüssig wird und alles über die Kommandozeile ausgeführt werden kann. In Kombination mit Cloud-init[^7], ein Softwaretool welches standartmässig auf Linux-Betriebssystemen installiert ist, lassen sich einsatzbereite Systeme automatisch bereitstellen und konfigurieren.
 
 
 ## 2.2 Aufgabenstellung
 
-Basierend auf der Problembeschreibung ist das Ziel dieses Projekts die Entwicklung eines Control Panels zur Verwaltung und Bereitstellung von AWS-Ressourcen. Das Control Panel soll ermöglichen, AWS-Ressourcen vollständig per Script zu erstellen und zu verwalten, wodurch die Nutzung der Weboberfläche weitgehend überflüssig gemacht wird. Diese Automatisierung soll effizient, fehlerfrei und schnell erfolgen. Für die Umsetzung wird AWS-CLI[^1], Bash und Cloud-init[^7] verwendet. Der gesamte Prozess der Ressourcenbereitstellung und Verwaltung wird durch Scripte automatisiert welche sicherstellen, dass alle notwendigen Aufgaben effizient und ohne manuelle Eingriffe durchgeführt werden.
+Basierend auf der Problembeschreibung ist das Ziel dieses Projekts die Entwicklung eines Control Panels zur Verwaltung und Bereitstellung von AWS-Ressourcen. Das Control Panel soll ermöglichen, AWS-Ressourcen vollständig per Script zu erstellen und zu verwalten, wodurch der manuelle Prozess der Erstellung wegfällt. Diese Automatisierung soll effizient, fehlerfrei und schnell erfolgen. Für die Umsetzung wird AWS-CLI[^1], Bash und Cloud-init verwendet. Der gesamte Prozess der Ressourcenbereitstellung und Verwaltung wird durch Scripte automatisiert welche sicherstellen, dass alle notwendigen Aufgaben effizient und ohne manuelle Eingriffe durchgeführt werden.
 
 ## 2.3 Ziele
 
-* __Effizienzsteigerung und Automatisierung:__
-Durch die Entwicklung eines Control Panel für die Verwaltung von AWS-Ressourcen mithilfe von Infrastructure-as-Code (IaC)[^8], soll die effizenz beim Arbeiten im AWS-Umfeld gesteigert werden. Der Zweck ist es EC2-Instanzen, VPCs, Subnets, Security Groups und andere AWS-Ressourcen durch Code automatisch zu erstellen, zu konfigurieren und zu verwalten. Dadurch sollten manuelle Arbeitsschritte vollständig wegfallen und die Bereitstellung automatisiert werden.
+* __Effizienzsteigerung und Automatisierung:__  
 
-* __Unabhängigkeit von der Weboberfläche:__
-Vollständige Steuerung und Verwaltung von AWS-Ressourcen über die Shell mit Scripte welche mittels Bash auf die AWS CLI zugreiffen. 
+Durch die Entwicklung eines eigenen Control Panels für die Verwaltung von AWS-Ressourcen mithilfe von Infrastructure-as-Code (IaC)[^8], soll die Effizenz beim Arbeiten im AWS-Umfeld gesteigert werden. Der Zweck ist es EC2-Instanzen, VPCs, Subnets, Security Groups durch Code automatisch zu erstellen, zu konfigurieren und zu verwalten. Dadurch sollten manuelle Arbeitsschritte vollständig wegfallen und die Bereitstellung automatisiert werden.
+
+* __Unabhängigkeit von der Weboberfläche:__  
+
+Eine Vollständige Steuerung und Verwaltung von AWS-Ressourcen über die Shell mit Scripte welche mittels Bash auf die AWS CLI zugreifen. 
 Die Notwendigkeit, die AWS Management Console zu nutzen, soll entfallen, um die Verwaltung und Bereitstellung der Ressourcen effizienter und einfacher zu gestalten.
 
-* __Standardisierung und Wiederverwendbarkeit:__
-Aufbau einer strukturierten IaC-Codelogik mit wiederverwendbaren Templates und Parametern für verschiedene AWS-Komponenten. 
+* __Standardisierung und Wiederverwendbarkeit:__  
+
+Der Aufbau einer strukturierten IaC-Codelogik mit wiederverwendbaren Templates und Parametern für verschiedene AWS-Komponenten. 
 Dadurch können identische Setups mehrfach verwendet und standardisiert werden. 
 Die Lösung soll versioniert über GitLab[^19] verwaltet werden, um Änderungen nachvollziehbar zu dokumentieren.
 
 
 ## 2.4 Terminplan
+
 Zur Planung des Projektablaufs wird in Jira[^18] ein Gantt-Chart verwendet. 
 Dieses dient dazu, eine Übersicht und zeitliche Strukturierung der User Stories zu erhalten. 
 Änderungen können flexibel vorgenommen werden, was eine sofortige Anpassung des Plans ermöglicht. 
@@ -78,7 +82,7 @@ Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so 
 | Sprint 1         | Grundlagen und Initialisierung                                       | 05.05.25 – 19.05.25          | Projektstruktur, Planung, AWS-Zugriffe einrichten, erstes Basis Script.     |
 | Sprint 2         | Netzwerkautomatisierung, Server Deployment und Automatisierung       | 19.05.25 – 02.06.25          | Automatisierte Erstellung der Infrastruktur (Instanzen, VPCs, Subnets etc.).|
 | Sprint 3         | Optimierung und Bedienbarkeit und Testing                            | 02.06.25 – 16.06.25          | Code verbessern, Logging[^10] und Fehlerbehandlung[^11] einbauen, erste Tests.        |
-| Sprint 4         | Dokumentation Nachbearbeitung                                        | 16.06.25 – 30.06.25          | Finales Testing und Dokumentation abschliessen.                             |
+| Sprint 4         | Dokumentation und Nachbearbeitung                                        | 16.06.25 – 30.06.25          | Finales Testing und Dokumentation abschliessen.                             |
 | Sprint 5         | Finalisierung der Semesterarbeit                                     | 30.06.25 – 09.07.25          | Dokumentation Prüfen und Projekt abgabebereit machen.                 |
 
 &nbsp;
@@ -101,9 +105,9 @@ Die Jira-Timeline visualisiert diese Änderungen unmittelbar und ermöglicht so 
 
 __Projektmethodik:__  
 
-Für die Umsetzung des Projekts wird SCRUM[^14] als agile Projektmanagementmethode verwendet. 
+Für die Umsetzung des Projekts wird das SCRUM[^14] -Framework als agile Projektmanagementmethode verwendet. 
 Die Entwicklung erfolgt iterativ wodurch regelmässige Zwischenergebnisse abgeliefert und überprüft werden können. 
-Bei Bedarf kann am Ende jeder Iteration das weitere Vorgehen angepasst werden. 
+Bei Bedarf kann am Ende jeder Iteration das weitere Vorgehen neu geplant und angepasst werden. 
 
 __Versionierungskonzept:__  
 
@@ -123,11 +127,11 @@ Als Code-Editor kommt Visual Studio Code zum Einsatz. Zur Veranschaulichung habe
 
 __Test und Validierung:__  
 
-Die Validierung des Codes findet Vortlaufend während der Entwicklung statt. Am Ende des Projekts werden zusätzlich Testfälle definiert um die Funktionsfähigkeit Final zu Messen. 
+Die Validierung des Codes findet fortlaufend während der Entwicklung statt. Am Ende des Projekts werden zusätzlich Testfälle definiert um die Funktionsfähigkeit final zu messen. 
 
 __Nicht Teil des Projektes:__  
 
-Das Bereitstellen von weiteren Ressourcen, abgesehen von EC2-Instanzen, VPCs, Security Groups usw. ist nicht vorgesehen. Im Rahmen des Projekts werden Ressourcen ausschliesslich per Script erstellt und gelöscht. Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgt nicht automatisiert und ist auch nicht Bestandteil des Projekt.
+Das Bereitstellen von weiteren Ressourcen, abgesehen von EC2-Instanzen, VPCs, Security Groups usw. ist nicht vorgesehen. Im Rahmen des Projekts werden Ressourcen ausschliesslich per Script erstellt und gelöscht. Vorgänge wie das Umbenennen, Duplizieren oder Erweitern von Ressourcen erfolgen nicht automatisiert und sind auch nicht Bestandteil des Projekts. Ausserdem wird das Control Panel nicht für die Zusammenarbeit in Teams entwickelt.
 
 __Risikoanalyse:__  
 
@@ -164,7 +168,7 @@ Das Risiko-Level  wird in folgende Gruppen Eingestuft:
 
 # 3 Projektplan
 
-Für die Semesterarbeit wurde kein klassischer Gantt-Projektplan erstellt. Die Durchführung erfolgt vollständig nach SCRUM wesshalb es im Verlauf vom Projekt zu Änderungen am Projektplan kommen könnte. Die Aufgaben wurden in User Stories aufgeteilt und in fünf Sprints gegliedert, wobei für jeden Sprint ein klares Ziel festgelegt wurde. Um dennoch eine visuelle Planung darzustellen, wurde die Timeline vom Projekt in Jira genutzt.
+Für die Semesterarbeit wurde kein klassischer Gantt-Projektplan erstellt. Die Durchführung erfolgt vollständig nach dem SCRUM-Framework, weshalb es im Verlauf des Projekts zu Änderungen am Projektplan kommen könnte. Die Aufgaben wurden in User Stories aufgeteilt und in fünf Sprints gegliedert, wobei für jeden Sprint ein klares Ziel festgelegt wurde. Um dennoch eine visuelle Planung darzustellen, wurde die Timeline vom Projekt in Jira genutzt.
 
 Diese kann über folgenden Link aufgerufen werden: [Jira Timeline](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline)
 
@@ -230,7 +234,7 @@ Die Definition of Done setzt sich aus individuell festgelegten Kriterien zusamme
 
 * __Betriebs- und Supportprozess:__ Falls erforderlich, wurde ein Prozess für den Betrieb und Support eingerichtet, um eine reibungslose Übergabe und Nachverfolgbarkeit sicherzustellen.
 
-In JIra wurde eine Automation Rule erstellt, welche die Kriterien der Definition of Done (DoD) automatisch in das Beschreibungsfeld eingefügt, sobald ein neues Backlog Item erstellt wird.
+In Jira wurde eine Automation Rule erstellt, welche die Kriterien der Definition of Done (DoD) automatisch in das Beschreibungsfeld eingefügt, sobald ein neues Backlog Item erstellt wird.
 
 &nbsp;
 
@@ -238,13 +242,13 @@ In JIra wurde eine Automation Rule erstellt, welche die Kriterien der Definition
 
 ### 3.4.1 Sprint 1
 
-Im ersten Sprint der Semesterarbeit geht es darum das Fundament und die Voraussetzungen für das Projekt zu schaffen. 
+Im ersten Sprint der Semesterarbeit geht es darum, das Fundament und die Voraussetzungen für das Projekt zu schaffen. 
 Dazu gehört das Erstellen einer Risikoanalyse, die Planung des weiteren Vorgehens sowie die Dokumentation der Organisationsstruktur. 
 Ziel ist es, dass am Ende des ersten Sprints alle notwendigen Vorarbeiten gemacht sind, damit mit der eigentlichen Umsetzung des Projekts gestartet werden kann.
 
 __Sprint Planning:__  
 
-Zu Beginn musste der Aufwand von den am höchsten priorisierten User Stories anhand von Storypoints geschätzt werden. 
+Zu Beginn musste der Aufwand von den am höchsten priorisierten User Storys anhand von Storypoints geschätzt werden. 
 Da im Rahmen dieser Arbeit nur eine einzelne Person das SCRUM-Team bildet, ist ein separates Backlog Refinement nicht sinnvoll.
 Die Schätzung der Storypoints erfolgt daher direkt im Sprint Planning. 
 
@@ -260,7 +264,7 @@ Abschliessend wurden falls erforderlich, Subtasks zu den Stories angelegt, um di
 
 __Sprint Review:__ 
 
-In der Sprint Review wurden die Ergebnisse des ersten Sprints vorgestellt und gemeinsam mit dem Projektmanagement-Lehrer Projektleiter besprochen. Dabei wurde gezielt frühzeitig Feedback von ihm eingeholt, um diesm im Verlauf der Arbeit zu verbessern. 
+In der Sprint Review wurden die Ergebnisse des ersten Sprints vorgestellt und gemeinsam mit dem Projektmanagement-Lehrer Projektleiter besprochen. Dabei wurde gezielt frühzeitig Feedback von ihm eingeholt, um dies im Verlauf der Arbeit zu verbessern. 
 
 Ein wichtiger Diskussionspunkt war die Deklaration von Inhalten, die mithilfe von künstlicher Intelligenz (KI) erstellt wurden. Es wurde von der Lehrperson festgelegt, dass solche Inhalte eindeutig gekennzeichnet werden und die verwendeten Prompts im Quellenverzeichnis aufgeführt werden sollen.
 Zudem wurde darüber diskutiert, ob zusätzlich zur Jira-Timeline ein Gantt-Diagramm erstellt werden sollte, um den Projektplan visuell darzustellen. Nach gemeinsamer Absprache wurde entschieden, dass die Visualisierung über die Jira-Timeline ausreichend ist und somit kein separates Gantt-Diagramm erstellt wird. 
@@ -289,7 +293,7 @@ Seit dem letzten Mal, als die verbleibenden User Stories im Backlog betrachtet w
 
 Daher bestand der erste Schritt darin, für alle User Stories aussagekräftige Beschreibungen zu verfassen und passende Akzeptanzkriterien zu definieren, um eine klare Grundlage für die Umsetzung zu schaffen. Anschliessend wurde anhand der Story Points ermittelt, wie viel Kapazität zur Verfügung steht. Für den zweiten Sprint wurden User Stories im Gesamtumfang von fünf Story Points eingeplant.
 
-Zum Abschluss wurde in Jira der zweite Sprint erstellt, welcher vom __19. Mai__ bis zum __2. Juni 2025__ läuft. Zusätzlich wurden für einige User Stories Sub-Tasks angelegt, um die Aufgaben innerhalb der Stories besser aufteilen und effizienter bearbeiten zu können.
+Zum Abschluss wurde in Jira der zweite Sprint erstellt, welcher vom __19. Mai__ bis zum __2. Juni 2025__ läuft. Zusätzlich wurden für einige User Storys einzelne Sub-Tasks angelegt, um die Aufgaben innerhalb der Stories besser aufteilen und effizienter bearbeiten zu können.
 
 ![Sprint2Planning](img/Sprint2Planning.png)
 *Screenshot von meinem Sprint 2 Backlog in Jira.*
@@ -299,7 +303,7 @@ __Sprint Review:__
 Im zweiten Sprint Review wurde eine kurze Live-Demo des im Sprint fertiggestellten Control Panels präsentiert. Der Fokus lag auf kleineren Navigationsschritten innerhalb des Panels,
 da aus zeitlichen Gründen keine umfangreichere Demonstration möglich war.  
 
-Im Anschluss holte ich Feedback von Ceasar Roth (Projektmanagement-Lehrperson) ein. Er wies mich darauf hin, dass nach jedem Sprint eine kurze Zusammenfassung in Form von 
+Im Anschluss holte ich Feedback von Projektleiter (Projektmanagement-Lehrperson) ein. Er wies mich darauf hin, dass nach jedem Sprint eine kurze Zusammenfassung in Form von 
 2–3 Sätzen erfolgen soll. In dieser sollte festgehalten werden, ob das Sprintziel erreicht wurde und welche User Stories abgeschlossen sind. 
 Er gab mir ausserdem stichwortartige Hinweise, was eine gute Sprint Review beinhalten sollte. Diese Punkte habe ich aufgenommen und direkt in meine Sprint Review integriert,
 um den formalen und inhaltlichen Anforderungen besser zu entsprechen.
@@ -401,7 +405,7 @@ Im nächsten und letzten Sprint steht nur noch der Feinschliff an. Dieser umfass
 
 __Sprint Planning:__
 
-Der fünfte und letzte Sprint befasst sich mit der Finalisierung der Semesterarbeit. Ziel ist es nach diesem Sprint die Semesterarbeit vollständig und abgabebereit zu haben. Es werden einzelne Feinschliffe noch gemacht falls nötig und der ganze Text und Code auf die richtigkeit geprüft. Der Sprint startet am __30. Juni__ und geht bis und mit dem __9. Juli 2025__ wobei dies auch gerade das Abgebedatum des Projekts ist.
+Der fünfte und letzte Sprint befasst sich mit der Finalisierung der Semesterarbeit. Ziel ist es nach diesem Sprint die Semesterarbeit vollständig und abgabebereit zu haben. Es werden noch einzelne Feinschliffe gemacht, falls nötig und der ganze Text und Code auf die richtigkeit geprüft. Der Sprint startet am __30. Juni__ und geht bis und mit dem __9. Juli 2025__ wobei dies auch gerade das Abgebedatum des Projekts ist.
 
 __Sprint Review:__
 
@@ -555,7 +559,7 @@ fi
 
 __EC2 Menu Script:__  
 
-Das EC2-Script übernimmt die vollständige Bereitstellung, Konfiguration sowie das Löschen von EC2-Instanzen. Es beinhaltet die gleichen Variablen wie das Main-Script und ist ähnlich aufgebaut. Das Script bietet dem Benutzer ein übersichtliches Menü zur Auswahl verschiedener Operationen, darunter das Erstellen, Anzeigen und Löschen von EC2-Instanzen.
+Das EC2-Menu Script übernimmt die vollständige Bereitstellung, Konfiguration sowie das Löschen von EC2-Instanzen. Es beinhaltet die gleichen Variablen wie das Main-Script und ist ähnlich aufgebaut. Das Script bietet dem Benutzer ein übersichtliches Menü zur Auswahl verschiedener Operationen, darunter das Erstellen, Anzeigen und Löschen von EC2-Instanzen.
 
 Der Header ist bewusst schlicht gehalten, ohne eine ASCII-Schriftzug jedoch wird dennoch klar anzeigt, in welchem Menü sich der Benutzer befindet.
 Bei der Auswahl einer Option wird ein separater Bash-Prozess gestartet, der das jeweils referenzierte Unterscript ausführt (z. B. ```ec2_create.bash```, ```ec2_list.bash```, ```ec2_delete.bash```). Nach Abschluss des Prozesses gibt das Script eine Zusammenfassung der ausgeführten Aktion aus und kehrt nach bestätigung des Anwenders ins EC2-Menü zurück.
@@ -868,10 +872,10 @@ Die Tests werden ausschliesslich in der definierten Projektumgebung durchgeführ
 
 &nbsp;
 
-| Testfall 4              | Fehlende Eingabe einer Security Group ID                                  |
+| Testfall 4              | Falsche Eingabe einer Security Group ID                                  |
 |------------------------|----------------------------------------------------------------------------|
 | Voraussetzungen        | - AWS CLI ist konfiguriert<br>- Script ist vorhanden                      |
-| Erwartetes Ergebnis    | Das Script bricht ab und meldet, dass keine gültige ID eingegeben wurde.   |
+| Erwartetes Ergebnis    | Das Script bricht ab und meldet, dass eine ungültige ID eingegeben wurde.   |
 | Testablauf             | 1. Script starten<br>2. Bei der Abfrage keine ID eingeben<br>3. Bestätigen |
 | Effektives Ergebnis    | Fehlermeldung wird ausgegeben<br>Script wird abgebrochen                   |
 | Screenshotg / Logfiles | ![Testfall4](img/Testing/Testfall4.gif)<br>*GIF Wrong Input Script*                                                                            |
@@ -970,7 +974,7 @@ pie title Durchgeführte Testfälle
 Diese Semesterarbeit bietet eine stabile technische Grundlage für die automatisierte Verwaltung von AWS-Ressourcen. 
 Durch ein eigenes entwickeltes Control Panel können Ressourcen in AWS effizient bereitgestellt, konfiguriert und gelöscht werden. 
 Die modulare Scriptstruktur und die Benutzerfreundliche Eingabeführung erleichtern den Umgang mit der AWS-Infrastruktur erheblich 
-und zeigen klar die Vorteile automatisierter Prozesse gegenüber manuellen Abläufen.
+und zeigen klar die Vorteile automatisierter Prozesse gegenüber manuellen Abläufen auf.
 
 Trotz der funktionalen Umsetzung wirft das Projekt bei näherer Betrachtung Fragen hinsichtlich Skalierbarkeit und der längerfristigen Verwaltbarkeit auf. 
 Ziel war es, ein Tool zu entwickeln, das komplett Unabhängig von der Weboberfläche funktioniert. Dieses Ziel wurde grundsätzlich erreicht,
@@ -984,7 +988,7 @@ Mit hinblick auf Themen wie z.B Sicherheit, Fehlerbehandlung und Mehrbenutzerfä
 
 ## 7.2 Persönliches Fazit
 
-Die Arbeit an diesem Projekt war anspruchsvoll und forderte mich fachlich heraus. Gleichzeitig war es aber auch eine Gelegenheit zu persönlichen Weiterentwicklung.
+Die Arbeit an diesem Projekt war anspruchsvoll und forderte mich fachlich heraus. Gleichzeitig war es aber auch eine Gelegenheit zur persönlichen Weiterentwicklung.
 Durch die Entwicklung des AWS-Control Panels konnte ich mein Verständnis für die Automatisierung und Steuerung von Cloud-Ressourcen mit der AWS CLI und Bash-Scripten[^2] deutlich vertiefen. Der Aufbau von einem nutzbaren Control Panels erforderte nicht nur technisches Know-how, sondern auch ein gewisses Gespür für die Prozessgestaltung und Benutzerführung.
 
 Ein wichtiger Punkt, der mir vorallem während der Umsetzung der Arbeit besonders bewusst wurde, war die klare Abgrenzung. Sei es bei der Auswahl der Availability Zones von AWS oder der automatisierten Erstellung von Ressourcen wie EC2-Instanzen, VPCs, Security Groups usw. Dabei zeigte sich, wie wichtig eine sorgfältige Planung und ein schrittweises, iteratives Vorgehen sind, um auch bei komplexeren Anforderungen den Überblick zu behalten um im endeffekt ein stabiles Ergebnisse zu erzielen.
@@ -1003,7 +1007,7 @@ Ein weiterer Schritt in Richtung professioneller Infrastrukturverwaltung wäre d
 
 # 8 Schlusswort
 
-Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funktionierende Lösung zur Verwaltung von AWS-Ressourcen darstellt, sondern auch eine wertvolle persönliche Lernerfahrung in Bezug auf Automatisierung, Strukturierung und den praktischen Umgang mit der AWS-CLI für mich war. Die Umsetzung hat mir gezeigt, wie eine durchdachte Planung und die kontinuierliche Verbesserung zu einem Ergebniss führen kann, das sowohl technisch robust sowie auch benutzerfreundlich ist. Das Projekt bildet eine gute Grundlage für zukünftige Projekte und bietet viele Ansätze, um es weiternetwickel zu können und noch stärker an professionelle Anforderungen anzupassen.
+Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funktionierende Lösung zur Verwaltung von AWS-Ressourcen darstellt, sondern auch eine wertvolle persönliche Lernerfahrung in Bezug auf Automatisierung, Strukturierung und den praktischen Umgang mit der AWS-CLI für mich war. Die Umsetzung hat mir gezeigt, wie eine durchdachte Planung und die kontinuierliche Verbesserung zu einem Ergebniss führen kann, das sowohl technisch robust sowie auch benutzerfreundlich ist. Das Projekt bildet eine gute Grundlage für zukünftige Projekte und bietet viele Ansätze, um es weiterentwickeln zu können und noch stärker an professionelle Anforderungen anzupassen.
 
 ## 8.2 Quellenverzeichnis
 
@@ -1013,6 +1017,7 @@ Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funkt
 * ChatGPT (2025, Mai 12). *Antwort von ChatGPT auf die Frage: Wie ist das Backlog hierarchisch gegliedert?* ChatGPT: https://chatgpt.com
 * Text to ASCII Art Generator (2025, Mai 22): https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 * Mp4 to GIF-Converter (2025, Juni 15): https://www.adobe.com/de/express/feature/video/convert/video-to-gif
+* Duden Recht­schreib­prüfung Online (2025, Juli 04): https://www.duden.de/rechtschreibpruefung-online
 
 ## 8.1 Glossar
 
@@ -1036,3 +1041,4 @@ Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funkt
 [^18]: __Jira__ ist ein Projektmanagement-Tool zur Planung, Verwaltung und Visualisierung von Aufgaben und Sprints.  
 [^19]: __Git / GitLab__ sind Versionsverwaltungssystem bzw. Plattform zur Quellcode-Verwaltung, Kollaboration und Nachverfolgung von Änderungen.
 [^20]: __Bourne Again Shell (Bash)__ ist eine Unix-Shell und Scriptsprache, die häufig für die Automatisierung von Aufgaben und als Kommandozeile verwendet wird.
+[^21]: __AWS (Amazon Web Service)__ ist ein weltweit führender Cloud-Computing Anbieter der flexible IT-Infrastruktur Dienste übers Internet bereitstellt.
