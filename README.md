@@ -409,7 +409,7 @@ __Sprint Planning:__
 Der fünfte und letzte Sprint befasst sich mit der Finalisierung der Semesterarbeit. Ziel ist es nach diesem Sprint die Semesterarbeit vollständig und abgabebereit zu haben. Es werden noch einzelne Feinschliffe gemacht, falls nötig und der ganze Text und Code auf die richtigkeit geprüft. Der Sprint startet am __30. Juni__ und geht bis und mit dem __9. Juli 2025__ wobei dies auch gerade das Abgebedatum des Projekts ist. Da der Sprint nur halb so lange dauert, wurden auch nur halb so viele Story Points vergeben.
 
 ![Sprint5Planning](img/Sprint5Planning.png)
-*Screenshot von meinem Sprint 4 Backlog in Jira.*
+*Screenshot von meinem Sprint 5 Backlog in Jira.*
 
 __Sprint Review:__
 
@@ -420,7 +420,7 @@ Die fünfte und somit letzte Sprint Review wurde ebenfalls ohne Beteiligung der 
 * [SCRUM-65, Letzte Anpassungen im Code](https://marlon-burri.atlassian.net/browse/SCRUM-65)✅-DONE
 
 ![Sprint5Review](img/JiraTimeline.png)
-*Screenshot von meiner Timeline nach dem vierten Sprint.*
+*Screenshot von meiner Timeline nach dem fünften Sprint.*
 
 # 4 Lösungsdesign
 
