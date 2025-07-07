@@ -172,7 +172,8 @@ Für die Semesterarbeit wurde kein klassischer Gantt-Projektplan erstellt. Die D
 
 Diese kann über folgenden Link aufgerufen werden: [Jira Timeline](https://marlon-burri.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline)
 
-__Platzhalter Screenshot Jira Timeline__
+![JiraTimline](img/JiraTimeline.png)
+*Screenshot der Timeline in Jira.*
 
 Die Timeline bietet einen strukturierten Überblick über alle geplanten Sprints. Änderungen an Tasks oder User Stories werden in Echtzeit sichtbar, was die Visualisierung der Projektumsetzung erleichtert.  
 
@@ -405,9 +406,21 @@ Im nächsten und letzten Sprint steht nur noch der Feinschliff an. Dieser umfass
 
 __Sprint Planning:__
 
-Der fünfte und letzte Sprint befasst sich mit der Finalisierung der Semesterarbeit. Ziel ist es nach diesem Sprint die Semesterarbeit vollständig und abgabebereit zu haben. Es werden noch einzelne Feinschliffe gemacht, falls nötig und der ganze Text und Code auf die richtigkeit geprüft. Der Sprint startet am __30. Juni__ und geht bis und mit dem __9. Juli 2025__ wobei dies auch gerade das Abgebedatum des Projekts ist.
+Der fünfte und letzte Sprint befasst sich mit der Finalisierung der Semesterarbeit. Ziel ist es nach diesem Sprint die Semesterarbeit vollständig und abgabebereit zu haben. Es werden noch einzelne Feinschliffe gemacht, falls nötig und der ganze Text und Code auf die richtigkeit geprüft. Der Sprint startet am __30. Juni__ und geht bis und mit dem __9. Juli 2025__ wobei dies auch gerade das Abgebedatum des Projekts ist. Da der Sprint nur halb so lange dauert, wurden auch nur halb so viele Story Points vergeben.
+
+![Sprint5Planning](img/Sprint5Planning.png)
+*Screenshot von meinem Sprint 4 Backlog in Jira.*
 
 __Sprint Review:__
+
+Die fünfte und somit letzte Sprint Review wurde ebenfalls ohne Beteiligung der Fachlehrperson durchgeführt. Mit dem Sprintende ist gleichzeitig auch der Abschluss der Semesterarbeit erreicht. Alle eingeplanten User Storys konnten Erfolgreich abgeschlossen werden. Den Text und den Code wurde final korrigiert und auf die Richtigkeit überprüft. Die abgeschlossene Arbeit wiederspiegelt meinen Wissensstand aus dem ersten Semester sehr gut und ist durchaus zufriedenstellend.
+
+* [SCRUM-63, Rechtschreibung Prüfen](https://marlon-burri.atlassian.net/browse/SCRUM-63)✅-DONE
+* [SCRUM-64, Darstellung Prüfen](https://marlon-burri.atlassian.net/browse/SCRUM-64)✅-DONE
+* [SCRUM-65, Letzte Anpassungen im Code](https://marlon-burri.atlassian.net/browse/SCRUM-65)✅-DONE
+
+![Sprint5Review](img/JiraTimeline.png)
+*Screenshot von meiner Timeline nach dem vierten Sprint.*
 
 # 4 Lösungsdesign
 
@@ -1018,6 +1031,7 @@ Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funkt
 * Text to ASCII Art Generator (2025, Mai 22): https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 * Mp4 to GIF-Converter (2025, Juni 15): https://www.adobe.com/de/express/feature/video/convert/video-to-gif
 * Duden Recht­schreib­prüfung Online (2025, Juli 04): https://www.duden.de/rechtschreibpruefung-online
+* ChatGPT (2025, Juli 07): *Zur Gramatikalischen Korrektur von Texten.* ChatGPT: https://chatgpt.com
 
 ## 8.1 Glossar
 
