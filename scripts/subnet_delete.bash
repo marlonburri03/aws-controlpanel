@@ -3,7 +3,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/../lib/init_env.bash"
 
 log "INFO" "Starting Script: $(basename "$0")"
 
-# delete a Subnet
+# delete Subnet
 delete_subnet() {
     echo "Fetching existing Subnets..."
 

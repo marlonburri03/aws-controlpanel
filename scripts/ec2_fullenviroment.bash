@@ -15,7 +15,6 @@ create_vpc() {
     --region "$AWS_REGION" \
     --query "Vpc.VpcId" \
     --output text)
-  # Tags richtig quoten, hier explizit in Anführungszeichen
   aws ec2 create-tags --resources "$VPC_ID" --tags Key=Name,Value="$VPC_NAME" --region "$AWS_REGION"
   log "INFO" "VPC created: $VPC_ID"
 }
@@ -104,7 +103,6 @@ launch_ec2_instance() {
 
   log "INFO" "EC2 Instance launched: $INSTANCE_ID"
 }
-
 
 # run functions
 check_aws_requirements

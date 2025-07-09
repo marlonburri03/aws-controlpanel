@@ -157,7 +157,7 @@ delete_vpc() {
             return 0
         fi
     else
-        read -rp "VPC ist leer. Sicher löschen? (y/N): " confirm
+        read -rp "VPC is empty, delete it? (y/N): " confirm
         if [[ "$confirm" =~ ^[Yy]$ ]]; then
             aws ec2 delete-vpc --vpc-id "$vpc_id"
             echo "VPC $vpc_id has been deleted."

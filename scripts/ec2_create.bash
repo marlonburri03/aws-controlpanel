@@ -149,14 +149,14 @@ create_ec2_instance() {
 
     read -rp "Set namen for your Instance: " TAG_NAME
 
-    # validation
+    # validate vars
     if [[ -z "$AMI_ID" || -z "$INSTANCE_TYPE" || -z "$KEY_NAME" || -z "$SECURITY_GROUP_ID" || -z "$SUBNET_ID" || -z "$TAG_NAME" ]]; then
         log "ERROR" "Not all vars used"
         echo "All vars must be set."
         return 1
     fi
 
-    # validation
+    # validate ami-id
     if [[ ! "$AMI_ID" =~ ^ami-[0-9a-fA-F]{8,17}$ ]]; then
         log "ERROR" "Invalid AMI-ID: $AMI_ID"
         echo "Please set valid AMI-ID with formatting 'ami-xxxxxxxxxxxxxxxxx'."
