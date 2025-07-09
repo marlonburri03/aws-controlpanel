@@ -984,15 +984,15 @@ pie title Durchgeführte Testfälle
 
 ## 7.1 Technisches Fazit
 
-Diese Semesterarbeit bietet eine stabile technische Grundlage für die automatisierte Verwaltung von AWS-Ressourcen. 
-Durch ein eigenes entwickeltes Control Panel können Ressourcen in AWS effizient bereitgestellt, konfiguriert und gelöscht werden. 
+Diese Semesterarbeit bietet eine technische stabile Grundlage für die automatisierte Verwaltung von AWS-Ressourcen. 
+Durch ein eigenes entwickeltes Control Panel können Ressourcen in AWS effizient erstellt, konfiguriert und gelöscht werden. 
 Die modulare Scriptstruktur und die Benutzerfreundliche Eingabeführung erleichtern den Umgang mit der AWS-Infrastruktur erheblich 
-und zeigen klar die Vorteile automatisierter Prozesse gegenüber manuellen Abläufen auf.
+und zeigt klar die Vorteile automatisierter Prozesse gegenüber manuellen Abläufen auf.
 
-Trotz der funktionalen Umsetzung wirft das Projekt bei näherer Betrachtung Fragen hinsichtlich Skalierbarkeit und der längerfristigen Verwaltbarkeit auf. 
-Ziel war es, ein Tool zu entwickeln, das komplett Unabhängig von der Weboberfläche funktioniert. Dieses Ziel wurde grundsätzlich erreicht,
-allerdings mussten dafür bestimmte Parameter eingeschränkt oder mit Standardwerten versehen werden, etwa bei der Auswahl eines SSH-Keys oder der AWS-Region.
-Da die Entwicklung in einer isolierten Testumgebung stattfand, bleibt offen, wie gut sich das Control Panel in realen Szenarien bewährt und welchen tatsächlichen Mehrwert es dort generiert.
+Trotz der funktionalen Umsetzung wirft das Projekt bei näherer Betrachtung Fragen hinsichtlich Skalierbarkeit und der längerfristigen Verwaltung auf. 
+Mein Ziel war es, ein Tool zu entwickeln, das komplett Unabhängig von der Weboberfläche funktioniert. Dieses Ziel wurde grundsätzlich erreicht,
+allerdings mussten dafür bestimmte Parameter eingeschränkt oder mit Standardwerten versehen werden, z.B bei der Auswahl eines SSH-Keys oder der AWS-Region.
+Da die Entwicklung in einer isolierten Testumgebung stattfand, bleibt offen, wie gut sich das Control Panel in einem produktiven Umfeld bewährt und welchen tatsächlichen Mehrwert es dort generiert.
 
 Die Benutzerfreundlichkeit konnte durch die Reduktion konfigurierbarer Optionen deutlich verbessert werden. Einige Parameter müssen jedoch weiterhin manuell eingegeben werden, 
 da keine praktikablen Standardwerte definiert werden konnten. Zukünftige Erweiterungen wie vordefinierte Profile oder dynamische Ressourcenabfragen bieten hier weiteres Optimierungspotenzial.
@@ -1001,8 +1001,8 @@ Mit hinblick auf Themen wie z.B Sicherheit, Fehlerbehandlung und Mehrbenutzerfä
 
 ## 7.2 Persönliches Fazit
 
-Die Arbeit an diesem Projekt war anspruchsvoll und forderte mich fachlich heraus. Gleichzeitig war es aber auch eine Gelegenheit zur persönlichen Weiterentwicklung.
-Durch die Entwicklung des AWS-Control Panels konnte ich mein Verständnis für die Automatisierung und Steuerung von Cloud-Ressourcen mit der AWS CLI und Bash-Scripten[^2] deutlich vertiefen. Der Aufbau von einem nutzbaren Control Panels erforderte nicht nur technisches Know-how, sondern auch ein gewisses Gespür für die Prozessgestaltung und Benutzerführung.
+Die Arbeit an diesem Projekt war anspruchsvoll und forderte mich fachlich heraus. Gleichzeitig war es aber auch eine gute Gelegenheit zur persönlichen Weiterentwicklung.
+Durch die Entwicklung des AWS-Control Panels konnte ich mein Verständnis für die Automatisierung und Steuerung von Cloud-Ressourcen mit der AWS CLI und Bash-Scripten[^2] deutlich vertiefen. Der Aufbau von einem nutzbaren Control Panel erforderte nicht nur technisches Know-how, sondern auch ein gewisses Gespür für die Prozessgestaltung und Benutzerführung.
 
 Ein wichtiger Punkt, der mir vorallem während der Umsetzung der Arbeit besonders bewusst wurde, war die klare Abgrenzung. Sei es bei der Auswahl der Availability Zones von AWS oder der automatisierten Erstellung von Ressourcen wie EC2-Instanzen, VPCs, Security Groups usw. Dabei zeigte sich, wie wichtig eine sorgfältige Planung und ein schrittweises, iteratives Vorgehen sind, um auch bei komplexeren Anforderungen den Überblick zu behalten um im endeffekt ein stabiles Ergebnisse zu erzielen.
 
@@ -1012,7 +1012,7 @@ Insgesamt hat mir dieses Projekt gezeigt, wie erfüllend es sein kann, eine Lös
 
 ## 7.3 Mögliche Weiterentwicklung
 
-Das Projekt bietet diverse Möglichkeiten zur Weiterentwicklung. Eine sinnvolle Erweiterung wäre die Einführung einer rollenbasierten Benutzer- und Rechteverwaltung, um den Zugriff auf bestimmte Funktionen gezielt steuern zu können und so den Einsatz im Arbeitsumfeld zu ermöglichen. Nebst dem schon bestehenden Logging würde auch die Integration von einer zusätzlichen Monitoring-Funktion zur besseren Nachvollziehbarkeit und Stabilität des Systems sinn ergeben.
+Das Projekt bietet diverse Möglichkeiten zur Weiterentwicklung. Eine mögliche Erweiterung wäre die Einführung einer rollenbasierten Benutzer- und Rechteverwaltung, um den Zugriff auf bestimmte Funktionen gezielt steuern zu können und so den Einsatz im Arbeitsumfeld zu ermöglichen. Nebst dem schon bestehenden Logging würde es eventuell sinn machen ein Mail-Reporting einzurichten welches z.B jeden Tag eine Zusammenfassung der erstellten sowie gelöschten Ressourcen ausgibt.
 
 Zusätzlich könnte das Tool noch erweitert werden und weitere AWS-Dienste wie z.B S3, RDS, IAM usw. integriert werden um diese über das Control Panel bereitstellen zu können. Ebenso wäre es denkbar, Skalierungsfunktionen zu integrieren. Mit welcher komplexere Umgebungen welche mit mehreren EC2-Instanzen, Subnetzen oder Load Balancern funktionieren, automatisch bereitgestellt werden könnten.
 
@@ -1020,7 +1020,9 @@ Ein weiterer Schritt in Richtung professioneller Infrastrukturverwaltung wäre d
 
 # 8 Schlusswort
 
-Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funktionierende Lösung zur Verwaltung von AWS-Ressourcen darstellt, sondern auch eine wertvolle persönliche Lernerfahrung in Bezug auf Automatisierung, Strukturierung und den praktischen Umgang mit der AWS-CLI für mich war. Die Umsetzung hat mir gezeigt, wie eine durchdachte Planung und die kontinuierliche Verbesserung zu einem Ergebniss führen kann, das sowohl technisch robust sowie auch benutzerfreundlich ist. Das Projekt bildet eine gute Grundlage für zukünftige Projekte und bietet viele Ansätze, um es weiterentwickeln zu können und noch stärker an professionelle Anforderungen anzupassen.
+Abschliessend lässt sich sagen, dass das AWS-Control Panel nicht nur eine funktionierende Lösung zur Verwaltung von AWS-Ressourcen darstellt, sondern auch eine wertvolle persönliche Lernerfahrung in Bezug auf Automatisierung, Strukturierung und den praktischen Umgang mit der AWS-CLI für mich war. 
+Die Umsetzung hat mir gezeigt, wie eine durchdachte Planung und die kontinuierliche Verbesserung zu einem Ergebniss führen kann, das sowohl technisch robust sowie auch benutzerfreundlich ist. 
+Das Projekt bildet eine gute Grundlage für zukünftige Projekte und bietet viele Ansätze, um es weiterentwickeln zu können und noch stärker an professionelle Anforderungen anzupassen.
 
 ## 8.2 Quellenverzeichnis
 
