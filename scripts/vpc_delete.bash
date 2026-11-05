@@ -132,7 +132,7 @@ force_delete_vpc() {
         aws ec2 release-address --allocation-id "$alloc"
     done
 
-    echo "Lösche VPC: $vpc_id"
+    echo "Deleting VPC: $vpc_id"
     aws ec2 delete-vpc --vpc-id "$vpc_id"
 }
 
